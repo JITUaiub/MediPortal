@@ -44,9 +44,9 @@
                             </ul> 
                         </td>
                         <td width="70%"><h2><ul>Welcome <?php
-							session_start();
+							//session_start();
 							
-							echo $_SESSION['loggedInUser']['name'];
+							echo "Bob";
 						?></ul></h2></td>
                     </table>
                 </div>
@@ -57,7 +57,7 @@
             	<!-- Footer section -->
                 <div>
                     <table align="center">
-                        <td>Copyright &copy; 2017</td>
+                        <td>&copy;2017 MediPortal. All rights reserved.</td>
                     </table>
                 </div>
             </td>
