@@ -94,12 +94,12 @@
                             </ul>
                         </fieldset>
                         </td>
-
-                        <td width="70%"><h2><ul>Welcome <?php
+                        <div align="center">
+                        <td width="70%" align="center"><h2><ul>Welcome <?php
 							//session_start();
 							
 							echo "Bob";
-						?></ul></h2></td>
+						?><img src="images/consult.jpg"></ul></h2></td></div>
                     </table>
                 </div>
             </td>
