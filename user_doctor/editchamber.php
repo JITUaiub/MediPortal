@@ -62,6 +62,11 @@
 								</td>
 							</tr>
 							<tr>
+								<td><label>Working Time</label></td>
+								<td>:</td>
+								<td><input type="time" name="time"> to <input type="time" name="time"></td>
+							</tr>
+							<tr>
 								<td><label>Description</label></td>
 								<td>:</td>
 								<td><textarea name="description"></textarea></td>

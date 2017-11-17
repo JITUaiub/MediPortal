@@ -4,40 +4,30 @@
 	<title>Doctor Registration</title>
 </head>
 <body>
-	<table>
-		<div>
-			<div>
-				<table align="center" width="100%" border="1">
-					<tr align="right">
-						<td width="30%">
-							<a href="../Home.html"><img src="../images/logo.png" align="left"></a>
-						</td>
-						<td width="30%">&nbsp;</td>
-						<td>
-							<a href="../Home.html" >Home <img src="../images/home.png"></a>
-						</td>
-						<td width="10%">
-							<a href="../Registration.html">Registration<img src="../images/registration.png"></a>
-						</td>
-						<td width="10%">
-							<a href="../Login.html">Login<img src="../images/login.png"></a>
-						</td>
-					</tr>
-				</table>
-			</div>
-
-			<div>
-				<table align="center">
-					<tr>
-						<td align="center">
-							Registared By 
-							<a href="NormalRegistration.html">Normal User</a>
-							<a href="BloodDonorRegistration.html">
-							Blood Donor</a> 			
-						</td>
-					</tr>
-				</table>
-			</div>
+	<table border="1" align="center" width="70%">
+    	<tr>
+        	<td>
+            	<!-- Header section -->
+            	<div>
+                    <table align="center" width="100%">
+                        <td width="20%">
+                            <img src="images/pageicon.png"/>
+                        </td>
+                        <td width="40%">&nbsp;</td>
+                        <td width="40%">
+                            <table align="right">
+                                <td><strong>Logged in as </strong></td>
+                                <td><a href="viewprofile.html">Bob<img src="images/user.png"></a></td>
+                                <td><hr width="1" size="15"></td>
+                                <td><a href="../index.html">Logout<img src="images/logout.png"></a></td>
+                            </table> 
+                        </td>
+                    </table>
+                </div>
+            </td>
+        </tr>
+        <tr>
+        	<td>
 			<div>
 				Please fill up your information
 			</div>
@@ -71,12 +61,21 @@
 								</td>
 							</tr>
 							<tr>
+								<td><label>Working Time</label></td>
+								<td>:</td>
+								<td><input type="time" name="time"> to <input type="time" name="time"></td>
+							</tr>
+							<tr>
 								<td><label>Description</label></td>
 								<td>:</td>
 								<td><textarea name="description"></textarea></td>
 							</tr>
 							<tr>
-								<td><input type="button" value="Add another"/>	<input type="submit" value="Finish"/></td>
+								<td align="center" colspan="3"><input type="button" value="Add another"/>	<input type="submit" value="Finish"/></td>
+							</tr>
+							<tr>
+								<td align="center" colspan="3"><a href="managechamber.html">Go to Manage Chamber</a>
+								<a href="editchamber.html">Go to Edit Chamber</a></td>
 							</tr>
 						</table>
 					</fieldset>		
