@@ -26,9 +26,16 @@
             </td>
         </tr>
         <tr>
+            <td>
+                <div>
+                    
+                </div>
+            </td>
+        </tr>
+        <tr>
         	<td>
             	<!-- Body section -->
-                <div>
+               <div>
                     <table width="100%">
                         <!-- User Menu Section -->
                         <td width="30%">
@@ -84,17 +91,12 @@
                             </ul>
                         </fieldset>
                         </td>
-
-                        <td width="70%">
-                        	<fieldset>
-                            	<legend><strong>PROFILE PICTURE</strong></legend>
-                                <img src="images/usericon.png"/>
-                                <br/><br/>
-                                <input type="file" name="newprofilepicture"/>
-                                <hr/>
-                                <input type="submit" value="Submit"/>
-                            </fieldset>
-                        </td>
+                        <div align="center">
+                        <td width="70%" align="center"><h2><ul>Welcome <?php
+							//session_start();
+							
+							echo "Bob";
+						?><img src="images/consult.jpg"></ul></h2></td></div>
                     </table>
                 </div>
             </td>

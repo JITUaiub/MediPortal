@@ -26,9 +26,16 @@
             </td>
         </tr>
         <tr>
+            <td>
+                <div>
+                    
+                </div>
+            </td>
+        </tr>
+        <tr>
         	<td>
             	<!-- Body section -->
-                <div>
+               <div>
                     <table width="100%">
                         <!-- User Menu Section -->
                         <td width="30%">
@@ -84,17 +91,38 @@
                             </ul>
                         </fieldset>
                         </td>
+                        <div align="center">
+                        <td width="70%" align="center">
+                            <!--------------------------------------------------- DESIGN UI HERE-------------------------------------------------->
 
-                        <td width="70%">
-                        	<fieldset>
-                            	<legend><strong>PROFILE PICTURE</strong></legend>
-                                <img src="images/usericon.png"/>
-                                <br/><br/>
-                                <input type="file" name="newprofilepicture"/>
-                                <hr/>
-                                <input type="submit" value="Submit"/>
-                            </fieldset>
-                        </td>
+                            <div>   
+                                <div align="left">
+                                    <fieldset>
+                                        <legend>Patient Medicine Information</legend><br>
+                                        <table border="1">
+                                            <tr>
+                                                <td width="15%">Patient Name</td>
+                                                <td width="15%">Medicine History</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td width="15%">Bob Marley</td>
+                                                <td width="15%">1.Napa<br>2.Met 850<br>3.Max Pro</td>
+                                            </tr>
+
+                                             <tr>
+                                                <td width="15%">Chester Benigton</td>
+                                                <td width="15%">1.Seclo<br>2.Met 850<br>3.Amdocal 500<br>4.Glipita</td>
+                                            </tr>
+                                        </table>
+
+                                        <a href="disanalysis.php">Go to Disease Analysis</a>
+                                    </fieldset>
+                                </div>
+                            </div>
+
+                            <!------------------------------------------------------ END HERE----------------------------------------------------->
+                        </td></div>
                     </table>
                 </div>
             </td>
