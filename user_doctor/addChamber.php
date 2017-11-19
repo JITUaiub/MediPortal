@@ -26,6 +26,8 @@
                 </div>
             </td>
         </tr>
+        	
+      
         <tr>
         	<td>
 			<div>
@@ -75,7 +77,7 @@
 							</tr>
 							<tr>
 								<td align="center" colspan="3"><a href="managechamber.html">Go to Manage Chamber</a>
-								<a href="editchamber.html">Go to Edit Chamber</a></td>
+								<a href="editchamber.php">Go to Edit Chamber</a></td>
 							</tr>
 						</table>
 					</fieldset>		

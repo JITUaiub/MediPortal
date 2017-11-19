@@ -109,10 +109,10 @@
 									<tr>
 										<td>
 											<strong>Name :</strong>
-											<select>
-												<option>Bob</option>
-											</select>
+											<input type="name" name="name"/>
 										</td>
+
+                                        <td><strong>Age:</strong><input type="number" name="age"></td>
 										
 										<td align="right" width="40%">
 											<strong>Date :</strong><input type="date" name="date"/>
@@ -124,28 +124,45 @@
 									<tr>
 										<td>
 											<table align="center" width="100%">
-												<tr align="center">
-													<td align="center">
-														<label align="center">Symtoms</label>
-														<textarea name="symtoms"></textarea>
+
+                                                <tr align="center">
+                                                    <td align="center">
+                                                        <label>Disease</label></td><td>
+                                                        <input type="text" name="disease"/>
+                                                    </td>
+                                               
+                                                    <td>
+														<label align="center">Symtoms</label></td>
+														<td><textarea name="symtoms"></textarea>
 													</td>
 												</tr>
-												<tr>
-													<td>
-														<label>Disease</label>
-														<input type="text" name="disease"/>
-													</td>
-												</tr>
+												
 											</table>
 										</td>
-										<td>
-											<label align="center">Medicine</label>
-											<textarea name="medicine"></textarea>
-										</td>
+                                        <tr>
+										<td >
+                                            <table>
+                                                <tr align="center">
+                                                    <td align="center">
+											<label align="center">Medicine</label></td><td>:</td><td>
+											<input type="text" name="medicine"></input>
+										</td></tr>
+                                        <tr>
+                                        <td ><label><strong>Time Of Day</strong></label></td>
+                                            <td>:</td>
+                                            <td><input type="checkbox" name="day">Morning
+                                            <input type="checkbox" name="day">AfterNoon
+                                            <input type="checkbox" name="day">Night</td>
+
+                                            <td width="10%"><label><strong>Total Day</strong></label></td><td>:</td>
+                                            <td><input type="number" name="total_day"></td>
+                                    </tr>
+                                </table>
 									</tr>
 								</table>
 								<hr/>
-								<input type="submit"/>
+								<input type="submit" name="submit" value="submit" />
+                                <input type="reset" name="reset" value="Reset" />
 							</fieldset>
 							<!------------------------ FINISH DESIGNING HERE ------------------------------>
 						</td>
