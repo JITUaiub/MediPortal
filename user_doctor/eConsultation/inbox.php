@@ -1,6 +1,6 @@
 <html>
 
-<head><title>Home</title></head>
+<head><title>Drafts</title></head>
 
 <body>
 	<table border="1" align="center" width="70%">
@@ -10,15 +10,15 @@
             	<div>
                     <table align="center" width="100%">
                         <td width="20%">
-                            <img src="images/pageicon.png"/>
+                            <img src="../images/pageicon.png"/>
                         </td>
                         <td width="40%">&nbsp;</td>
                         <td width="40%">
                             <table align="right">
                                 <td><strong>Logged in as </strong></td>
-                                <td><a href="viewprofile.html">Bob<img src="images/user.png"></a></td>
+                                <td><a href="../viewprofile.html">Bob<img src="../images/user.png"></a></td>
                                 <td><hr width="1" size="15"></td>
-                                <td><a href="../index.html">Logout<img src="images/logout.png"></a></td>
+                                <td><a href="../../index.html">Logout<img src="../images/logout.png"></a></td>
                             </table> 
                         </td>
                     </table>
@@ -43,11 +43,11 @@
                                 <legend>
                             <strong>Personal Information</strong></legend>
                             <ul>
-                                <li><a href="dashboard.php">Dashboard</a></li>
-                                <li><a href="viewprofile.html">View Profile</a></li>
-                                <li><a href="editprofile.html">Edit Profile</a></li>
-                                <li><a href="changeprofilepicture.html">Change Profile Picture</a></li>
-                                <li><a href="managechamber.html">Manage Chambers</a></li>
+                                <li><a href="../dashboard.php">Dashboard</a></li>
+                                <li><a href="../viewprofile.html">View Profile</a></li>
+                                <li><a href="../editprofile.html">Edit Profile</a></li>
+                                <li><a href="../changeprofilepicture.html">Change Profile Picture</a></li>
+                                <li><a href="../managechamber.html">Manage Chambers</a></li>
                             </ul>
                         </fieldset>
 
@@ -56,8 +56,8 @@
                             <legend>
                             <strong>Manage Prescriptions</strong></legend>
                                 <ul>
-                                <li><a href="newpescriptions.html">Create new Prescriptions</a></li>
-                                <li><a href="pescriptions.html">Previous Prescriptions</a></li>
+                                <li><a href="../newpescriptions.html">Create new Prescriptions</a></li>
+                                <li><a href="../pescriptions.html">Previous Prescriptions</a></li>
                             </ul>
                         </fieldset>
 
@@ -66,8 +66,8 @@
                             <strong>Appointments Information</strong></legend>
                            
                             <ul>
-                                <li><a href="appointmentstatus.html">Appointment Status</a></li>
-                                <li><a href="appointmenthistory.html">Appointment History</a></li>
+                                <li><a href="../appointmentstatus.html">Appointment Status</a></li>
+                                <li><a href="../appointmenthistory.html">Appointment History</a></li>
                             </ul>
                         </fieldset>
 
@@ -77,9 +77,9 @@
                             <strong>Reports</strong></legend>
                            
                             <ul>
-                                <li><a href="patienthistory.html">Patient History</a></li>
-                                <li><a href="medianalysis.html">Medicine Analysis</a></li>
-                                <li><a href="disanalysis.html">Disease Analysis</a></li>
+                                <li><a href="../patienthistory.html">Patient History</a></li>
+                                <li><a href="../medianalysis.html">Medicine Analysis</a></li>
+                                <li><a href="../disanalysis.html">Disease Analysis</a></li>
                             </ul>
                         </fieldset>
 						
@@ -89,10 +89,10 @@
                             <strong>E-consultation</strong></legend>
                            
                             <ul>
-								<li><a href="message.html">New Message</a></li>
-                                <li><a href="inbox.html">Inbox</a></li>
-                                <li><a href="sentitems.html">Sent items</a></li>
-								<li><a href="drafts.html">Drafts</a></li>
+								<li><a href="../eConsultation/message.php">New Message</a></li>
+                                <li><a href="../eConsultation/inbox.php">Inbox</a></li>
+                                <li><a href="../eConsultation/sentitems.php">Sent Items</a></li>
+								<li><a href="../eConsultation/drafts.php">Drafts</a></li>
                             </ul>
                         </fieldset>
 
@@ -102,8 +102,8 @@
                             <strong>Account</strong></legend>
                            
                             <ul>
-                                <li><a href="changepassword.html">Change Password</a></li>
-                                <li><a href="../index.html">Logout</a></li>
+                                <li><a href="../changepassword.html">Change Password</a></li>
+                                <li><a href="../../index.html">Logout</a></li>
                             </ul>
                         </fieldset>
                         </td>
