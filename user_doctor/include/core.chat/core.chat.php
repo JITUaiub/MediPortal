@@ -6,4 +6,4 @@
 	require('include/core.chat/database/getMessage.php');
 	require('include/core.chat/database/sendMessage.php');
 
->?
+?>
