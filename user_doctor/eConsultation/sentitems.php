@@ -138,27 +138,57 @@
                         <div align="center">
                         <td width="70%" align="center">
 							<fieldset>
-								<legend align="center">Sentitems</legend>
-								 <label>Action</label>
-                                <select>
-                                    <option> </option>
-                                    <option>Read all</option>
-                                    <option>Unmark all</option>
-                                    <option>Delete</option>
-                                </select>
-                                <table border="1">
-                                      <tr>
-                                          <td width="10%" align="left"><strong>Sender</strong></td>
-                                          <td width="15%" align="center"><strong>Message</strong></td>
-                                           <td width="10%" align="right"><strong>Date</strong></td>
-                                      </tr>  
-                                      <tr>
-                                          <td width="10%" align="left">someone@gmail.com</td>
-                                          <td width="15%" align="center">I have a problem. Please help me</td>
-                                           <td width="10%" align="right">15 oct</td>
-                                      </tr>                        
+                                <legend align="center"><h4>Sent Items</h4></legend>
+                                <table border="0" width="100%">
+                                    <tr>
+                                        <td align="center">
+                                             <strong>Recipient</strong>
+                                        </td>
+                                        <td align="center">
+                                             <strong>Subject</strong>
+                                        </td>
+                                        <td align="center">
+                                             <strong>Message</strong>
+                                        </td>
+                                        <td align="center">
+                                             <strong>Time / Date</strong>
+                                        </td>
+                                        <td align="center">
+                                             <strong>
+                                                <select >
+                                                    <optgroup label="Actions">
+                                                        <option selected="true" value="all">Select none</option>
+                                                        <option value="all">Select all</option>
+                                                        <option value="none">Revert selected</option>
+                                                        <option value="read">Mark as read</option>
+                                                        <option value="delete">Delete</option>
+                                                        </optgroup>
+                                                </select>
+                                            </strong>
+                                        </td>
+                                    </tr>
+                                    <tr><td colspan="5"><hr></td></tr>
+                                    <tr>
+                                        <td align="center">
+                                            <strong>testDev</strong>
+                                        </td>
+                                        <td align="center">
+                                            <strong>Testing<strong>
+                                        </td>
+                                        <td align="center">
+                                             <strong>Hello developer !!</strong>
+                                        </td>
+                                        <td align="center">
+                                             <strong>3:06AM / 24-11-2017</strong>
+                                        </td>
+                                        <td align="center">
+                                            <input type="checkbox" name="action">
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr><td colspan="5"><hr></td></tr>
                                 </table>
-							</fieldset>
+                            </fieldset>
 						</td>
 						</div>
                     </table>

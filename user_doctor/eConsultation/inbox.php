@@ -138,51 +138,55 @@
                         <div align="center">
                         <td width="70%" align="center">
 							<fieldset>
-								<legend align="center">Inbox</legend>
+								<legend align="center"><h4>Inbox</h4></legend>
 								<table border="0" width="100%">
                                     <tr>
                                         <td align="center">
                                              <strong>Sender</strong>
                                         </td>
                                         <td align="center">
+                                             <strong>Subject</strong>
+                                        </td>
+                                        <td align="center">
                                              <strong>Message</strong>
+                                        </td>
+                                        <td align="center">
+                                             <strong>Time / Date</strong>
                                         </td>
                                         <td align="center">
                                              <strong>
                                                 <select >
-                                                    <option value="action">action</option>
-                                                    <option value="all">select all</option>
-                                                    <option value="none">none</option>
-                                                    <option value="delete">delete</option>
+                                                    <optgroup label="Actions">
+                                                        <option selected="true" value="all">Select none</option>
+                                                        <option value="all">Select all</option>
+                                                        <option value="none">Revert selected</option>
+                                                        <option value="read">Mark as read</option>
+                                                        <option value="delete">Delete</option>
+                                                        </optgroup>
                                                 </select>
                                             </strong>
                                         </td>
                                     </tr>
-                                    <tr><td colspan="3"><hr></td></tr>
+                                    <tr><td colspan="5"><hr></td></tr>
                                     <tr>
                                         <td align="center">
-                                            <strong>tiger</strong>
+                                            <strong>testDev</strong>
                                         </td>
                                         <td align="center">
-                                            <strong>hello bob , how ......</strong>
+                                            <strong>Testing<strong>
+                                        </td>
+                                        <td align="center">
+                                             <strong>Hello developer !!</strong>
+                                        </td>
+                                        <td align="center">
+                                             <strong>3:06AM / 24-11-2017</strong>
                                         </td>
                                         <td align="center">
                                             <input type="checkbox" name="action">
                                         </td>
                                     </tr>
-                                    <tr><td colspan="3"><hr></td></tr>
-                                    <tr>
-                                        <td align="center">
-                                            <strong>tom</strong>
-                                        </td>
-                                        <td align="center">
-                                            <strong>hello bob , what's ......</strong>
-                                        </td>
-                                        <td align="center">
-                                            <input type="checkbox" name="action">
-                                        </td>
-                                    </tr>
-                                    <tr><td colspan="3"><hr></td></tr>
+                                    
+                                    <tr><td colspan="5"><hr></td></tr>
                                 </table>
 							</fieldset>
 						</td>

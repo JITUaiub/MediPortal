@@ -138,7 +138,7 @@
                         <div align="center">
                         <td width="70%" align="center">
 							<fieldset>
-								<legend align="center">Message</legend>
+								<legend align="center"><h4>Type a message here</h4></legend>
 								 <fieldset>
                                              <legend>New Message</legend>
                                              <table>
@@ -154,15 +154,26 @@
                                               <tr><td colspan="3"><hr></td></tr>
                                              <tr>
                                                 <td width="5%" align="center">
-                                                 <label>Write your asking</label></td><td>:</td><td ><textarea></textarea></td>
+                                                 <label>Body</label></td><td>:</td><td ><textarea></textarea></td>
                                              </tr>
                                               <tr><td colspan="3"><hr></td></tr>
+
                                               <tr>
                                                   <td>
-                                                      <input type="submit" name="send" value="Send">
+                                                      Attachments
                                                   </td>
+                                                  <td>:</td>
                                                   <td><input type="file" name="upload"></td>
                                               </tr>
+                                              <tr>
+                                                  <td>
+                                                      &nbsp;
+                                                  </td>
+                                              </tr>
+                                              <tr>
+                                                  <td><input type="submit" name="Submit" value="Send Message"></td>
+                                              </tr>
+
                                              </table>
                                          </fieldset>  
 							</fieldset>
