@@ -17,7 +17,7 @@
                         <td width="40%">
                             <table align="right">
                                 <td><strong>Logged in as </strong></td>
-                                <td><a href="viewprofile.html">Bob<img src="images/user.png"></a></td>
+                                <td><a href="viewprofile.php">Bob<img src="images/user.png"></a></td>
                                 <td><hr width="1" size="15"></td>
                                 <td><a href="../index.html">Logout<img src="images/logout.png"></a></td>
                             </table> 
