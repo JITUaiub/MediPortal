@@ -88,10 +88,10 @@
                             <strong>E-consultation</strong></legend>
                            
                             <ul>
-								<li><a href="message.html">New Message</a></li>
-                                <li><a href="inbox.html">Inbox</a></li>
-                                <li><a href="sentitems.html">Sent items</a></li>
-								<li><a href="drafts.html">Drafts</a></li>
+								<li><a href="eConsultation/message.php">New Message</a></li>
+                                <li><a href="eConsultation/inbox.php">Inbox</a></li>
+                                <li><a href="eConsultation/sentitems.php">Sent Items</a></li>
+								<li><a href="eConsultation/drafts.php">Drafts</a></li>
                             </ul>
                         </fieldset>
 
