@@ -3,11 +3,11 @@
 <head><title>Drafts</title></head>
 
 <body>
-	<table border="1" align="center" width="70%">
-    	<tr>
-        	<td>
-            	<!-- Header section -->
-            	<div>
+    <table border="1" align="center" width="70%">
+        <tr>
+            <td>
+                <!-- Header section -->
+                <div>
                     <table align="center" width="100%">
                         <td width="20%">
                             <img src="../images/pageicon.png"/>
@@ -33,8 +33,8 @@
             </td>
         </tr>
         <tr>
-        	<td>
-            	<!-- Body section -->
+            <td>
+                <!-- Body section -->
                <div>
                     <table width="100%">
                         <!-- User Menu Section -->
@@ -82,17 +82,17 @@
                                 <li><a href="../disanalysis.php">Disease Analysis</a></li>
                             </ul>
                         </fieldset>
-						
-						
-						<fieldset>
+                        
+                        
+                        <fieldset>
                             <legend>
                             <strong>E-consultation</strong></legend>
                            
                             <ul>
-								<li><a href="../eConsultation/message.php">New Message</a></li>
+                                <li><a href="../eConsultation/message.php">New Message</a></li>
                                 <li><a href="../eConsultation/inbox.php">Inbox</a></li>
                                 <li><a href="../eConsultation/sentitems.php">Sent Items</a></li>
-								<li><a href="../eConsultation/drafts.php">Drafts</a></li>
+                                <li><a href="../eConsultation/drafts.php">Drafts</a></li>
                             </ul>
                         </fieldset>
 
@@ -108,92 +108,39 @@
                         </fieldset>
                         </td>
             <div align="center">
-            <td width="70%" align="center">
-              <?php
-                if($_SERVER['REQUEST_METHOD'] == 'POST'){
+                        <td width="70%">
+                            <fieldset>
+                                <legend align="center"><h4>Conversation</h4></legend>
+                                <p align="center"><strong>Receiver Name</strong><br/>
+                                User ID: 0000<br/>
+                                Subject: Unknown<br/>
+                                Last seen: X moment ago</p>
+                                <table border="0" width="100%">
+                                    <tr>
+                                        <td>
+                                            Message 1
+                                        </td>
+                                        <td align="right">
+                                            11:14:19 PM / 20-11-2017
+                                        </td>
+                                    </tr>
+                                </table>
+                                <h3>&nbsp;</h3>
+                                <p align="left">Reply to this conversation:</p>
+                                <textarea></textarea>
+                                <br/>
+                                <input type="submit" name="reply" value="Reply">
 
-                   // Need to set sender      Need to work on cookie                                      
-                  $sender = "Jitu";
-                  $to = $_POST['to_mail'];
-                  $subject = $_POST['subject'];
-                  $body = $_POST['body'];
-
-                  if(trim($subject) == "")
-                    $subject = "No Subject";
-
-                  include 'php/sendMessage.php';
-
-                  if(!empty($to) && !empty($body)){
-                    if (sendMessage($sender, $to, $subject, $body)) {
-                      print "<p>Message sent successfully</p>";
-                    } else {
-                      print "<p>Cannot sent message.</p>";
-                    } 
-                  }
-                  else {
-                      print "<p>Please fix and try again !!</p>";
-                  }
-                  if(empty($to))    print "<p>Enter recipient</p>";
-                  if(empty($body))  print "<p>Message body cannot be empty !!</p>";
-
-                  unset($_POST);
-                  $subject = "";
-                }
-              ?>	
-              <form action="" method="post">
-                
-                <fieldset>
-                              <legend align="center"><h4>Type a message here</h4></legend>
-                               <fieldset>
-                                             <legend>New Message</legend>
-                                             <table>
-                                             <tr>
-                                                 <td width="5%" align="center">To</td><td>:</td>
-                                                 <td ><input  type="text" name="to_mail"/></td>
-                                             </tr>
-                                             <tr><td colspan="3"><hr></td></tr>
-                                             <tr>
-                                                 <td width="5%" align="center">Subject</td><td>:</td>
-                                                 <td><input type="text" name="subject"></td>
-                                             </tr>
-                                              <tr><td colspan="3"><hr></td></tr>
-                                             <tr>
-                                                <td width="5%" align="center">
-                                                 <label>Body</label></td><td>:</td><td ><textarea name="body"></textarea></td>
-                                             </tr>
-                                              <tr><td colspan="3"><hr></td></tr>
-
-                                              <tr>
-                                                  <td>
-                                                      Attachments (X)
-                                                  </td>
-                                                  <td>:</td>
-                                                  <td><input type="file" name="upload"></td>
-                                              </tr>
-                                              <tr>
-                                                  <td>
-                                                      &nbsp;
-                                                  </td>
-                                              </tr>
-                                              <tr>
-                                                  <td><input type="submit" name="Submit" value="Send Message"></td>
-                                              </tr>
-                                             </table>
-                                         </fieldset>  
-              </fieldset>
-
-              </form>
-
-						</td>
-						</div>
-
-          </table>
+                            </fieldset>
+                        </td>
+                        </div>
+                    </table>
                 </div>
             </td>
         </tr>
         <tr>
-        	<td>
-            	<!-- Footer section -->
+            <td>
+                <!-- Footer section -->
                 <div>
                     <table align="center">
                         <td>&copy;2017 MediPortal. All rights reserved.</td>
