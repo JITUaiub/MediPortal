@@ -107,16 +107,49 @@
                             </ul>
                         </fieldset>
                         </td>
-                        <div align="center">
-                        <td width="70%" align="center">
-							<fieldset>
-								<legend align="center"><h4>Type a message here</h4></legend>
-								 <fieldset>
+            <div align="center">
+            <td width="70%" align="center">
+              <?php
+                if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+                   // Need to set sender      Need to work on cookie                                      
+                  $sender = "Jitu";
+                  $to = $_POST['to_mail'];
+                  $subject = $_POST['subject'];
+                  $body = $_POST['body'];
+
+                  if(trim($subject) == "")
+                    $subject = "No Subject";
+
+                  include 'php/sendMessage.php';
+
+                  if(!empty($to) && !empty($body)){
+                    if (sendMessage($sender, $to, $subject, $body)) {
+                      print "<p>Message sent successfully</p>";
+                    } else {
+                      print "<p>Cannot sent message.</p>";
+                    } 
+                  }
+                  else {
+                      print "<p>Please fix and try again !!</p>";
+                  }
+                  if(empty($to))    print "<p>Enter recipient</p>";
+                  if(empty($body))  print "<p>Message body cannot be empty !!</p>";
+
+                  unset($_POST);
+                  $subject = "";
+                }
+              ?>	
+              <form action="" method="post">
+                
+                <fieldset>
+                              <legend align="center"><h4>Type a message here</h4></legend>
+                               <fieldset>
                                              <legend>New Message</legend>
                                              <table>
                                              <tr>
                                                  <td width="5%" align="center">To</td><td>:</td>
-                                                 <td ><input  type="text" name="mail"/></td>
+                                                 <td ><input  type="text" name="to_mail"/></td>
                                              </tr>
                                              <tr><td colspan="3"><hr></td></tr>
                                              <tr>
@@ -126,13 +159,13 @@
                                               <tr><td colspan="3"><hr></td></tr>
                                              <tr>
                                                 <td width="5%" align="center">
-                                                 <label>Body</label></td><td>:</td><td ><textarea></textarea></td>
+                                                 <label>Body</label></td><td>:</td><td ><textarea name="body"></textarea></td>
                                              </tr>
                                               <tr><td colspan="3"><hr></td></tr>
 
                                               <tr>
                                                   <td>
-                                                      Attachments
+                                                      Attachments (X)
                                                   </td>
                                                   <td>:</td>
                                                   <td><input type="file" name="upload"></td>
@@ -145,13 +178,16 @@
                                               <tr>
                                                   <td><input type="submit" name="Submit" value="Send Message"></td>
                                               </tr>
-
                                              </table>
                                          </fieldset>  
-							</fieldset>
+              </fieldset>
+
+              </form>
+
 						</td>
 						</div>
-                    </table>
+
+          </table>
                 </div>
             </td>
         </tr>
