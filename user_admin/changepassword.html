@@ -67,7 +67,8 @@
                            
                             <ul>
                                 <li><a href="reportsNormalUsers.php">General Users Statistics</a></li>
-                                <li><a href="reportsDoctorUsers.php">General Users Statistics</a></li>
+                                <li><a href="reportsDoctorUsers.php">Doctor's Statistics</a></li>
+                                <li><a href="reportsAdmin.php">Overall User Statistics</a></li>
                             </ul>
                         </fieldset>
                         
