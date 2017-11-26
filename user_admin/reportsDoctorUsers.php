@@ -126,7 +126,7 @@
         <td>Doctor</td>
         <td width="40"><a href="viewprofile.php">Profile</a></td>
         <td width="30"><a href="Doctoractivity.php">Activity</a></td>
-        <td width="45"><a href="user_member/message.html">Messege</a></td>
+        <td width="45"><a href="#">Messege</a></td>
     </tr>
   
                     </table>
