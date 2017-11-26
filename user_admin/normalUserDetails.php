@@ -97,44 +97,72 @@
                         </td>
                         <div align="center">
                         <td width="70%" align="center">
+
+              
                             <fieldset>
-                                         <legend>
-                                                <b>GENEREL USERS | SEARCH</b>
-                                        </legend>
-    Filter By
-    <select>
-        <option>Any</option>
-        <option>Name</option>
-        <option>Email</option>
-        
-    </select>
-    <input />
-    <input type="submit" value="Search" />
-</fieldset>
-<br/>
-<table width="100%" cellspacing="0" border="1" cellpadding="5">
-    <tr>
-        <th align="left">NAME</th>
-        <th align="left">EMAIL</th>
-        <th align="left">STATUS</th>
-        <th colspan="3"></th>
-    </tr>
-    <tr>
-        <td>Jitu</td>
-        <td>Jitu@aiub.edu</td>
-        <td>Active</td>
-        <td width="40"><a href="normalUserDetails.php">Detail</a></td>
-        <td width="30"><a href="edit.html">Edit</a></td>
-        <td width="45"><a href="delete.html">Delete</a></td>
-    </tr>
-                        </td></div>
+                                    <legend><strong>PROFILE</strong></legend>
+                                    <table width="100%">
+                                        <td width="60%">
+                                            <table width="100%">
+                                                <tr>
+                                                    <td>
+                                                        <table width="100%">
+                                                            <td width="30%"><strong>Name</strong></td>
+                                                            <td><strong>:</strong></td>
+                                                            <td>Jitu</td>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr><td><hr/></td></tr>
+                                                <tr>
+                                                    <td>
+                                                        <table width="100%">
+                                                            <td width="30%"><strong>Email</strong></td>
+                                                            <td><strong>:</strong></td>
+                                                            <td>jitu@aiub.edu</td>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr><td><hr/></td></tr>
+                                                <tr>
+                                                    <td>
+                                                        <table width="100%">
+                                                            <td width="30%"><strong>Gender</strong></td>
+                                                            <td><strong>:</strong></td>
+                                                            <td>Male</td>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr><td><hr/></td></tr>
+                                                <tr>
+                                                    <td>
+                                                        <table width="100%">
+                                                            <td width="30%"><strong>Date of Birth</strong></td>
+                                                            <td><strong>:</strong></td>
+                                                            <td>19/9/1996</td>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td width="40%">
+                                            <table>
+                                                <tr>
+                                                    <td align="center"><img src="images/usericon.png"/></td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="center"><a href="changeprofilepicture.html">Change</a></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                </td></div>
                     </table>
                 </div>
             </td>
         </tr>
         <tr>
-        	<td>
-            	<!-- Footer section -->
+            <td>
+                <!-- Footer section -->
                 <div>
                     <table align="center">
                         <td>&copy;2017 MediPortal. All rights reserved.</td>
