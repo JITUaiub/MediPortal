@@ -97,6 +97,7 @@
                         </td>
                         <div align="center">
                         <td width="70%" align="center">
+<<<<<<< HEAD
                              
                                     <fieldset>
                                          <legend>
@@ -129,6 +130,11 @@
         <td width="45"><a href="delete.html">Delete</a></td>
     </tr>
    
+=======
+                             <!--------------------------------------------------- DESIGN UI HERE-------------------------------------------------->
+
+                               
+>>>>>>> 381f9c8f36deeba0cdf63055711478e1673ec644
 
 
                         </td></div>

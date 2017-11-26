@@ -36,18 +36,14 @@
                                 <legend>
                             <strong>Personal Information</strong></legend>
                             <ul>
-<<<<<<< HEAD
+
                                 <li><a href="dashboard.php">Dashboard</a></li>
                                 <li><a href="viewprofile.php">View Profile</a></li>
                                 <li><a href="editprofile.php">Edit Profile</a></li>
                                 <li><a href="changeprofilepicture.php">Change Profile Picture</a></li>
                                 <li><a href="managechamber.html">Manage Chambers</a></li>
-=======
-								<li><a href="eConsultation/message.html">New Message</a></li>
-                                <li><a href="eConsultation/inbox.html">Inbox</a></li>
-                                <li><a href="eConsultation/sentitems.html">Sent Items</a></li>
-								<li><a href="eConsultation/drafts.html">Drafts</a></li>
->>>>>>> 4cc39d121220d2eb4b7f239b7043b85626e4e709
+
+								
                             </ul>
                         </fieldset>
 
