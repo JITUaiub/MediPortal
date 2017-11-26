@@ -1,13 +1,13 @@
 <html>
 
-<head><title>Drafts</title></head>
+<head><title>Home</title></head>
 
 <body>
-	<table border="1" align="center" width="70%">
-    	<tr>
-        	<td>
-            	<!-- Header section -->
-            	<div>
+    <table border="1" align="center" width="70%">
+        <tr>
+            <td>
+                <!-- Header section -->
+                <div>
                     <table align="center" width="100%">
                         <td width="20%">
                             <img src="../images/pageicon.png"/>
@@ -33,8 +33,8 @@
             </td>
         </tr>
         <tr>
-        	<td>
-            	<!-- Body section -->
+            <td>
+                <!-- Body section -->
                <div>
                     <table width="100%">
                         <!-- User Menu Section -->
@@ -47,27 +47,16 @@
                                 <li><a href="../viewprofile.php">View Profile</a></li>
                                 <li><a href="../editprofile.php">Edit Profile</a></li>
                                 <li><a href="../changeprofilepicture.php">Change Profile Picture</a></li>
-                                <li><a href="../managechamber.html">Manage Chambers</a></li>
-                            </ul>
-                        </fieldset>
-
-
-                        <fieldset>
-                            <legend>
-                            <strong>Manage Prescriptions</strong></legend>
-                                <ul>
-                                <li><a href="../newpescriptions.html">Create new Prescriptions</a></li>
-                                <li><a href="../pescriptions.php">Previous Prescriptions</a></li>
                             </ul>
                         </fieldset>
 
                         <fieldset>
                             <legend>
-                            <strong>Appointments Information</strong></legend>
+                            <strong>Monitoring Users</strong></legend>
                            
                             <ul>
-                                <li><a href="../appointmentstatus.php">Appointment Status</a></li>
-                                <li><a href="../appointmenthistory.php">Appointment History</a></li>
+                                <li><a href="../normalUsers.php">General Users</a></li>
+                                <li><a href="../doctorUsers.php">Doctor</a></li>
                             </ul>
                         </fieldset>
 
@@ -77,22 +66,20 @@
                             <strong>Reports</strong></legend>
                            
                             <ul>
-                                <li><a href="../patienthistory.php">Patient History</a></li>
-                                <li><a href="../medianalysis.php">Medicine Analysis</a></li>
-                                <li><a href="../disanalysis.php">Disease Analysis</a></li>
+                                <li><a href="../reportsNormalUsers.php">General Users Statistics</a></li>
+                                <li><a href="../reportsDoctorUsers.php">General Users Statistics</a></li>
                             </ul>
                         </fieldset>
-						
-						
-						<fieldset>
+                        
+                        
+                        <fieldset>
                             <legend>
-                            <strong>E-consultation</strong></legend>
+                            <strong>Email</strong></legend>
                            
                             <ul>
-								<li><a href="../eConsultation/message.php">New Message</a></li>
-                                <li><a href="../eConsultation/inbox.php">Inbox</a></li>
-                                <li><a href="../eConsultation/sentitems.php">Sent Items</a></li>
-								<li><a href="../eConsultation/drafts.php">Drafts</a></li>
+                                <li><a href="message.php">New Message</a></li>
+                                <li><a href="inbox.php">Inbox</a></li>
+                                <li><a href="sentitems.php">Sent Items</a></li>
                             </ul>
                         </fieldset>
 
@@ -107,10 +94,13 @@
                             </ul>
                         </fieldset>
                         </td>
-            <div align="center">
+                    
+
+
+                    <div align="center">
                         <td width="70%" align="center">
 							<fieldset>
-                                <legend align="center"><h4>Drafts</h4></legend>
+                                <legend align="center"><h4>Sent Items</h4></legend>
                                 <table border="0" width="100%">
                                     <tr>
                                         <td align="center">
