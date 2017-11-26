@@ -97,11 +97,35 @@
                         </td>
                         <div align="center">
                         <td width="70%" align="center">
-                            <!--------------------------------------------------- DESIGN UI HERE-------------------------------------------------->
-
-                            
-
-                            <!------------------------------------------------------ END HERE----------------------------------------------------->
+                            <fieldset>
+                                         <legend>
+                                                <b>GDOCTORS | SEARCH</b>
+                                        </legend>
+    Filter By
+    <select>
+        <option>Any</option>
+        <option>Name</option>
+        
+        <option>ACTIVITY</option>
+        
+    </select>
+      <input />
+    <input type="submit" value="Search" />
+</fieldset>
+    <br/>
+<table width="100%" cellspacing="0" border="1" cellpadding="5">
+    <tr>
+        
+        <th align="left">NAME</th>
+        
+        <th colspan="2">ACTIVITY</th>
+    </tr>
+    <tr>
+        
+        <td>Jitu</td>
+        <td width="40"><a href="viewprofile.php">Profile</a></td>
+        <td width="30"><a href="useractivity.php">Activity</a></td>
+    </tr>
                         </td></div>
                     </table>
                 </div>
