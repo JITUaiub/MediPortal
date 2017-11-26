@@ -3,11 +3,11 @@
 <head><title>Home</title></head>
 
 <body>
-  <table border="1" align="center" width="70%">
-      <tr>
-          <td>
-              <!-- Header section -->
-              <div>
+    <table border="1" align="center" width="70%">
+        <tr>
+            <td>
+                <!-- Header section -->
+                <div>
                     <table align="center" width="100%">
                         <td width="20%">
                             <img src="images/pageicon.png"/>
@@ -33,8 +33,8 @@
             </td>
         </tr>
         <tr>
-          <td>
-              <!-- Body section -->
+            <td>
+                <!-- Body section -->
                <div>
                     <table width="100%">
                         <!-- User Menu Section -->
@@ -71,9 +71,9 @@
                                 <li><a href="reportsAdmin.php">Overall User Statistics</a></li>
                             </ul>
                         </fieldset>
-            
-            
-            <fieldset>
+                        
+                        
+                        <fieldset>
                             <legend>
                             <strong>Email</strong></legend>
                            
@@ -98,12 +98,11 @@
                         <div align="center">
                         <td width="70%" align="center">
 
-
-<fieldset>
+                            <fieldset>
     <table width="100%" cellpadding="0" cellspacing="0">
         <tr>
             <td>
-                <b>DOCTOR'S ACTIVITY</b>
+                <b>USER'S ACTIVITY</b>
             </td>
             <td align="right">
                 <input type="submit" value="Print"/>
@@ -118,13 +117,12 @@
         <td>
             <table cellspacing="0" cellpadding="5" border="1" width="100%">
                 <tr>
-                    <td width="80%">Bob Marsh</td>
+                    <td width="80%">Jitu</td>
                     <td>Last logged in 1 days ago</td>        
                 </tr>
-                
-            
 
-                              </table>
+
+                                          </table>
                 </div>
             </td>
         </tr>
