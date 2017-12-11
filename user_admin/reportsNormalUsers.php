@@ -123,7 +123,7 @@
     <tr>
         
         <td>Jitu</td>
-        <td width="40"><a href="viewprofile.php">Profile</a></td>
+        <td width="40"><a href="normalUserDetails.php">Profile</a></td>
         <td width="30"><a href="useractivity.php">Activity</a></td>
     </tr>
                         </td></div>
