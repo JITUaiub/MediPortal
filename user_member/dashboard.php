@@ -107,7 +107,7 @@
                         <div align="center">
                         <td width="70%" align="center"><h2><ul>Welcome <?php
 							//session_start();
-							echo "User - General User";
+							echo "Bob";
 
 						?><img src="images/consult.jpg"></ul></h2></td></div>
                     </table>
