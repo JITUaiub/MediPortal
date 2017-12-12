@@ -34,7 +34,7 @@
 <div>
 	<table width="70%" align="center">
 		<tr>
-			<td width="20%">
+			<td width="20%" valign="top">
 				<fieldset>
 					<legend>Select Category</legend>
 					<ul>

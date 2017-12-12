@@ -34,7 +34,7 @@
 <div>
 	<table width="70%" align="center">
 		<tr>
-			<td width="20%">
+			<td width="20%" valign="top">
 				<fieldset>
 					<legend>Select Category</legend>
 					<ul>
@@ -49,7 +49,24 @@
 				<a href="ownQuestion.php">Submit your Own Question</a>
 			</td>
 			<td>
-				<h1>How to get econsultation?</h1>
+				<fieldset>
+                                         <legend><b>QUESTION | SEARCH</b></legend>
+                                          <input value="What is" />
+                                        <input type="submit" value="Search" />
+                                        Results show per page: <select>
+                                            <option>10</option>
+                                            <option>20</option>
+                                            <option>30</option>
+                                        </select>
+                                        <button onclick="ResultPerPage()">Go</button>
+                                        <script>
+                                            function ResultPerPage()
+                                            {
+
+                                            }
+                                        </script>
+                                    </fieldset>
+						<h1>How to get econsultation?</h1>
 				<br><hr>
 				<p>
 					Ask your doctor for an econsultation session. Get an appointment and ask him for e-consultation.
@@ -60,6 +77,14 @@
 				<p>
 					Currently we don't have any facilities for live consultation, We are working on it. Please wait for further updates.
 				</p>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td align="center" colspan="2">
+				<button>Previous Page</button> | <button>Next Page</button>
 			</td>
 		</tr>
 		<tr>
