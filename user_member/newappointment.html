@@ -3,7 +3,7 @@
 <head><title>Home</title></head>
 
 <body>
-	<table border="1" align="center" width="70%">
+	<table border="0" align="center" width="100%">
     	<tr>
         	<td>
             	<!-- Header section -->
@@ -36,9 +36,9 @@
         	<td>
             	<!-- Body section -->
                <div>
-                    <table width="100%">
+                    <table width="100%" border="1">
                         <!-- User Menu Section -->
-                        <td width="30%">
+                        <td width="20%">
                             <fieldset>
                                 <legend>
                             <strong>Personal Information</strong></legend>
@@ -82,7 +82,8 @@
 
                         <fieldset>
                             <legend>
-                            <strong>E-consultation</strong></legend>
+								<strong>E-consultation</strong>
+							</legend>
                            
                             <ul>
                 <li><a href="message.html">New Message</a></li>
@@ -107,9 +108,96 @@
                         <td width="70%" align="center">
                            <fieldset>
                                <legend>Patient Appointment</legend>
-                              <fieldset>
+							    <fieldset>
+									<legend><b>DOCTOR | SEARCH</b></legend>
+							    <table>
+									<tr>
+										<td colspan="2">
+												Filter By
+												<select>
+													<option>Any</option>
+													<option>Name</option>   
+													<option>Email</option>
+													<option>BMDC Reg. No</option>
+													<option>Phone</option>
+												</select>
+												  <input />
+												<input type="submit" value="Search" />
+											
+										</td>
+										<td>
+											
+										</td>
+									</tr>
+									<tr>
+										<td colspan="2">
+											<hr/>
+										</td>
+										
+									</tr>
+									<tr>
+										<td align="right">
+											<strong>Department :</strong>
+										</td>
+										<td>
+											
+											<select>
+												<option>Select one</option>
+												<option>Anesthesiology</option>
+												<option>Cancer Surgery</option>
+												<option>Cardiac Anesthesia</option>
+												<option>Cardiology</option>
+												<option>Cilincal Hemotology</option>
+												<option>Dermatology</option>
+												<option>Dietetics & Nutrition</option>
+												<option>Cardiac Surgery</option>
+												<option>Neurosurgery</option>
+												<option>Orthopedics</option>
+											</select>
+											
+										</td>
+									</tr>
+									<tr>
+										<td align="right">
+											<strong>Title :</strong>
+										</td>
+										<td>
+											
+											<select name="title">
+												
+												<optgroup label="Proffesor">
+													<option>Assistant Proffesor</option>
+													<option>Associate Proffesor</option>
+												</optgroup>
+												<optgroup label="Consultant">
+													<option>Senior Consultant</option>
+													<option>Junior Consultant</option>
+												</optgroup>
+											</select>
+										</td>
+									</tr>
+									<tr>
+										<td align="right">
+											<strong>Doctor :</strong>
+										</td>
+										<td>
+											<select>
+												<option>Select one</option>
+												<option>Dr.poran</option>
+												<option>Dr.Arif</option>
+												<option>Dr.eshtiak</option>
+												<option>Dr.pronob</option>
+											</select>
+										</td>
+									</tr>
+									
+									
+							    </table>
+								</fieldset>
+							   
+                             <!-- <fieldset>
                                   <legend>Doctor Information</legend>
-                                  <table>
+                                  <table border="0"height="100%">
                                       <tr>
                                           <td align="left" width="30%">
                                             <label>Doctor Name</label></td>
@@ -145,38 +233,17 @@
                                       </tr>
                                   </table>
                               </fieldset>
-                                
-                                <fieldset>
-                                    <legend>Patient Information</legend>
+							  
+							  -->
                                     <table>
                                         <tr>
-                                            <td width="25%"><label>Name</label></td><td>:</td>
-                                            <td><hr></td>
-                                            <td width="25%"><label>Patient Type</label></td><td>:</td>
+                                            
+                                            <td width=""><label>Appointment For</label></td><td>:</td>
                                             <td width="30%"><select>
                                                 <option>General</option>
                                                 <option>Emergency</option>
                                                 <option>Operation</option>
                                             </select></td>
-                                        </tr>
-
-                                        <tr>
-                                            <td><label>Address</label></td><td>:</td>
-                                            
-                                        </tr>
-
-                                        <tr>
-                                            <td><label>Sex</label></td><td>:</td>
-                                           
-                                            
-                                        </tr>
-
-                                        <tr>
-                                            <td><label>Age</label></td><td>:</td>
-                                           
-
-                                            <td><label>Mobile No</label></td><td>:</td>
-                                            
                                         </tr>
 
                                         <tr>
@@ -189,20 +256,14 @@
                                               <label>Date</label> </td>
                                               <td>:</td>
                                               <td><input type="date" name="date"/>
-                                                (Please enter your current date)
+                                                (when you wish to meet)
                                           </td>
-                                          <td><label>Time</label></td><td>:</td>
-                                          <td><input type="time" name="time" (Please enter your current time)>
-                                          (Please enter your current time)</td>
                                       </tr>
                                        </table>
-                                </fieldset>
-
-                                <button>Submit</button>
-                           </fieldset>
-
-                           <a href="appointmentstatus.php">Go to Appoint Status</a>
-                           
+									   <hr/>
+                                <input id="submit" type="submit" value="Request" onclick="status()"/>
+								<a href="appointmentstatus.php">Go to Appoint Status</a>
+                           </fieldset> 
                         </td></div>
                     </table>
                 </div>
@@ -219,6 +280,16 @@
             </td>
         </tr>
     </table>
+	<script type="text/javascript">
+		function status(){
+			var x= document.getElementById("submit").value;
+			alert("Request is pending");
+        window.location.assign("appointmentstatus.php");
+		
+		
+		
+		}
+	</script>
 </body>
 
 </html>

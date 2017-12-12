@@ -3,7 +3,7 @@
 <head><title>Home</title></head>
 
 <body>
-	<table border="1" align="center" width="70%">
+	<table border="0" align="center" width="100%">
     	<tr>
         	<td>
             	<!-- Header section -->
@@ -36,9 +36,9 @@
         	<td>
             	<!-- Body section -->
                <div>
-                    <table width="100%">
+                    <table width="100%" border="1">
                         <!-- User Menu Section -->
-                        <td width="30%">
+                        <td width="20%">
                             <fieldset>
                                 <legend>
                             <strong>Personal Information</strong></legend>
