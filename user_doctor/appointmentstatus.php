@@ -104,6 +104,8 @@
                         <td width="70%">
 							<fieldset>
                                 <legend>Patient Appoinment</legend><br>
+                                <fieldset>
+                                    <legend><b>Online Service</b></legend>
                                 <table border="1">
                                     <tr>
                                         <td><strong>Patient Name</strong></td>
@@ -111,7 +113,10 @@
                                         <td><strong>Patient Address</strong></td>
                                         <td><strong>Sex</strong></td>
                                         <td><strong>Patient Problem</strong></td>
-                                        <td colspan="3" align="center"><strong>Appoinment</strong>
+                                       
+
+                                        <td colspan="3" align="center"><strong>Appoinment</strong></td>
+
                                     </tr>
 
                                     <tr>
@@ -120,9 +125,11 @@
                                          <td>Niketon, Dhaka</td>
                                          <td>Male</td>
                                          <td>I am suffering for fever from last 10 days. High Fever, High headeac and I have no test for food.</td>
-                                         <td><input type="date" name="date"></td>
+                                        
+                                         
                                          <td><input type="time" name="time"></td>
                                          <td><input type="submit" name="submit" value="send"></td>
+                                           <td><strong><a href="newpescriptions.html">create prescription</strong></td>
                                     </tr>
 
                                     <tr>
@@ -131,10 +138,53 @@
                                          <td>Khilgaon, Dhaka</td>
                                          <td>Male</td>
                                          <td></td>
+                                        
+                                         <td><input type="time" name="time"></td>
+                                         <td><input type="submit" name="submit" value="send"></td>
+                                           <td><strong><a href="newpescriptions.html">create prescription</strong></td>
+                                    </tr>
+                                </table>
+                            </fieldset>
+                      
+
+                    <fieldset>
+                        <legend><b>Direct Communication</b></legend>
+                        <table border="1">
+                            <tr>
+                                <td><strong>Patient Name</strong></td>
+                                        <td><strong>Patient Age</strong></td>
+                                        <td><strong>Patient Address</strong></td>
+                                        <td><strong>Sex</strong></td>
+                                        <td><strong>Patient Problem</strong></td>
+                                       
+
+                                        <td colspan="3" align="center"><strong>Appoinment</strong></td>
+                            </tr>
+
+                            <tr>
+                                <td>Bob Marley</td>
+                                         <td>26</td>
+                                         <td>Niketon, Dhaka</td>
+                                         <td>Male</td>
+                                         <td>I am suffering for fever from last 10 days. High Fever, High headeac and I have no test for food.</td>
+                                        
                                          <td><input type="date" name="date"></td>
                                          <td><input type="time" name="time"></td>
                                          <td><input type="submit" name="submit" value="send"></td>
+                            </tr>
+
+                            <tr>
+                                         <td>David Batista</td>
+                                         <td>46</td>
+                                         <td>Khilgaon, Dhaka</td>
+                                         <td>Male</td>
+                                         <td></td>
+                                        <td><input type="date" name="date"></td>
+                                         <td><input type="time" name="time"></td>
+                                         <td><input type="submit" name="submit" value="send"></td>
                                     </tr>
+                        </table>
+                    </fieldset>
                                 </table> <br>                    
                             </fieldset>
                             <a href="appointmenthistory.html">Go to appoinment history</a>
