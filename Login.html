@@ -7,7 +7,7 @@
 	<table>
 		<div>
 			<div>
-				<table align="center" width="100%" border="1">
+				<table align="center" width="100%">
 					<tr align="right">
 						<td width="30%">
 							<a href="Home.html"><img src="images/logo.png" align="left"></a>
@@ -26,43 +26,47 @@
 				</table>
 			</div>
 
-			<div>
-				Please Login with your username and password
+			<div align="center">
+				<h1>Please Login with your username and password</h1>
 			</div>
        
 			<div>
-				<fieldset>
-					<legend>Login</legend>
-					<table align="center">
+				<form action="php/valUser.php" method="post">
+					<table align="center" width="60%">
 						<tr>
-							<td><label>User Name</label></td>
-							<td>:</td>
-							<td><input type="name" name="name"/></td>
-							<td><img src="images/person.png"></td>
-						</tr>
-						<tr>
-							<td><label>Password</label></td>
-							<td>:</td>
-							<td><input type="password" name="password"/></td>
-							<td><img src="images/password.png"></td>
-						</tr>
-						<tr>
-							<td align="center" colspan="4">
-								<input type="submit" name="submit" value="Login">
-								<input type="reset" name="reset" value="Reset">
-						</tr>
-						<tr>
-							<td colspan="4" align="center">
-								<a href="user_doctor/dashboard.php">Doctor Index</a>
-								<a href="user_member/dashboard.php">Patient Index</a>
-								<a href="user_admin/dashboard.php">Admin Index</a>
-							</br>
-								<a href="ForgetPassword.html">Forget Password</a>
-								<a href="Registration.html">Sign Up
+							<td>
+								<fieldset>
+									<legend>Login</legend>
+									<table align="center">
+										<tr>
+											<td><label>User Name</label></td>
+											<td>:</td>
+											<td><input type="name" name="name" value="admin" /></td>
+											<td><img src="images/person.png"></td>
+										</tr>
+										<tr>
+											<td><label>Password</label></td>
+											<td>:</td>
+											<td><input type="password" name="password" value="admin" /></td>
+											<td><img src="images/password.png"></td>
+										</tr>
+										<tr>
+											<td align="center" colspan="4">
+												<input type="submit" name="submit" value="Login">
+												<input type="reset" name="reset" value="Reset">
+										</tr>
+										<tr>
+											<td colspan="4" align="center">
+												<a href="ForgetPassword.html">Forget Password</a>
+												<a href="Registration.html">Sign Up
+											</td>
+										</tr>
+									</table>
+								</fieldset>
 							</td>
 						</tr>
 					</table>
-				</fieldset>
+				</form>
 			</div>
 
 			<div>
