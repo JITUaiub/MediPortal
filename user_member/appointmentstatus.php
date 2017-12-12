@@ -85,10 +85,9 @@
                             <strong>E-consultation</strong></legend>
                            
                             <ul>
-                                <li><a href="message.html">New Message</a></li>
-                                <li><a href="inbox.html">Inbox</a></li>
-                                <li><a href="sentitems.html">Sent items</a></li>
-                                <li><a href="drafts.html">Drafts</a></li>
+                                <li><a href="eConsultation/message.php">New Message</a></li>
+                                <li><a href="eConsultation/inbox.php">Inbox</a></li>
+                                <li><a href="eConsultation/sentitems.php">Sent Items</a></li>
                             </ul>
                         </fieldset>
 
@@ -162,6 +161,20 @@
         	<td>
             	<!-- Footer section -->
                 <div>
+                    <table align="center">
+                        <tr align="center">
+                            <td>
+                            <a href="https://www.facebook.com/">
+                            <img src="../images/facebook.png">
+                             </a>
+                         </td>
+                            <td>
+                                    <a href="https://www.twitter.com/">
+                                    <img src="../images/twitter.png">
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
                     <table align="center">
                         <td>&copy;2017 MediPortal. All rights reserved.</td>
                     </table>
