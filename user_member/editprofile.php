@@ -106,8 +106,9 @@
                                                 <tr>
                                                     <td><strong>Name</strong></td>
                                                     <td>:</td>
-                                                    <td><input name="name" type="text" value="Bob"></td>
-													<td></td>
+
+                                                    <td><input name="name" value="Bob Marley"></td>
+
                                                 </tr>				
                                             </table>
                                             <hr>
@@ -117,14 +118,19 @@
                                                     <td>:</td>
                                                     <td>
                                                         <table>
-                                                            <td><input name="email" type="text" value ="bob@aiub.edu"></td>
-                                                            <td><img src="images/hinticon.png" title="someone@example.com"/></td>
+
+                                                            <td><input name="email" value="someone@example.com"></td>
+                                                            <td><img src="images/hinticon.png" title="someone@example.com" /></td>
+
                                                         </table>
                                                     </td>
                                                 </tr>				
                                             </table>
                                         </div>
                                         <hr>
+
+                                                
+
 										<div>
 											<table>
 												<tr>
@@ -155,11 +161,13 @@
                                         <hr>
                                         <input type="submit" value="Submit"/>
                                         <a href="dashboard.php">Dashboard</a>        
+
                                     </fieldset>
                                 </form>
                             </div>
                         </td>
                     </table>
+
                 </div>
             </td>
         </tr>

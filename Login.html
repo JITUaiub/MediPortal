@@ -5,9 +5,9 @@
 </head>
 <body>
 	<table>
-		<div>
+		<div id="page">
 			<div>
-				<table align="center" width="100%" border="1">
+				<table align="center" width="100%">
 					<tr align="right">
 						<td width="30%">
 							<a href="Home.html"><img src="images/logo.png" align="left"></a>
@@ -26,39 +26,66 @@
 				</table>
 			</div>
 
-			<div>
-				Please Login with your username and password
+			<div align="center">
+				<h1>Please Login with your username and password</h1>
 			</div>
-       
+       		
+			<script>
+				function login() {
+			        var id = document.getElementById("name").value;
+			        var pass = document.getElementById("password").value;
+			        if (id == "admin" && pass == "admin")
+			            {
+			            	window.location.href = "user_admin/dashboard.php";
+			            } 
+			        else if (id == "member" && pass == "member")
+						{
+							window.location.href = "user_member/dashboard.php";
+						}
+					else if (id == "doctor" && pass == "doctor")
+						{
+							window.location.href = "user_doctor/dashboard.php";
+						}
+				}
+			</script>
+
 			<div>
-				<fieldset>
-					<legend>Login</legend>
-					<table align="center">
+				<form name="myForm" onsubmit="return validateForm()" method="POST" action="#" >
+					<table align="center" width="60%">
 						<tr>
-							<td><label>User Name</label></td>
-							<td>:</td>
-							<td><input type="name" name="name"/></td>
-							<td><img src="images/person.png"></td>
-						</tr>
-						<tr>
-							<td><label>Password</label></td>
-							<td>:</td>
-							<td><input type="password" name="password"/></td>
-							<td><img src="images/password.png"></td>
-						</tr>
-						<tr>
-							<td align="center" colspan="4">
-								<input type="submit" name="submit" value="Login">
-								<input type="reset" name="reset" value="Reset">
-						</tr>
-						<tr>
-							<td colspan="4" align="center">
-								<a href="ForgetPassword.html">Forget Password</a>
-								<a href="Registration.html">Sign Up
+							<td>
+								<fieldset>
+									<legend>Login</legend>
+									<table align="center">
+										<tr>
+											<td><label>User Name</label></td>
+											<td>:</td>
+											<td><input type="name" id="name" name="name" value="admin" /></td>
+											<td><img src="images/person.png"></td>
+										</tr>
+										<tr>
+											<td><label>Password</label></td>
+											<td>:</td>
+											<td><input type="password" id="password" name="password" value="admin" /></td>
+											<td><img src="images/password.png"></td>
+										</tr>
+										<tr>
+											<td align="center" colspan="4">
+												<input type="button" value="LogIn" onClick="login()" />
+												<input type="reset" name="reset" value="Reset">
+										</tr>
+										<tr>
+											<td colspan="4" align="center">
+												<a href="ForgetPassword.html">Forget Password</a>
+												<a href="Registration.html">Sign Up
+											</td>
+										</tr>
+									</table>
+								</fieldset>
 							</td>
 						</tr>
 					</table>
-				</fieldset>
+				</form>
 			</div>
 
 			<div>
@@ -96,7 +123,7 @@
 			</div>
 		</div>
 	</table>
-    +<div>
+    <div>
 <table align="center" width="100%" border="1">
 <tr>
 <td align="center" colspan="3">

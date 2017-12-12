@@ -161,7 +161,7 @@
                                     </table>
                                     <hr/>
                                     <a href="editprofile.php">Edit Profile</a>
-									<a href="dashboard.php">Dashboard</a>
+
                                 </fieldset>
                             </div>
                         </td>

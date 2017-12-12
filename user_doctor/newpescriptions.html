@@ -3,11 +3,11 @@
 <head><title>Home</title></head>
 
 <body>
-	<table border="1" align="center" width="70%">
-    	<tr>
-        	<td>
-            	<!-- Header section -->
-            	<div>
+    <table border="1" align="center" width="100%">
+        <tr>
+            <td>
+                <!-- Header section -->
+                <div>
                     <table align="center" width="100%">
                         <td width="20%">
                             <img src="images/pageicon.png"/>
@@ -26,12 +26,12 @@
             </td>
         </tr>
         <tr>
-        	<td>
-            	<!-- Body section -->
+            <td>
+                <!-- Body section -->
                 <div>
                     <table width="100%">
                         <!-- User Menu Section -->
-                        <td width="30%">
+                        <td width="20%">
                             <fieldset>
                                 <legend>
                             <strong>Personal Information</strong></legend>
@@ -75,17 +75,17 @@
                                 <li><a href="disanalysis.php">Disease Analysis</a></li>
                             </ul>
                         </fieldset>
-						
-						
-						<fieldset>
+                        
+                        
+                        <fieldset>
                             <legend>
                             <strong>E-consultation</strong></legend>
                            
                             <ul>
-								<li><a href="eConsultation/message.php">New Message</a></li>
+                                <li><a href="eConsultation/message.php">New Message</a></li>
                                 <li><a href="eConsultation/inbox.php">Inbox</a></li>
                                 <li><a href="eConsultation/sentitems.php">Sent Items</a></li>
-								<li><a href="eConsultation/drafts.php">Drafts</a></li>
+                                
                             </ul>
                         </fieldset>
 
@@ -102,82 +102,162 @@
                         </td>
 
                         <td width="70%">
-							<!------------------------ DESIGN PORTAL PAGE HERE ------------------------------>
-							<fieldset>
-								<legend align="center">Prescription</legend>
-								<table border="1" width="100%">
-									<tr>
-										<td>
-											<strong>Name :</strong>
-											<input type="name" name="name"/>
-										</td>
+                            <fieldset>
+                                <legend><b>Online Service Patient</b></legend>
+                            <table align="center" border="1">
+                                <tr>
+                                    <td width="20%">Name</td>
+                                    <td width="20%">Adress</td>
+                                    <td width="20%">Age</td>
+                                    <td width="20%">Patient Problem</td>
+                                    
+                                </tr>
 
-                                        <td><strong>Age:</strong><input type="number" name="age"></td>
-										
-										<td align="right" width="40%">
-											<strong>Date :</strong><input type="date" name="date"/>
-										</td>
-									</tr>
-									
-								</table>
-								<table align="center">
-									<tr>
-										<td>
-											<table align="center" width="100%">
+                                <tr>
+                                    <td>Kent</td>
+                                    <td>Khilkhet,Dhaka</td>
+                                    <td>25</td>
+                                    <td>Fever</td>
+                                    <td><a href="newpescriptions.html">Create Prescription</a></td>
+                                   
+                                </tr>
+
+                                 <tr>
+                                    <td>Gayle</td>
+                                    <td>Dhanmondi</td>
+                                    <td>31</td>
+                                    <td>Headeac</td>
+                                    <td><a href="newpescriptions.html">Create Prescription</a></td>
+                                   
+                                </tr>
+                            </table>
+                        </fieldset>
+
+
+                            <!------------------------ DESIGN PORTAL PAGE HERE ------------------------------>
+                            <fieldset>
+                                <legend align="center">Prescription</legend>
+                                <table width="100%">
+                                   <tr align="center">
+                                       <div align="center">
+                                           <td align="center" colspan="3">
+                                              <b> Doctor Name: Md.Jahid</b>
+                                           </td>
+                                       </div>
+                                   </tr>
+                                   <br>
+                                   <tr>
+                                    <div>
+                                           
+                                           <td align="center" colspan="3">
+                                               Assitant Professor
+                                           </td>
+                                       </div>
+                                   </tr>
+                                        </br>
+                                   <tr>
+                                    <div>
+                                           
+                                           <td align="center" colspan="3">
+                                              Dhaka Medical College
+                                           </td>
+                                       </div>
+                                   </tr>
+                                   <tr>
+                                       <td></td>
+                                   </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>Name : Kent</strong>
+                                            
+                                        </td>
+
+                                        <td><strong>Age:24</strong></td>
+                                        
+                                        <td align="right" width="40%">
+                                            <strong>Date : 12 December 2017</strong>
+                                        </td>
+                                    </tr>
+                                    
+                                </table>
+                                <table align="center">
+                                    <tr>
+                                        <td colspan="3">
+                                            <table align="center" width="100%">
 
                                                 <tr align="center">
                                                     <td align="center">
                                                         <label>Disease</label></td><td>
-                                                        <input type="text" name="disease"/>
+                                                        <input type="text" name="disease" value="Virul Fever" /></textarea>
                                                     </td>
                                                
                                                     <td>
-														<label align="center">Symtoms</label></td>
-														<td><textarea name="symtoms"></textarea>
-													</td>
-												</tr>
-												
-											</table>
-										</td>
+                                                        <label align="center">Symtoms</label></td>
+                                                        <td><input type="text" name="symtoms" value="High Fever,Headeache"></textarea>
+                                                    </td>
+                                                </tr>
+                                                
+                                            </table>
+                                        </td>
                                         <tr>
-										<td >
-                                            <table>
+                                        <td >
+                                            <table border="1" width="100%">
                                                 <tr align="center">
-                                                    <td align="center">
-											<label align="center">Medicine</label></td><td>:</td><td>
-											<input type="text" name="medicine"></input>
-										</td></tr>
-                                        <tr>
-                                        <td ><label><strong>Time Of Day</strong></label></td>
-                                            <td>:</td>
+                                                    <td>Medicine</td>
+                                                    <td>Time Of day</td>
+                                                    <td>Total Day</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                            <input type="text" name="medicine" value="Napa"></input>
+                                        </td>
+                                
                                             <td><input type="checkbox" name="day">Morning
                                             <input type="checkbox" name="day">AfterNoon
                                             <input type="checkbox" name="day">Night</td>
 
-                                            <td width="10%"><label><strong>Total Day</strong></label></td><td>:</td>
-                                            <td><input type="number" name="total_day"></td>
+                                           
+                                            <td><input type="text" name="total_day" value="5 days"/></td>
+                                    
                                     </tr>
+
                                     <tr>
-                                        <td><label><strong>New Appointment</strong></label></td>
-                                        <td>:</td>
-                                        <td><input type="date" name="new_appointment"></td>
+                                                    <td>
+                                            <input type="text" name="medicine" value="Histacin"></input>
+                                        </td>
+                                
+                                            <td><input type="checkbox" name="day">Morning
+                                            <input type="checkbox" name="day">AfterNoon
+                                            <input type="checkbox" name="day">Night</td>
+
+                                           
+                                            <td><input type="text" name="total_day" value="4 days"/></td>
+                                    
                                     </tr>
                                 </table>
-									</tr>
-								</table>
-								<hr/>
-								<input type="submit" name="submit" value="submit" />
+                            </br>
+
+                                        <label align="center"><strong>New Appointment: </strong></label>
+                                        
+                                        <input type="text" name="new_appointment" value="25/12/2017">
+                                    
+                                    </tr>
+                                </table>
+                                <hr/>
+                                <input type="submit" name="submit" value="Send" />
                                 <input type="reset" name="reset" value="Reset" />
-							</fieldset>
-							<!------------------------ FINISH DESIGNING HERE ------------------------------>
-						</td>
+                            </br>
+                            <a href="pescriptions.php">Go to Prescription History</a>
+                            </fieldset>
+                            <!------------------------ FINISH DESIGNING HERE ------------------------------>
+                        </td>
                     </table>
                 </div>
             </td>
         </tr>
         <tr>
-        	<td>
-            	<!-- Footer section -->
+            <td>
+                <!-- Footer section -->
                 <div>
                     <table align="center">
                         <td>&copy;2017 MediPortal. All rights reserved.</td>

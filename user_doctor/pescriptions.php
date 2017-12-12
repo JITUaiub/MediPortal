@@ -3,7 +3,7 @@
 <head><title>Home</title></head>
 
 <body>
-	<table border="1" align="center" width="70%">
+	<table border="1" align="center" width="100%">
     	<tr>
         	<td>
             	<!-- Header section -->
@@ -31,7 +31,7 @@
                  <div>
                     <table width="100%">
                         <!-- User Menu Section -->
-                        <td width="30%">
+                        <td width="20%">
                             <fieldset>
                                 <legend>
                             <strong>Personal Information</strong></legend>
@@ -85,7 +85,7 @@
 								<li><a href="eConsultation/message.php">New Message</a></li>
                                 <li><a href="eConsultation/inbox.php">Inbox</a></li>
                                 <li><a href="eConsultation/sentitems.php">Sent Items</a></li>
-								<li><a href="eConsultation/drafts.php">Drafts</a></li>
+								
                             </ul>
                         </fieldset>
 
@@ -100,15 +100,45 @@
                             </ul>
                         </fieldset>
                         </td>
-
+                          
+                         <div align="center">
                         <td width="70%">
-							<!------------------------ DESIGN PORTAL PAGE HERE --------------------------------->
+                              <table align="center">
+                                <tr align="center">
+                                    <td align="center">
+                                        <label>
+                                            Search By
+                                        </label>
+                                    </td>
+                                    <td>:</td>
+                                    <td>
+                                    <select>
+                                        <option>Patient Name</option>
+                                        <option>Disease</option>
+                                        <option>Prescription Name</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </br>
+
+                        <tr>
+                            <td>
+                                <label>Search</label>
+                            </td>
+                            <td>:</td>
+                            <td>
+                                <input type="text" name="text"/>
+                            </td>
+                        </tr>
+                        </table>
+                                
+							
 							<fieldset>
 								<legend>Prescriptions History</legend>
 								<table border="1" width="100%" height="400">
 									<tr height="10%">
 										<th>
-											<h3 align="center">Date</h3>
+											<h3 align="center">Appointment Date</h3>
 										</th>
 										<th>
 											<h3 align="center">Name</h3>
@@ -128,7 +158,7 @@
 											<h3>10/12/1999</h3>
 										</td>
 										<td>
-											<a href="viewprofile.html">Bob</a>
+											<h4>Bob Marley</h4>
 										</td>
 										<td>
 											<h3>35</h3>
@@ -140,8 +170,27 @@
 											fineName.pdf
 										</td>
 									</tr>
+
+                                    <tr>
+                                        <td>
+                                            <h3>10/12/2015</h3>
+                                        </td>
+                                        <td>
+                                            <h4>Kent Williams</h4>
+                                        </td>
+                                        <td>
+                                            <h3>40</h3>
+                                        </td>
+                                        <td>
+                                            <h3>Cancer</h3>
+                                        </td>
+                                        <td>
+                                            cancer_prescription.pdf
+                                        </td>
+                                    </tr>
 									
 								</table>
+                                <a href="newpescriptions.html">Create New Prescription</a>
 							</fieldset>
 							<!------------------------ FINISH DESIGNING HERE --------------------------------->
 						</td>

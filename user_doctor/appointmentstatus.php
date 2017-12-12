@@ -3,7 +3,7 @@
 <head><title>Home</title></head>
 
 <body>
-	<table border="1" align="center" width="70%">
+	<table border="1" align="center" width="100%">
     	<tr>
         	<td>
             	<!-- Header section -->
@@ -31,7 +31,7 @@
                 <div>
                     <table width="100%">
                         <!-- User Menu Section -->
-                        <td width="30%">
+                        <td width="20%">
                             <fieldset>
                                 <legend>
                             <strong>Personal Information</strong></legend>
@@ -85,7 +85,7 @@
 								<li><a href="eConsultation/message.php">New Message</a></li>
                                 <li><a href="eConsultation/inbox.php">Inbox</a></li>
                                 <li><a href="eConsultation/sentitems.php">Sent Items</a></li>
-								<li><a href="eConsultation/drafts.php">Drafts</a></li>
+							
                             </ul>
                         </fieldset>
 
@@ -104,6 +104,8 @@
                         <td width="70%">
 							<fieldset>
                                 <legend>Patient Appoinment</legend><br>
+                                <fieldset>
+                                    <legend><b>Online Service</b></legend>
                                 <table border="1">
                                     <tr>
                                         <td><strong>Patient Name</strong></td>
@@ -111,7 +113,10 @@
                                         <td><strong>Patient Address</strong></td>
                                         <td><strong>Sex</strong></td>
                                         <td><strong>Patient Problem</strong></td>
-                                        <td colspan="3" align="center"><strong>Appoinment</strong>
+                                       
+
+                                        <td colspan="3" align="center"><strong>Appoinment</strong></td>
+
                                     </tr>
 
                                     <tr>
@@ -119,10 +124,12 @@
                                          <td>26</td>
                                          <td>Niketon, Dhaka</td>
                                          <td>Male</td>
-                                         <td></td>
-                                         <td><input type="date" name="date"></td>
+                                         <td>I am suffering for fever from last 10 days. High Fever, High headeac and I have no test for food.</td>
+                                        
+                                         
                                          <td><input type="time" name="time"></td>
                                          <td><input type="submit" name="submit" value="send"></td>
+                                           <td><strong><a href="newpescriptions.html">create prescription</strong></td>
                                     </tr>
 
                                     <tr>
@@ -131,13 +138,58 @@
                                          <td>Khilgaon, Dhaka</td>
                                          <td>Male</td>
                                          <td></td>
+                                        
+                                         <td><input type="time" name="time"></td>
+                                         <td><input type="submit" name="submit" value="send"></td>
+                                           <td><strong><a href="newpescriptions.html">create prescription</strong></td>
+                                    </tr>
+                                </table>
+                            </fieldset>
+                      
+
+                    <fieldset>
+                        <legend><b>Direct Communication</b></legend>
+                        <table border="1">
+                            <tr>
+                                <td><strong>Patient Name</strong></td>
+                                        <td><strong>Patient Age</strong></td>
+                                        <td><strong>Patient Address</strong></td>
+                                        <td><strong>Sex</strong></td>
+                                        <td><strong>Patient Problem</strong></td>
+                                       
+
+                                        <td colspan="3" align="center"><strong>Appoinment</strong></td>
+                            </tr>
+
+                            <tr>
+                                <td>Bob Marley</td>
+                                         <td>26</td>
+                                         <td>Niketon, Dhaka</td>
+                                         <td>Male</td>
+                                         <td>I am suffering for fever from last 10 days. High Fever, High headeac and I have no test for food.</td>
+                                        
                                          <td><input type="date" name="date"></td>
                                          <td><input type="time" name="time"></td>
                                          <td><input type="submit" name="submit" value="send"></td>
+                            </tr>
+
+                            <tr>
+                                         <td>David Batista</td>
+                                         <td>46</td>
+                                         <td>Khilgaon, Dhaka</td>
+                                         <td>Male</td>
+                                         <td></td>
+                                        <td><input type="date" name="date"></td>
+                                         <td><input type="time" name="time"></td>
+                                         <td><input type="submit" name="submit" value="send"></td>
                                     </tr>
-                                </table> <br>                    
+                        </table>
+                    </fieldset>
+                    <a href="appointmenthistory.php">Go to appoinment history</a>
+                                </table> <br>    
+
                             </fieldset>
-                            <a href="appointmenthistory.html">Go to appoinment history</a>
+                            
 						</td>
                     </table>
                 </div>

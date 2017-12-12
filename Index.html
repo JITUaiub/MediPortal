@@ -7,7 +7,7 @@
 	<table>
 		<div>
 		<div>
-				<table align="center" width="100%" border="1">
+				<table align="center" width="100%">
 					<tr align="right">
 						<td width="30%">
 							<a href="Home.html"><img src="images/logo.png" align="left"></a>
@@ -29,8 +29,6 @@
 	<h1 align="center"><i>Welcome to MediPortal</i></h1>
 </div>
 <br>
-
-
 
 <div align="center">
 	<script>
@@ -61,39 +59,103 @@
 	window.onload=changeImage;
 	</script>
 
-	<img name="slide" width="80%" height="55%">
+	<img name="slide" width="60%" height="48%">
 
 </div>
-
+<br><br>
 <div align="center">
-	<form>
-		<label>Select City</label>
-		<select>
-			<optgroup label="Dhaka Division">
-				<option>Dhaka</option>
-				<option>Gazipur</option>
-			</optgroup>
-		</select>
-		<label>Looking for</label>
-		<select>
-			<option>Doctor</option>
-			<option>Blood Donor</option>
-		</select>
-		<select>
-			<optgroup label="Doctor Name">
-				<option>Mr. X</option>
-				<option>Mr. Y</option>
-			</optgroup>
-			<optgroup label="Donor Name">
-				<option>Mr. X</option>
-				<option>Mr. Y</option>
-			</optgroup>
-		</select>
-		
-		<input type="submit" value="Get an appointment now"/>
-	</form>
-</div>
+	<table width="60%" align="center">
+		<tr>
+			<td>
+				<fieldset>
+					<h1 align="center">Get an Appointment now</h1>
+					<table align="center">
+				<form action="php/loginRedirect.php">
+					<tr><td>
+					<label>Select City</label>
+					<select>
+							<option selected="true">Select City</option>
+						<optgroup label="Dhaka Division">
+							<option>Dhaka</option>
+							<option>Gazipur</option>
+						</optgroup>
+					</select></td></tr>
 
+					<tr><td>
+					<label>Looking for</label>
+					<select>
+						<option>Doctor</option>
+						<option>Blood Donor</option>
+					</select>
+					<select>
+						<optgroup label="Doctor Name">
+							<option>Mr. X</option>
+							<option>Mr. Y</option>
+						</optgroup>
+						<optgroup label="Donor Name">
+							<option>Mr. X</option>
+							<option>Mr. Y</option>
+						</optgroup>
+					</select></td></tr>
+					<tr><td align="center">
+					<input type="submit" value="Get an appointment now" id="Sub"/></td></tr>
+				</form>
+			</table>
+			</fieldset>
+			</td>
+		</tr>
+	</table>
+</div>	
+
+<br><hr>
+				<div>
+					<table align="left" width="40%">
+						<tr>
+							<td>
+								<fieldset>
+									<h1>Get Appointment From Home</h1>
+									<hr>
+									<p>
+										Find your doctor and get an appointment today.
+									</p>
+								</fieldset>
+							</td>
+						</tr>
+					</table><br><br><br><br><br><br>
+
+					<table align="right" width="40%">
+						<tr>
+							<td>
+								<fieldset>
+									<h1>Contact with your doctor</h1>
+									<hr>
+									<p>
+										With e-consultation you can talk to your
+										doctor from home or anywhere.
+									</p>
+								</fieldset>
+							</td>
+						</tr>
+					</table><br><br><br><br><br><br>
+					<table align="left" width="40%">
+						<tr>
+							<td>
+								<fieldset>
+									<h1>Search for a blood donors</h1>
+									<hr>
+									<p>
+										Find a donor and get an appointment today.
+									</p>
+								</fieldset>
+							</td>
+						</tr>
+					</table>
+				</div>
+
+<br><br><br><br><br><br><br><br>
+
+
+			
 <br><br>
 <div align="center">
 
@@ -117,6 +179,7 @@
 			<tr>
 				<td align="center" colspan="3">
 				<a href="About_Us.html">About Us   </a>
+		
 			</td>
 			<td align="center" colspan="3">
 				<a href="Contact_Us.html">Contact Us   </a>
@@ -130,7 +193,7 @@
 			</tr>
 		</table>
 	</div>
-    +<div>
+    <div>
 <table align="center" width="100%" border="1">
 <tr>
 <td align="center" colspan="3">
@@ -141,3 +204,4 @@
 </div>
 </body>
 </html>
+       

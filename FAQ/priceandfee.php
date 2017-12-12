@@ -10,17 +10,17 @@
 				<table align="center" width="100%">
 					<tr align="right">
 						<td width="30%">
-							<a href="Home.html"><img src="images/logo.png" align="left"></a>
+							<a href="../Home.html"><img src="../images/logo.png" align="left"></a>
 						</td>
 						<td width="30%">&nbsp;</td>
 						<td>
-							<a href="Home.html" >Home <img src="images/home.png"></a>
+							<a href="../Home.html" >Home <img src="../images/home.png"></a>
 						</td>
 						<td width="10%">
-							<a href="Registration.html">Registration<img src="images/registration.png"></a>
+							<a href="../Registration.html">Registration<img src="../images/registration.png"></a>
 						</td>
 						<td width="10%">
-							<a href="Login.html">Login<img src="images/login.png"></a>
+							<a href="../Login.html">Login<img src="../images/login.png"></a>
 						</td>
 					</tr>
 				</table>
@@ -38,15 +38,15 @@
 				<fieldset>
 					<legend>Select Category</legend>
 					<ul>
-						<li><a href="FAQ/mediportal.php">Mediportal</a></li>
-						<li><a href="FAQ/appointments.php">Appointments</a></li>
-						<li><a href="FAQ/econsultation.php">E-consultation</a></li>
-						<li><a href="FAQ/priceandfee.php">Price and Fees</a></li>
+						<li><a href="mediportal.php">Mediportal</a></li>
+						<li><a href="appointments.php">Appointments</a></li>
+						<li><a href="econsultation.php">E-consultation</a></li>
+						<li><a href="priceandfee.php">Price and Fees</a></li>
 							<br><br>
 					</ul>
 				</fieldset><br><br>
 				Didn't find your question and answer?
-				<a href="FAQ/ownQuestion.php">Submit your Own Question</a>
+				<a href="ownQuestion.php">Submit your Own Question</a>
 			</td>
 			<td>
 				<fieldset>
@@ -66,18 +66,17 @@
                                             }
                                         </script>
                                     </fieldset>
-				<!--  Q/A Body  -->
-				<h1>What is Mediportal?</h1>
+						<h1>Is Mediportal free?</h1>
 				<br><hr>
 				<p>
-					Mediportal is a online doctor appointment system made for general users and doctor's accross the world. Get an appointment today.
+					Mediportal is full free for general users. You can request for an appointment for free.
+					You need to pay 5% of your fee if you register as an doctor.
 				</p>
-				<h1>What is Mediportal's Hotline?</h1>
+				<h1>What is Mediportal's Doctor's visit?</h1>
 				<br><hr>
 				<p>
-					Currently we don't have any helpline number. Soon we'll add hotline number(toll free).
+					It differs from doctor to doctor. You can see doctor visit from his profile page.
 				</p>
-				<!-- Q/A Body Finished -->
 			</td>
 		</tr>
 		<tr>
@@ -98,12 +97,12 @@
 			<tr align="center">
 				<td>
 				<a href="https://www.facebook.com/">
-				<img src="images/facebook.png">
+				<img src="../images/facebook.png">
                  </a>
              </td>
 				<td>
 						<a href="https://www.twitter.com/">
-						<img src="images/twitter.png">
+						<img src="../images/twitter.png">
 					</a>
 				</td>
 			</tr>
@@ -112,16 +111,16 @@
 		<table align="center">
 			<tr>
 				<td align="center" colspan="3">
-				<a href="About_Us.html">About Us   </a>
+				<a href="../About_Us.html">About Us   </a>
 			</td>
 			<td align="center" colspan="3">
-				<a href="Contact_Us.html">Contact Us   </a>
+				<a href="../Contact_Us.html">Contact Us   </a>
 			</td>
 			<td align="center" colspan="3">
-				<a href="privacyPolicy.html">Privacy Policy   </a>
+				<a href="../privacyPolicy.html">Privacy Policy   </a>
 			</td>
 			<td align="center" colspan="3">
-				<a href="faq.html">FAQ</a>
+				<a href="../faq.html">FAQ</a>
 			</td>
 			</tr>
 		</table>
