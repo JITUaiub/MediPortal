@@ -75,7 +75,7 @@
                                 <li><a href="eConsultation/message.php">New Message</a></li>
                                 <li><a href="eConsultation/inbox.php">Inbox</a></li>
                                 <li><a href="eConsultation/sentitems.php">Sent items</a></li>
-                                <li><a href="eConsultation/promoMail.php">Promotional Mail</a></li>
+				<li><a href="eConsultation/promoMail.php">Promotional Mail</a></li>
                             </ul>
                         </fieldset>
 
@@ -93,78 +93,105 @@
                         <div align="center">
                              <td width="70%" align="center">
                                 <!------ UI  -->
-                                    <fieldset>
-                                <table width="100%" cellpadding="0" cellspacing="0">
+                                    <h1>Review Users Report</h1>
+                                
+                                <table width="100%">
                                     <tr>
-                                        <td>
-                                            <b>OVERALL | STATISTICS</b>
+                                        <td align="center">
+                                             <strong>Reported By</strong>
                                         </td>
-                                        <td align="right">
-                                            <input type="submit" value="Print"/>
+                                        <td align="center">
+                                             <strong>Reported for</strong>
+                                        </td>
+                                        <td align="center">
+                                             <strong>Subject</strong>
+                                        </td>
+                                        <td align="center">
+                                             <strong>Time | Date</strong>
+                                        </td>
+                                        <td align="center">
+                                             <strong>
+                                                <select >
+                                                    <optgroup label="Actions">
+                                                        <option selected="true" value="all">Select none</option>
+                                                        <option value="all">Select all</option>
+                                                        <option value="none">Revert selected</option>
+                                                        <option value="read">Mark as read</option>
+                                                        <option value="delete">Delete</option>
+                                                        </optgroup>
+                                                </select>
+                                            </strong>
                                         </td>
                                     </tr>
+                                    <tr><td colspan="5"><hr></td></tr>
+                                    <tr>
+                                        <td align="center">
+                                            <strong>Ashley</strong>
+                                        </td>
+                                        <td align="center">
+                                            <strong>Bob<strong>
+                                        </td>
+                                        <td align="center">
+                                             <a href="reportReview.php"><strong>Harrasement</strong></a>
+                                        </td>
+                                        <td align="center">
+                                             <strong>3:06AM | 24-11-2017</strong>
+                                        </td>
+                                        <td align="center">
+                                            <strong><input type="checkbox" name="action"></strong>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr><td colspan="5"><hr></td></tr>
+
+                                    <tr>
+                                        <td align="center">
+                                            Marsh
+                                        </td>
+                                        <td align="center">
+                                            John
+                                        </td>
+                                        <td align="center">
+                                             <a href="reportReview.php">fake medicine</a>
+                                        </td>
+                                        <td align="center">
+                                             9:27AM | 23-11-2017
+                                        </td>
+                                        <td align="center">
+                                            <input type="checkbox" name="action">
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr><td colspan="5"><hr></td></tr>
+
+                                    <tr>
+                                        <td align="center">
+                                            <strong>John</strong>
+                                        </td>
+                                        <td align="center">
+                                            <strong>Ashley<strong>
+                                        </td>
+                                        <td align="center">
+                                             <a href="reportReview.php"><strong>virus from attachments..</strong></a>
+                                        </td>
+                                        <td align="center">
+                                             <strong>1:39PM | 21-11-2017</strong>
+                                        </td>
+                                        <td align="center">
+                                            <strong><input type="checkbox" name="action"></strong>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr><td colspan="5"><hr></td></tr>
                                 </table>
-                            </fieldset>
-                            <br/>
-                        <table width="100%" cellspacing="0" border="1" cellpadding="5">
-                            <tr>
-                                <th align="left">ROLE</th>
-                                <th align="center" width="110">NO OF USERS</th>
-                            </tr>
-                            <tr>
-                                <td>Doctors</td>
-                                <td align="center">7</td>        
-                            </tr>
-                            <tr>
-                                <td>General Users</td>
-                                <td align="center">43</td>        
-                            </tr>
-                            <tr>
-                                <td>Blood Donors</td>
-                                <td align="center">24</td>        
-                            </tr>
-                        </table>
-                                <br><br>
-                                <table width="100%" cellspacing="0" border="1" cellpadding="5">
-                                    <tr>
-                                        <th align="left">BLOCKED USER</th>
-                                        <th align="right">Date: <input type="date" name="blockdate1" value="2013-01-08"> to <input type="date" name="blockdate2" value="2013-01-08"> <button>Go</button></th>
-                                        <th align="center" width="110">NO OF USERS</th>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2">Doctors</td>
-                                        <td align="center">2</td>        
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2">General Users</td>
-                                        <td align="center">7</td>        
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2">Blood Donors</td>
-                                        <td align="center">6</td>        
-                                    </tr>
-                                </table>
-                                <br><br>
-                                <table width="100%" cellspacing="0" border="1" cellpadding="5">
-                                    <tr>
-                                        <th align="left">USER'S ACTIVITY</th>
-                                        <th align="center" width="110">NO OF USERS</th>
-                                    </tr>
-                                    <tr>
-                                        <td>Active Users</td>
-                                        <td align="center">58</td>        
-                                    </tr>
-                                    <tr>
-                                        <td>Last Login before 1 months</td>
-                                        <td align="center">12</td>        
-                                    </tr>
-                                    <tr>
-                                        <td>Last Login before 3 months</td>
-                                        <td align="center">6</td>        
-                                    </tr>
-                                </table><br><br>
-                                Want to send a Greetings or any NOTICE ?<br>
-                                <a href="eConsultation/promoMail.php">Send Promotional Emails</a>
+                                <button>Previous Page</button><button>Next Page</button>
+                                <br>
+                                <br>
+                                Show Reports Per Page: <select>
+                                    <option>10</option>
+                                    <option>20</option>
+                                    <option>30</option>
+                                </select>
                                 <!-- END -->
                             </td>
                         </div>

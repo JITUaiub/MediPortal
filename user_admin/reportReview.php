@@ -1,6 +1,6 @@
 <html>
 
-<head><title>Home</title></head>
+<head><title>Report Review</title></head>
 
 <body>
     <table align="center" width="100%">
@@ -75,7 +75,7 @@
                                 <li><a href="eConsultation/message.php">New Message</a></li>
                                 <li><a href="eConsultation/inbox.php">Inbox</a></li>
                                 <li><a href="eConsultation/sentitems.php">Sent items</a></li>
-                                <li><a href="eConsultation/promoMail.php">Promotional Mail</a></li>
+				<li><a href="eConsultation/promoMail.php">Promotional Mail</a></li>
                             </ul>
                         </fieldset>
 
@@ -90,82 +90,45 @@
                             </ul>
                         </fieldset>
                         </td>
-                        <div align="center">
-                             <td width="70%" align="center">
-                                <!------ UI  -->
-                                    <fieldset>
-                                <table width="100%" cellpadding="0" cellspacing="0">
-                                    <tr>
-                                        <td>
-                                            <b>OVERALL | STATISTICS</b>
-                                        </td>
-                                        <td align="right">
-                                            <input type="submit" value="Print"/>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </fieldset>
-                            <br/>
-                        <table width="100%" cellspacing="0" border="1" cellpadding="5">
-                            <tr>
-                                <th align="left">ROLE</th>
-                                <th align="center" width="110">NO OF USERS</th>
-                            </tr>
-                            <tr>
-                                <td>Doctors</td>
-                                <td align="center">7</td>        
-                            </tr>
-                            <tr>
-                                <td>General Users</td>
-                                <td align="center">43</td>        
-                            </tr>
-                            <tr>
-                                <td>Blood Donors</td>
-                                <td align="center">24</td>        
-                            </tr>
-                        </table>
-                                <br><br>
-                                <table width="100%" cellspacing="0" border="1" cellpadding="5">
-                                    <tr>
-                                        <th align="left">BLOCKED USER</th>
-                                        <th align="right">Date: <input type="date" name="blockdate1" value="2013-01-08"> to <input type="date" name="blockdate2" value="2013-01-08"> <button>Go</button></th>
-                                        <th align="center" width="110">NO OF USERS</th>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2">Doctors</td>
-                                        <td align="center">2</td>        
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2">General Users</td>
-                                        <td align="center">7</td>        
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2">Blood Donors</td>
-                                        <td align="center">6</td>        
-                                    </tr>
-                                </table>
-                                <br><br>
-                                <table width="100%" cellspacing="0" border="1" cellpadding="5">
-                                    <tr>
-                                        <th align="left">USER'S ACTIVITY</th>
-                                        <th align="center" width="110">NO OF USERS</th>
-                                    </tr>
-                                    <tr>
-                                        <td>Active Users</td>
-                                        <td align="center">58</td>        
-                                    </tr>
-                                    <tr>
-                                        <td>Last Login before 1 months</td>
-                                        <td align="center">12</td>        
-                                    </tr>
-                                    <tr>
-                                        <td>Last Login before 3 months</td>
-                                        <td align="center">6</td>        
-                                    </tr>
-                                </table><br><br>
-                                Want to send a Greetings or any NOTICE ?<br>
-                                <a href="eConsultation/promoMail.php">Send Promotional Emails</a>
+                            <div align="center">
+                             <td width="70%" align="left">
+                                <fieldset>
+                                    <!------ UI  -->
+                                    <h1 align="center">Review Bob's Report</h1>
+                                    <h3 align="center">Harrasment</h3>
+                                    <p align="center">Reported by: Ashley<br>
+                                        Reported against: Bob<br>
+                                        Reported time: 10.37PM
+                                    </p>
+                                    <p align="center">
+                                        <br>bla bla bla bla bla bla bla bla bla blabla bla bla bla bla  <br>
+                                    bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla <br>
+                                    bla bla bla bla bla bla bla bla bla bla <br>
+                                    bla bla bla bla bla <br>
+                                    </p>
+                                    <br>
+
+                                    <strong>Take a Action</strong>
+                                        <table>
+                                            <td width="80%">
+                                                <ul>
+                                                    <li><a href="eConsultation/Conversation.php">Check Conversation between Ashley and Bob</a></li>
+                                                    <li><a href="userActivity.php">Check Bob's Activity</a></li>
+                                                </ul>
+                                            </td>
+                                            <td align="right">
+                                                <button>Block Bob's Account Immedietly</button>
+                                            </td>
+                                        </table>
+                                    <div align="center"><button onclick="goBack()">Go Back</button></div>
+                                    <script>
+                                        function goBack()
+                                        {
+                                            window.history.back();
+                                        }
+                                    </script>
                                 <!-- END -->
+                                </fieldset>
                             </td>
                         </div>
                     </table>
