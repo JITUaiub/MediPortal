@@ -1,16 +1,17 @@
+
 <html>
 
 <head><title>Home</title></head>
 
 <body>
-    <table border="1" align="center" width="70%">
+    <table align="center" width="100%">
         <tr>
             <td>
                 <!-- Header section -->
                 <div>
                     <table align="center" width="100%">
                         <td width="20%">
-                            <img src="../images/pageicon.png"/>
+                            <a href="../dashboard.php"><img src="../images/pageicon.png"/></a>
                         </td>
                         <td width="40%">&nbsp;</td>
                         <td width="40%">
@@ -27,18 +28,11 @@
         </tr>
         <tr>
             <td>
-                <div>
-                    
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>
                 <!-- Body section -->
                <div>
-                    <table width="100%">
+                    <table width="100%" border="1">
                         <!-- User Menu Section -->
-                        <td width="30%">
+                        <td width="20%">
                             <fieldset>
                                 <legend>
                             <strong>Personal Information</strong></legend>
@@ -52,11 +46,12 @@
 
                         <fieldset>
                             <legend>
-                            <strong>Monitoring Users</strong></legend>
+                            <strong>Manage Users</strong></legend>
                            
                             <ul>
                                 <li><a href="../normalUsers.php">General Users</a></li>
-                                <li><a href="../doctorUsers.php">Doctor</a></li>
+                                <li><a href="../doctorUsers.php">Doctors</a></li>
+                                <li><a href="../reportedUsers.php">Reported Users</a></li>
                             </ul>
                         </fieldset>
 
@@ -68,7 +63,7 @@
                             <ul>
                                 <li><a href="../reportsNormalUsers.php">General Users Statistics</a></li>
                                 <li><a href="../reportsDoctorUsers.php">Doctor's Statistics</a></li>
-                                <li><a href="../reportsAdmin.php">Overall User Statistics</a></li>
+                                <li><a href="../reportsAdmin.php">Overall Statistics</a></li>
                             </ul>
                         </fieldset>
                         
@@ -78,9 +73,10 @@
                             <strong>Email</strong></legend>
                            
                             <ul>
-                                <li><a href="message.php">New Message</a></li>
-                                <li><a href="inbox.php">Inbox</a></li>
-                                <li><a href="sentitems.php">Sent Items</a></li>
+                                <li><a href="../eConsultation/message.php">New Message</a></li>
+                                <li><a href="../eConsultation/inbox.php">Inbox</a></li>
+                                <li><a href="../eConsultation/sentitems.php">Sent items</a></li>
+                                <li><a href="../eConsultation/promoMail.php">Promotional Mail</a></li>
                             </ul>
                         </fieldset>
 
@@ -95,62 +91,29 @@
                             </ul>
                         </fieldset>
                         </td>
-
-
-
-            <div align="center">
-            <td width="70%" align="center">
-              <?php
-                if($_SERVER['REQUEST_METHOD'] == 'POST'){
-
-                   // Need to set sender      Need to work on cookie                                      
-                  $sender = "Jitu";
-                  $to = $_POST['to_mail'];
-                  $subject = $_POST['subject'];
-                  $body = $_POST['body'];
-
-                  if(trim($subject) == "")
-                    $subject = "No Subject";
-
-                  include 'php/sendMessage.php';
-
-                  if(!empty($to) && !empty($body)){
-                    if (sendMessage($sender, $to, $subject, $body)) {
-                      print "<p>Message sent successfully</p>";
-                    } else {
-                      print "<p>Cannot sent message.</p>";
-                    } 
-                  }
-                  else {
-                      print "<p>Please fix and try again !!</p>";
-                  }
-                  if(empty($to))    print "<p>Enter recipient</p>";
-                  if(empty($body))  print "<p>Message body cannot be empty !!</p>";
-
-                  unset($_POST);
-                  $subject = "";
-                }
-              ?>	
+                        <div align="center">
+                             <td width="70%" align="center">
+                                <!------ UI  -->
+                              
               <form action="" method="post">
-                
-                <fieldset>
+                              <h1>New Message</h1>
                               <legend align="center"><h4>Type a message here</h4></legend>
                                <fieldset>
-                                             <legend>New Message</legend>
+                                             
                                              <table>
                                              <tr>
-                                                 <td width="5%" align="center">To</td><td>:</td>
-                                                 <td ><input  type="text" name="to_mail"/></td>
+                                                 <td align="center">To</td><td>:</td>
+                                                 <td align="left"><input  type="text" name="to_mail" value="Receiver name" /></td>
                                              </tr>
                                              <tr><td colspan="3"><hr></td></tr>
                                              <tr>
-                                                 <td width="5%" align="center">Subject</td><td>:</td>
-                                                 <td><input type="text" name="subject"></td>
+                                                 <td align="center">Subject</td><td>:</td>
+                                                 <td><input type="text" name="subject" value="No Subject"></td>
                                              </tr>
                                               <tr><td colspan="3"><hr></td></tr>
                                              <tr>
-                                                <td width="5%" align="center">
-                                                 <label>Body</label></td><td>:</td><td ><textarea name="body"></textarea></td>
+                                                <td align="center">
+                                                 <label>Body</label></td><td>:</td><td ><textarea name="body">Hello there!! How are bla bla bla bla?</textarea></td>
                                              </tr>
                                               <tr><td colspan="3"><hr></td></tr>
 
@@ -166,26 +129,37 @@
                                                       &nbsp;
                                                   </td>
                                               </tr>
-                                              <tr>
-                                                  <td><input type="submit" name="Submit" value="Send Message"></td>
-                                              </tr>
                                              </table>
+                                             <input type="submit" name="Submit" value="Send Message"><br/><br/>
+                                             <a href="inbox.php">Go to inbox</a>
                                          </fieldset>  
-              </fieldset>
-
               </form>
 
-						</td>
-						</div>
+            </td>
+            </div>
 
           </table>
                 </div>
             </td>
         </tr>
         <tr>
-        	<td>
-            	<!-- Footer section -->
+          <td>
+                <!-- Footer section -->
                 <div>
+                    <table align="center">
+                        <tr align="center">
+                            <td>
+                            <a href="https://www.facebook.com/">
+                            <img src="../../images/facebook.png">
+                             </a>
+                         </td>
+                            <td>
+                                    <a href="https://www.twitter.com/">
+                                    <img src="../../images/twitter.png">
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
                     <table align="center">
                         <td>&copy;2017 MediPortal. All rights reserved.</td>
                     </table>

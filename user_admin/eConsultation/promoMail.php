@@ -1,3 +1,4 @@
+
 <html>
 
 <head><title>Home</title></head>
@@ -93,56 +94,57 @@
                         <div align="center">
                              <td width="70%" align="center">
                                 <!------ UI  -->
-                                <h1>Conversation</h1>
-                                <p align="center"><a href="viewProfileAdmin.php">Ashley</a><br/>
-                                Email: ashley@example.com<br/>
-                                Subject: Unknown<br/>
-                                Last seen: X moment ago</p>
-                                <table width="100%">
-                                    <tr align="left">
-                                        <td>Heey Bob, How are you?..</td>
-                                    </tr>
-                                    <tr align="left"><td>3:06AM | 24-11-2017</td></tr>
-                                </table>
-                                <table width="100%">
-                                    <tr align="right">
-                                        <td>I'm good. What's about you?..</td>
-                                    </tr>
-                                    <tr align="right"><td>3:07AM | 24-11-2017</td></tr>
-                                </table>
+                              
+              <form action="" method="post">
+                              <h1>Promotional Email</h1>
+                              <legend align="center"><h4>Type a message here</h4></legend>
+                               <fieldset>
+                                             
+                                             <table>
+                                             <tr>
+                                                 <td align="center">To</td><td>:</td>
+                                                 <td align="left"><select>
+                                                    <option>All Doctors</option>
+                                                    <option>All General Users</option>
+                                                    <option>All Blood Donors</option>
+                                                    <option>All Blocked User</option>
+                                                 </select></td>
+                                             </tr>
+                                             <tr><td colspan="3"><hr></td></tr>
+                                             <tr>
+                                                 <td align="center">Subject</td><td>:</td>
+                                                 <td><input type="text" name="subject" value="Welcome"></td>
+                                             </tr>
+                                              <tr><td colspan="3"><hr></td></tr>
+                                             <tr>
+                                                <td align="center">
+                                                 <label>Body</label></td><td>:</td><td ><textarea name="body">Welcome to MediPortal. Your online doctor.</textarea></td>
+                                             </tr>
+                                              <tr><td colspan="3"><hr></td></tr>
 
-                                <table width="100%">
-                                    <tr align="left">
-                                        <td>Any new Grand opening for today?</td>
-                                    </tr>
-                                    <tr align="left"><td>3:09AM | 24-11-2017</td></tr>
-                                </table>
+                                              <tr>
+                                                  <td>
+                                                      Attachments (X)
+                                                  </td>
+                                                  <td>:</td>
+                                                  <td><input type="file" name="upload"></td>
+                                              </tr>
+                                              <tr>
+                                                  <td>
+                                                      &nbsp;
+                                                  </td>
+                                              </tr>
+                                             </table>
+                                             <input type="checkbox" name="replyflag" checked="true"> Turn off reply to this mail<br><br>
+                                             <input type="submit" name="Submit" value="Send Message"><br/><br/>
+                                             <a href="../reportsAdmin.php">Back to overall statistic</a>
+                                         </fieldset>  
+              </form>
 
-                                <table width="100%">
-                                    <tr align="right">
-                                        <td>We got a special one. Better than last time.. bla bla</td>
-                                    </tr>
-                                    <tr align="right"><td>3:12AM | 24-11-2017</td></tr>
-                                </table>
+            </td>
+            </div>
 
-                                <!-- Reply  -->
-                                <br><br>
-                                <table>
-                                    <tr>
-                                        <td align="right">Reply to this conversation:</td>
-                                        <td width="20%"><textarea></textarea></td>
-                                    </tr>
-                                    <tr>
-                                        <td align="left"><a href="inbox.php">Go to inbox</a></td>
-                                        <td align="right"><input type="submit" name="reply" value="Reply"></td>
-                                    </tr>
-                                </table>
-
-                                
-                                <!-- END -->
-                            </td>
-                       </div>
-                     </table>
+          </table>
                 </div>
             </td>
         </tr>
