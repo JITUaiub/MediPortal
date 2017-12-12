@@ -7,7 +7,7 @@
 	<table>
 		<div>
 			<div>
-				<table align="center" width="100%" border="1">
+				<table align="center" width="100%">
 					<tr align="right">
 						<td width="30%">
 							<a href="../Home.html"><img src="../images/logo.png" align="left"></a>
@@ -27,51 +27,55 @@
 			</div>
 
 			<div>
-				<table align="center">
-					<tr>
-						<td align="center">
-							Registared By 
-							<a href="NormalRegistration.html">Normal User</a>
-							<a href="BloodDonorRegistration.html">
-							Blood Donor</a> 			
-						</td>
-					</tr>
-				</table>
-			</div>
-			<div>
-				Please fill up your information
-			</div>
-			<div>
-				<form action="docEdu.php">
-					<fieldset>
-						<legend>Add Education Background</legend>
-						<table align="center">
-							<tr>
-								<td><label>Degree</label></td>
-								<td>:</td>
-								<td><input type="text" name="degreeName"/></td>
-							</tr>
-							<tr>
-								<td><label>Passed Year</label></td>
-								<td>:</td>
-								<td><input type="text" name="passedYear"/></td>
-							</tr>
-							<tr>
-								<td><label>University</label></td>
-								<td>:</td>
-								<td><input type="text" name="university"/></td>
-							</tr>
-							<tr>
-								<td><label>Description</label></td>
-								<td>:</td>
-								<td><textarea name="description"></textarea></td>
-							</tr>
-							<tr>
-								<td><input type="button" value="Add another"/>	<input type="submit" value="Next Step"/></td>
-							</tr>
-						</table>
-					
-					</fieldset>		
+				<form action="">
+					<h1 align="center">Add Education Background</h1>
+					<table align="center" width="60%">
+						<tr>
+							<td>
+								<fieldset>	
+									<table align="center" >
+										<tr>
+											<td><label>Degree</label></td>
+											<td>:</td>
+											<td><input type="text" name="degreeName"/></td>
+										</tr>
+										<tr>
+											<td><label>Passed Year</label></td>
+											<td>:</td>
+											<td><input type="text" name="passedYear"/></td>
+										</tr>
+										<tr>
+											<td><label>University</label></td>
+											<td>:</td>
+											<td><input type="text" name="university"/></td>
+										</tr>
+										<tr>
+											<td><label>Description</label></td>
+											<td>:</td>
+											<td><textarea name="description"></textarea></td>
+										</tr>
+										<script type="text/javascript">
+											function add()
+											{
+												window.location.href = "docRegAddEducation.html";
+											}
+											function next()
+											{
+												window.location.href = "docRegAddChamber.html";
+											}
+										</script>
+										<tr>
+											<td colspan="3" align="center"><input type="button" value="Add another" onclick="add()" /> |	<input type="button" value="Next Step" onclick="next()" /></td>
+										</tr>
+										<tr>
+											<td colspan="3" align="center"><a href="docRegAddChamber.html">Skip for now</a></td>
+										</tr>
+									</table>
+								
+								</fieldset>	
+							</td>
+						</tr>
+					</table>	
 				</form>
 			</div>
 			<div>
@@ -109,5 +113,14 @@
 			</div>
 		</div>	
 	</table>
+	<div>
+		<table align="center" width="100%" border="1">
+			<tr>
+				<td align="center" colspan="3">
+				<b>&copy;2017 MediPortal. All rights reserved</b>
+				</td>
+			</tr>
+		</table>
+	</div>
 </body>
 </html>
