@@ -7,7 +7,7 @@
 	<table>
 		<div>
 			<div>
-				<table align="center" width="100%" border="1">
+				<table align="center" width="100%">
 					<tr align="right">
 						<td width="30%">
 							<a href="../Home.html"><img src="../images/logo.png" align="left"></a>
@@ -27,45 +27,41 @@
 			</div>
 
 			<div>
-				<table align="center">
-					<tr>
-						<td align="center">
-							Registared By 
-							<a href="NormalRegistration.html">Normal User</a>
-							<a href="BloodDonorRegistration.html">
-							Blood Donor</a> 			
-						</td>
-					</tr>
-				</table>
-			</div>
-			<div>
-				Please fill up your information
-			</div>
-			<div>
-				<form action="docChamber.php">
-					<fieldset>
-						<legend>Add Chamber</legend>
+				<h1 align="center">Add Chamber</h1>
+				<form action="">
+					<table align="center" width="60%">
+						<tr>
+							<td>
+								<fieldset>
+						
 						<table align="center">
 							<tr>
-								<td><label>Name</label></td>
+								<td><label>Chamber Name</label></td>
 								<td>:</td>
-								<td><input type="text" name="chamberName"/></td>
+								<td><input type="text" name="chamberName" value="X Hospital" /></td>
 							</tr>
 							<tr>
 								<td><label>Location</label></td>
 								<td>:</td>
-								<td><input type="text" name="location"/></td>
+								<td><input type="text" name="location" value="Dhaka" /></td>
 							</tr>
 							<tr>
 								<td><label>Working Days</label></td>
 								<td>:</td>
 								<td>
-									<input type="checkbox" name="workDays"/>SAT
+									<input type="checkbox" name="workDays" checked="true" />SAT
 									<input type="checkbox" name="workDays"/>SUN
 									<input type="checkbox" name="workDays"/>MON
-									<input type="checkbox" name="workDays"/>TUE
+									<input type="checkbox" name="workDays" checked="true" />TUE
+									
+								</td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>
 									<input type="checkbox" name="workDays"/>WED
-									<input type="checkbox" name="workDays"/>THU
+									<input type="checkbox" name="workDays" checked="true" />THU
 									<input type="checkbox" name="workDays"/>FRI
 									
 								</td>
@@ -78,13 +74,28 @@
 							<tr>
 								<td><label>Description</label></td>
 								<td>:</td>
-								<td><textarea name="description"></textarea></td>
+								<td><textarea name="description"> Bla bla bla bla bla bla bla bla</textarea></td>
 							</tr>
+							<tr><td colspan="3">&nbsp;</td></tr>
 							<tr>
-								<td><input type="button" value="Add another"/>	<input type="submit" value="Finish"/></td>
+								<script type="text/javascript">
+									function add()
+									{
+										window.location.href = "docRegAddChamber.html";
+									}
+									function finish()
+									{
+										window.location.href = "../user_doctor/dashboard.php";
+									}
+								</script>
+
+								<td colspan="3" align="center"><input type="button" value="Add another" onclick="add()"/> | <input type="button" value="Finish" onclick="finish()" /></td>
 							</tr>
 						</table>
-					</fieldset>		
+					</fieldset>
+							</td>
+						</tr>
+					</table>		
 				</form>
 			</div>
 			<div>
@@ -119,8 +130,18 @@
 					</td>
 					</tr>
 				</table>
+
 			</div>
 		</div>	
 	</table>
+	<div>
+		<table align="center" width="100%" border="1">
+			<tr>
+				<td align="center" colspan="3">
+				<b>&copy;2017 MediPortal. All rights reserved</b>
+				</td>
+			</tr>
+		</table>
+	</div>
 </body>
 </html>
