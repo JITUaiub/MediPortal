@@ -4,7 +4,7 @@
 	<title>Doctor Registration</title>
 </head>
 <body>
-	<table border="1" align="center" width="70%">
+	<table border="1" align="center" width="100%">
     	<tr>
         	<td>
             	<!-- Header section -->
@@ -40,12 +40,12 @@
 							<tr>
 								<td><label>Name</label></td>
 								<td>:</td>
-								<td><input type="text" name="chamberName"/></td>
+								<td><input type="text" name="chamberName" value="Apollo Hospital" /></td>
 							</tr>
 							<tr>
 								<td><label>Location</label></td>
 								<td>:</td>
-								<td><input type="text" name="location"/></td>
+								<td><input type="text" name="location" value="Bashundhara, Dhaka" /></td>
 							</tr>
 							<tr>
 								<td><label>Working Days</label></td>
@@ -64,13 +64,20 @@
 							<tr>
 								<td><label>Working Time</label></td>
 								<td>:</td>
-								<td><input type="time" name="time"> to <input type="time" name="time"></td>
+								<td><input type="time" name="time" value="19:00:00"> to <input type="time" name="time" value="23:00:00"></td>
 							</tr>
 							<tr>
 								<td><label>Description</label></td>
 								<td>:</td>
 								<td><textarea name="description"></textarea></td>
 							</tr>
+							<tr>
+								<td align="center">
+									<input type="button" name="btn_edit" value="Edit Chamber">
+								</td>
+
+							</tr>
+						</br>
 							<tr>
 								<td><a href="managechamber.html">Go Back to Manage Chamber</a>
                                     <a href="addChamber.php">Add Chamber</a>
@@ -93,6 +100,7 @@
 								<img src="../images/twitter.png">
 							</a>
 						</td>
+
 					</tr>
 				</table>
 				

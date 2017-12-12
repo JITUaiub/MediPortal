@@ -3,7 +3,7 @@
 <head><title>Home</title></head>
 
 <body>
-	<table border="1" align="center" width="70%">
+	<table border="1" align="center" width="100%">
     	<tr>
         	<td>
             	<!-- Header section -->
@@ -31,7 +31,7 @@
                 <div>
                     <table width="100%">
                         <!-- User Menu Section -->
-                        <td width="30%">
+                        <td width="20%">
                             <fieldset>
                                 <legend>
                             <strong>Personal Information</strong></legend>
@@ -85,7 +85,7 @@
 								<li><a href="eConsultation/message.php">New Message</a></li>
                                 <li><a href="eConsultation/inbox.php">Inbox</a></li>
                                 <li><a href="eConsultation/sentitems.php">Sent Items</a></li>
-								<li><a href="eConsultation/drafts.php">Drafts</a></li>
+							
                             </ul>
                         </fieldset>
 
@@ -119,7 +119,7 @@
                                          <td>26</td>
                                          <td>Niketon, Dhaka</td>
                                          <td>Male</td>
-                                         <td></td>
+                                         <td>I am suffering for fever from last 10 days. High Fever, High headeac and I have no test for food.</td>
                                          <td><input type="date" name="date"></td>
                                          <td><input type="time" name="time"></td>
                                          <td><input type="submit" name="submit" value="send"></td>

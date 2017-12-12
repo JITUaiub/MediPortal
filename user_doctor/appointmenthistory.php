@@ -3,7 +3,7 @@
 <head><title>Home</title></head>
 
 <body>
-	<table border="1" align="center" width="70%">
+	<table border="1" align="center" width="100%">
     	<tr>
         	<td>
             	<!-- Header section -->
@@ -31,7 +31,7 @@
                  <div>
                     <table width="100%">
                         <!-- User Menu Section -->
-                        <td width="30%">
+                        <td width="20%">
                             <fieldset>
                                 <legend>
                             <strong>Personal Information</strong></legend>
@@ -85,7 +85,7 @@
 								<li><a href="eConsultation/message.php">New Message</a></li>
                                 <li><a href="eConsultation/inbox.php">Inbox</a></li>
                                 <li><a href="eConsultation/sentitems.php">Sent Items</a></li>
-								<li><a href="eConsultation/drafts.php">Drafts</a></li>
+							
                             </ul>
                         </fieldset>
 

@@ -3,14 +3,14 @@
 <head><title>Home</title></head>
 
 <body>
-	<table border="1" align="center" width="70%">
-    	<tr>
-        	<td>
-            	<!-- Header section -->
-            	<div>
+    <table align="center" width="100%">
+        <tr>
+            <td>
+                <!-- Header section -->
+                <div>
                     <table align="center" width="100%">
                         <td width="20%">
-                            <img src="images/pageicon.png"/>
+                            <a href="dashboard.php"><img src="images/pageicon.png"/></a>
                         </td>
                         <td width="40%">&nbsp;</td>
                         <td width="40%">
@@ -26,16 +26,16 @@
             </td>
         </tr>
         <tr>
-        	<td>
-            	<!-- Body section -->
-                <div>
-                    <table width="100%">
+            <td>
+                <!-- Body section -->
+               <div>
+                    <table width="100%" border="1">
                         <!-- User Menu Section -->
-                        <td width="30%">
+                        <td width="20%">
                             <fieldset>
                                 <legend>
                             <strong>Personal Information</strong></legend>
-                            <ul>
+                             <ul>
                                 <li><a href="dashboard.php">Dashboard</a></li>
                                 <li><a href="viewprofile.php">View Profile</a></li>
                                 <li><a href="editprofile.php">Edit Profile</a></li>
@@ -75,16 +75,17 @@
                                 <li><a href="disanalysis.php">Disease Analysis</a></li>
                             </ul>
                         </fieldset>
-						
-						<fieldset>
+                        
+                        
+                        <fieldset>
                             <legend>
                             <strong>E-consultation</strong></legend>
                            
                             <ul>
-								<li><a href="eConsultation/message.php">New Message</a></li>
+                                <li><a href="eConsultation/message.php">New Message</a></li>
                                 <li><a href="eConsultation/inbox.php">Inbox</a></li>
                                 <li><a href="eConsultation/sentitems.php">Sent Items</a></li>
-								<li><a href="eConsultation/drafts.php">Drafts</a></li>
+                                <li><a href="eConsultation/drafts.php">Drafts</a></li>
                             </ul>
                         </fieldset>
 
@@ -99,27 +100,47 @@
                             </ul>
                         </fieldset>
                         </td>
+                        <div align="center">
+                             <td width="70%" align="center">
+                                <!------ UI  -->
+                                    <h1>CHANGE PROFILE PICTURE</h1>
+                                    <img src="images/usericon.png"/>
+                                    <br/><br/>
+                                    <input type="file" name="newprofilepicture"/>
+                                    <hr/>
+                                    <input type="submit" value="Submit"/>
 
-                        <td width="70%">
-                        	<fieldset>
-                            	<legend><strong>PROFILE PICTURE</strong></legend>
-                                <img src="images/usericon.png"/>
-                                <br/><br/>
-                                <input type="file" name="newprofilepicture"/>
-                                <hr/>
-                                <input type="submit" value="Submit"/>
-                            </fieldset>
+                                    <table width="100%">
+                                        <td colspan="2" align="right" width="49%"><a href="editprofile.php">Edit Profile</a></td>
+                                        <td width="2%"><strong><hr width="1" size="15"></strong></td>
+                                        <td colspan="2" align="left" width="49%"><a href="changepassword.html">Change Password</a></td>
+                                    </table>
+                                <!-- END -->
+                            </td>
 
-                             <a href="viewprofile.html">Back to View Profile</a>
-                        </td>
+                        </div>
                     </table>
                 </div>
             </td>
         </tr>
         <tr>
-        	<td>
-            	<!-- Footer section -->
+            <td>
+                <!-- Footer section -->
                 <div>
+                    <table align="center">
+                        <tr align="center">
+                            <td>
+                            <a href="https://www.facebook.com/">
+                            <img src="../images/facebook.png">
+                             </a>
+                         </td>
+                            <td>
+                                    <a href="https://www.twitter.com/">
+                                    <img src="../images/twitter.png">
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
                     <table align="center">
                         <td>&copy;2017 MediPortal. All rights reserved.</td>
                     </table>

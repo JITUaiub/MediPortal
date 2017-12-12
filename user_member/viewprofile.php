@@ -160,7 +160,7 @@
                                         </td>
                                     </table>
                                     <hr/>
-                                    <a href="editprofile.html">Edit Profile</a>
+                                    <a href="editprofile.php">Edit Profile</a>
                                 </fieldset>
                             </div>
                         </td>

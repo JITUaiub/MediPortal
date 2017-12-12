@@ -4,7 +4,7 @@
 	<title>Doctor Registration</title>
 </head>
 <body>
-	<table border="1" align="center" width="70%">
+	<table border="1" align="center" width="100%">
     	<tr>
         	<td>
             	<!-- Header section -->

@@ -3,7 +3,7 @@
 <head><title>Home</title></head>
 
 <body>
-	<table border="1" align="center" width="70%">
+	<table border="1" align="center" width="100%">
     	<tr>
         	<td>
             	<!-- Header section -->
@@ -31,7 +31,7 @@
                 <div>
                     <table width="100%">
                         <!-- User Menu Section -->
-                        <td width="30%">
+                        <td width="20%">
                             <fieldset>
                                 <legend>
                             <strong>Personal Information</strong></legend>
@@ -105,17 +105,17 @@
 							<!------------------------ DESIGN PORTAL PAGE HERE ------------------------------>
 							<fieldset>
 								<legend align="center">Prescription</legend>
-								<table border="1" width="100%">
+								<table width="100%">
 									<tr>
 										<td>
-											<strong>Name :</strong>
-											<input type="name" name="name"/>
+											<strong>Name : Kent</strong>
+											
 										</td>
 
-                                        <td><strong>Age:</strong><input type="number" name="age"></td>
+                                        <td><strong>Age:24</strong></td>
 										
 										<td align="right" width="40%">
-											<strong>Date :</strong><input type="date" name="date"/>
+											<strong>Date : 12 December 2017</strong>
 										</td>
 									</tr>
 									
@@ -128,12 +128,12 @@
                                                 <tr align="center">
                                                     <td align="center">
                                                         <label>Disease</label></td><td>
-                                                        <input type="text" name="disease"/>
+                                                        <input type="text" name="disease" value="Virul Fever" /></textarea>
                                                     </td>
                                                
                                                     <td>
 														<label align="center">Symtoms</label></td>
-														<td><textarea name="symtoms"></textarea>
+														<td><input type="text" name="symtoms" value="High Fever,Headeache"></textarea>
 													</td>
 												</tr>
 												
@@ -141,32 +141,50 @@
 										</td>
                                         <tr>
 										<td >
-                                            <table>
+                                            <table border="1" width="100%">
                                                 <tr align="center">
-                                                    <td align="center">
-											<label align="center">Medicine</label></td><td>:</td><td>
-											<input type="text" name="medicine"></input>
-										</td></tr>
-                                        <tr>
-                                        <td ><label><strong>Time Of Day</strong></label></td>
-                                            <td>:</td>
+                                                    <td>Medicine</td>
+                                                    <td>Time Of day</td>
+                                                    <td>Total Day</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+											<input type="text" name="medicine" value="Napa"></input>
+										</td>
+                                
                                             <td><input type="checkbox" name="day">Morning
                                             <input type="checkbox" name="day">AfterNoon
                                             <input type="checkbox" name="day">Night</td>
 
-                                            <td width="10%"><label><strong>Total Day</strong></label></td><td>:</td>
-                                            <td><input type="number" name="total_day"></td>
+                                           
+                                            <td><input type="text" name="total_day" value="5 days"/></td>
+                                    
                                     </tr>
+
                                     <tr>
-                                        <td><label><strong>New Appointment</strong></label></td>
-                                        <td>:</td>
-                                        <td><input type="date" name="new_appointment"></td>
+                                                    <td>
+                                            <input type="text" name="medicine" value="Histacin"></input>
+                                        </td>
+                                
+                                            <td><input type="checkbox" name="day">Morning
+                                            <input type="checkbox" name="day">AfterNoon
+                                            <input type="checkbox" name="day">Night</td>
+
+                                           
+                                            <td><input type="text" name="total_day" value="4 days"/></td>
+                                    
                                     </tr>
                                 </table>
+                            </br>
+
+                                        <label align="center"><strong>New Appointment: </strong></label>
+                                        
+                                        <input type="text" name="new_appointment" value="25/12/2017">
+                                    
 									</tr>
 								</table>
 								<hr/>
-								<input type="submit" name="submit" value="submit" />
+								<input type="submit" name="submit" value="Send" />
                                 <input type="reset" name="reset" value="Reset" />
 							</fieldset>
 							<!------------------------ FINISH DESIGNING HERE ------------------------------>

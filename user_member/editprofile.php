@@ -106,7 +106,7 @@
                                                 <tr>
                                                     <td width="60%"><strong>Name</strong></td>
                                                     <td>:</td>
-                                                    <td><input name="name"></td>
+                                                    <td><input name="name" value="Bob Marley"></td>
                                                 </tr>				
                                             </table>
                                             <hr>
@@ -116,8 +116,8 @@
                                                     <td>:</td>
                                                     <td>
                                                         <table>
-                                                            <td><input name="email"></td>
-                                                            <td><img src="images/hinticon.png" title="someone@example.com"/></td>
+                                                            <td><input name="email" value="someone@example.com"></td>
+                                                            <td><img src="images/hinticon.png" title="someone@example.com" /></td>
                                                         </table>
                                                     </td>
                                                 </tr>				
@@ -137,23 +137,27 @@
                                             <fieldset>
                                             <legend>Date of Birth</legend>
                                                 <table>
-                                                    <td><input name="date"/></td>
+                                                    <td><input name="date" value="12" /></td>
                                                     <td>/</td>
-                                                    <td><input name="month"/></td>
+                                                    <td><input name="month" value="10" /></td>
                                                     <td>/</td>
-                                                    <td><input name="year"/></td>	
+                                                    <td><input name="year" value="2000" /></td>	
                                                     <td>(dd/mm/yyyy)</td>		
                                                 </table>
                                             </fieldset>	
                                         </div>
                                         <hr>
                                         <input type="submit" value="Submit"/>
-                                        <input type="button" value="Reset"/>         
+                                        <input type="button" value="Reset"/>
+
+                                        <a href="changeprofilepicture.php">Edit Profile Picture</a>
+                                        <a href="viewprofile.php">Back to View Profile</a>         
                                     </fieldset>
                                 </form>
                             </div>
                         </td>
                     </table>
+
                 </div>
             </td>
         </tr>

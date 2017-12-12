@@ -105,6 +105,8 @@
                                 <input type="file" name="newprofilepicture"/>
                                 <hr/>
                                 <input type="submit" value="Submit"/>
+
+                                <a href="viewprofile.php">Back to View Profile</a>
                             </fieldset>
                         </td>
                     </table>
