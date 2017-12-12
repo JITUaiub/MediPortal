@@ -154,13 +154,14 @@
                                                     <td align="center"><img src="images/usericon.png"/></td>
                                                 </tr>
                                                 <tr>
-                                                    <td align="center"><a href="changeprofilepicture.html">Change</a></td>
+                                                    <td align="center"><a href="changeprofilepicture.php">Change</a></td>
                                                 </tr>
                                             </table>
                                         </td>
                                     </table>
                                     <hr/>
                                     <a href="editprofile.php">Edit Profile</a>
+
                                 </fieldset>
                             </div>
                         </td>

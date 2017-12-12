@@ -107,42 +107,46 @@
                         <div align="center">
                             
                         <td width="70%" align="center">
-                            <table>
-                                <tr>
-                                    <td><label>Search History By</label></td><td>:</td>
-                                        <td><select>
-                                            <option>Doctor Name</option>
-                                            <option>Previous Appoinment Date</option>
-                                            <option>Next Appoinment Date</option>
-                                        </select></td></tr>
-                                        <tr>
-                                        <td>
-                                        <label>Search</label><td>:</td>
-                                        <td><input type="text" name="text"></td>
-                                </tr>
-                            </table>
+                           
                            <fieldset>
                               <legend>Appoinment History</legend><br>
+							   <table>
+                                <tr>
+                                    <td>
+										Filter By
+										<select>
+											<option>Any</option>
+											<option>Doctor Name</option>
+											<option>Appoinment Date</option>
+											<option>Time</option>
+										</select>
+										<input />
+										<input type="submit" value="Search" />
+									</td>
+									
+								</tr>
+                            </table>
+							<br/><br/><br/>
                               <table border="1">
                                   <tr>
-                                      <td width="10%"><strong>Patient Name</strong></td>
-                                      <td  width="10%"><strong>Previous Appoinment Date</strong></td>
-                                      <td  width="10%"><strong>Next Appointment Date</strong></td>
-                                      <td  width="10%"><strong>Doctor Name</strong></td>
+                                      <th width="10%"><strong>Doctor Name</strong></th>
+                                      <th  width="10%"><strong>Previous Appoinment Date</strong></th>
+                                      <td  width="10%"><strong>Next Appointment Date</strong></th>
+                                      <th  width="10%"><strong>Time</strong></th>
                                   </tr>
 
                                   <tr>
-                                      <td>Bob Marley</td>
+                                      <td>Dr.poran</td>
                                       <td>25 April</td>
                                       <td>8 December</td>
-                                      <td>Nitesh Saha</td>
+                                      <td>22:30</td>
                                   </tr>
 
                                    <tr>
-                                      <td>David Batista</td>
+                                      <td>Dr.arif</td>
                                       <td>11 August</td>
                                       <td>17 October</td>
-                                      <td>Arpita Paul</td>
+                                      <td>18:25</td>
                                   </tr>
                               </table>   <br>                  
                             </fieldset>

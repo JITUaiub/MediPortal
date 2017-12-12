@@ -1,6 +1,6 @@
 <html>
 
-<head><title>Home</title></head>
+<head><title>Report Review</title></head>
 
 <body>
     <table align="center" width="100%">
@@ -75,7 +75,7 @@
                                 <li><a href="eConsultation/message.php">New Message</a></li>
                                 <li><a href="eConsultation/inbox.php">Inbox</a></li>
                                 <li><a href="eConsultation/sentitems.php">Sent items</a></li>
-                                <li><a href="eConsultation/promoMail.php">Promotional Mail</a></li>
+				<li><a href="eConsultation/promoMail.php">Promotional Mail</a></li>
                             </ul>
                         </fieldset>
 
@@ -90,37 +90,45 @@
                             </ul>
                         </fieldset>
                         </td>
-                        <div align="center">
-                             <td width="70%" align="center">
-                                <!------ UI  -->
-                                    <form>
-                                    <h1>CHANGE PASSWORD</h1>
-                                    <table>
-                                        <tr>
-                                            <td><strong>Current Password</strong></td>
-                                            <td><strong>:</strong></td>
-                                            <td><input type="password" name="currentpassword"/></td>  
-                                        </tr>
-                                        <tr>
-                                            <td><strong>New Password</strong></td>
-                                            <td><strong>:</strong></td>
-                                            <td><input type="password" name="newpassword"/></td>  
-                                        </tr>
-                                        <tr>
-                                            <td><strong>Retype New Password</strong></td>
-                                            <td><strong>:</strong></td>
-                                            <td><input type="password" name="retypepassword"/></td>  
-                                        </tr>
-                                    </table>
-                                    <hr/>
-                                    <input type="submit" value="Submit"/>
-                                </form>
-                                <table width="100%">
-                                        <td colspan="2" align="right" width="49%"><a href="editprofile.php">Edit Profile</a></td>
-                                        <td width="2%"><strong><hr width="1" size="15"></strong></td>
-                                        <td colspan="2" align="left" width="49%"><a href="changeprofilepicture.php">Change Profile Picture</a></td>
-                                    </table>
+                            <div align="center">
+                             <td width="70%" align="left">
+                                <fieldset>
+                                    <!------ UI  -->
+                                    <h1 align="center">Review Bob's Report</h1>
+                                    <h3 align="center">Harrasment</h3>
+                                    <p align="center">Reported by: Ashley<br>
+                                        Reported against: Bob<br>
+                                        Reported time: 10.37PM
+                                    </p>
+                                    <p align="center">
+                                        <br>bla bla bla bla bla bla bla bla bla blabla bla bla bla bla  <br>
+                                    bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla <br>
+                                    bla bla bla bla bla bla bla bla bla bla <br>
+                                    bla bla bla bla bla <br>
+                                    </p>
+                                    <br>
+
+                                    <strong>Take a Action</strong>
+                                        <table>
+                                            <td width="80%">
+                                                <ul>
+                                                    <li><a href="eConsultation/Conversation.php">Check Conversation between Ashley and Bob</a></li>
+                                                    <li><a href="userActivity.php">Check Bob's Activity</a></li>
+                                                </ul>
+                                            </td>
+                                            <td align="right">
+                                                <button>Block Bob's Account Immedietly</button>
+                                            </td>
+                                        </table>
+                                    <div align="center"><button onclick="goBack()">Go Back</button></div>
+                                    <script>
+                                        function goBack()
+                                        {
+                                            window.history.back();
+                                        }
+                                    </script>
                                 <!-- END -->
+                                </fieldset>
                             </td>
                         </div>
                     </table>

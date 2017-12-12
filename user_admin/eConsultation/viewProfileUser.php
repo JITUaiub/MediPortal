@@ -1,3 +1,4 @@
+
 <html>
 
 <head><title>Home</title></head>
@@ -93,52 +94,7 @@
                         <div align="center">
                              <td width="70%" align="center">
                                 <!------ UI  -->
-                                <h1>Conversation</h1>
-                                <p align="center"><a href="viewProfileAdmin.php">Ashley</a><br/>
-                                Email: ashley@example.com<br/>
-                                Subject: Unknown<br/>
-                                Last seen: X moment ago</p>
-                                <table width="100%">
-                                    <tr align="left">
-                                        <td>Heey Bob, How are you?..</td>
-                                    </tr>
-                                    <tr align="left"><td>3:06AM | 24-11-2017</td></tr>
-                                </table>
-                                <table width="100%">
-                                    <tr align="right">
-                                        <td>I'm good. What's about you?..</td>
-                                    </tr>
-                                    <tr align="right"><td>3:07AM | 24-11-2017</td></tr>
-                                </table>
-
-                                <table width="100%">
-                                    <tr align="left">
-                                        <td>Any new Grand opening for today?</td>
-                                    </tr>
-                                    <tr align="left"><td>3:09AM | 24-11-2017</td></tr>
-                                </table>
-
-                                <table width="100%">
-                                    <tr align="right">
-                                        <td>We got a special one. Better than last time.. bla bla</td>
-                                    </tr>
-                                    <tr align="right"><td>3:12AM | 24-11-2017</td></tr>
-                                </table>
-
-                                <!-- Reply  -->
-                                <br><br>
-                                <table>
-                                    <tr>
-                                        <td align="right">Reply to this conversation:</td>
-                                        <td width="20%"><textarea></textarea></td>
-                                    </tr>
-                                    <tr>
-                                        <td align="left"><a href="inbox.php">Go to inbox</a></td>
-                                        <td align="right"><input type="submit" name="reply" value="Reply"></td>
-                                    </tr>
-                                </table>
-
-                                
+                              
                                 <!-- END -->
                             </td>
                        </div>

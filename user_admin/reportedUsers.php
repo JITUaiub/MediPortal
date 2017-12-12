@@ -10,15 +10,15 @@
                 <div>
                     <table align="center" width="100%">
                         <td width="20%">
-                            <a href="../dashboard.php"><img src="../images/pageicon.png"/></a>
+                            <a href="dashboard.php"><img src="images/pageicon.png"/></a>
                         </td>
                         <td width="40%">&nbsp;</td>
                         <td width="40%">
                             <table align="right">
                                 <td><strong>Logged in as </strong></td>
-                                <td><a href="../viewprofile.php">Bob<img src="../images/user.png"></a></td>
+                                <td><a href="viewprofile.php">Bob<img src="images/user.png"></a></td>
                                 <td><hr width="1" size="15"></td>
-                                <td><a href="../../index.html">Logout<img src="../images/logout.png"></a></td>
+                                <td><a href="../index.html">Logout<img src="images/logout.png"></a></td>
                             </table> 
                         </td>
                     </table>
@@ -36,10 +36,10 @@
                                 <legend>
                             <strong>Personal Information</strong></legend>
                             <ul>
-                                <li><a href="../dashboard.php">Dashboard</a></li>
-                                <li><a href="../viewprofile.php">View Profile</a></li>
-                                <li><a href="../editprofile.php">Edit Profile</a></li>
-                                <li><a href="../changeprofilepicture.php">Change Profile Picture</a></li>
+                                <li><a href="dashboard.php">Dashboard</a></li>
+                                <li><a href="viewprofile.php">View Profile</a></li>
+                                <li><a href="editprofile.php">Edit Profile</a></li>
+                                <li><a href="changeprofilepicture.php">Change Profile Picture</a></li>
                             </ul>
                         </fieldset>
 
@@ -48,9 +48,9 @@
                             <strong>Manage Users</strong></legend>
                            
                             <ul>
-                                <li><a href="../normalUsers.php">General Users</a></li>
-                                <li><a href="../doctorUsers.php">Doctors</a></li>
-                                <li><a href="../reportedUsers.php">Reported Users</a></li>
+                                <li><a href="normalUsers.php">General Users</a></li>
+                                <li><a href="doctorUsers.php">Doctors</a></li>
+                                <li><a href="reportedUsers.php">Reported Users</a></li>
                             </ul>
                         </fieldset>
 
@@ -60,9 +60,9 @@
                             <strong>Reports</strong></legend>
                            
                             <ul>
-                                <li><a href="../reportsNormalUsers.php">General Users Statistics</a></li>
-                                <li><a href="../reportsDoctorUsers.php">Doctor's Statistics</a></li>
-                                <li><a href="../reportsAdmin.php">Overall Statistics</a></li>
+                                <li><a href="reportsNormalUsers.php">General Users Statistics</a></li>
+                                <li><a href="reportsDoctorUsers.php">Doctor's Statistics</a></li>
+                                <li><a href="reportsAdmin.php">Overall Statistics</a></li>
                             </ul>
                         </fieldset>
                         
@@ -72,10 +72,10 @@
                             <strong>Email</strong></legend>
                            
                             <ul>
-                                <li><a href="../eConsultation/message.php">New Message</a></li>
-                                <li><a href="../eConsultation/inbox.php">Inbox</a></li>
-                                <li><a href="../eConsultation/sentitems.php">Sent items</a></li>
-                                <li><a href="../eConsultation/promoMail.php">Promotional Mail</a></li>
+                                <li><a href="eConsultation/message.php">New Message</a></li>
+                                <li><a href="eConsultation/inbox.php">Inbox</a></li>
+                                <li><a href="eConsultation/sentitems.php">Sent items</a></li>
+				<li><a href="eConsultation/promoMail.php">Promotional Mail</a></li>
                             </ul>
                         </fieldset>
 
@@ -85,33 +85,29 @@
                             <strong>Account</strong></legend>
                            
                             <ul>
-                                <li><a href="../changepassword.html">Change Password</a></li>
-                                <li><a href="../../index.html">Logout</a></li>
+                                <li><a href="changepassword.html">Change Password</a></li>
+                                <li><a href="../index.html">Logout</a></li>
                             </ul>
                         </fieldset>
                         </td>
                         <div align="center">
                              <td width="70%" align="center">
                                 <!------ UI  -->
-                                <h1>Sent Items</h1>
-                                <strong>Search Message: </strong><input type="text" name="senderName" value="Sender Name">
-                                <input type="submit" name="search" value="Search"><br><br>
+                                    <h1>Review Users Report</h1>
+                                
                                 <table width="100%">
                                     <tr>
                                         <td align="center">
-                                             <strong>Receiver</strong>
+                                             <strong>Reported By</strong>
+                                        </td>
+                                        <td align="center">
+                                             <strong>Reported for</strong>
                                         </td>
                                         <td align="center">
                                              <strong>Subject</strong>
                                         </td>
                                         <td align="center">
-                                             <strong>Message</strong>
-                                        </td>
-                                        <td align="center">
                                              <strong>Time | Date</strong>
-                                        </td>
-                                        <td align="center">
-                                            <strong>Attachment</strong>
                                         </td>
                                         <td align="center">
                                              <strong>
@@ -127,105 +123,96 @@
                                             </strong>
                                         </td>
                                     </tr>
-                                    <tr><td colspan="6"><hr></td></tr>
+                                    <tr><td colspan="5"><hr></td></tr>
                                     <tr>
                                         <td align="center">
-                                            Ashley
+                                            <strong>Ashley</strong>
                                         </td>
                                         <td align="center">
-                                            Hello
+                                            <strong>Bob<strong>
                                         </td>
                                         <td align="center">
-                                             <a href="conversation.php">I'm good. What's about you?..</a>
+                                             <a href="reportReview.php"><strong>Harrasement</strong></a>
                                         </td>
                                         <td align="center">
-                                             3:06AM | 24-11-2017
+                                             <strong>3:06AM | 24-11-2017</strong>
                                         </td>
                                         <td align="center">
-                                            No attachment
-                                        </td>
-                                        <td align="center">
-                                            <input type="checkbox" name="action">
+                                            <strong><input type="checkbox" name="action"></strong>
                                         </td>
                                     </tr>
                                     
-                                    <tr><td colspan="6"><hr></td></tr>
+                                    <tr><td colspan="5"><hr></td></tr>
 
                                     <tr>
                                         <td align="center">
                                             Marsh
                                         </td>
                                         <td align="center">
-                                            No Subject
+                                            John
                                         </td>
                                         <td align="center">
-                                             <a href="conversation.php">Are you coming tonight !! ..</a>
+                                             <a href="reportReview.php">fake medicine</a>
                                         </td>
                                         <td align="center">
                                              9:27AM | 23-11-2017
                                         </td>
                                         <td align="center">
-                                            No attachment
-                                        </td>
-                                        <td align="center">
                                             <input type="checkbox" name="action">
                                         </td>
                                     </tr>
                                     
-                                    <tr><td colspan="6"><hr></td></tr>
+                                    <tr><td colspan="5"><hr></td></tr>
 
                                     <tr>
                                         <td align="center">
-                                            John
+                                            <strong>John</strong>
                                         </td>
                                         <td align="center">
-                                            Solution
+                                            <strong>Ashley<strong>
                                         </td>
                                         <td align="center">
-                                             <a href="conversation.php">Check This</a>
+                                             <a href="reportReview.php"><strong>virus from attachments..</strong></a>
                                         </td>
                                         <td align="center">
-                                             1:39PM | 21-11-2017
+                                             <strong>1:39PM | 21-11-2017</strong>
                                         </td>
                                         <td align="center">
-                                            solve.docx
-                                        </td>
-                                        <td align="center">
-                                            <input type="checkbox" name="action">
+                                            <strong><input type="checkbox" name="action"></strong>
                                         </td>
                                     </tr>
                                     
-                                    <tr><td colspan="6"><hr></td></tr>
+                                    <tr><td colspan="5"><hr></td></tr>
                                 </table>
                                 <button>Previous Page</button><button>Next Page</button>
                                 <br>
                                 <br>
-                                Show Email Per Page: <select>
+                                Show Reports Per Page: <select>
                                     <option>10</option>
                                     <option>20</option>
                                     <option>30</option>
                                 </select>
                                 <!-- END -->
                             </td>
-                       </div>
-                     </table>
+                        </div>
+                    </table>
                 </div>
             </td>
         </tr>
         <tr>
-          <td>
+            <td>
                 <!-- Footer section -->
                 <div>
                     <table align="center">
                         <tr align="center">
                             <td>
                             <a href="https://www.facebook.com/">
-                            <img src="../../images/facebook.png">
+                            <img src="../images/facebook.png">
                              </a>
                          </td>
                             <td>
                                     <a href="https://www.twitter.com/">
-                                    <img src="../../images/twitter.png">
+                                    <img src="../images/twitter.png">
                                 </a>
                             </td>
                         </tr>

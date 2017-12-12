@@ -3,14 +3,14 @@
 <head><title>Home</title></head>
 
 <body>
-    <table border="1" align="center" width="70%">
+    <table align="center" width="100%">
         <tr>
             <td>
                 <!-- Header section -->
                 <div>
                     <table align="center" width="100%">
                         <td width="20%">
-                            <img src="../images/pageicon.png"/>
+                            <a href="../dashboard.php"><img src="../images/pageicon.png"/></a>
                         </td>
                         <td width="40%">&nbsp;</td>
                         <td width="40%">
@@ -27,18 +27,11 @@
         </tr>
         <tr>
             <td>
-                <div>
-                    
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>
                 <!-- Body section -->
                <div>
-                    <table width="100%">
+                    <table width="100%" border="1">
                         <!-- User Menu Section -->
-                        <td width="30%">
+                        <td width="20%">
                             <fieldset>
                                 <legend>
                             <strong>Personal Information</strong></legend>
@@ -52,11 +45,12 @@
 
                         <fieldset>
                             <legend>
-                            <strong>Monitoring Users</strong></legend>
+                            <strong>Manage Users</strong></legend>
                            
                             <ul>
                                 <li><a href="../normalUsers.php">General Users</a></li>
-                                <li><a href="../doctorUsers.php">Doctor</a></li>
+                                <li><a href="../doctorUsers.php">Doctors</a></li>
+                                <li><a href="../reportedUsers.php">Reported Users</a></li>
                             </ul>
                         </fieldset>
 
@@ -68,7 +62,7 @@
                             <ul>
                                 <li><a href="../reportsNormalUsers.php">General Users Statistics</a></li>
                                 <li><a href="../reportsDoctorUsers.php">Doctor's Statistics</a></li>
-                                <li><a href="../reportsAdmin.php">Overall User Statistics</a></li>
+                                <li><a href="../reportsAdmin.php">Overall Statistics</a></li>
                             </ul>
                         </fieldset>
                         
@@ -78,9 +72,10 @@
                             <strong>Email</strong></legend>
                            
                             <ul>
-                                <li><a href="message.php">New Message</a></li>
-                                <li><a href="inbox.php">Inbox</a></li>
-                                <li><a href="sentitems.php">Sent Items</a></li>
+                                <li><a href="../eConsultation/message.php">New Message</a></li>
+                                <li><a href="../eConsultation/inbox.php">Inbox</a></li>
+                                <li><a href="../eConsultation/sentitems.php">Sent items</a></li>
+                                <li><a href="../eConsultation/promoMail.php">Promotional Mail</a></li>
                             </ul>
                         </fieldset>
 
@@ -95,13 +90,13 @@
                             </ul>
                         </fieldset>
                         </td>
-                    
-
-                     <div align="center">
-                        <td width="70%" align="center">
-							<fieldset>
-								<legend align="center"><h4>Inbox</h4></legend>
-								<table border="0" width="100%">
+                        <div align="center">
+                             <td width="70%" align="center">
+                                <!------ UI  -->
+                                <h1>Inbox</h1>
+                                <strong>Search Message: </strong><input type="text" name="senderName" value="Sender Name">
+                                <input type="submit" name="search" value="Search"><br><br>
+                                <table width="100%">
                                     <tr>
                                         <td align="center">
                                              <strong>Sender</strong>
@@ -113,10 +108,10 @@
                                              <strong>Message</strong>
                                         </td>
                                         <td align="center">
-                                             <strong>Time / Date</strong>
+                                             <strong>Time | Date</strong>
                                         </td>
                                         <td align="center">
-                                        	<strong>Status</strong>
+                                            <strong>Attachment</strong>
                                         </td>
                                         <td align="center">
                                              <strong>
@@ -132,41 +127,110 @@
                                             </strong>
                                         </td>
                                     </tr>
-                                    <tr><td colspan="5"><hr></td></tr>
+                                    <tr><td colspan="6"><hr></td></tr>
                                     <tr>
                                         <td align="center">
-                                            <strong>testDev</strong>
+                                            <strong>Ashley</strong>
                                         </td>
                                         <td align="center">
-                                            <strong>Testing<strong>
+                                            <strong>Hello<strong>
                                         </td>
                                         <td align="center">
-                                             <strong>Hello developer !!</strong>
+                                             <a href="conversation.php"><strong>Heey Bob, How are you?..</strong></a>
                                         </td>
                                         <td align="center">
-                                             <strong>3:06AM / 24-11-2017</strong>
+                                             <strong>3:06AM | 24-11-2017</strong>
                                         </td>
                                         <td align="center">
-                                        	<strong>Unread</strong>
+                                            <strong>No attachment</strong>
+                                        </td>
+                                        <td align="center">
+                                            <strong><input type="checkbox" name="action"></strong>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr><td colspan="6"><hr></td></tr>
+
+                                    <tr>
+                                        <td align="center">
+                                            Marsh
+                                        </td>
+                                        <td align="center">
+                                            Need Help
+                                        </td>
+                                        <td align="center">
+                                             <a href="conversation.php">Hi Buddy !! ..</a>
+                                        </td>
+                                        <td align="center">
+                                             9:27AM | 23-11-2017
+                                        </td>
+                                        <td align="center">
+                                            assignment24Li.pdf
                                         </td>
                                         <td align="center">
                                             <input type="checkbox" name="action">
                                         </td>
                                     </tr>
                                     
-                                    <tr><td colspan="5"><hr></td></tr>
+                                    <tr><td colspan="6"><hr></td></tr>
+
+                                    <tr>
+                                        <td align="center">
+                                            <strong>John</strong>
+                                        </td>
+                                        <td align="center">
+                                            <strong>No Subject<strong>
+                                        </td>
+                                        <td align="center">
+                                             <a href="conversation.php"><strong>Meet me at this place at..</strong></a>
+                                        </td>
+                                        <td align="center">
+                                             <strong>1:39PM | 21-11-2017</strong>
+                                        </td>
+                                        <td align="center">
+                                            <strong>location.txt</strong>
+                                        </td>
+                                        <td align="center">
+                                            <strong><input type="checkbox" name="action"></strong>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr><td colspan="6"><hr></td></tr>
                                 </table>
-							</fieldset>
-						</td>
-						</div>
-                    </table>
+                                <button>Previous Page</button><button>Next Page</button>
+                                <br>
+                                <br>
+                                Show Email Per Page: <select>
+                                    <option>10</option>
+                                    <option>20</option>
+                                    <option>30</option>
+                                </select>
+
+                                <!-- END -->
+                            </td>
+                       </div>
+                     </table>
                 </div>
             </td>
         </tr>
         <tr>
-        	<td>
-            	<!-- Footer section -->
+          <td>
+                <!-- Footer section -->
                 <div>
+                    <table align="center">
+                        <tr align="center">
+                            <td>
+                            <a href="https://www.facebook.com/">
+                            <img src="../../images/facebook.png">
+                             </a>
+                         </td>
+                            <td>
+                                    <a href="https://www.twitter.com/">
+                                    <img src="../../images/twitter.png">
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
                     <table align="center">
                         <td>&copy;2017 MediPortal. All rights reserved.</td>
                     </table>

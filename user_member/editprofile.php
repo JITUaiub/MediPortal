@@ -104,54 +104,64 @@
                                         <div>
                                             <table>
                                                 <tr>
-                                                    <td width="60%"><strong>Name</strong></td>
+                                                    <td><strong>Name</strong></td>
                                                     <td>:</td>
+
                                                     <td><input name="name" value="Bob Marley"></td>
+
                                                 </tr>				
                                             </table>
                                             <hr>
                                             <table>
                                                 <tr>
-                                                    <td width="55%"><strong>Email</strong></td>
+                                                    <td><strong>Email</strong></td>
                                                     <td>:</td>
                                                     <td>
                                                         <table>
+
                                                             <td><input name="email" value="someone@example.com"></td>
                                                             <td><img src="images/hinticon.png" title="someone@example.com" /></td>
+
                                                         </table>
                                                     </td>
                                                 </tr>				
                                             </table>
                                         </div>
                                         <hr>
-                                        <div>
-                                            <fieldset>
-                                                <legend>Gender</legend>
-                                                <input name="gender" type="radio" value="Male">Male</input>
-                                                <input name="gender" type="radio" value="Female">Female</input>
-                                                <input name="gender" type="radio" value="Others">Others</input>
-                                            </fieldset>
-                                        </div>
-                                        <hr>
-                                        <div>
-                                            <fieldset>
-                                            <legend>Date of Birth</legend>
-                                                <table>
-                                                    <td><input name="date" value="12" /></td>
-                                                    <td>/</td>
-                                                    <td><input name="month" value="10" /></td>
-                                                    <td>/</td>
-                                                    <td><input name="year" value="2000" /></td>	
-                                                    <td>(dd/mm/yyyy)</td>		
-                                                </table>
-                                            </fieldset>	
+
+                                                
+
+										<div>
+											<table>
+												<tr>
+													<td>Gender</td>
+													<td>:</td>
+													<td>
+														<input name="gender" type="radio" checked="checked">Male
+														<input name="gender" type="radio">Female
+														<input name="gender" type="radio">Other
+													</td>
+													<td></td>
+												</tr>
+											</table>	
+											<hr>
+											<table>
+												<tr>
+													<td valign="top">Date of Birth</td>
+													<td valign="top">:</td>
+													<td>
+														<input name="dob" type="text" value="23/12/1999">
+														<font size="2"><i>(dd/mm/yyyy)</i></font>
+													</td>
+													<td></td>
+												</tr>
+											</table>	
+											
                                         </div>
                                         <hr>
                                         <input type="submit" value="Submit"/>
-                                        <input type="button" value="Reset"/>
+                                        <a href="dashboard.php">Dashboard</a>        
 
-                                        <a href="changeprofilepicture.php">Edit Profile Picture</a>
-                                        <a href="viewprofile.php">Back to View Profile</a>         
                                     </fieldset>
                                 </form>
                             </div>
