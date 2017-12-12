@@ -3,7 +3,7 @@
 <head><title>Home</title></head>
 
 <body>
-	<table border="1" align="center" width="70%">
+	<table border="0" align="center" width="100%">
     	<tr>
         	<td>
             	<!-- Header section -->
@@ -29,9 +29,9 @@
         	<td>
             	<!-- Body section -->
                 <div>
-                    <table width="100%">
+                    <table border="1" width="100%">
                         <!-- User Menu Section -->
-                        <td width="30%">
+                        <td width="20%">
                             <fieldset>
                                 <legend>
                             <strong>Personal Information</strong></legend>
@@ -77,10 +77,9 @@
                             <strong>E-consultation</strong></legend>
                            
                             <ul>
-								<li><a href="message.html">New Message</a></li>
-                                <li><a href="inbox.html">Inbox</a></li>
-                                <li><a href="sentitems.html">Sent items</a></li>
-								<li><a href="drafts.html">Drafts</a></li>
+                                <li><a href="eConsultation/message.php">New Message</a></li>
+                                <li><a href="eConsultation/inbox.php">Inbox</a></li>
+                                <li><a href="eConsultation/sentitems.php">Sent Items</a></li>
                             </ul>
                         </fieldset>
 
@@ -175,6 +174,20 @@
         	<td>
             	<!-- Footer section -->
                 <div>
+                    <table align="center">
+                        <tr align="center">
+                            <td>
+                            <a href="https://www.facebook.com/">
+                            <img src="../images/facebook.png">
+                             </a>
+                         </td>
+                            <td>
+                                    <a href="https://www.twitter.com/">
+                                    <img src="../images/twitter.png">
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
                     <table align="center">
                         <td>&copy;2017 MediPortal. All rights reserved.</td>
                     </table>
