@@ -7,7 +7,7 @@
 	<table>
 	<div>
 				<div>
-				<table align="center" width="100%" border="1">
+				<table align="center" width="100%">
 					<tr align="right">
 						<td width="30%">
 							<a href="../Home.html"><img src="../images/logo.png" align="left"></a>
@@ -26,168 +26,91 @@
 				</table>
 		</div>
 
-<div>
-  	<table align="center">
-  		<tr>
-  			<td align="center">
-  				<strong>Registared By</strong>  <br/>
-  				<a href="DoctorRegistration.html">Doctor</a>
-  							
-  			</td>
-  		</tr>
-  	</table>
-  	<div>
-				Please fill up your information
-			</div>
-
-<div>
-	<fieldset>
-		<legend>Patient Registration</legend>
-	<table align="center">
-			<tr>
-				<td><label>Name</label></td>
-				<td>:</td>
-				<td><input type="text" name="name"/></td>
-			</tr>
-			<tr>
-				<td><label>User Name</label></td>
-				<td>:</td>
-				<td><input type="text" name="name"/></td>
-			</tr>
-			<tr>
-				<td><label>Password</label></td>
-				<td>:</td>
-				<td><input type="password" name="password"/></td>
-			</tr>
-			<tr>
-				<td><label>Confirm Password</label></td>
-				<td>:</td>
-				<td><input type="password" name="password"/></td>
-			</tr>
-
-			<tr>
-				<td><label>Gender</label></td>
-				<td>:</td>
-				<td>
-					<input name="Gender" type="radio" value="Male"/>Male
-	                <input name="Gender" type="radio" value="Female"/>Female
-	                <input name="Gender" type="radio" value="Other"/>Other
-	            </td>
-			</tr>
-			<tr>
-				<td><label>Date Of Birth</label></td>
-				<td>:</td>	
-				<td>
-					<input type="text" name="Dob" placeholder="mm/dd/yyyy"/>	
-				</td>
-								
-			</tr>
-			<tr>
-				<td><label>Mobile Number</label></td>
-				<td>:</td>
-				<td><input type="text" name="mobile_number"/></td>
-			</tr>
-			<tr>
-				<td><label>Email</label></td>
-				<td>:</td>
-				<td><input type="text" name="email"/></td>
-			</tr>
-			<tr>
-				<td><label>Profile Picture</label></td>
-				<td>:</td>
-				<td><input type="file"/></td>
-			</tr>
-			<tr>
-				<td colspan="3">
-					<fieldset>
-						<legend>IF you wish to Donating blood in future please fill it up</legend>
-						<table align="center">
+			<div>
+				<h1 align="center">General Member Registration Form</h1>
+				
+				<table align="center" width="60%">
+					<tr>
+						<td>
+							<fieldset>
+								<form action="">
+									<table align="center">
 							<tr>
-								<td><label>Blood Group</label></td>
+								<td><label>Name</label></td>
+								<td>:</td>
+								<td><input type="text" name="name" value="Mr. XYZ" /></td>
+							</tr>
+							<tr>
+								<td><label>User Name</label></td>
+								<td>:</td>
+								<td><input type="text" name="name" value="xyz" /></td>
+							</tr>
+							<tr>
+								<td><label>Password</label></td>
+								<td>:</td>
+								<td><input type="password" name="password" value="12345678" /></td>
+							</tr>
+							<tr>
+								<td><label>Confirm Password</label></td>
+								<td>:</td>
+								<td><input type="password" name="password" value="123456789" /></td>
+							</tr>
+
+							<tr>
+								<td><label>Gender</label></td>
 								<td>:</td>
 								<td>
-									<select>
-										<option>Select one</option>
-										<option>A(-)</option>
-										<option>A(+)</option>
-										<option>B(-)</option>
-										<option>B(+)</option>
-										<option>AB(-)</option>
-										<option>AB(+)</option>
-										<option>O(-)</option>
-										<option>O(+)</option>
-										<option>Don't Know</option>
-									</select>
+									<input name="Gender" type="radio" value="Male" checked="true" />Male
+					                <input name="Gender" type="radio" value="Female"/>Female
+					                <input name="Gender" type="radio" value="Other"/>Other
+					            </td>
+							</tr>
+							<tr>
+								<td><label>Date Of Birth</label></td>
+								<td>:</td>	
+								<td>
+									<input type="date" name="Dob" value="2017-12-22" />	
 								</td>
+												
+							</tr>
+							<tr>
+								<td><label>Email</label></td>
+								<td>:</td>
+								<td><input type="text" name="email" value="xyz@example.com" /></td>
+							</tr>
+							<tr>
+								<td><label>Profile Picture</label></td>
+								<td>:</td>
+								<td><input type="file"/></td>
 							</tr>
 							
 							<tr>
 								<td colspan="3">
-									<hr/>
-								</td>
-							</tr>
-							
-							<tr>
+									<input type="checkbox" name="check"/>Are you agree with the <a href="../privacypolicy.html">Privacy Policy</a>
 								<td>
-									<label>Are you Healthy and weight over 50KG?</label>
-								</td>
-								<td colspan="2">
-									<input name="weight" type="radio" value="yes"/>Yes
-									<input name="weight" type="radio" value="no"/>No
-								</td>
-										
 							</tr>
-							
+							<tr><td>&nbsp;</td></tr>
+							<script type="text/javascript">
+								function next()
+								{
+									window.location.href = "DonorSubscription.html";
+								}
+							</script>
 							<tr>
-								<td colspan="3">
-									<hr/>
-								</td>
-							</tr>
+								<td colspan="3" align="center">
+							<input type="reset" name="reset" value="Reset" align="center"> | <input type="button" name="Submit" value="Next" align="center" onclick="next()">
 							
-							<tr>
-								<td>
-									<label>Have a serious heart condition?</label>
-								</td>
-								<td colspan="2">
-									<input name="heartcondition" type="radio" value="yes"/>Yes
-									<input name="heartcondition" type="radio" value="no"/>No
-								</td>
-							
-							</tr>
-							
-							<tr>
-								<td colspan="3">
-									<hr/>
-								</td>
-							</tr>
-							
-							<tr>
-								<td>
-									<label>Ever injected recreational drugs?</label>
-								</td>
-								<td colspan="2">
-									<input name="drugs" type="radio" value="yes"/>Yes
-									<input name="drugs" type="radio" value="no"/>No
-								</td>
-							
-							</tr>
+						</td>
 						</table>
-					</fieldset>
-				</td>
-			</tr>
-			<tr>
-				<td colspan="3">
-				<input type="checkbox" name="check">Are you sure want to registered??
-				<td>
-			</tr>
-			<tr>
-				<td colspan="3" align="center">
-			<input type="submit" name="Submit" value="submit" align="center">
-			<input type="reset" name="reset" value="reset" align="center">
-		</td>
-		</table>
-			</fieldset>		
-	</div>
+								</form>
+							</fieldset>
+						</td>
+					</tr>
+				</table>	
+
+			</div>
+	
+
 	<div>
 		<table align="center">
 			<tr align="center">
@@ -222,6 +145,14 @@
 		</table>
 	</div>
 </table>
-
+<div>
+		<table align="center" width="100%" border="1">
+			<tr>
+				<td align="center" colspan="3">
+				<b>&copy;2017 MediPortal. All rights reserved</b>
+				</td>
+			</tr>
+		</table>
+	</div>
 </body>
 </html>
