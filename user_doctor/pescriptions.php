@@ -190,6 +190,7 @@
                                     </tr>
 									
 								</table>
+                                <a href="newpescriptions.html">Create New Prescription</a>
 							</fieldset>
 							<!------------------------ FINISH DESIGNING HERE --------------------------------->
 						</td>

@@ -102,32 +102,155 @@
                         </td>
                         <!--Appoinment History-->
                         <td width="70%">
+                            
 							<fieldset>
                               <legend>Appoinment History</legend><br>
-                              <table border="1">
+                              <fieldset>
+                                <legend> Month: January</legend>
+
+                                <table>
+                                    <tr>
+                                        <td>
+                                <label>Search By</label>
+                                <select>
+                                    <option>Name</option>
+                                    <option>Appoinment Date</option>
+                                    <option>Status</option>
+                                </select>
+                            </td>
+                            </br>
+                            <td>
+                            <label>Search</label>
+                            <input type="text" name="search"/></td>
+                        </tr>
+                    </table>
+                              <table border="1" align="center">
                                   <tr>
-                                      <td width="10%"><strong>Patient Name</strong></td>
-                                      <td  width="10%"><strong>Appoinment Date</strong></td>
-                                      <td  width="10%"><strong>Appointment Time</strong></td>
-                                      <td  width="10%"><strong>Registered By</strong></td>
+                                      <td  width="25%"><strong>Appoinment Date</strong></td>
+                                      <td  width="25%"><strong>Appointment Time</strong></td>
+                                      <td  width="25%"><strong>Patient Name</strong></td>
+                                      <td  width="25%"><strong>Status</strong></td>
+                                     
                                   </tr>
 
                                   <tr>
-                                      <td>Bob Marley</td>
-                                      <td>25 April</td>
+                                      
+                                      <td>25 January</td>
                                       <td>8 am</td>
-                                      <td>Nitesh Saha</td>
+                                      <td>Bob Marley</td>
+                                      <td>Online Service</td>
+                                     
                                   </tr>
 
                                    <tr>
-                                      <td>David Batista</td>
-                                      <td>11 August</td>
+
+                                      <td>11 January</td>
                                       <td>9:05 am</td>
-                                      <td>Arpita Paul</td>
+                                      <td>David Batista</td>
+                                      <td>Online Service</td>
+                                     
                                   </tr>
-                              </table>   <br>                  
+                              </table>
+                              </fieldset>
+
+                              <fieldset>
+                                <legend> Month:February</legend>
+                                    <table>
+                                    <tr>
+                                        <td>
+                                <label>Search By</label>
+                                <select>
+                                    <option>Name</option>
+                                    <option>Appoinment Date</option>
+                                    <option>Status</option>
+                                </select>
+                            </td>
+                            </br>
+                            <td>
+                            <label>Search</label>
+                            <input type="text" name="search"/></td>
+                        </tr>
+                    </table>
+                              <table border="1" align="center">
+                                  <tr>
+                                      <td  width="25%"><strong>Appoinment Date</strong></td>
+                                      <td  width="25%"><strong>Appointment Time</strong></td>
+                                      <td  width="25%"><strong>Patient Name</strong></td>
+                                      <td  width="25%"><strong>Status</strong></td>
+                                     
+                                  </tr>
+
+                                  <tr>
+                                      
+                                      <td>25 February</td>
+                                      <td>8 am</td>
+                                      <td>Bob Marley</td>
+                                      <td>Direct Communication</td>
+                                     
+                                  </tr>
+
+                                   <tr>
+
+                                      <td>11 February</td>
+                                      <td>9:05 am</td>
+                                      <td>David Batista</td>
+                                      <td>Online Service</td>
+                                     
+                                  </tr> 
+                              </table>
+                          </fieldset>
+
+                          <fieldset>
+                                <legend> Month:March</legend>
+                                    <table>
+                                    <tr>
+                                        <td>
+                                <label>Search By</label>
+                                <select>
+                                    <option>Name</option>
+                                    <option>Appoinment Date</option>
+                                    <option>Status</option>
+                                </select>
+                            </td>
+                            </br>
+                            <td>
+                            <label>Search</label>
+                            <input type="text" name="search"/></td>
+                        </tr>
+                    </table>
+                              <table border="1" align="center">
+                                  <tr>
+                                      <td  width="25%"><strong>Appoinment Date</strong></td>
+                                      <td  width="25%"><strong>Appointment Time</strong></td>
+                                      <td  width="25%"><strong>Patient Name</strong></td>
+                                      <td  width="25%"><strong>Status</strong></td>
+                                     
+                                  </tr>
+
+                                  <tr>
+                                      
+                                      <td>25 March</td>
+                                      <td>8 am</td>
+                                      <td>Bob Marley</td>
+                                      <td>Direct Communication</td>
+                                     
+                                  </tr>
+
+                                   <tr>
+
+                                      <td>11 March</td>
+                                      <td>9:05 am</td>
+                                      <td>David Batista</td>
+                                      <td>Online Service</td>
+                                     
+                                  </tr> 
+                              </table>
+                          </fieldset>
+
+
                             </fieldset>
-                            <a href="appointmentstatus.html">Go to Appoinment Status</a>
+                        </div>
+                            <a href="appointmentstatus.php">Go to Appoinment Status</a>
                             
 						</td>
                     </table>

@@ -185,9 +185,11 @@
                                     </tr>
                         </table>
                     </fieldset>
-                                </table> <br>                    
+                    <a href="appointmenthistory.php">Go to appoinment history</a>
+                                </table> <br>    
+
                             </fieldset>
-                            <a href="appointmenthistory.html">Go to appoinment history</a>
+                            
 						</td>
                     </table>
                 </div>
