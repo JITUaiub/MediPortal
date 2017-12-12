@@ -29,39 +29,34 @@
 			<div align="center">
 				<h1>Please Login with your username and password</h1>
 			</div>
-       
+       		
+			<script>
+				function login() {
+			        var id = document.getElementById("name").value;
+			        var pass = document.getElementById("password").value;
+			        if (id == "admin" && pass == "admin")
+			            {
+			            	window.location.href = "user_admin/dashboard.php";
+			            } 
+			        else if (id == "member" && pass == "member")
+						{
+							window.location.href = "user_member/dashboard.php";
+						}
+					else if (id == "doctor" && pass == "doctor")
+						{
+							window.location.href = "user_doctor/dashboard.php";
+						}
+				}
+			</script>
+
 			<div>
-				<form name="myForm" onsubmit="return validateForm()" method="POST" action="php/valUser.php" >
+				<form name="myForm" onsubmit="return validateForm()" method="POST" action="#" >
 					<table align="center" width="60%">
 						<tr>
 							<td>
 								<fieldset>
 									<legend>Login</legend>
 									<table align="center">
-										<script>
-											function validateForm(){
-											    var uname = document.getElementById("name").value;
-											    var pass = document.getElementById("password").value;
-											    
-											    if((!isEmpty(uname, "Log In")) && (!isEmpty(pass, "Password"))){
-											    	
-											    	if(uname == "admin" && pass == "admin")
-											    		document.getElementById("page").href = "user_admin/dashboard.php";
-											        return true;
-											    }else{
-											        return false;
-											    }
-											}
-
-											function isEmpty(elemValue, field){
-											    if((elemValue == "") || (elemValue == null)){
-											        alert("you can not have "+field+" field empty");
-											        return true;
-											    }else{
-											        return false;
-											    }
-											}
-										</script>
 										<tr>
 											<td><label>User Name</label></td>
 											<td>:</td>
@@ -76,7 +71,7 @@
 										</tr>
 										<tr>
 											<td align="center" colspan="4">
-												<input type="submit" name="submitBt" value="LogIn" />
+												<input type="button" value="LogIn" onClick="login()" />
 												<input type="reset" name="reset" value="Reset">
 										</tr>
 										<tr>
