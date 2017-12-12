@@ -113,22 +113,25 @@
 										<legend>Patient Medicine Information</legend><br>
 										<table border="1">
 											<tr>
-												<td width="15%">Patient Name</td>
-												<td width="15%">Medicine History</td>
+												<td width="10%">Patient Name</td>
+												<td width="10%">Medicine History</td>
+                                                <td width="10%">Disease</td>
 											</tr>
 
 											<tr>
-												<td width="15%">Bob Marley</td>
-												<td width="15%">1.Napa<br>2.Met 850<br>3.Max Pro</td>
+												<td width="10%">Bob Marley</td>
+												<td width="10%">1.Napa<br>2.Met 850<br>3.Max Pro</td>
+                                                <td width="10%"><b>HIV+</b>
 											</tr>
 
 											 <tr>
-												<td width="15%">Chester Benigton</td>
-												<td width="15%">1.Seclo<br>2.Met 850<br>3.Amdocal 500<br>4.Glipita</td>
+												<td width="10%">Chester Benigton</td>
+												<td width="10%">1.Seclo<br>2.Met 850<br>3.Amdocal 500<br>4.Glipita</td>
+                                                <td width="10%"><b>Cancer</b></td>
 											</tr>
 										</table>
 
-										<a href="disanalysis.html">Go to Disease Analysis</a>
+										<a href="disanalysis.php">Go to Disease Analysis</a>
 									</fieldset>
 								</div>
 							</div>
