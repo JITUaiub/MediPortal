@@ -132,9 +132,11 @@
 									<tr>
 										<td colspan="2">
 											<hr/>
+											<label>( Search more specifically )</label>
 										</td>
 										
 									</tr>
+									
 									<tr>
 										<td align="right">
 											<strong>Department :</strong>
@@ -235,32 +237,41 @@
                               </fieldset>
 							  
 							  -->
-                                    <table>
+                                    <table border="0">
                                         <tr>
                                             
-                                            <td width=""><label>Appointment For</label></td><td>:</td>
-                                            <td width="30%"><select>
-                                                <option>General</option>
-                                                <option>Emergency</option>
-                                                <option>Operation</option>
-                                            </select></td>
+                                            <td width="30%" align="right">
+												<label>Appointment For :</label>
+											</td>
+											
+                                            <td >
+												<select>
+													<option>Consultation</option>
+													<option>Emergency</option>
+													<option>Operation</option>
+												</select>
+											</td>
                                         </tr>
 
                                         <tr>
-                                            <td><label>Problems</label></td><td>:</td>
-                                            <td><textarea></textarea></td>
-                                        </tr><br>
-
+                                            <td width="30%" align="right">
+												<label>Problems :</label>
+											</td>
+                                            <td>
+												<textarea></textarea>
+											</td>
+                                        </tr>
                                         <tr>
-                                          <td>
-                                              <label>Date</label> </td>
-                                              <td>:</td>
-                                              <td><input type="date" name="date"/>
+                                            <td width="30%" align="right">
+												<label>Date :</label>
+										    </td>
+                                            <td>
+												<input type="date" name="date"/>
                                                 (when you wish to meet)
-                                          </td>
-                                      </tr>
-                                       </table>
-									   <hr/>
+                                            </td>
+                                        </tr>
+                                    </table>
+									  <hr/>
                                 <input id="submit" type="submit" value="Request" onclick="status()"/>
 								<a href="appointmentstatus.php">Go to Appoint Status</a>
                            </fieldset> 

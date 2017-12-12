@@ -3,7 +3,7 @@
 <head><title>Home</title></head>
 
 <body>
-	<table border="1" align="center" width="70%">
+	<table border="0" align="center" width="100%">
     	<tr>
         	<td>
             	<!-- Header section -->
@@ -36,9 +36,9 @@
         	<td>
             	<!-- Body section -->
                <div>
-                    <table width="100%">
+                    <table border="1" width="100%">
                         <!-- User Menu Section -->
-                        <td width="30%">
+                        <td width="20%">
                             <fieldset>
                                 <legend>
                             <strong>Personal Information</strong></legend>
@@ -107,92 +107,52 @@
                             <!--------------------------------------------------- DESIGN UI HERE-------------------------------------------------->
 
                                 <fieldset>
-                                  <legend>Disease Analysis</legend>
-                                  <fieldset>
-                                    <legend>Patient Information</legend>
-                                  <table>
-                                      <tr>
-                                          <td >
-                                              <strong>Patient Name</strong>
-                                          </td>
-                                          <td >:</td>
-                                          <td >Bob Marley</td>
-                                      </tr>
-                                      <tr>
-                                          <td >
-                                             <strong> Mobile Number</strong></td><td>:</td><td >0167499424
-                                          </td><td>--------</td>
-                                          <td ><strong>House Phone Number</strong></td><td>:</td><td >02-857412369</td>
-                                      </tr>
-                                      <tr>
-                                          <td > 
-                                              <strong>Residensial Address</strong>
-                                          </td><td>:</td><td >North America</td>
-                                      </tr>
-                                      <tr>
-                                        <td ><strong>Sex</strong></td><td>:</td>
-                                          <td><input type="checkbox" name="sex">Male</input></td>
-                                         <td><input type="checkbox" name="sex">Female</input></td></tr>
-                                         <tr>
-
-                                          <td ><strong>Date Of Birth</strong></td><td>:</td>
-                                          <td >25 January 1990</td>
-
-                                          <td ><strong>Age(If Date of Birth Unknown)</strong></td><td>:</td>
-                                          <td>____</td>
-                                      </tr>
-                                       </table>
-                                   </fieldset>
-                                      <fieldset>
-                                          <legend>Disease Description</legend>
-                                          <table>
-                                              <tr>
-                                                  <td>
-                                                      <strong>Disease Name</strong>
-                                                  </td><td>:</td><td>Cancer</td>
-                                              </tr>
-                                              <tr>
-                                                  <td><strong>Has the patient/guardian been notified of the disease?</strong></td><td>:</td><td>Yes</td>
-                                              </tr>
-                                              <tr>
-                                                  <td><strong>Symptom</strong></td><td>:</td>
-                                                  <td>1.Write something
-                                                      2.Symptoms are
-                                                      3.Careful about that</td>
-                                              </tr>
-                                              </table>
-                                          </fieldset>
-
-                                          <fieldset>
-                                              <legend>Laboratory Information
-                                              </legend>
-
-                                              <table>
-                                                  <tr>
-                                                      <td><strong>Name of Test Performed</strong></td><td>:</td>
-                                                      <td>Cancer test</td>
-                                                      <td><strong>Result of Test</strong></td><td>:</td>
-                                                      <td>Yes</td>
-                                                  </tr>
-
-                                                  <tr>
-                                                      <td><strong>Laboratory Name</strong></td><td>:</td>
-                                                      <td>Local Area</td>
-                                                  </tr>
-                                                  <tr><td><strong>Test Date</strong></td><td>:</td>
-                                                  <td>22 October 2017</td>
-                                                  </tr>
-                                                                                            </table>
-                                          </fieldset>
-                                           <fieldset><legend>Treatment Information</legend>
-                                          
-
-                                          <table><tr><td><strong>Treatment Type</strong></td><td>:</td><td>badely</td><td><strong>Treatment Date</strong></td><td>:</td><td>31 Novembor 2017</td></tr></table>
-
-                                          </fieldset>                   
-                            </fieldset>
-
-                            <a href="medianalysis.php">Go to Medicine Analysis</a>
+                                         <legend><b>Disease  | SEARCH</b></legend>
+                                        Filter By
+                                        <select>
+                                            <option>Any</option>
+                                            <option>Name</option>
+                                        </select>
+                                          <input />
+                                        
+										
+                                  Date: <input name="blockdate1" value="2013-01-08"  type="date">
+                                     to <input name="blockdate2" value="2014-01-08" type="date">
+                                        <input type="submit" value="Search" />
+										<input type="submit" value="Print"/>
+                                                    
+                                    </fieldset>
+                                        <br/>
+                                    <table width="100%" cellspacing="0" border="1" cellpadding="5">
+                                            <tr>                  
+                                                <th >Disease Name</th>  
+                                                <th >Number Of Affected</th>
+                                                
+                                            </tr>
+                                            <tr>
+                                                <td>Fever</td>
+                                                <td>7</td>
+                                               
+                                            </tr>
+											<tr>
+                                                <td>Dengue</td>
+                                                <td>2</td>
+                                                
+                                            </tr>
+											<tr>
+                                                <td>Hepatitis B</td>
+                                                <td>1</td>
+                                                
+                                            </tr>
+											<tr>
+                                                <td>Malaria</td>
+                                                <td>1</td>
+                                                
+                                            </tr>
+                                     </table>
+                                
+							
+							
 
                             <!------------------------------------------------------ END HERE----------------------------------------------------->
                         </td></div>
@@ -204,6 +164,20 @@
         	<td>
             	<!-- Footer section -->
                 <div>
+                	<table align="center">
+						<tr align="center">
+							<td>
+							<a href="https://www.facebook.com/">
+							<img src="../images/facebook.png">
+			                 </a>
+			             </td>
+							<td>
+									<a href="https://www.twitter.com/">
+									<img src="../images/twitter.png">
+								</a>
+							</td>
+						</tr>
+					</table>
                     <table align="center">
                         <td>&copy;2017 MediPortal. All rights reserved.</td>
                     </table>

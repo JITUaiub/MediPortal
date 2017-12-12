@@ -3,7 +3,7 @@
 <head><title>Home</title></head>
 
 <body>
-	<table border="1" align="center" width="70%">
+	<table border="0" align="center" width="100%">
     	<tr>
         	<td>
             	<!-- Header section -->
@@ -36,38 +36,41 @@
         	<td>
             	<!-- Body section -->
                <div>
-                    <table width="100%">
+                    <table border="1" width="100%">
                         <!-- User Menu Section -->
-                        <td width="30%">
+                        <td width="20%">
                             <fieldset>
                                 <legend>
-                            <strong>Personal Information</strong></legend>
-                            <ul>
-                                <li><a href="dashboard.php">Dashboard</a></li>
-                                <li><a href="viewprofile.php">View Profile</a></li>
-                                <li><a href="editprofile.php">Edit Profile</a></li>
-                                <li><a href="changeprofilepicture.php">Change Profile Picture</a></li>
-                            </ul>
-                        </fieldset>
+									<strong>Personal Information</strong>
+								</legend>
+								<ul>
+									<li><a href="dashboard.php">Dashboard</a></li>
+									<li><a href="viewprofile.php">View Profile</a></li>
+									<li><a href="editprofile.php">Edit Profile</a></li>
+									<li><a href="changeprofilepicture.php">Change Profile Picture</a></li>
+								</ul>
+							</fieldset>
 
 
-                        <fieldset>
-                            <legend>
-                            <strong>Medical History</strong></legend>
-                                <ul>
-                                <li><a href="prevpescriptions.php">Previous Prescriptions</a></li>
-                            </ul>
-                        </fieldset>
+							<fieldset>
+								<legend>
+									<strong>Medical History</strong>
+								</legend>
+									<ul>
+									<li><a href="prevpescriptions.php">Previous Prescriptions</a></li>
+								</ul>
+							</fieldset>
 
-                        <fieldset>
-                            <legend>
-                            <strong>Appointments Information</strong></legend>
-                           
-                            <ul>
-                                <li><a href="newappointment.html">New Appointment</a></li>
-                                <li><a href="appointmentstatus.php">Appointment Status</a></li>
-                            </ul>
-                        </fieldset>
+							<fieldset>
+								<legend>
+									<strong>Appointments Information</strong>
+								</legend>
+							   
+								<ul>
+									<li><a href="newappointment.html">New Appointment</a></li>
+									<li><a href="appointmentstatus.php">Appointment Status</a></li>
+								</ul>
+							</fieldset>
 
 
                         <fieldset>
@@ -106,32 +109,56 @@
                         <td width="70%" align="center">
                             <!--------------------------------------------------- DESIGN UI HERE-------------------------------------------------->
 
-                            <div>   
-                                <div align="left">
-                                    <fieldset>
-                                        <legend>Patient Medicine Information</legend><br>
-                                        <table border="1">
-                                            <tr>
-                                                <td width="15%">Patient Name</td>
-                                                <td width="15%">Medicine History</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td width="15%">Bob Marley</td>
-                                                <td width="15%">1.Napa<br>2.Met 850<br>3.Max Pro</td>
-                                            </tr>
-
-                                             <tr>
-                                                <td width="15%">Chester Benigton</td>
-                                                <td width="15%">1.Seclo<br>2.Met 850<br>3.Amdocal 500<br>4.Glipita</td>
-                                            </tr>
-                                        </table>
-
-                                        <a href="disanalysis.php">Go to Disease Analysis</a>
+                             <fieldset>
+                                         <legend><b>Medicine  | SEARCH</b></legend>
+                                        Filter By
+                                        <select>
+                                            <option>Any</option>
+                                            <option>Name</option>
+                                        </select>
+                                          <input />
+                                        
+										
+                                  Date: <input name="blockdate1" value="2013-01-08"  type="date">
+                                     to <input name="blockdate2" value="2014-01-08" type="date">
+                                        <input type="submit" value="Search" />
+										<input type="submit" value="Print"/>
+                                                    
                                     </fieldset>
-                                </div>
-                            </div>
-
+                                        <br/>
+                                    <table width="100%" cellspacing="0" border="1" cellpadding="5">
+                                            <tr>                  
+                                                <th >Medicine Name</th>  
+                                                <th >Number Of Prescribed</th>
+                                                
+                                            </tr>
+                                            <tr>
+                                                <td>Napa</td>
+                                                <td>17</td>
+                                               
+                                            </tr>
+											<tr>
+                                                <td>Naloxegol</td>
+                                                <td>9</td>
+                                                
+                                            </tr>
+											<tr>
+                                                <td>Naltrexone</td>
+                                                <td>2</td>
+                                                
+                                            </tr>
+											<tr>
+                                                <td>Zantac 150</td>
+                                                <td>1</td>
+                                                
+                                            </tr>
+                                     </table>
+                                
+							
+							
+							
+							
+							
                             <!------------------------------------------------------ END HERE----------------------------------------------------->
                         </td></div>
                     </table>
@@ -142,6 +169,20 @@
         	<td>
             	<!-- Footer section -->
                 <div>
+                	<table align="center">
+						<tr align="center">
+							<td>
+							<a href="https://www.facebook.com/">
+							<img src="../images/facebook.png">
+			                 </a>
+			             </td>
+							<td>
+									<a href="https://www.twitter.com/">
+									<img src="../images/twitter.png">
+								</a>
+							</td>
+						</tr>
+					</table>
                     <table align="center">
                         <td>&copy;2017 MediPortal. All rights reserved.</td>
                     </table>
