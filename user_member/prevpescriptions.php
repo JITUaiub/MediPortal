@@ -3,7 +3,7 @@
 <head><title>Home</title></head>
 
 <body>
-	<table border="1" align="center" width="70%">
+	<table border="0" align="center" width="70%">
     	<tr>
         	<td>
             	<!-- Header section -->
@@ -110,22 +110,34 @@
 
                                 <fieldset>
                                 <legend>Prescriptions History</legend>
-                                <table border="1" width="100%" height="400">
+								Filter By
+								<select>
+									<option>Any</option>
+									<option>Date</option>
+									<option>Doctor's name</option>
+									<option>Disease</option>
+								</select>
+								<input />
+								<input type="submit" value="Search" />
+								<br/><br/><br/>
+								
+								
+                                <table border="1" width="100%" height="40">
                                     <tr height="10%">
                                         <th>
-                                            <h3 align="center">Date</h3>
+                                            <h2 align="center">Date</h2>
                                         </th>
                                         <th>
-                                            <h3 align="center">Time</h3>
+                                            <h2 align="center">Doctor</h2>
                                         </th>
                                         <th>
-                                            <h3 align="center">Age</h3>
+                                            <h2 align="center">Time</h2>
                                         </th>
                                         <th>
-                                            <h3 align="center">Disease</h3>
+                                            <h2 align="center">Disease</h2>
                                         </th>
                                         <th>
-                                            <h3 align="center">Prescription</h3>
+                                            <h2 align="center">Prescription</h2>
                                         </th>
                                     </tr>
                                     <tr>
@@ -133,16 +145,33 @@
                                             <h3>10/12/1999</h3>
                                         </td>
                                         <td>
-                                            <h3>10.45 AM</h3>
+                                            <h3>Dr.poran</h3>
                                         </td>
                                         <td>
-                                            <h3>35</h3>
+                                            <h3>10:20</h3>
                                         </td>
                                         <td>
                                             <h3>HIV(+)</h3>
                                         </td>
                                         <td>
-                                            fineName.pdf
+                                            <i>fineName.pdf</i>
+                                        </td>
+                                    </tr>
+									<tr>
+                                        <td>
+                                            <h3>10/12/2017</h3>
+                                        </td>
+                                        <td>
+                                            <h3>Dr.arif</h3>
+                                        </td>
+                                        <td>
+                                            <h3>12:00</h3>
+                                        </td>
+                                        <td>
+                                            <h3>heart disease</h3>
+                                        </td>
+                                        <td>
+                                            <i>fineName.pdf</i>
                                         </td>
                                     </tr>
                                     
