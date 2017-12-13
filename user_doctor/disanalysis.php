@@ -187,7 +187,7 @@
                                           </fieldset>                   
                             </fieldset>
 
-                            <a href="medianalysis.html">Go to Medicine Analysis</a>
+                            <a href="medianalysis.php">Go to Medicine Analysis</a>
 						</td>
                     </table>
                 </div>
