@@ -202,8 +202,76 @@
                                                         </table>
                                                     </td>
                                                 </tr>
-
-                                                                 
+                                                                                                <tr><td><hr/></td></tr>
+                                                <tr>
+                                                    <td>
+                                                        <table width="100%">
+                                                            <td width="30%"><strong>Education</strong></td>
+                                                            <td><strong>:</strong></td>
+                                                            <td>
+                                                                <fieldset>
+                                                                    <table>
+                                                                        <tr>
+                                                                            <td>Degree Name</td>
+                                                                            <td>:</td>
+                                                                            <td>MBBS</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Passed Year</td>
+                                                                            <td>:</td>
+                                                                            <td>2015</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>University</td>
+                                                                            <td>:</td>
+                                                                            <td>DMC</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Description</td>
+                                                                            <td>:</td>
+                                                                            <td>Bla bla bla bla</td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </fieldset>
+                                                            </td>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                                                                <tr><td><hr/></td></tr>
+                                                <tr>
+                                                    <td>
+                                                        <table width="100%">
+                                                            <td width="30%"><strong>Chambers</strong></td>
+                                                            <td><strong>:</strong></td>
+                                                            <td>
+                                                                <fieldset>
+                                                                    <table>
+                                                                        <tr>
+                                                                            <td>Chamber Name</td>
+                                                                            <td>:</td>
+                                                                            <td>XYZ</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Chamber Location</td>
+                                                                            <td>:</td>
+                                                                            <td>Dhaka</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Working Days</td>
+                                                                            <td>:</td>
+                                                                            <td>SAT, SUN, TUES</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Time</td>
+                                                                            <td>:</td>
+                                                                            <td>8.30PM to 10.30PM</td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </fieldset>
+                                                            </td>
+                                                        </table>
+                                                    </td>
+                                                </tr>              
                                             </table>
                                         </td>
                                         <td width="40%">
@@ -219,8 +287,9 @@
                                         </td>
                                     </table>
                                     <hr/>
-                                    <a href="editprofile.php">Edit Profile</a>
-                                    <a href="changepassword.html">Edit Password</a>
+                                    <a href="editprofile.php">Edit Profile</a> | 
+                                    <a href="changepassword.html">Edit Password</a> | 
+                                    <a href="managechamber.html">Manage Chambers</a>
                                 </fieldset>
                             </div>
                         </td>
