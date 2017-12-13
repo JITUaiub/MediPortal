@@ -86,9 +86,9 @@
                             <strong>E-consultation</strong></legend>
                            
                             <ul>
-                                <li><a href="../eConsultation/message.php">New Message</a></li>
-                                <li><a href="../eConsultation/inbox.php">Inbox</a></li>
-                                <li><a href="../eConsultation/sentitems.php">Sent Items</a></li>
+                                <li><a href="eConsultation/message.php">New Message</a></li>
+                                <li><a href="eConsultation/inbox.php">Inbox</a></li>
+                                <li><a href="eConsultation/sentitems.php">Sent Items</a></li>
                             </ul>
                         </fieldset>
 
@@ -104,11 +104,25 @@
                         </fieldset>
                         </td>
                         <div align="center">
-                        <td width="70%" align="center"><h2><ul>Welcome Bob <?php
-							//session_start();
-							//echo "Bob";
-
-						?><img src="images/consult.jpg"></ul></h2></td></div>
+							<td width="70%" align="center">    <h2><img src="images/usericon.png"/><br/>
+                                <h2>Welcome,<a href="viewprofile.php"> Bob</a></h2>  
+                                <h3>11 DEC, 2017</h3>
+                                <table width="50%">
+                                    <tr>
+                                        <td align="right" width="30%""><h1><a href="appointmentstatus.php">1 </a></h1></td>
+                                        <td align="left"> appointment accepted today</td>
+                                    </tr>
+									<tr>
+                                        <td align="right" width="30%""><h1><a href="appointmentstatus.php">1 </a></h1></td>
+                                        <td align="left"> appointment still pending </td>
+                                    </tr>
+									<tr>
+                                        <td align="right" width="30%""><h1><a href="appointmentstatus.php">1 </a></h1></td>
+                                        <td align="left"> appointment was REJECTED</td>
+                                    </tr>
+                                </table>
+                            </td>
+						</div>
                     </table>
                 </div>
             </td>

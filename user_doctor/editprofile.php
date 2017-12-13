@@ -31,7 +31,7 @@
                <div>
                     <table width="100%" border="1">
                         <!-- User Menu Section -->
-                        <td width="20%">
+                        <td width="20%" valign="top">
                             <fieldset>
                                 <legend>
                             <strong>Personal Information</strong></legend>
@@ -181,10 +181,81 @@
                                                                         <td align="center" width="10%">&nbsp;</td>
                                                                         <td align="center" width="30%"><strong>BMDC Number</strong></td>
                                                                         <td align="center"><strong>:</strong></td>
-                                                                        <td align="center"><input type="text" name="bmdc_no" value="DMC-017000BMDC-P0"></td>
+                                                                        <td align="center"><input type="text" name="bmdc_no" value="DMC-017000BMDC-P0" disabled="true"></td>
                                                                     </table>
                                                                 </td>
                                                             </tr>
+                                                                                                            <tr><td><hr/></td></tr>
+                                                <tr>
+                                                    <td>
+                                                        <table width="100%">
+                                                            <td width="30%"><strong>Education</strong></td>
+                                                            <td><strong>:</strong></td>
+                                                            <td>
+                                                                <fieldset>
+                                                                    <table>
+                                                                        <tr>
+                                                                            <td>Degree Name</td>
+                                                                            <td>:</td>
+                                                                            <td><input type="text" name="" value="MBBS"></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Passed Year</td>
+                                                                            <td>:</td>
+                                                                            <td><input type="text" name="" value="2015"></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>University</td>
+                                                                            <td>:</td>
+                                                                            <td><input type="text" name="" value="DMC"></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Description</td>
+                                                                            <td>:</td>
+                                                                            <td><textarea>Bla bla bla bla</textarea></td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </fieldset>
+                                                            </td>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                                                                <tr><td><hr/></td></tr>
+                                                <tr>
+                                                    <td>
+                                                        <table width="100%">
+                                                            <td width="30%"><strong>Chambers</strong></td>
+                                                            <td><strong>:</strong></td>
+                                                            <td>
+                                                                <fieldset>
+                                                                    <table>
+                                                                        <tr>
+                                                                            <td>Chamber Name</td>
+                                                                            <td>:</td>
+                                                                            <td>XYZ</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Chamber Location</td>
+                                                                            <td>:</td>
+                                                                            <td>Dhaka</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Working Days</td>
+                                                                            <td>:</td>
+                                                                            <td>SAT, SUN, TUES</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Time</td>
+                                                                            <td>:</td>
+                                                                            <td>8.30PM to 10.30PM</td>
+                                                                        </tr>
+                                                                        <tr><td><a href="managechamber.html">Edit Chambers</a></td></tr>
+                                                                    </table>
+                                                                </fieldset>
+                                                            </td>
+                                                        </table>
+                                                    </td>
+                                                </tr>
                                                             <tr><td><hr/></td></tr>
                                                             <tr><td><hr/></td></tr>
                                                             <tr><td colspan="4" align="center"><input type="submit" name="submit" value="Update Profile"></td></tr>

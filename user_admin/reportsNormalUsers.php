@@ -54,7 +54,16 @@
                             </ul>
                         </fieldset>
 
-
+                        <fieldset>
+                            <legend>
+                            <strong>FAQ Section</strong></legend>
+                           
+                            <ul>
+                                <li><a href="FAQ/newFAQ.php">New FAQ</a></li>
+                                <li><a href="FAQ/requestedFAQ.php">User Requested FAQ</a></li>
+                                <li><a href="FAQ/manageFAQ.php">Manage FAQ</a></li>
+                            </ul>
+                        </fieldset>
                         <fieldset>
                             <legend>
                             <strong>Reports</strong></legend>
@@ -127,12 +136,16 @@
                                                 <td width="80%" align="center"><a href="normalUserdetails.php">John</a></td>
                                                 <td align="center">2</td>
                                             </tr>
+                                            <tr>
+                                                <td width="80%" align="center"><strong>Total</strong></td>
+                                                <td align="center">16</td>
+                                            </tr>
                                         </table>
                                         <br><br>
                                         <table border="1" align="center" width="100%" cellpadding="0" cellspacing="0">
                                             <tr>
                                                 <th width="80%">TOP 3 BLOOD DONOR</th>
-                                                <th>NO of donation</th>
+                                                <th>Times of donation</th>
                                             </tr>
                                             <tr>
                                                 <td width="80%" align="center"><a href="normalUserdetails.php">Ashley</a></td>
@@ -145,6 +158,10 @@
                                             <tr>
                                                 <td width="80%" align="center"><a href="normalUserdetails.php">John</a></td>
                                                 <td align="center">5</td>
+                                            </tr>
+                                            <tr>
+                                                <td width="80%" align="center"><strong>Total</strong></td>
+                                                <td align="center">46</td>
                                             </tr>
                                         </table>
 

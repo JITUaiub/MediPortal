@@ -3,11 +3,11 @@
 <head><title>Home</title></head>
 
 <body>
-    <table align="center" width="100%">
-        <tr>
-            <td>
-                <!-- Header section -->
-                <div>
+	<table align="center" width="100%">
+    	<tr>
+        	<td>
+            	<!-- Header section -->
+            	<div>
                     <table align="center" width="100%">
                         <td width="20%">
                             <a href="../dashboard.php"><img src="../images/pageicon.png"/></a>
@@ -26,8 +26,8 @@
             </td>
         </tr>
         <tr>
-            <td>
-                <!-- Body section -->
+        	<td>
+            	<!-- Body section -->
                <div>
                     <table width="100%" border="1">
                         <!-- User Menu Section -->
@@ -59,11 +59,12 @@
                             <strong>FAQ Section</strong></legend>
                            
                             <ul>
-                                <li><a href="../FAQ/newFAQ.php">New FAQ</a></li>
-                                <li><a href="../FAQ/requestedFAQ.php">User Requested FAQ</a></li>
-                                <li><a href="../FAQ/manageFAQ.php">Manage FAQ</a></li>
+                                <li><a href="newFAQ.php">New FAQ</a></li>
+                                <li><a href="requestedFAQ.php">User Requested FAQ</a></li>
+                                <li><a href="manageFAQ.php">Manage FAQ</a></li>
                             </ul>
                         </fieldset>
+
                         <fieldset>
                             <legend>
                             <strong>Reports</strong></legend>
@@ -74,9 +75,9 @@
                                 <li><a href="../reportsAdmin.php">Overall Statistics</a></li>
                             </ul>
                         </fieldset>
-                        
-                        
-                        <fieldset>
+						
+						
+						<fieldset>
                             <legend>
                             <strong>Email</strong></legend>
                            
@@ -100,27 +101,25 @@
                         </fieldset>
                         </td>
                         <div align="center">
-                             <td width="70%" align="center">
-                                <!------ UI  -->
-                                <h1>Inbox</h1>
-                                <strong>Search Message: </strong><input type="text" name="senderName" value="Sender Name">
-                                <input type="submit" name="search" value="Search"><br><br>
+                       		 <td width="70%" align="center">
+                       		 	<!-- FAQ DESIGN -->
+
+                                <h1>Frequently Asked Questions</h1>
+                                
                                 <table width="100%">
                                     <tr>
                                         <td align="center">
-                                             <strong>Sender</strong>
+                                             <strong>Asked By</strong>
                                         </td>
                                         <td align="center">
-                                             <strong>Subject</strong>
+                                             <strong>Title</strong>
                                         </td>
+                                        <td align="center"><strong>Category</strong></td>
                                         <td align="center">
-                                             <strong>Message</strong>
+                                             <strong>Question</strong>
                                         </td>
                                         <td align="center">
                                              <strong>Time | Date</strong>
-                                        </td>
-                                        <td align="center">
-                                            <strong>Attachment</strong>
                                         </td>
                                         <td align="center">
                                              <strong>
@@ -136,110 +135,103 @@
                                             </strong>
                                         </td>
                                     </tr>
-                                    <tr><td colspan="6"><hr></td></tr>
+                                    <tr><td colspan="5"><hr></td></tr>
                                     <tr>
                                         <td align="center">
-                                            <strong>Ashley</strong>
+                                            <strong>John</strong>
                                         </td>
                                         <td align="center">
-                                            <strong>Hello<strong>
+                                            <strong>Hotline<strong>
                                         </td>
+                                        <td><strong>Mediportal</strong></td>
                                         <td align="center">
-                                             <a href="conversation.php"><strong>Heey Bob, How are you?..</strong></a>
+                                             <a href="addFAQAnswer.php"><strong>Do you have any hotline number?</strong></a>
                                         </td>
                                         <td align="center">
                                              <strong>3:06AM | 24-11-2017</strong>
-                                        </td>
-                                        <td align="center">
-                                            <strong>No attachment</strong>
                                         </td>
                                         <td align="center">
                                             <strong><input type="checkbox" name="action"></strong>
                                         </td>
                                     </tr>
                                     
-                                    <tr><td colspan="6"><hr></td></tr>
+                                    <tr><td colspan="5"><hr></td></tr>
 
                                     <tr>
                                         <td align="center">
                                             Marsh
                                         </td>
                                         <td align="center">
-                                            Need Help
+                                            Fees
                                         </td>
+                                        <td>Price and Fee</td>
                                         <td align="center">
-                                             <a href="conversation.php">Hi Buddy !! ..</a>
+                                             <a href="addFAQAnswer.php">What are the fees?</a>
                                         </td>
                                         <td align="center">
                                              9:27AM | 23-11-2017
-                                        </td>
-                                        <td align="center">
-                                            assignment24Li.pdf
                                         </td>
                                         <td align="center">
                                             <input type="checkbox" name="action">
                                         </td>
                                     </tr>
                                     
-                                    <tr><td colspan="6"><hr></td></tr>
+                                    <tr><td colspan="5"><hr></td></tr>
 
                                     <tr>
                                         <td align="center">
                                             <strong>John</strong>
                                         </td>
                                         <td align="center">
-                                            <strong>No Subject<strong>
+                                            <strong>Payment Gateway<strong>
                                         </td>
+                                        <td>Price and Fee</td>
                                         <td align="center">
-                                             <a href="conversation.php"><strong>Meet me at this place at..</strong></a>
+                                             <a href="addFAQAnswer.php"><strong>What are the payment gateways?</strong></a>
                                         </td>
                                         <td align="center">
                                              <strong>1:39PM | 21-11-2017</strong>
-                                        </td>
-                                        <td align="center">
-                                            <strong>location.txt</strong>
                                         </td>
                                         <td align="center">
                                             <strong><input type="checkbox" name="action"></strong>
                                         </td>
                                     </tr>
                                     
-                                    <tr><td colspan="6"><hr></td></tr>
+                                    <tr><td colspan="5"><hr></td></tr>
                                 </table>
                                 <button>Previous Page</button><button>Next Page</button>
                                 <br>
                                 <br>
-                                Show Email Per Page: <select>
+                                Show Reports Per Page: <select>
                                     <option>10</option>
                                     <option>20</option>
                                     <option>30</option>
                                 </select>
 
-                                <!-- END -->
-                            </td>
-                       </div>
-                     </table>
+                    		</td>
+                    	</div>
+                    </table>
                 </div>
             </td>
         </tr>
         <tr>
-          <td>
-                <!-- Footer section -->
+        	<td>
+            	<!-- Footer section -->
                 <div>
-                    <table align="center">
-                        <tr align="center">
-                            <td>
-                            <a href="https://www.facebook.com/">
-                            <img src="../../images/facebook.png">
-                             </a>
-                         </td>
-                            <td>
-                                    <a href="https://www.twitter.com/">
-                                    <img src="../../images/twitter.png">
-                                </a>
-                            </td>
-                        </tr>
-                    </table>
+                	<table align="center">
+						<tr align="center">
+							<td>
+							<a href="https://www.facebook.com/">
+							<img src="../../images/facebook.png">
+			                 </a>
+			             </td>
+							<td>
+									<a href="https://www.twitter.com/">
+									<img src="../../images/twitter.png">
+								</a>
+							</td>
+						</tr>
+					</table>
                     <table align="center">
                         <td>&copy;2017 MediPortal. All rights reserved.</td>
                     </table>

@@ -110,7 +110,7 @@
                                         <td align="left">new appointment today</td>
                                     </tr>
                                     <tr>
-                                        <td align="right" width="30%""><h1><a href="newpescriptions.html">0</a></h1></td>
+                                        <td align="right" width="30%""><h1><a href="newpescriptions.html">2</a></h1></td>
                                         <td align="left">Pending Prescriptions</td>
                                     </tr>
                                     

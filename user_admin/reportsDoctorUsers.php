@@ -54,6 +54,16 @@
                             </ul>
                         </fieldset>
 
+                        <fieldset>
+                            <legend>
+                            <strong>FAQ Section</strong></legend>
+                           
+                            <ul>
+                                <li><a href="FAQ/newFAQ.php">New FAQ</a></li>
+                                <li><a href="FAQ/requestedFAQ.php">User Requested FAQ</a></li>
+                                <li><a href="FAQ/manageFAQ.php">Manage FAQ</a></li>
+                            </ul>
+                        </fieldset>
 
                         <fieldset>
                             <legend>
@@ -127,11 +137,16 @@
                                                 <td width="80%" align="center"><a href="doctordetails.php">John</a></td>
                                                 <td align="center">3</td>
                                             </tr>
+                                            <tr>
+                                                <td width="80%" align="center"><strong>Total</strong></td>
+                                                <td align="center">19</td>
+                                            </tr>
+                                            
                                         </table>
                                         <br><br>
                                         <table border="1" align="center" width="100%" cellpadding="0" cellspacing="0">
                                             <tr>
-                                                <th width="80%">TOP 3 DISEASE DOCTOR TREAT</th>
+                                                <th width="80%">TOP 3 E-CONSULTATION TREATMENT</th>
                                                 <th>NO of Occurence</th>
                                             </tr>
                                             <tr>
@@ -146,12 +161,16 @@
                                                 <td width="80%" align="center"><a href="doctordetails.php">John</a></td>
                                                 <td align="center">5</td>
                                             </tr>
+                                            <tr>
+                                                <td width="80%" align="center"><strong>Total</strong></td>
+                                                <td align="center">46</td>
+                                            </tr>
                                         </table>
                                         <br><br>
                                         <table border="1" align="center" width="100%" cellpadding="0" cellspacing="0">
                                             <tr>
-                                                <th width="80%">TOP 3 ACTIVE DOCTORS/th>
-                                                <th>NO of Occurence</th>
+                                                <th width="80%">TOP 3 ACTIVE DOCTORS</th>
+                                                <th>NO of Login</th>
                                             </tr>
                                             <tr>
                                                 <td width="80%" align="center"><a href="doctordetails.php">Lia</a></td>
@@ -164,6 +183,10 @@
                                             <tr>
                                                 <td width="80%" align="center"><a href="doctordetails.php">John</a></td>
                                                 <td align="center">5</td>
+                                            </tr>
+                                            <tr>
+                                                <td width="80%" align="center"><strong>Total</strong></td>
+                                                <td align="center">46</td>
                                             </tr>
                                         </table>
                                 <!-- END -->

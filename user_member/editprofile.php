@@ -96,74 +96,106 @@
                         </td>
 
                         <td width="70%">
-                        	<div>
-                                <form>
-                                    <fieldset>
-                                        <legend><strong>EDIT PROFILE</strong></legend>
-                                        <div>
-                                            <table>
+                        	<!------ UI  -->
+                                <div>
+                                        <h1>EDIT PROFILE</h1>
+                                            <table width="65%">
                                                 <tr>
-                                                    <td><strong>Name</strong></td>
-                                                    <td>:</td>
-
-                                                    <td><input name="name" value="Bob Marley"></td>
-
-                                                </tr>				
-                                            </table>
-                                            <hr>
-                                            <table>
-                                                <tr>
-                                                    <td><strong>Email</strong></td>
-                                                    <td>:</td>
-                                                    <td>
-                                                        <table>
-
-                                                            <td><input name="email" value="someone@example.com"></td>
-                                                            <td><img src="images/hinticon.png" title="someone@example.com" /></td>
-
+                                                    <td width="60%" align="center">
+                                                        <table width="100%" align="center">
+                                                            <tr>
+                                                                <td>
+                                                                    <table width="100%" align="center">
+                                                                        <td width="10%" align="center">&nbsp;</td>
+                                                                        <td width="30%" align="center"><strong>Name</strong></td>
+                                                                        <td align="center"><strong>:</strong></td>
+                                                                        <td align="center"><input type="text" name="name" value="Bob Pirate "></td>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <tr><td><hr/></td></tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <table width="100%">
+                                                                        <td align="center" width="10%">&nbsp;</td>
+                                                                        <td align="center" width="30%"><strong>Username</strong></td>
+                                                                        <td align="center"><strong>:</strong></td>
+                                                                        <td align="center"><input type="text" name="username" value="Bob"></td>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <tr><td><hr/></td></tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <table width="100%">
+                                                                        <td align="center" width="10%">&nbsp;</td>
+                                                                        <td align="center" width="30%"><strong>Gender</strong></td>
+                                                                        <td align="center"><strong>:</strong></td>
+                                                                        <td align="center"><input type="text" disabled="true" value="Male"></td>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <tr><td><hr/></td></tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <table width="100%">
+                                                                        <td align="center" width="10%">&nbsp;</td>
+                                                                        <td align="center" width="30%"><strong>Email</strong></td>
+                                                                        <td align="center"><strong>:</strong></td>
+                                                                        <td align="center"><input type="text" name="email" value="Bob@example.com"></td>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <tr><td><hr/></td></tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <table width="100%">
+                                                                        <td align="center" width="10%">&nbsp;</td>
+                                                                        <td align="center" width="30%"><strong>Phone</strong></td>
+                                                                        <td align="center"><strong>:</strong></td>
+                                                                        <td align="center"><input type="text" name="phone" value="01700000000"></td>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <tr><td><hr/></td></tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <table width="100%">
+                                                                        <td align="center" width="10%">&nbsp;</td>
+                                                                        <td align="center" width="30%"><strong>Date of Birth</strong></td>
+                                                                        <td align="center"><strong>:</strong></td>
+                                                                        <td align="center"><input type="date" name="DOB" value="2013-01-08"></td>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <tr><td><hr/></td></tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <table width="100%">
+                                                                        <td align="center" width="10%">&nbsp;</td>
+                                                                        <td align="center" width="30%"><strong>Country</strong></td>
+                                                                        <td align="center"><strong>:</strong></td>
+                                                                        <td align="center"><input type="text" value="Bangladesh" disabled="true"></td>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <tr><td><hr/></td></tr>
+                                                            <tr><td colspan="4" align="center"><input type="submit" name="submit" value="Update Profile"></td></tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <table width="100%">
+                                                                        <td colspan="2" align="right"><a href="changeprofilepicture.php">Change Profile Picture</a></td>
+                                                                        <td><strong><hr width="1" size="15"></strong></td>
+                                                                        <td colspan="2" align="left"><a href="changepassword.html">Change Password</a></td>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
                                                         </table>
                                                     </td>
-                                                </tr>				
+                                                </tr>
                                             </table>
-                                        </div>
-                                        <hr>
-
-                                                
-
-										<div>
-											<table>
-												<tr>
-													<td>Gender</td>
-													<td>:</td>
-													<td>
-														<input name="gender" type="radio" checked="checked">Male
-														<input name="gender" type="radio">Female
-														<input name="gender" type="radio">Other
-													</td>
-													<td></td>
-												</tr>
-											</table>	
-											<hr>
-											<table>
-												<tr>
-													<td valign="top">Date of Birth</td>
-													<td valign="top">:</td>
-													<td>
-														<input name="dob" type="text" value="23/12/1999">
-														<font size="2"><i>(dd/mm/yyyy)</i></font>
-													</td>
-													<td></td>
-												</tr>
-											</table>	
-											
-                                        </div>
-                                        <hr>
-                                        <input type="submit" value="Submit"/>
-                                        <a href="dashboard.php">Dashboard</a>        
-
-                                    </fieldset>
-                                </form>
-                            </div>
+                                    </div>
+                                <!-- END -->
                         </td>
                     </table>
 

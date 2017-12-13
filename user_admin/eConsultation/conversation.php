@@ -54,7 +54,16 @@
                             </ul>
                         </fieldset>
 
-
+                        <fieldset>
+                            <legend>
+                            <strong>FAQ Section</strong></legend>
+                           
+                            <ul>
+                                <li><a href="../FAQ/newFAQ.php">New FAQ</a></li>
+                                <li><a href="../FAQ/requestedFAQ.php">User Requested FAQ</a></li>
+                                <li><a href="../FAQ/manageFAQ.php">Manage FAQ</a></li>
+                            </ul>
+                        </fieldset>
                         <fieldset>
                             <legend>
                             <strong>Reports</strong></legend>
@@ -132,8 +141,17 @@
                                         <td align="right">Reply to this conversation:</td>
                                         <td width="20%"><textarea></textarea></td>
                                     </tr>
+                                    <script>
+                                                function goBack() {
+                                                    window.history.back();
+                                                }
+                                                function report()
+                                                {
+
+                                                }
+                                    </script> 
                                     <tr>
-                                        <td align="left"><a href="inbox.php">Go to inbox</a></td>
+                                        <td align="left"><a href="inbox.php">Go to inbox</a> |  | <button onclick="report()">Report This User</button></td>
                                         <td align="right"><input type="submit" name="reply" value="Reply"></td>
                                     </tr>
                                 </table>

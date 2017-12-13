@@ -78,9 +78,9 @@
                             <strong>E-consultation</strong></legend>
                            
                             <ul>
-                                <li><a href="../eConsultation/message.php">New Message</a></li>
-                                <li><a href="../eConsultation/inbox.php">Inbox</a></li>
-                                <li><a href="../eConsultation/sentitems.php">Sent Items</a></li>
+                                <li><a href="eConsultation/message.php">New Message</a></li>
+                                <li><a href="eConsultation/inbox.php">Inbox</a></li>
+                                <li><a href="eConsultation/sentitems.php">Sent Items</a></li>
                             </ul>
                         </fieldset>
 

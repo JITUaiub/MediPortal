@@ -126,27 +126,85 @@
 								</tr>
                             </table>
 							<br/><br/><br/>
-                              <table border="1">
+                              <table width="100%" cellspacing="0" border="1" cellpadding="5">
                                   <tr>
+									  <th align="left" width="1%">
+                                             <strong>
+                                                <select >
+                                                    <optgroup label="Actions">
+                                                        <option selected="true" value="all">Select none</option>
+                                                        <option value="all">Select all</option>
+                                                        <option value="none">Revert selected</option>
+                                                        <option value="read">Mark as read</option>
+                                                        <option value="delete">Delete</option>
+														<option value="delete">cancle</option>
+                                                    </optgroup>
+                                                </select>
+                                            </strong>
+                                        </th>
+
                                       <th width="10%"><strong>Doctor Name</strong></th>
-                                      <th  width="10%"><strong>Previous Appoinment Date</strong></th>
+                                      <th  width="10%"><strong>Appoinment Date</strong></th>
                                       <td  width="10%"><strong>Next Appointment Date</strong></th>
                                       <th  width="10%"><strong>Time</strong></th>
+									  <th  width="10%"><strong>Type</strong></th>
+									  <th  width="10%"><strong>Status</strong></th>
                                   </tr>
 
                                   <tr>
-                                      <td>Dr.poran</td>
-                                      <td>25 April</td>
-                                      <td>8 December</td>
+										<td align="center">
+                                            <input type="checkbox" name="action">
+                                        </td>
+										<td>
+											<a href="doctordetails.php"><h4>Dr.poran</h4></a>
+										</td>
+                                      <td>1/1/2018</td>
+                                      <td>....................</td>
                                       <td>22:30</td>
+									  <td>Online</td>
+									  <td>Accepted</td>
                                   </tr>
 
                                    <tr>
-                                      <td>Dr.arif</td>
-                                      <td>11 August</td>
-                                      <td>17 October</td>
+										<td align="center">
+                                            <input type="checkbox" name="action">
+                                        </td>
+										<td>
+											<a href="doctordetails.php"><h4>Dr.arif</h4></a>
+									    </td>
+                                      <td>7/17/2017</td>
+                                      <td>9/1/2017</td>
                                       <td>18:25</td>
+									  <td>Direct communication</td>
+									  <td>Done</td>
                                   </tr>
+								  <tr>
+										<td align="center">
+                                            <input type="checkbox" name="action">
+                                        </td>
+										<td>
+											<a href="doctordetails.php"><h4>Dr.Anne</h4></a>
+									    </td>
+                                      <td>7/17/2017</td>
+                                      <td>............</td>
+                                      <td>18:25</td>
+									  <td>Direct communication</td>
+									  <td>Rejected</td>
+                                  </tr>
+								  <tr>
+										<td align="center">
+                                            <input type="checkbox" name="action">
+                                        </td>
+										<td>
+											<a href="doctordetails.php"><h4>Dr.Robart</h4></a>
+									    </td>
+                                      <td>7/17/2017</td>
+                                      <td>............</td>
+                                      <td>18:25</td>
+									  <td>Direct communication</td>
+									  <td>Pending</td>
+                                  </tr>
+								  
                               </table>   <br>                  
                             </fieldset>
 

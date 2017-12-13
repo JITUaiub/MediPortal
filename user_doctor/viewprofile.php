@@ -3,7 +3,7 @@
 <head><title>Home</title></head>
 
 <body>
-	<table border="1" align="center" width="100%">
+	<table align="center" width="100%">
     	<tr>
         	<td>
             	<!-- Header section -->
@@ -29,9 +29,9 @@
         	<td>
             	<!-- Body section -->
                 <div>
-                    <table width="100%">
+                    <table width="100%" border="1">
                     	<!-- User Menu Section -->
-                        <td width="20%">
+                        <td width="20%" valign="top">
                             <fieldset>
                                 <legend>
                         	<strong>Personal Information</strong></legend>
@@ -103,8 +103,9 @@
 
                         <td width="70%">
                         	<div>
+                                <h1 align="center">PROFILE</h1>
                             	<fieldset>
-                                    <legend><strong>PROFILE</strong></legend>
+                                    
                                     <table width="100%">
                                         <td width="60%">
                                             <table width="100%">
@@ -202,11 +203,79 @@
                                                         </table>
                                                     </td>
                                                 </tr>
-
-                                                                 
+                                                                                                <tr><td><hr/></td></tr>
+                                                <tr>
+                                                    <td>
+                                                        <table width="100%">
+                                                            <td width="30%"><strong>Education</strong></td>
+                                                            <td><strong>:</strong></td>
+                                                            <td>
+                                                                <fieldset>
+                                                                    <table>
+                                                                        <tr>
+                                                                            <td>Degree Name</td>
+                                                                            <td>:</td>
+                                                                            <td>MBBS</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Passed Year</td>
+                                                                            <td>:</td>
+                                                                            <td>2015</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>University</td>
+                                                                            <td>:</td>
+                                                                            <td>DMC</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Description</td>
+                                                                            <td>:</td>
+                                                                            <td>Bla bla bla bla</td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </fieldset>
+                                                            </td>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                                                                <tr><td><hr/></td></tr>
+                                                <tr>
+                                                    <td>
+                                                        <table width="100%">
+                                                            <td width="30%"><strong>Chambers</strong></td>
+                                                            <td><strong>:</strong></td>
+                                                            <td>
+                                                                <fieldset>
+                                                                    <table>
+                                                                        <tr>
+                                                                            <td>Chamber Name</td>
+                                                                            <td>:</td>
+                                                                            <td>XYZ</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Chamber Location</td>
+                                                                            <td>:</td>
+                                                                            <td>Dhaka</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Working Days</td>
+                                                                            <td>:</td>
+                                                                            <td>SAT, SUN, TUES</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Time</td>
+                                                                            <td>:</td>
+                                                                            <td>8.30PM to 10.30PM</td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </fieldset>
+                                                            </td>
+                                                        </table>
+                                                    </td>
+                                                </tr>              
                                             </table>
                                         </td>
-                                        <td width="40%">
+                                        <td width="40%" align="center">
                                             <table>
                                                 <tr>
                                                     <td align="center"><img src="images/usericon.png"/></td>
@@ -219,8 +288,9 @@
                                         </td>
                                     </table>
                                     <hr/>
-                                    <a href="editprofile.php">Edit Profile</a>
-                                    <a href="changepassword.html">Edit Password</a>
+                                    <a href="editprofile.php">Edit Profile</a> | 
+                                    <a href="changepassword.html">Edit Password</a> | 
+                                    <a href="managechamber.html">Manage Chambers</a>
                                 </fieldset>
                             </div>
                         </td>
@@ -232,6 +302,20 @@
         	<td>
             	<!-- Footer section -->
                 <div>
+                    <table align="center">
+                        <tr align="center">
+                            <td>
+                            <a href="https://www.facebook.com/">
+                            <img src="../images/facebook.png">
+                             </a>
+                         </td>
+                            <td>
+                                    <a href="https://www.twitter.com/">
+                                    <img src="../images/twitter.png">
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
                     <table align="center">
                         <td>&copy;2017 MediPortal. All rights reserved.</td>
                     </table>

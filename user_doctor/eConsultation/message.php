@@ -122,7 +122,7 @@
                                               <tr><td colspan="3"><hr></td></tr>
                                              <tr>
                                                 <td align="center">
-                                                 <label>Body</label></td><td>:</td><td ><textarea name="body">Hello there!! How are bla bla bla bla?</textarea></td>
+                                                 <label>Body</label></td><td>:</td><td ><textarea name="body">Start from here</textarea></td>
                                              </tr>
                                               <tr><td colspan="3"><hr></td></tr>
 

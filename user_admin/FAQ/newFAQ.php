@@ -1,4 +1,3 @@
-
 <html>
 
 <head><title>Home</title></head>
@@ -60,11 +59,12 @@
                             <strong>FAQ Section</strong></legend>
                            
                             <ul>
-                                <li><a href="../FAQ/newFAQ.php">New FAQ</a></li>
-                                <li><a href="../FAQ/requestedFAQ.php">User Requested FAQ</a></li>
-                                <li><a href="../FAQ/manageFAQ.php">Manage FAQ</a></li>
+                                <li><a href="newFAQ.php">New FAQ</a></li>
+                                <li><a href="requestedFAQ.php">User Requested FAQ</a></li>
+                                <li><a href="manageFAQ.php">Manage FAQ</a></li>
                             </ul>
                         </fieldset>
+
                         <fieldset>
                             <legend>
                             <strong>Reports</strong></legend>
@@ -102,63 +102,71 @@
                         </td>
                         <div align="center">
                              <td width="70%" align="center">
-                                <!------ UI  -->
-                              
-              <form action="" method="post">
-                              <h1>Promotional Email</h1>
-                              <legend align="center"><h4>Type a message here</h4></legend>
-                               <fieldset>
-                                             
-                                             <table>
-                                             <tr>
-                                                 <td align="center">To</td><td>:</td>
-                                                 <td align="left"><select>
-                                                    <option>All Doctors</option>
-                                                    <option>All General Users</option>
-                                                    <option>All Blood Donors</option>
-                                                    <option>All Blocked User</option>
-                                                 </select></td>
-                                             </tr>
-                                             <tr><td colspan="3"><hr></td></tr>
-                                             <tr>
-                                                 <td align="center">Subject</td><td>:</td>
-                                                 <td><input type="text" name="subject" value="Welcome"></td>
-                                             </tr>
-                                              <tr><td colspan="3"><hr></td></tr>
-                                             <tr>
-                                                <td align="center">
-                                                 <label>Body</label></td><td>:</td><td ><textarea name="body">Welcome to MediPortal. Your online doctor.</textarea></td>
-                                             </tr>
-                                              <tr><td colspan="3"><hr></td></tr>
-
-                                              <tr>
-                                                  <td>
-                                                      Attachments (X)
-                                                  </td>
-                                                  <td>:</td>
-                                                  <td><input type="file" name="upload"></td>
-                                              </tr>
-                                              <tr>
-                                                  <td>
-                                                      &nbsp;
-                                                  </td>
-                                              </tr>
-                                             </table>
-                                             <input type="checkbox" name="replyflag" checked="true"> Turn off reply to this mail<br><br>
-                                             <input type="submit" name="Submit" value="Send Message"><br/><br/>
-                                             <a href="../reportsAdmin.php">Go to overall statistic</a>
-                                         </fieldset>  
-              </form>
-
-            </td>
-            </div>
-
-          </table>
+                                <!-- FAQ DESIGN -->
+                                <h1 align="center">New FAQ</h1>
+                                <p align="center"><strong>Fill in the form below</strong></p>
+                                <form>
+                                    <fieldset>
+                                        <table align="center">
+                                        <tr>
+                                            <td>
+                                                <strong>Select Category</strong>
+                                            </td>
+                                            <td>:</td>
+                                            <td>
+                                                <select>
+                                                    <option>Mediportal</option>
+                                                    <option>Appointments</option>
+                                                    <option>Econsultation</option>
+                                                    <option>Price and Fees</option> 
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td ><label><strong>Question Title</strong></label></td>
+                                                <td>:</td>
+                                                <td ><input type="text" name="questiontitle" value="Title"></td>
+                                            
+                                        </tr>
+                                        <tr>
+                                                <td ><label><strong>Author</strong></label></td>
+                                                <td>:</td>
+                                                <td ><input type="text" name="askerName" value="John Doe"></td>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td><label><strong>Write your question</strong></label></td>
+                                            <td>:</td>
+                                            <td>
+                                                <textarea>bla bla bla</textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><label><strong>Add an Answer</strong></label></td>
+                                            <td>:</td>
+                                            <td>
+                                                <textarea>bla bla bla</textarea>
+                                            </td>
+                                        </tr>
+                                        <tr><td colspan="3" align="center"><hr></tr>
+                                        <tr>
+                                            <td align="right"><button>Add Question</button></td>
+                                            <td>|</td>
+                                            <td><input type="reset" name="" value="Reset"></td>
+                                        </tr>
+                                        <tr><td>&nbsp;</td></tr>
+                                        <tr><td colspan="3" align="center"><a href="manageFAQ.php">Go to Manage FAQ</a></td></tr>
+                                    </table>
+                                    </fieldset>
+                                </form>
+                            </td>
+                        </div>
+                    </table>
                 </div>
             </td>
         </tr>
         <tr>
-          <td>
+            <td>
                 <!-- Footer section -->
                 <div>
                     <table align="center">
