@@ -3,7 +3,7 @@
 <head><title>Home</title></head>
 
 <body>
-	<table border="1" align="center" width="100%">
+	<table align="center" width="100%">
     	<tr>
         	<td>
             	<!-- Header section -->
@@ -29,7 +29,7 @@
         	<td>
             	<!-- Body section -->
                  <div>
-                    <table width="100%">
+                    <table width="100%" border="1">
                         <!-- User Menu Section -->
                         <td width="20%">
                             <fieldset>
@@ -103,80 +103,76 @@
                           
                          <div align="center">
                         <td width="70%">
-                              <table align="center">
-                                <tr align="center">
-                                    <td align="center">
-                                        <label>
-                                            Search By
-                                        </label>
-                                    </td>
-                                    <td>:</td>
-                                    <td>
+                              <table align="center" width="80%">
+                                
+                            <h1 align="center">Prescriptions History</h1>   
+                        <tr>
+                            <td>
+                                <fieldset>
+                                    <div align="center">
+                                        <label>Search by: </label>
                                     <select>
                                         <option>Patient Name</option>
                                         <option>Disease</option>
                                         <option>Prescription Name</option>
                                     </select>
-                                </td>
-                            </tr>
-                        </br>
+                                    <input type="text" name="text" value="Search Text" /><button>Go</button><br>
+                                    Results per page: 
+                                    <select>
+                                        <option>10</option>
+                                        <option>20</option>
+                                        <option>30</option>
+                                    </select>
+                                    <button>Go</button>
+                                    </div>
+                                </fieldset><br>
 
-                        <tr>
-                            <td>
-                                <label>Search</label>
-                            </td>
-                            <td>:</td>
-                            <td>
-                                <input type="text" name="text"/>
                             </td>
                         </tr>
-                        </table>
-                                
-							
-							<fieldset>
-								<legend>Prescriptions History</legend>
-								<table border="1" width="100%" height="400">
-									<tr height="10%">
-										<th>
-											<h3 align="center">Appointment Date</h3>
-										</th>
-										<th>
-											<h3 align="center">Name</h3>
-										</th>
-										<th>
-											<h3 align="center">Age</h3>
-										</th>
-										<th>
-											<h3 align="center">Disease</h3>
-										</th>
-										<th>
-											<h3 align="center">Prescription</h3>
-										</th>
-									</tr>
-									<tr>
-										<td>
-											<h3>10/12/1999</h3>
-										</td>
-										<td>
-											<h4>Bob Marley</h4>
-										</td>
-										<td>
-											<h3>35</h3>
-										</td>
-										<td>
-											<h3>HIV(+)</h3>
-										</td>
-										<td>
-											fineName.pdf
-										</td>
-									</tr>
+                        <tr>
+                            <td>
+                                <table border="1" width="100%">
+                                    <tr height="10%">
+                                        <th>
+                                            <h3 align="center">Appointment Date</h3>
+                                        </th>
+                                        <th>
+                                            <h3 align="center">Name</h3>
+                                        </th>
+                                        <th>
+                                            <h3 align="center">Age</h3>
+                                        </th>
+                                        <th>
+                                            <h3 align="center">Disease</h3>
+                                        </th>
+                                        <th>
+                                            <h3 align="center">Prescription</h3>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <h3>10/12/1999</h3>
+                                        </td>
+                                        <td>
+                                            <h4><a href="patientdetails.php">Bob Marley</a></h4>
+                                        </td>
+                                        <td>
+                                            <h3>35</h3>
+                                        </td>
+                                        <td>
+                                            <h3>HIV(+)</h3>
+                                        </td>
+                                        <td>
+                                            <a href="#">fineName.pdf</a>
+                                        </td>
+                                    </tr>
 
                                     <tr>
-                                        <td>
+                                        <td align="center">
                                             <h3>10/12/2015</h3>
                                         </td>
                                         <td>
-                                            <h4>Kent Williams</h4>
+                                            <h4><a href="patientdetails.php">Kent Williams</a></h4>
                                         </td>
                                         <td>
                                             <h3>40</h3>
@@ -185,14 +181,19 @@
                                             <h3>Cancer</h3>
                                         </td>
                                         <td>
-                                            cancer_prescription.pdf
+                                            <a href="#">cancer_prescription.pdf</a>
                                         </td>
                                     </tr>
-									
-								</table>
-                                <a href="newpescriptions.html">Create New Prescription</a>
-							</fieldset>
-							<!------------------------ FINISH DESIGNING HERE --------------------------------->
+                                    
+                                </table><br><br>
+                                <p align="center"><a href="newpescriptions.html">Create New Prescription</a></p>
+                            </td>
+                        </tr>
+                        </table>
+                                 
+							
+							
+							<!------------------------ FINISH DESIGNING HERE -->
 						</td>
                     </table>
                 </div>
@@ -202,6 +203,20 @@
         	<td>
             	<!-- Footer section -->
                 <div>
+                    <table align="center">
+                        <tr align="center">
+                            <td>
+                            <a href="https://www.facebook.com/">
+                            <img src="../images/facebook.png">
+                             </a>
+                         </td>
+                            <td>
+                                    <a href="https://www.twitter.com/">
+                                    <img src="../images/twitter.png">
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
                     <table align="center">
                         <td>&copy;2017 MediPortal. All rights reserved.</td>
                     </table>
