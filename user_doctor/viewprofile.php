@@ -3,7 +3,7 @@
 <head><title>Home</title></head>
 
 <body>
-	<table border="1" align="center" width="100%">
+	<table align="center" width="100%">
     	<tr>
         	<td>
             	<!-- Header section -->
@@ -29,9 +29,9 @@
         	<td>
             	<!-- Body section -->
                 <div>
-                    <table width="100%">
+                    <table width="100%" border="1">
                     	<!-- User Menu Section -->
-                        <td width="20%">
+                        <td width="20%" valign="top">
                             <fieldset>
                                 <legend>
                         	<strong>Personal Information</strong></legend>
@@ -103,8 +103,9 @@
 
                         <td width="70%">
                         	<div>
+                                <h1 align="center">PROFILE</h1>
                             	<fieldset>
-                                    <legend><strong>PROFILE</strong></legend>
+                                    
                                     <table width="100%">
                                         <td width="60%">
                                             <table width="100%">
@@ -274,7 +275,7 @@
                                                 </tr>              
                                             </table>
                                         </td>
-                                        <td width="40%">
+                                        <td width="40%" align="center">
                                             <table>
                                                 <tr>
                                                     <td align="center"><img src="images/usericon.png"/></td>
@@ -301,6 +302,20 @@
         	<td>
             	<!-- Footer section -->
                 <div>
+                    <table align="center">
+                        <tr align="center">
+                            <td>
+                            <a href="https://www.facebook.com/">
+                            <img src="../images/facebook.png">
+                             </a>
+                         </td>
+                            <td>
+                                    <a href="https://www.twitter.com/">
+                                    <img src="../images/twitter.png">
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
                     <table align="center">
                         <td>&copy;2017 MediPortal. All rights reserved.</td>
                     </table>

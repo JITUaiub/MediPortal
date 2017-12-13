@@ -141,8 +141,17 @@
                                         <td align="right">Reply to this conversation:</td>
                                         <td width="20%"><textarea></textarea></td>
                                     </tr>
+                                    <script>
+                                                function goBack() {
+                                                    window.history.back();
+                                                }
+                                                function report()
+                                                {
+
+                                                }
+                                    </script> 
                                     <tr>
-                                        <td align="left"><a href="inbox.php">Go to inbox</a></td>
+                                        <td align="left"><a href="inbox.php">Go to inbox</a> |  | <button onclick="report()">Report This User</button></td>
                                         <td align="right"><input type="submit" name="reply" value="Reply"></td>
                                     </tr>
                                 </table>

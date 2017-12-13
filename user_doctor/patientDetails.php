@@ -100,66 +100,15 @@
                             </ul>
                         </fieldset>
                         </td>
-                             <!--Manage Chamber Information -->
-                         <td width="70%">
-                             <form action="docChamber.php">
-                             	<h1 align="center">Add Chamber</h1>
-					<table align="center" width="60%">
-						<tr>
-							<td>
-								<fieldset>
-						<table align="center">
-							<tr>
-								<td><label>Name</label></td>
-								<td>:</td>
-								<td><input type="text" name="chamberName" value="DMC" /></td>
-							</tr>
-							<tr>
-								<td><label>Location</label></td>
-								<td>:</td>
-								<td><input type="text" name="location" value="Dhaka" /></td>
-							</tr>
-							<tr>
-								<td><label>Working Days</label></td>
-								<td>:</td>
-								<td>
-									<input type="checkbox" name="workDays" checked="true" />SAT
-									<input type="checkbox" name="workDays"/>SUN
-									<input type="checkbox" name="workDays"/>MON
-									<input type="checkbox" name="workDays" checked="true" />TUE
-									<input type="checkbox" name="workDays"/>WED
-									<input type="checkbox" name="workDays"/>THU
-									<input type="checkbox" name="workDays"/>FRI
-									
-								</td>
-							</tr>
-							<tr>
-								<td><label>Working Time</label></td>
-								<td>:</td>
-								<td><input type="time" name="time"> to <input type="time" name="time"></td>
-							</tr>
-							<tr>
-								<td><label>Description</label></td>
-								<td>:</td>
-								<td><textarea name="description">Bla bla bla bla</textarea></td>
-							</tr>
-							<tr>
-								<td align="center" colspan="3"><input type="button" value="Add another"/>	<input type="submit" value="Finish"/></td>
-							</tr>
-							<tr>
-								<td align="center" colspan="3"><a href="managechamber.html">Go to Manage Chamber</a>
-								<a href="editchamber.php">Go to Edit Chamber</a></td>
-							</tr>
-						</table>
-					</fieldset>
-							</td>
-						</tr>
-					</table>		
-				</form>
-                        </td>
-                    </table>
-                </fieldset>
-                        </td>
+                        <div align="center">
+                             <td width="70%" align="center">
+
+
+
+
+                                
+                            </td>
+                        </div>
                     </table>
                 </div>
             </td>

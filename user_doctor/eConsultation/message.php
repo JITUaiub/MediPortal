@@ -112,7 +112,7 @@
                                              <table>
                                              <tr>
                                                  <td align="center">To</td><td>:</td>
-                                                 <td align="left"><input  type="text" name="to_mail" placeholder="Receiver name" /></td>
+                                                 <td align="left"><input  type="text" name="to_mail" value="Receiver name" /></td>
                                              </tr>
                                              <tr><td colspan="3"><hr></td></tr>
                                              <tr>
@@ -122,7 +122,7 @@
                                               <tr><td colspan="3"><hr></td></tr>
                                              <tr>
                                                 <td align="center">
-                                                 <label>Body</label></td><td>:</td><td ><textarea name="body" placeholder="Start from here"></textarea></td>
+                                                 <label>Body</label></td><td>:</td><td ><textarea name="body">Start from here</textarea></td>
                                              </tr>
                                               <tr><td colspan="3"><hr></td></tr>
 

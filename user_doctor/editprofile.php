@@ -31,7 +31,7 @@
                <div>
                     <table width="100%" border="1">
                         <!-- User Menu Section -->
-                        <td width="20%">
+                        <td width="20%" valign="top">
                             <fieldset>
                                 <legend>
                             <strong>Personal Information</strong></legend>
