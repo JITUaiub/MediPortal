@@ -100,7 +100,7 @@
                         </fieldset>
                         </td>
                         <div align="center">
-                             <td width="70%" align="center">
+                             <td width="70%" align="center" valign="top">
                                 <!------ UI  -->
                                         <fieldset>
                                             <table width="100%" cellpadding="0" cellspacing="0">

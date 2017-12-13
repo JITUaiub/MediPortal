@@ -10,7 +10,7 @@
             	<div>
                     <table align="center" width="100%">
                         <td width="20%">
-                            <img src="images/pageicon.png"/>
+                            <a href="dashboard.php"><img src="images/pageicon.png"/></a>
                         </td>
                        <td width="40%">&nbsp;</td>
                         <td width="40%">

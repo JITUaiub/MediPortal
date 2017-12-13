@@ -101,7 +101,7 @@
                         </fieldset>
                         </td>
                         <div align="center">
-                             <td width="70%" align="center">
+                             <td width="70%" align="center" valign="top">
                                 <h1 align="center">Create Prescription</h1>
                                 <table align="center" width="80%">
                                     <tr>

@@ -10,7 +10,7 @@
             	<div>
                     <table align="center" width="100%">
                         <td width="20%">
-                            <img src="images/pageicon.png"/>
+                            <a href="dashboard.php"><img src="images/pageicon.png"/></a>
                         </td>
                        <td width="40%">&nbsp;</td>
                         <td width="40%">
@@ -102,7 +102,7 @@
                         </td>
                           
                          <div align="center">
-                        <td width="70%">
+                        <td width="70%" valign="top">
                               <table align="center" width="80%">
                                 
                             <h1 align="center">Prescriptions History</h1>   
@@ -146,23 +146,23 @@
                                             <h3 align="center">Disease</h3>
                                         </th>
                                         <th>
-                                            <h3 align="center">Prescription</h3>
+                                            <h3 align="center">Download Prescription File</h3>
                                         </th>
                                     </tr>
                                     <tr>
                                         <td align="center">
                                             <h3>10/12/1999</h3>
                                         </td>
-                                        <td>
+                                        <td align="center">
                                             <h4><a href="patientdetails.php">Bob Marley</a></h4>
                                         </td>
-                                        <td>
+                                        <td align="center">
                                             <h3>35</h3>
                                         </td>
-                                        <td>
+                                        <td align="center">
                                             <h3>HIV(+)</h3>
                                         </td>
-                                        <td>
+                                        <td align="center">
                                             <a href="#">fineName.pdf</a>
                                         </td>
                                     </tr>
@@ -171,22 +171,24 @@
                                         <td align="center">
                                             <h3>10/12/2015</h3>
                                         </td>
-                                        <td>
+                                        <td align="center">
                                             <h4><a href="patientdetails.php">Kent Williams</a></h4>
                                         </td>
-                                        <td>
+                                        <td align="center">
                                             <h3>40</h3>
                                         </td>
-                                        <td>
+                                        <td align="center">
                                             <h3>Cancer</h3>
                                         </td>
-                                        <td>
+                                        <td align="center">
                                             <a href="#">cancer_prescription.pdf</a>
                                         </td>
                                     </tr>
                                     
                                 </table><br><br>
+                                <p align="center"><button>Previous Page</button> | <button>Next Page</button></p>
                                 <p align="center"><a href="newpescriptions.html">Create New Prescription</a></p>
+                                
                             </td>
                         </tr>
                         </table>

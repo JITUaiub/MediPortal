@@ -100,7 +100,7 @@
                         </fieldset>
                         </td>
                         <div align="center">
-                             <td width="70%" align="center">
+                             <td width="70%" align="center" valign="top">
                                 <!------ UI  -->
                                     <fieldset>
                                          <legend><b>GENERAL USERS | SEARCH</b></legend>
@@ -156,6 +156,7 @@
                                      </table>
                                         <br>
                                         <br>
+                                        <p align="center"><button>Previous Page</button> | <button>Next Page</button></p>
                                         Check for <a href="doctorUsers.php">Doctors</a>
                                 <!-- END -->
                             </td>

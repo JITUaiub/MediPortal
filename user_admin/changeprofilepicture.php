@@ -100,7 +100,7 @@
                         </fieldset>
                         </td>
                         <div align="center">
-                             <td width="70%" align="center">
+                             <td width="70%" align="center" valign="top">
                                 <!------ UI  -->
                                     <h1>CHANGE PROFILE PICTURE</h1>
                                     <img src="images/usericon.png"/>
