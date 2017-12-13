@@ -10,7 +10,7 @@
             	<div>
                     <table align="center" width="100%">
                         <td width="20%">
-                            <img src="images/pageicon.png"/>
+                            <a href="dashboard.php"><img src="images/pageicon.png"/></a>
                         </td>
                         <td width="40%">&nbsp;</td>
                         <td width="40%">
@@ -100,7 +100,7 @@
                             </ul>
                         </fieldset>
                         </td>
-                        <td width="70%">
+                        <td width="70%" valign="top">
 							<!------------------------ DESIGN PORTAL PAGE HERE --------------------------------->
 							<fieldset>
 								<legend>Patient History</legend>

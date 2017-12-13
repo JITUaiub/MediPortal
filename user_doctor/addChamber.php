@@ -101,7 +101,7 @@
                         </fieldset>
                         </td>
                              <!--Manage Chamber Information -->
-                         <td width="70%">
+                         <td width="70%" valign="top">
                              <form action="docChamber.php">
                              	<h1 align="center">Add Chamber</h1>
 					<table align="center" width="60%">

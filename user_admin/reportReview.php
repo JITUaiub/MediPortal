@@ -100,7 +100,7 @@
                         </fieldset>
                         </td>
                             <div align="center">
-                             <td width="70%" align="left">
+                             <td width="70%" align="left" valign="top">
                                 <fieldset>
                                     <!------ UI  -->
                                     <h1 align="center">Review Bob's Report</h1>

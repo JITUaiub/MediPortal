@@ -3,14 +3,14 @@
 <head><title>Home</title></head>
 
 <body>
-	<table border="1" align="center" width="70%">
+	<table border="0" align="center" width="100%">
     	<tr>
         	<td>
             	<!-- Header section -->
             	<div>
                     <table align="center" width="100%">
                         <td width="20%">
-                            <img src="images/pageicon.png"/>
+                            <a href="dashboard.php"><img src="images/pageicon.png"/></a>
                         </td>
                         <td width="40%">&nbsp;</td>
                         <td width="40%">
@@ -29,9 +29,9 @@
         	<td>
             	<!-- Body section -->
                  <div>
-                    <table width="100%">
+                    <table width="100%" border="1">
                         <!-- User Menu Section -->
-                        <td width="30%">
+                        <td width="20%">
                             <fieldset>
                                 <legend>
                             <strong>Personal Information</strong></legend>
@@ -104,13 +104,12 @@
                         </fieldset>
                         </td>
                        <!--Medicine Analysis -->
-                        <td width="70%">
+                        <td width="70%" valign="top">
                             <div>
-								<div align="center"><img src="images/medicine.jpg" width="55%"></div>
-
 								<div align="left">
 									<fieldset>
 										<legend>Patient Medicine Information</legend><br>
+<<<<<<< HEAD
 										<table border="1">
 											<tr>
 												<td width="10%">Patient Name</td>
@@ -128,8 +127,149 @@
 												<td width="10%">Chester Benigton</td>
 												<td width="10%">1.Seclo<br>2.Met 850<br>3.Amdocal 500<br>4.Glipita</td>
                                                 <td width="10%"><b>Cancer</b></td>
+=======
+										<table id="bar" align="center" border="0" cellspacing="10">
+											<tr >
+												<td height="400" >
+													<table width="100%" height="100%" border="0">
+														<tr>
+															<td height="9.1%" >100+</td>
+															
+														</tr>
+														<tr>
+															<td height="9.1%" >90</td>
+															
+														</tr>
+														<tr>
+															<td height="9.1%" >80</td>
+															
+														</tr>
+														<tr>
+															<td height="9.1%" >70</td>
+															
+														</tr>
+														<tr>
+															<td height="9.1%" >60</td>
+															
+														</tr>
+														<tr>
+															<td height="9.1%" >50</td>
+															
+														</tr>
+														<tr>
+															<td height="9.1%" >40</td>
+															
+														</tr>
+														<tr>
+															<td height="9.1%">30</td>
+															
+														</tr>
+														<tr>
+															<td height="9.1%" >20</td>
+															
+														</tr>
+														<tr>
+															<td height="9.1%" >10</td>
+
+															
+														</tr>
+														<tr>
+															<td height="9.1%" >0</td>
+															
+															
+														</tr>
+													</table>
+												</td>
+												<td height="400" >
+													<table  width="100%" height="100%" >
+														<tr>
+															<td height="30%" ></td>
+															
+														</tr>
+														<tr>
+															<td align="up" id="napa"height="70%"  title="70"></td>
+														</tr>
+													</table>
+												</td>
+												<td height="400" >
+													<table width="100%" height="100%">
+														<tr>
+															<td height="0%" ></td>
+															
+														</tr>
+														<tr>
+															<td id="antacid" height="40%"  title="40"></td>
+														</tr>
+													</table>
+												</td>
+												<td height="400" >
+													<table width="100%" height="100%">
+														<tr>
+															<td height="0%" ></td>
+															
+														</tr>
+														<tr>
+															<td id="alatrol" height="120%"  title="120"></td>
+														</tr>
+													</table>
+												</td>
+												<td height="400" >
+													<table width="100%" height="100%">
+														<tr>
+															<td height="55%" ></td>
+															
+														</tr>
+														<tr>
+															<td id="tuska" height="45%"  title="45"></td>
+														</tr>
+													</table>
+												</td>
+												<td height="400" >
+													<table width="100%" height="100%">
+														<tr>
+															<td height="0%" ></td>
+															
+														</tr>
+														<tr>
+															<td id="alat" height="50%"  title="50"></td>
+														</tr>
+													</table>
+												</td>
+											</tr>
+											<tr>
+												<th height="10" >
+													<h5>No</h5>
+												</th>
+												<th height="10" >
+													<h5>Napa</h5>
+												</th>
+												<th height="10" >
+													<h5>antacid</h5>
+												</th>
+												<th height="10" >
+													<h5>alatrol</h5>
+												</th>
+												<th height="10" >
+													<h5>tuska</h5>
+												</th>
+												<th height="10" >
+													<h5>alat</h5>
+												</th>
+>>>>>>> d72d6fda45327601b19b35fa5a368bababa6b352
 											</tr>
 										</table>
+									
+										<script type="text/javascript">
+											//var bar=document.getElementById("bar");
+												//bar.style.backgroundColor = "DodgerBlue";
+												napa.style.backgroundColor="green";
+												antacid.style.backgroundColor="green";
+												tuska.style.backgroundColor="green";
+												alatrol.style.backgroundColor="green";
+												alat.style.backgroundColor="green";	
+												
+										</script>
+										<h4 align="center">Number of Medicine which is Prescrib to Patient</h4>
 
 										<a href="disanalysis.php">Go to Disease Analysis</a>
 									</fieldset>

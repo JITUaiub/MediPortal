@@ -101,7 +101,7 @@
                         </fieldset>
                         </td>
                         <div align="center">
-                       		 <td width="70%" align="center">
+                       		 <td width="70%" align="center" valign="top">
                        		 	<!-- FAQ DESIGN -->
 
                                 <h1>Frequently Asked Questions</h1>

@@ -100,7 +100,7 @@
                         </fieldset>
                         </td>
                         <div align="center">
-                             <td width="70%" align="center">
+                             <td width="70%" align="center" valign="top">
                                 <!------ UI  -->
                                     <fieldset>
                                          <legend><b>PENDING JOINING | SEARCH</b></legend>
@@ -153,7 +153,9 @@
                                                 <td width="30"><button>Accept</button></td>
                                             </tr>
                                      </table>
-                                     <br><br>
+
+
+                                        <p align="center"><button>Previous Page</button> | <button>Next Page</button></p><br><br>
                                     <fieldset>
                                          <legend><b>DOCTOR USERS | SEARCH</b></legend>
                                         Filter By
@@ -210,6 +212,8 @@
                                                 <td width="30"><button>UNBLOCK</button></td>
                                             </tr>
                                      </table>
+                                     
+                                        <p align="center"><button>Previous Page</button> | <button>Next Page</button></p>
                                         <br>
                                         <br>
                                         Check for <a href="normalUsers.php">General Users</a>
