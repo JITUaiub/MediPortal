@@ -3,7 +3,7 @@
 <head><title>Home</title></head>
 
 <body>
-	<table border="1" align="center" width="100%">
+	<table align="center" width="100%">
     	<tr>
         	<td>
             	<!-- Header section -->
@@ -29,7 +29,7 @@
         	<td>
             	<!-- Body section -->
                 <div>
-                    <table width="100%">
+                    <table width="100%" border="1">
                         <!-- User Menu Section -->
                         <td width="20%">
                             <fieldset>
@@ -102,93 +102,70 @@
                         </td>
                         <!--Appoinment-->
                         <td width="70%" valign="top">
-							<fieldset>
-                                <legend>Patient Appoinment</legend><br>
-                                <fieldset>
-                                    <legend><b>Online Service</b></legend>
-                                <table border="1">
+							<h1 align="center">Online Appointments</h1>
+                                <table align="center" width="80%">
                                     <tr>
-                                        <td><strong>Patient Name</strong></td>
-                                        <td><strong>Patient Age</strong></td>
-                                        <td><strong>Patient Address</strong></td>
-                                        <td><strong>Sex</strong></td>
-                                        <td><strong>Patient Problem</strong></td>
-                                       
+                                        <td>
+                                            <fieldset>
+                                             <legend><b>GENERAL USERS | SEARCH</b></legend>
+                                            Filter By
+                                            <select>
+                                                <option>Select One</option>
+                                                <option>Name</option>   
+                                                <option>Age</option>
+                                                <option>Problem</option>
+                                            </select>
+                                              <input />
+                                            <input type="submit" value="Search" />
+                                            Results show per page: <select>
+                                                <option>10</option>
+                                                <option>20</option>
+                                                <option>30</option>
+                                            </select>
+                                            <button onclick="ResultPerPage()">Go</button>
+                                            <script>
+                                                function ResultPerPage()
+                                                {
 
-                                        <td colspan="3" align="center"><strong>Appoinment</strong></td>
+                                                }
+                                            </script>
+                                        </fieldset>
+                                            <fieldset>
+                                                <legend><b>Online Service Patient</b></legend>
+                                            <table align="center" border="1">
+                                                <tr>
+                                                    <td width="15%">Name</td>
+                                                    <td width="15%">Adress</td>
+                                                    <td width="15%">Age</td>
+                                                    <td width="15%">Patient Problem</td>
+                                                    <td width="15%">Time | Date</td>
+                                                    <td align="center" colspan="3">Action</td>
+                                                </tr>
 
-                                    </tr>
+                                                <tr>
+                                                    <td><a href="patientDetails.php">Kent</a></td>
+                                                    <td>Khilkhet,Dhaka</td>
+                                                    <td>25</td>
+                                                    <td>Fever</td>
+                                                    <td>2.30PM | 12-09-2017</td>
+                                                    <td><button>Confirm Appointment</button></td>
+                                                    <td><a href="eConsultation/conversation.php">Message</a></td>
+                                                    <td><button>Delete</button></td>
+                                                </tr>
 
-                                    <tr>
-                                         <td>Bob Marley</td>
-                                         <td>26</td>
-                                         <td>Niketon, Dhaka</td>
-                                         <td>Male</td>
-                                         <td>I am suffering for fever from last 10 days. High Fever, High headeac and I have no test for food.</td>
-                                        
-                                         
-                                         <td><input type="time" name="time"></td>
-                                         <td><input type="submit" name="submit" value="send"></td>
-                                           <td><strong><a href="newpescriptions.html">create prescription</strong></td>
-                                    </tr>
-
-                                    <tr>
-                                         <td>David Batista</td>
-                                         <td>46</td>
-                                         <td>Khilgaon, Dhaka</td>
-                                         <td>Male</td>
-                                         <td></td>
-                                        
-                                         <td><input type="time" name="time"></td>
-                                         <td><input type="submit" name="submit" value="send"></td>
-                                           <td><strong><a href="newpescriptions.html">create prescription</strong></td>
-                                    </tr>
-                                </table>
-                            </fieldset>
-                      
-
-                    <fieldset>
-                        <legend><b>Direct Communication</b></legend>
-                        <table border="1">
-                            <tr>
-                                <td><strong>Patient Name</strong></td>
-                                        <td><strong>Patient Age</strong></td>
-                                        <td><strong>Patient Address</strong></td>
-                                        <td><strong>Sex</strong></td>
-                                        <td><strong>Patient Problem</strong></td>
-                                       
-
-                                        <td colspan="3" align="center"><strong>Appoinment</strong></td>
-                            </tr>
-
-                            <tr>
-                                <td>Bob Marley</td>
-                                         <td>26</td>
-                                         <td>Niketon, Dhaka</td>
-                                         <td>Male</td>
-                                         <td>I am suffering for fever from last 10 days. High Fever, High headeac and I have no test for food.</td>
-                                        
-                                         <td><input type="date" name="date"></td>
-                                         <td><input type="time" name="time"></td>
-                                         <td><input type="submit" name="submit" value="send"></td>
-                            </tr>
-
-                            <tr>
-                                         <td>David Batista</td>
-                                         <td>46</td>
-                                         <td>Khilgaon, Dhaka</td>
-                                         <td>Male</td>
-                                         <td></td>
-                                        <td><input type="date" name="date"></td>
-                                         <td><input type="time" name="time"></td>
-                                         <td><input type="submit" name="submit" value="send"></td>
-                                    </tr>
-                        </table>
-                    </fieldset>
-                    <a href="appointmenthistory.php">Go to appoinment history</a>
-                                </table> <br>    
-
-                            </fieldset>
+                                                 <tr>
+                                                    <td><a href="patientDetails.php">Gayle</a></td>
+                                                    <td>Dhanmondi</td>
+                                                    <td>31</td>
+                                                    <td>Headeach</td>
+                                                    <td>2.30PM | 12-09-2017</td>
+                                                    <td><button>Confirm Appointment</button></td>
+                                                    <td><a href="eConsultation/conversation.php">Message</a></td>
+                                                    <td><button>Delete</button></td>
+                                                </tr>
+                                             </table>
+                                             <p align="center"><button>Previous Page</button> | <button>Next Page</button></p>
+                                            </fieldset>
                             
 						</td>
                     </table>

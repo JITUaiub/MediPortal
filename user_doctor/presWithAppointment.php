@@ -102,7 +102,7 @@
                         </td>
                         <div align="center">
                              <td width="70%" align="center" valign="top">
-                                <h1 align="center">Online Appointments</h1>
+                                <h1 align="center">Pending Online Appointments</h1>
                                 <table align="center" width="80%">
                                     <tr>
                                         <td>
