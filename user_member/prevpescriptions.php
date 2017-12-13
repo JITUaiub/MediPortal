@@ -121,7 +121,7 @@
 								<br/><br/><br/>
 								
 								
-                                <table border="1" width="100%" height="40">
+                                <table width="100%" cellspacing="0" border="1" cellpadding="5">
                                     <tr height="10%">
                                         <th>
                                             <h2 align="center">Date</h2>
@@ -144,7 +144,7 @@
                                             <h3>10/12/1999</h3>
                                         </td>
                                         <td>
-                                            <h3>Dr.poran</h3>
+                                            <a href="doctordetails.php"><h4>Dr.poran</h4></a>
                                         </td>
                                         <td>
                                             <h3>10:20</h3>
@@ -161,7 +161,7 @@
                                             <h3>10/12/2017</h3>
                                         </td>
                                         <td>
-                                            <h3>Dr.arif</h3>
+                                            <a href="doctordetails.php"><h4>Dr.arif</h4></a>
                                         </td>
                                         <td>
                                             <h3>12:00</h3>
