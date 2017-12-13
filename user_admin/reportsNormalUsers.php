@@ -136,6 +136,10 @@
                                                 <td width="80%" align="center"><a href="normalUserdetails.php">John</a></td>
                                                 <td align="center">2</td>
                                             </tr>
+                                            <tr>
+                                                <td width="80%" align="center"><strong>Total</strong></td>
+                                                <td align="center">16</td>
+                                            </tr>
                                         </table>
                                         <br><br>
                                         <table border="1" align="center" width="100%" cellpadding="0" cellspacing="0">
@@ -154,6 +158,10 @@
                                             <tr>
                                                 <td width="80%" align="center"><a href="normalUserdetails.php">John</a></td>
                                                 <td align="center">5</td>
+                                            </tr>
+                                            <tr>
+                                                <td width="80%" align="center"><strong>Total</strong></td>
+                                                <td align="center">46</td>
                                             </tr>
                                         </table>
 
