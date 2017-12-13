@@ -197,11 +197,15 @@
                                                     </td>
                                                 </tr>
                                             </table>
-                                             <button onclick="goBack()">Go back</button>
+                                             <button onclick="goBack()">Go back</button> | <button onclick="report()">Report This User</button>
 
                                                 <script>
                                                 function goBack() {
                                                     window.history.back();
+                                                }
+                                                function report()
+                                                {
+
                                                 }
                                                 </script> 
                                     </div>

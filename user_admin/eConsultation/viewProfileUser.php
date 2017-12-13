@@ -104,6 +104,18 @@
                              <td width="70%" align="center">
                                 <!------ UI  -->
                               
+
+                                 | <button onclick="report()">Report This User</button>
+
+                                                <script>
+                                                function goBack() {
+                                                    window.history.back();
+                                                }
+                                                function report()
+                                                {
+                                                    
+                                                }
+                                                </script> 
                                 <!-- END -->
                             </td>
                        </div>

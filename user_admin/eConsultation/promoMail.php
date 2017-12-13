@@ -146,7 +146,7 @@
                                              </table>
                                              <input type="checkbox" name="replyflag" checked="true"> Turn off reply to this mail<br><br>
                                              <input type="submit" name="Submit" value="Send Message"><br/><br/>
-                                             <a href="../reportsAdmin.php">Back to overall statistic</a>
+                                             <a href="../reportsAdmin.php">Go to overall statistic</a>
                                          </fieldset>  
               </form>
 

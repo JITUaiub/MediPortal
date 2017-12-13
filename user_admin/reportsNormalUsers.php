@@ -141,7 +141,7 @@
                                         <table border="1" align="center" width="100%" cellpadding="0" cellspacing="0">
                                             <tr>
                                                 <th width="80%">TOP 3 BLOOD DONOR</th>
-                                                <th>NO of donation</th>
+                                                <th>Times of donation</th>
                                             </tr>
                                             <tr>
                                                 <td width="80%" align="center"><a href="normalUserdetails.php">Ashley</a></td>
