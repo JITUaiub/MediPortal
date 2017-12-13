@@ -54,7 +54,16 @@
                             </ul>
                         </fieldset>
 
-
+                        <fieldset>
+                            <legend>
+                            <strong>FAQ Section</strong></legend>
+                           
+                            <ul>
+                                <li><a href="../FAQ/newFAQ.php">New FAQ</a></li>
+                                <li><a href="../FAQ/requestedFAQ.php">User Requested FAQ</a></li>
+                                <li><a href="../FAQ/manageFAQ.php">Manage FAQ</a></li>
+                            </ul>
+                        </fieldset>
                         <fieldset>
                             <legend>
                             <strong>Reports</strong></legend>
@@ -66,7 +75,16 @@
                             </ul>
                         </fieldset>
                         
-                        
+                        <fieldset>
+                            <legend>
+                            <strong>FAQ Section</strong></legend>
+                           
+                            <ul>
+                                <li><a href="../FAQ/newFAQ.php">New FAQ</a></li>
+                                <li><a href="../FAQ/requestedFAQ.php">User Requested FAQ</a></li>
+                                <li><a href="../FAQ/manageFAQ.php">Manage FAQ</a></li>
+                            </ul>
+                        </fieldset>
                         <fieldset>
                             <legend>
                             <strong>Email</strong></legend>
