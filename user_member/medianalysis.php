@@ -106,7 +106,7 @@
                         </td>
                         <div align="center">
                         <td width="70%" align="center">
-                            <!--------------------------------------------------- DESIGN UI HERE-------------------------------------------------->
+                           
 
                              <fieldset>
                                          <legend><b>Medicine  | SEARCH</b></legend>
@@ -123,8 +123,7 @@
                                         <input type="submit" value="Search" />
 										<input type="submit" value="Print"/>
                                                     
-                                    </fieldset>
-                                        <br/>
+                                    
                                     <table width="100%" cellspacing="0" border="1" cellpadding="5">
                                             <tr>                  
                                                 <th >Medicine Name</th>  
@@ -151,6 +150,136 @@
                                                 <td>1</td>
                                                 
                                             </tr>
+                                            <table id="bar" align="center" border="0" cellspacing="10">
+											<tr >
+												<td height="400" >
+													<table width="100%" height="100%" border="0">
+														<tr>
+															<td height="9.1%" >100+</td>
+															
+														</tr>
+														<tr>
+															<td height="9.1%" >90</td>
+															
+														</tr>
+														<tr>
+															<td height="9.1%" >80</td>
+															
+														</tr>
+														<tr>
+															<td height="9.1%" >70</td>
+															
+														</tr>
+														<tr>
+															<td height="9.1%" >60</td>
+															
+														</tr>
+														<tr>
+															<td height="9.1%" >50</td>
+															
+														</tr>
+														<tr>
+															<td height="9.1%" >40</td>
+															
+														</tr>
+														<tr>
+															<td height="9.1%">30</td>
+															
+														</tr>
+														<tr>
+															<td height="9.1%" >20</td>
+															
+														</tr>
+														<tr>
+															<td height="9.1%" >10</td>
+
+															
+														</tr>
+														<tr>
+															<td height="9.1%" >0</td>
+															
+															
+														</tr>
+													</table>
+														<td height="400" >
+													<table  width="100%" height="100%" >
+														<tr>
+															<td height="30%" ></td>
+															
+														</tr>
+														<tr>
+															<td align="up" id="napa"height="17%"  title="17"></td>
+														</tr>
+													</table>
+												</td>
+												<td height="400" >
+													<table width="100%" height="100%">
+														<tr>
+															<td height="0%" ></td>
+															
+														</tr>
+														<tr>
+															<td id="naloxegol" height="9%"  title="9"></td>
+														</tr>
+													</table>
+												</td>
+												<td height="400" >
+													<table width="100%" height="100%">
+														<tr>
+															<td height="0%" ></td>
+															
+														</tr>
+														<tr>
+															<td id="naltrexone" height="2%"  title="2"></td>
+														</tr>
+													</table>
+												</td>
+												<td height="400" >
+													<table width="100%" height="100%">
+														<tr>
+															<td height="0%" ></td>
+															
+														</tr>
+														<tr>
+															<td id="zantac" height="1%"  title="1"></td>
+														</tr>
+													</table>
+												</td>
+												<tr>
+												<th height="10" >
+													<h5>No</h5>
+												</th>
+												<th height="10" >
+													<h5>Napa</h5>
+												</th>
+												<th height="10" >
+													<h5>Naloxegol</h5>
+												</th>
+												<th height="10" >
+													<h5>Naltrexone</h5>
+												</th>
+												<th height="10" >
+													<h5>Zantac 150</h5>
+												</th>
+												
+
+											</tr>
+										</table>
+										<script type="text/javascript">
+											//var bar=document.getElementById("bar");
+												//bar.style.backgroundColor = "DodgerBlue";
+												napa.style.backgroundColor="green";
+												naloxegol.style.backgroundColor="green";
+												naltrexone.style.backgroundColor="green";
+												zantac.style.backgroundColor="green";
+												
+												
+										</script>
+										<h4 align="center">Number of Medicine which is Prescrib to Patient</h4>
+
+										<a href="disanalysis.php">Go to Disease Analysis</a>
+									</fieldset>
+													</table>
                                      </table>
                                 
 							
@@ -158,7 +287,7 @@
 							
 							
 							
-                            <!------------------------------------------------------ END HERE----------------------------------------------------->
+                            
                         </td></div>
                     </table>
                 </div>

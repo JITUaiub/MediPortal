@@ -255,7 +255,7 @@
 												<th height="10" >
 													<h5>alat</h5>
 												</th>
->>>>>>> d72d6fda45327601b19b35fa5a368bababa6b352
+
 											</tr>
 										</table>
 									
