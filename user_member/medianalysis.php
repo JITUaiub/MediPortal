@@ -131,22 +131,22 @@
                                                 
                                             </tr>
                                             <tr>
-                                                <td>Napa</td>
+                                                <td><a href="medicineblog.php">Napa</a></td>
                                                 <td>17</td>
                                                
                                             </tr>
 											<tr>
-                                                <td>Naloxegol</td>
+                                                <td><a href="medicineblog.php">Naloxegol</a></td>
                                                 <td>9</td>
                                                 
                                             </tr>
 											<tr>
-                                                <td>Naltrexone</td>
+                                                <td><a href="medicineblog.php">Naltrexone</a></td>
                                                 <td>2</td>
                                                 
                                             </tr>
 											<tr>
-                                                <td>Zantac 150</td>
+                                                <td><a href="medicineblog.php">Zantac 150</a></td>
                                                 <td>1</td>
                                                 
                                             </tr>

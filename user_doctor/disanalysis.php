@@ -139,26 +139,31 @@
                                             <tr>                  
                                                 <th >Disease Name</th>  
                                                 <th >Number Of Affected</th>
+                                                <th>Disease Symptoms</th>
                                                 
                                             </tr>
                                             <tr>
-                                                <td><a href="symptoms.php">Fever</a></td>
+                                                <td>Fever</td>
                                                 <td>7</td>
+                                                <td><a href="symptoms.php">Read Symptoms</a></td>
                                                
                                             </tr>
                       <tr>
-                                                <td><a href="symptoms.php">Dengue</a></td>
+                                                <td>Dengue</td>
                                                 <td>2</td>
+                                                <td><a href="symptoms.php">Read Symptoms</a></td>
                                                 
                                             </tr>
                       <tr>
-                                                <td><a href="symptoms.php">Hepatitis B</a></td>
+                                                <td>Hepatitis B</td>
                                                 <td>1</td>
+                                                <td><a href="symptoms.php">Read Symptoms</a></td>
                                                 
                                             </tr>
                       <tr>
-                                                <td><a href="symptoms.php">Malaria</a></td>
+                                                <td>Malaria</td>
                                                 <td>1</td>
+                                                <td><a href="symptoms.php">Read Symptoms</a></td>
                                                 
                                             </tr>
                                      </table>
@@ -192,26 +197,31 @@
                                             <tr>                  
                                                 <th >Disease Name</th>  
                                                 <th >Number Of Affected</th>
+                                                 <th>Disease Symptoms</th>
                                                 
                                             </tr>
                                             <tr>
                                                 <td>Fever</td>
                                                 <td>7</td>
+                                                <td><a href="symptoms.php">Read Symptoms</a></td>
                                                
                                             </tr>
                       <tr>
                                                 <td>Dengue</td>
                                                 <td>2</td>
+                                                <td><a href="symptoms.php">Read Symptoms</a></td>
                                                 
                                             </tr>
                       <tr>
                                                 <td>Hepatitis B</td>
                                                 <td>1</td>
+                                                <td><a href="symptoms.php">Read Symptoms</a></td>
                                                 
                                             </tr>
                       <tr>
                                                 <td>Malaria</td>
                                                 <td>1</td>
+                                                <td><a href="symptoms.php">Read Symptoms</a></td>
                                                 
                                             </tr>
                                      </table>
