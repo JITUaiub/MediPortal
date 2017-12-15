@@ -103,8 +103,95 @@
                         <div align="center">
                              <td width="70%" align="center" valign="top">
 
-
-
+                                <h1 align="center">Patient Details</h1>
+                                <div>
+                                        <h1>Bob</h1>
+                                            <table width="100%">
+                                                <tr>
+                                                    <td width="60%">
+                                                        <table width="100%">
+                                                            <tr>
+                                                                <td>
+                                                                    <table width="100%">
+                                                                        <td width="10%">&nbsp;</td>
+                                                                        <td width="30%"><strong>Name</strong></td>
+                                                                        <td><strong>:</strong></td>
+                                                                        <td>Bob Pirate </td>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <tr><td><hr/></td></tr>
+                                                            
+                                                           
+                                                            <tr>
+                                                                <td>
+                                                                    <table width="100%">
+                                                                        <td width="10%">&nbsp;</td>
+                                                                        <td width="30%"><strong>Gender</strong></td>
+                                                                        <td><strong>:</strong></td>
+                                                                        <td>Male</td>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <tr><td><hr/></td></tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <table width="100%">
+                                                                        <td width="10%">&nbsp;</td>
+                                                                        <td width="30%"><strong>Email</strong></td>
+                                                                        <td><strong>:</strong></td>
+                                                                        <td>Bob@example.com</td>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <tr><td><hr/></td></tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <table width="100%">
+                                                                        <td width="10%">&nbsp;</td>
+                                                                        <td width="30%"><strong>Phone</strong></td>
+                                                                        <td><strong>:</strong></td>
+                                                                        <td>01700000000</td>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <tr><td><hr/></td></tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <table width="100%">
+                                                                        <td width="10%">&nbsp;</td>
+                                                                        <td width="30%"><strong>Date of Birth</strong></td>
+                                                                        <td><strong>:</strong></td>
+                                                                        <td>19/9/1998</td>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <tr><td><hr/></td></tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <table width="100%">
+                                                                        <td width="10%">&nbsp;</td>
+                                                                        <td width="30%"><strong>Country</strong></td>
+                                                                        <td><strong>:</strong></td>
+                                                                        <td>Bangladesh</td>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <tr><td><hr/></td></tr>
+                                                           
+                                                        </table>
+                                                    </td>
+                                                    <td width="40%">
+                                                        <table align="center">
+                                                            <tr>
+                                                                <td align="center"><img src="images/usericon.png"/></td>
+                                                            </tr>
+                                                            
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                    </div>
 
                                 
                             </td>

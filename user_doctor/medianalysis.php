@@ -10,7 +10,7 @@
             	<div>
                     <table align="center" width="100%">
                         <td width="20%">
-                            <a href="dashboard.php"><img src="images/pageicon.png"/></a>
+                            <img src="images/pageicon.png"/>
                         </td>
                         <td width="40%">&nbsp;</td>
                         <td width="40%">
@@ -26,24 +26,28 @@
             </td>
         </tr>
         <tr>
+            <td>
+                <div>
+                    
+                </div>
+            </td>
+        </tr>
+        <tr>
         	<td>
             	<!-- Body section -->
-                 <div>
-                    <table width="100%" border="1">
+               <div>
+                    <table border="1" width="100%">
                         <!-- User Menu Section -->
                         <td width="20%">
                             <fieldset>
                                 <legend>
-                            <strong>Personal Information</strong></legend>
+									<strong>Personal Information</strong></legend>
                             <ul>
-
                                 <li><a href="dashboard.php">Dashboard</a></li>
                                 <li><a href="viewprofile.php">View Profile</a></li>
                                 <li><a href="editprofile.php">Edit Profile</a></li>
                                 <li><a href="changeprofilepicture.php">Change Profile Picture</a></li>
                                 <li><a href="managechamber.html">Manage Chambers</a></li>
-
-								
                             </ul>
                         </fieldset>
 
@@ -88,7 +92,7 @@
 								<li><a href="eConsultation/message.php">New Message</a></li>
                                 <li><a href="eConsultation/inbox.php">Inbox</a></li>
                                 <li><a href="eConsultation/sentitems.php">Sent Items</a></li>
-								<li><a href="eConsultation/drafts.php">Drafts</a></li>
+							
                             </ul>
                         </fieldset>
 
@@ -103,32 +107,53 @@
                             </ul>
                         </fieldset>
                         </td>
-                       <!--Medicine Analysis -->
-                        <td width="70%" valign="top">
-                            <div>
-								<div align="left">
-									<fieldset>
-										<legend>Patient Medicine Information</legend><br>
-<<<<<<< HEAD
-										<table border="1">
-											<tr>
-												<td width="10%">Patient Name</td>
-												<td width="10%">Medicine History</td>
-                                                <td width="10%">Disease</td>
-											</tr>
+                        <div align="center">
+                        <td width="70%" align="center">
+                           
 
+                             <fieldset>
+                                         <legend><b>Medicine  | SEARCH</b></legend>
+                                        Filter By
+                                        <select>
+                                            <option>Any</option>
+                                            <option>Name</option>
+                                        </select>
+                                          <input />
+                                        
+										
+                                  Date: <input name="blockdate1" value="2013-01-08"  type="date">
+                                     to <input name="blockdate2" value="2014-01-08" type="date">
+                                        <input type="submit" value="Search" />
+										<input type="submit" value="Print"/>
+                                                    
+                                    
+                                    <table width="100%" cellspacing="0" border="1" cellpadding="5">
+                                            <tr>                  
+                                                <th >Medicine Name</th>  
+                                                <th >Number Of Prescribed</th>
+                                                
+                                            </tr>
+                                            <tr>
+                                                <td>Napa</td>
+                                                <td>17</td>
+                                               
+                                            </tr>
 											<tr>
-												<td width="10%">Bob Marley</td>
-												<td width="10%">1.Napa<br>2.Met 850<br>3.Max Pro</td>
-                                                <td width="10%"><b>HIV+</b>
-											</tr>
-
-											 <tr>
-												<td width="10%">Chester Benigton</td>
-												<td width="10%">1.Seclo<br>2.Met 850<br>3.Amdocal 500<br>4.Glipita</td>
-                                                <td width="10%"><b>Cancer</b></td>
-=======
-										<table id="bar" align="center" border="0" cellspacing="10">
+                                                <td>Naloxegol</td>
+                                                <td>9</td>
+                                                
+                                            </tr>
+											<tr>
+                                                <td>Naltrexone</td>
+                                                <td>2</td>
+                                                
+                                            </tr>
+											<tr>
+                                                <td>Zantac 150</td>
+                                                <td>1</td>
+                                                
+                                            </tr>
+                                            <table id="bar" align="center" border="0" cellspacing="10">
 											<tr >
 												<td height="400" >
 													<table width="100%" height="100%" border="0">
@@ -179,15 +204,14 @@
 															
 														</tr>
 													</table>
-												</td>
-												<td height="400" >
+														<td height="400" >
 													<table  width="100%" height="100%" >
 														<tr>
 															<td height="30%" ></td>
 															
 														</tr>
 														<tr>
-															<td align="up" id="napa"height="70%"  title="70"></td>
+															<td align="up" id="napa"height="17%"  title="17"></td>
 														</tr>
 													</table>
 												</td>
@@ -198,7 +222,7 @@
 															
 														</tr>
 														<tr>
-															<td id="antacid" height="40%"  title="40"></td>
+															<td id="naloxegol" height="9%"  title="9"></td>
 														</tr>
 													</table>
 												</td>
@@ -209,18 +233,7 @@
 															
 														</tr>
 														<tr>
-															<td id="alatrol" height="120%"  title="120"></td>
-														</tr>
-													</table>
-												</td>
-												<td height="400" >
-													<table width="100%" height="100%">
-														<tr>
-															<td height="55%" ></td>
-															
-														</tr>
-														<tr>
-															<td id="tuska" height="45%"  title="45"></td>
+															<td id="naltrexone" height="2%"  title="2"></td>
 														</tr>
 													</table>
 												</td>
@@ -231,12 +244,11 @@
 															
 														</tr>
 														<tr>
-															<td id="alat" height="50%"  title="50"></td>
+															<td id="zantac" height="1%"  title="1"></td>
 														</tr>
 													</table>
 												</td>
-											</tr>
-											<tr>
+												<tr>
 												<th height="10" >
 													<h5>No</h5>
 												</th>
@@ -244,38 +256,42 @@
 													<h5>Napa</h5>
 												</th>
 												<th height="10" >
-													<h5>antacid</h5>
+													<h5>Naloxegol</h5>
 												</th>
 												<th height="10" >
-													<h5>alatrol</h5>
+													<h5>Naltrexone</h5>
 												</th>
 												<th height="10" >
-													<h5>tuska</h5>
+													<h5>Zantac 150</h5>
 												</th>
-												<th height="10" >
-													<h5>alat</h5>
-												</th>
+												
 
 											</tr>
 										</table>
-									
 										<script type="text/javascript">
 											//var bar=document.getElementById("bar");
 												//bar.style.backgroundColor = "DodgerBlue";
 												napa.style.backgroundColor="green";
-												antacid.style.backgroundColor="green";
-												tuska.style.backgroundColor="green";
-												alatrol.style.backgroundColor="green";
-												alat.style.backgroundColor="green";	
+												naloxegol.style.backgroundColor="green";
+												naltrexone.style.backgroundColor="green";
+												zantac.style.backgroundColor="green";
+												
 												
 										</script>
 										<h4 align="center">Number of Medicine which is Prescrib to Patient</h4>
 
 										<a href="disanalysis.php">Go to Disease Analysis</a>
 									</fieldset>
-								</div>
-							</div>
-						</td>
+													</table>
+                                     </table>
+                                
+							
+							
+							
+							
+							
+                            
+                        </td></div>
                     </table>
                 </div>
             </td>
@@ -284,6 +300,20 @@
         	<td>
             	<!-- Footer section -->
                 <div>
+                	<table align="center">
+						<tr align="center">
+							<td>
+							<a href="https://www.facebook.com/">
+							<img src="../images/facebook.png">
+			                 </a>
+			             </td>
+							<td>
+									<a href="https://www.twitter.com/">
+									<img src="../images/twitter.png">
+								</a>
+							</td>
+						</tr>
+					</table>
                     <table align="center">
                         <td>&copy;2017 MediPortal. All rights reserved.</td>
                     </table>

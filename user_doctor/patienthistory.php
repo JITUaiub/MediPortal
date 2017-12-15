@@ -3,7 +3,7 @@
 <head><title>Home</title></head>
 
 <body>
-	<table border="1" align="center" width="70%">
+	<table border="1" align="center" width="100%">
     	<tr>
         	<td>
             	<!-- Header section -->
@@ -31,7 +31,7 @@
                  <div>
                     <table width="100%">
                         <!-- User Menu Section -->
-                        <td width="30%">
+                        <td width="20%">
                             <fieldset>
                                 <legend>
                             <strong>Personal Information</strong></legend>
@@ -85,7 +85,7 @@
 								<li><a href="eConsultation/message.php">New Message</a></li>
                                 <li><a href="eConsultation/inbox.php">Inbox</a></li>
                                 <li><a href="eConsultation/sentitems.php">Sent Items</a></li>
-								<li><a href="eConsultation/drafts.php">Drafts</a></li>
+								
                             </ul>
                         </fieldset>
 
@@ -101,36 +101,53 @@
                         </fieldset>
                         </td>
                         <td width="70%" valign="top">
-							<!------------------------ DESIGN PORTAL PAGE HERE --------------------------------->
-							<fieldset>
+							<!------------------------ DESIGN PORTAL PAGE HERE ---------------------------------->
+							
+                            <fieldset>
 								<legend>Patient History</legend>
+                              <table align="center">
+                            <tr>
+                                <td>
+                                 <label>Search By</label>
+                                <select>
+                                    <option>Name</option>
+                                    <option>Appoinment Date</option>
+                                    <option>Status</option>
+                                </select>
+                            </td>
+                            </br>
+                            <td>
+                            <label>Search</label> 
+                            <input type="text" name="search"/> <button>Search</button></td> 
+                        </table>
+
 								<table border="1" width="100%" height="400">
 									<tr height="10%">
-										<th>
+										<td>
 											<h3 align="center">Date</h3>
-										</th>
-										<th>
+										</td>
+										<td>
 											<h3 align="center">Name</h3>
-										</th>
-										<th>
+										</td>
+										<td>
 											<h3 align="center">Age</h3>
-										</th>
-										<th>
+										</td>
+										<td>
 											<h3 align="center">Disease</h3>
-										</th>
-										<th>
+										</td>
+										<td>
 											<h3 align="center">Prescription</h3>
-										</th>
-										<th>
+										</td>
+										<td>
 											<h3 align="center">Status</h3>
-										</th>
+										</td>
 									</tr>
 									<tr>
 										<td>
 											<h3>10/12/1999</h3>
 										</td>
 										<td>
-											<a href="viewprofile.html">Bob</a>
+											<a href="viewprofile.php">Bob</a>
 										</td>
 										<td>
 											<h3>35</h3>
@@ -139,15 +156,41 @@
 											<h3>HIV(+)</h3>
 										</td>
 										<td>
-											<a href="prescriptionHistory.html">Prescription History</a>
+											<a href="pescriptions.php">Prescription History</a>
 										</td>
 										<td>
 											Pending
 										</td>
 									</tr>
-									
+
+                                    <tr>
+                                        <td>
+                                            <h3>10/2/2012</h3>
+                                        </td>
+                                        <td>
+                                            <a href="viewprofile.php">William</a>
+                                        </td>
+                                        <td>
+                                            <h3>21</h3>
+                                        </td>
+                                        <td>
+                                            <h3>Cancer</h3>
+                                        </td>
+                                        <td>
+                                            <a href="pescriptions.php">Prescription History</a>
+                                        </td>
+                                        <td>
+                                            Active
+                                        </td>
+                                    </tr>
+									<tr>
+                                        <td align="center" colspan="6">
+                                             <a href="newpescriptions.html">Create New Prescription</a>
+                                        </td>                           
+                                    </tr>
 								</table>
 							</fieldset>
+
 							<!------------------------ FINISH DESIGNING HERE --------------------------------->
 						</td>
                     </table>
