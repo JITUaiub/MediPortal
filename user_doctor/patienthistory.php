@@ -103,9 +103,12 @@
                         <td width="70%" valign="top">
 							<!------------------------ DESIGN PORTAL PAGE HERE ---------------------------------->
 							
+                            <h1 align="center">Patient History</h1>
                             <fieldset>
-								<legend>Patient History</legend>
+                                    <legend><b>Find Patient Histoy</b></legend>
                               <table align="center">
+                                
+                                
                             <tr>
                                 <td>
                                  <label>Search By</label>
@@ -118,7 +121,7 @@
                             </br>
                             <td>
                             <label>Search</label> 
-                            <input type="text" name="search"/> <button>Search</button></td> 
+                            <input type="text" name="search"/> <button>Search</button></td> </tr>
                         </table>
 
 								<table border="1" width="100%" height="400">
@@ -190,6 +193,7 @@
                                     </tr>
 								</table>
 							</fieldset>
+                      </table>
 
 							<!------------------------ FINISH DESIGNING HERE --------------------------------->
 						</td>
