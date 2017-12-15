@@ -27,8 +27,15 @@
         </tr>
         <tr>
             <td>
+                <div>
+                    
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
                 <!-- Body section -->
-                 <div>
+               <div>
                     <table border="1" width="100%">
                         <!-- User Menu Section -->
                         <td width="20%">
@@ -72,7 +79,6 @@
                                 <li><a href="disanalysis.php">Disease Analysis</a></li>
                             </ul>
                         </fieldset>
-                        
                         <fieldset>
                             <legend>
                             <strong>E-consultation</strong></legend>
@@ -95,26 +101,32 @@
                             </ul>
                         </fieldset>
                         </td>
+                        <div align="center">
+                             <td width="70%" align="center" valign="top">
+                                <!------ UI  -->
+                                    <h1>CHANGE PROFILE PICTURE</h1>
+                                    <img src="images/usericon.png"/>
+                                    <br/><br/>
+                                    <input type="file" name="newprofilepicture"/>
+                                    <hr/>
+                                    <input type="submit" value="Submit"/>
 
-                        <td width="70%">
-                        	<fieldset>
-                            	<legend><strong>PROFILE PICTURE</strong></legend>
-                                <img src="images/usericon.png"/>
-                                <br/><br/>
-                                <input type="file" name="newprofilepicture"/>
-                                <hr/>
-                                <input type="submit" value="Submit"/>
+                                    <table width="100%">
+                                        <td colspan="2" align="right" width="49%"><a href="editprofile.php">Edit Profile</a></td>
+                                        <td width="2%"><strong><hr width="1" size="15"></strong></td>
+                                        <td colspan="2" align="left" width="49%"><a href="changepassword.html">Change Password</a></td>
+                                    </table>
+                                <!-- END -->
+                            </td>
 
-                                <a href="viewprofile.php">Back to View Profile</a>
-                            </fieldset>
-                        </td>
+                        </div>
                     </table>
                 </div>
             </td>
         </tr>
         <tr>
-        	<td>
-            	<!-- Footer section -->
+            <td>
+                <!-- Footer section -->
                 <div>
                     <table align="center">
                         <tr align="center">

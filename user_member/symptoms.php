@@ -3,14 +3,14 @@
 <head><title>Home</title></head>
 
 <body>
-    <table align="center" width="100%">
+    <table border="0" align="center" width="100%">
         <tr>
             <td>
                 <!-- Header section -->
                 <div>
                     <table align="center" width="100%">
                         <td width="20%">
-                            <a href="dashboard.php"><img src="images/pageicon.png"/></a>
+                            <img src="images/pageicon.png"/>
                         </td>
                         <td width="40%">&nbsp;</td>
                         <td width="40%">
@@ -28,29 +28,27 @@
         <tr>
             <td>
                 <!-- Body section -->
-               <div>
-                    <table width="100%" border="1">
+                <div>
+                    <table border="1" width="100%">
                         <!-- User Menu Section -->
                         <td width="20%">
                             <fieldset>
                                 <legend>
-                                    <strong>Personal Information</strong></legend>
+                            <strong>Personal Information</strong></legend>
                             <ul>
                                 <li><a href="dashboard.php">Dashboard</a></li>
                                 <li><a href="viewprofile.php">View Profile</a></li>
                                 <li><a href="editprofile.php">Edit Profile</a></li>
                                 <li><a href="changeprofilepicture.php">Change Profile Picture</a></li>
-                                <li><a href="managechamber.html">Manage Chambers</a></li>
                             </ul>
                         </fieldset>
 
 
                         <fieldset>
                             <legend>
-                            <strong>Manage Prescriptions</strong></legend>
+                            <strong>Medical History</strong></legend>
                                 <ul>
-                                <li><a href="newpescriptions.html">Create new Prescriptions</a></li>
-                                <li><a href="pescriptions.php">Previous Prescriptions</a></li>
+                                <li><a href="prevpescriptions.php">Previous Prescriptions</a></li>
                             </ul>
                         </fieldset>
 
@@ -59,8 +57,8 @@
                             <strong>Appointments Information</strong></legend>
                            
                             <ul>
+                                <li><a href="newappointment.html">New Appointment</a></li>
                                 <li><a href="appointmentstatus.php">Appointment Status</a></li>
-                                <li><a href="appointmenthistory.php">Appointment History</a></li>
                             </ul>
                         </fieldset>
 
@@ -70,11 +68,11 @@
                             <strong>Reports</strong></legend>
                            
                             <ul>
-                                <li><a href="patienthistory.php">Patient History</a></li>
                                 <li><a href="medianalysis.php">Medicine Analysis</a></li>
                                 <li><a href="disanalysis.php">Disease Analysis</a></li>
                             </ul>
                         </fieldset>
+                        
                         
                         
                         <fieldset>
@@ -85,7 +83,6 @@
                                 <li><a href="eConsultation/message.php">New Message</a></li>
                                 <li><a href="eConsultation/inbox.php">Inbox</a></li>
                                 <li><a href="eConsultation/sentitems.php">Sent Items</a></li>
-                                
                             </ul>
                         </fieldset>
 
