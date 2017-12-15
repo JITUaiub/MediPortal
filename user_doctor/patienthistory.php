@@ -124,8 +124,8 @@
                             <input type="text" name="search"/> <button>Search</button></td> </tr>
                         </table>
 
-								<table border="1" width="100%" height="400">
-									<tr height="10%">
+								<table border="1" width="100%" >
+									<tr>
 										<td>
 											<h3 align="center">Date</h3>
 										</td>
@@ -150,7 +150,7 @@
 											<h3>10/12/1999</h3>
 										</td>
 										<td>
-											<a href="viewprofile.php">Bob</a>
+											<a href="patientDetails.php">Bob</a>
 										</td>
 										<td>
 											<h3>35</h3>
@@ -171,7 +171,7 @@
                                             <h3>10/2/2012</h3>
                                         </td>
                                         <td>
-                                            <a href="viewprofile.php">William</a>
+                                            <a href="patientDetails.php">William</a>
                                         </td>
                                         <td>
                                             <h3>21</h3>

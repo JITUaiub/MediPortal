@@ -190,6 +190,11 @@
                                                         </table>
                                                     </td>
                                                 </tr>
+                                                <tr>
+                                                    <td align="center">
+                                                        <a href="patienthistory.php">Back to Patient History</a>
+                                                    </td>
+                                                </tr>
                                             </table>
                                     </div>
 

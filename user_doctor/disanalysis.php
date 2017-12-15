@@ -10,7 +10,7 @@
               <div>
                     <table align="center" width="100%">
                         <td width="20%">
-                            <img src="images/pageicon.png"/>
+                           <a href="dashboard.php"> <img src="images/pageicon.png"/> </a>
                         </td>
                         <td width="40%">&nbsp;</td>
                         <td width="40%">
@@ -142,22 +142,22 @@
                                                 
                                             </tr>
                                             <tr>
-                                                <td>Fever</td>
+                                                <td><a href="symptoms.php">Fever</a></td>
                                                 <td>7</td>
                                                
                                             </tr>
                       <tr>
-                                                <td>Dengue</td>
+                                                <td><a href="symptoms.php">Dengue</a></td>
                                                 <td>2</td>
                                                 
                                             </tr>
                       <tr>
-                                                <td>Hepatitis B</td>
+                                                <td><a href="symptoms.php">Hepatitis B</a></td>
                                                 <td>1</td>
                                                 
                                             </tr>
                       <tr>
-                                                <td>Malaria</td>
+                                                <td><a href="symptoms.php">Malaria</a></td>
                                                 <td>1</td>
                                                 
                                             </tr>
