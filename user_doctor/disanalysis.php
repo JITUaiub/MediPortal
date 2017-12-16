@@ -3,14 +3,14 @@
 <head><title>Home</title></head>
 
 <body>
-  <table border="0" align="center" width="100%">
-      <tr>
-          <td>
-              <!-- Header section -->
-              <div>
+    <table align="center" width="100%">
+        <tr>
+            <td>
+                <!-- Header section -->
+                <div>
                     <table align="center" width="100%">
                         <td width="20%">
-                           <a href="dashboard.php"> <img src="images/pageicon.png"/> </a>
+                            <a href="dashboard.php"><img src="images/pageicon.png"/></a>
                         </td>
                         <td width="40%">&nbsp;</td>
                         <td width="40%">
@@ -27,21 +27,14 @@
         </tr>
         <tr>
             <td>
-                <div>
-                    
-                </div>
-            </td>
-        </tr>
-        <tr>
-          <td>
-              <!-- Body section -->
+                <!-- Body section -->
                <div>
-                    <table border="1" width="100%">
+                    <table width="100%" border="1">
                         <!-- User Menu Section -->
                         <td width="20%">
                             <fieldset>
                                 <legend>
-                            <strong>Personal Information</strong></legend>
+                                    <strong>Personal Information</strong></legend>
                             <ul>
                                 <li><a href="dashboard.php">Dashboard</a></li>
                                 <li><a href="viewprofile.php">View Profile</a></li>
@@ -82,17 +75,17 @@
                                 <li><a href="disanalysis.php">Disease Analysis</a></li>
                             </ul>
                         </fieldset>
-            
-            
-            <fieldset>
+                        
+                        
+                        <fieldset>
                             <legend>
                             <strong>E-consultation</strong></legend>
                            
                             <ul>
-                <li><a href="eConsultation/message.php">New Message</a></li>
+                                <li><a href="eConsultation/message.php">New Message</a></li>
                                 <li><a href="eConsultation/inbox.php">Inbox</a></li>
                                 <li><a href="eConsultation/sentitems.php">Sent Items</a></li>
-              
+                                
                             </ul>
                         </fieldset>
 
@@ -108,15 +101,12 @@
                         </fieldset>
                         </td>
                         <div align="center">
-                        <td width="70%" align="center">
-                            <!--------------------------------------------------- DESIGN UI HERE-------------------------------------------------->
+                             <td width="70%" align="center" valign="top">
 
-                                <fieldset>
+
+
+                                                               <fieldset>
                                          <legend><b>Disease  | SEARCH</b></legend>
-                                          <fieldset>
-                                  <legend>
-                                    Patient Name:Bob
-                                  </legend>  
                                         Filter By
 
                                       
@@ -125,17 +115,17 @@
                                             <option>Name</option>
                                         </select>
                                           <input />
-                                      
+                                      <input type="submit" value="Search" />    
                     
                                   Date: <input name="blockdate1" value="2013-01-08"  type="date">
                                      to <input name="blockdate2" value="2014-01-08" type="date">
-                                        <input type="submit" value="Search" />
+                                     <button>Go</button>
+                                        
                     <input type="submit" value="Print"/>
                                                     
-                           
-
-                                        <br/>
-                                    <table width="100%" cellspacing="0" border="1" cellpadding="5">
+                                   </fieldset>
+                                   <br><br>
+                                   <table width="100%" cellspacing="0" border="1" cellpadding="5">
                                             <tr>                  
                                                 <th >Disease Name</th>  
                                                 <th >Number Of Affected</th>
@@ -145,120 +135,52 @@
                                             <tr>
                                                 <td>Fever</td>
                                                 <td>7</td>
-                                                <td><a href="symptoms.php">Read Symptoms</a></td>
+                                                <td><a href="symptoms.php">Check Symptoms</a></td>
                                                
                                             </tr>
-                      <tr>
+                                            <tr>
                                                 <td>Dengue</td>
                                                 <td>2</td>
-                                                <td><a href="symptoms.php">Read Symptoms</a></td>
-                                                
-                                            </tr>
-                      <tr>
-                                                <td>Hepatitis B</td>
-                                                <td>1</td>
-                                                <td><a href="symptoms.php">Read Symptoms</a></td>
-                                                
-                                            </tr>
-                      <tr>
-                                                <td>Malaria</td>
-                                                <td>1</td>
-                                                <td><a href="symptoms.php">Read Symptoms</a></td>
-                                                
-                                            </tr>
-                                     </table>
-                                   </fieldset>
-
-
-
-                                   <fieldset>
-                                  <legend>
-                                    Patient Name:William
-                                  </legend>  
-                                        Filter By
-
-                                      
-                                        <select>
-                                            <option>Any</option>
-                                            <option>Name</option>
-                                        </select>
-                                          <input />
-                                      
-                    
-                                  Date: <input name="blockdate1" value="2013-01-08"  type="date">
-                                     to <input name="blockdate2" value="2014-01-08" type="date">
-                                        <input type="submit" value="Search" />
-                    <input type="submit" value="Print"/>
-                                                    
-                           
-
-                                        <br/>
-                                    <table width="100%" cellspacing="0" border="1" cellpadding="5">
-                                            <tr>                  
-                                                <th >Disease Name</th>  
-                                                <th >Number Of Affected</th>
-                                                 <th>Disease Symptoms</th>
+                                                <td><a href="symptoms.php">Check Symptoms</a></td>
                                                 
                                             </tr>
                                             <tr>
-                                                <td>Fever</td>
-                                                <td>7</td>
-                                                <td><a href="symptoms.php">Read Symptoms</a></td>
-                                               
-                                            </tr>
-                      <tr>
-                                                <td>Dengue</td>
-                                                <td>2</td>
-                                                <td><a href="symptoms.php">Read Symptoms</a></td>
-                                                
-                                            </tr>
-                      <tr>
                                                 <td>Hepatitis B</td>
                                                 <td>1</td>
-                                                <td><a href="symptoms.php">Read Symptoms</a></td>
+                                                <td><a href="symptoms.php">Check Symptoms</a></td>
                                                 
                                             </tr>
-                      <tr>
+                                             <tr>
                                                 <td>Malaria</td>
                                                 <td>1</td>
-                                                <td><a href="symptoms.php">Read Symptoms</a></td>
+                                                <td><a href="symptoms.php">Check Symptoms</a></td>
                                                 
                                             </tr>
                                      </table>
-                                   </fieldset>
-
-
-
-                                     </fieldset>
-
-                                
-              
-              
-
-                            <!------------------------------------------------------ END HERE----------------------------------------------------->
-                        </td></div>
+                            </td>
+                        </div>
                     </table>
                 </div>
             </td>
         </tr>
         <tr>
-          <td>
-              <!-- Footer section -->
+            <td>
+                <!-- Footer section -->
                 <div>
-                  <table align="center">
-            <tr align="center">
-              <td>
-              <a href="https://www.facebook.com/">
-              <img src="../images/facebook.png">
-                       </a>
-                   </td>
-              <td>
-                  <a href="https://www.twitter.com/">
-                  <img src="../images/twitter.png">
-                </a>
-              </td>
-            </tr>
-          </table>
+                    <table align="center">
+                        <tr align="center">
+                            <td>
+                            <a href="https://www.facebook.com/">
+                            <img src="../images/facebook.png">
+                             </a>
+                         </td>
+                            <td>
+                                    <a href="https://www.twitter.com/">
+                                    <img src="../images/twitter.png">
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
                     <table align="center">
                         <td>&copy;2017 MediPortal. All rights reserved.</td>
                     </table>

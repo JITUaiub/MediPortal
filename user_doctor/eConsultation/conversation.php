@@ -103,7 +103,7 @@
                              <td width="70%" align="center" valign="top">
                                 <!------ UI  -->
                                 <h1>Conversation</h1>
-                                <p align="center"><a href="viewProfileAdmin.php">Ashley</a><br/>
+                                <p align="center"><a href="viewProfileUser.php">Ashley</a><br/>
                                 Email: ashley@example.com<br/>
                                 Subject: Unknown<br/>
                                 Last seen: X moment ago</p>

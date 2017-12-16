@@ -3,14 +3,14 @@
 <head><title>Home</title></head>
 
 <body>
-	<table border="0" align="center" width="100%">
-    	<tr>
-        	<td>
-            	<!-- Header section -->
-            	<div>
+    <table align="center" width="100%">
+        <tr>
+            <td>
+                <!-- Header section -->
+                <div>
                     <table align="center" width="100%">
                         <td width="20%">
-                           <a href="dashboard.php"> <img src="images/pageicon.png"/></a>
+                            <a href="dashboard.php"><img src="images/pageicon.png"/></a>
                         </td>
                         <td width="40%">&nbsp;</td>
                         <td width="40%">
@@ -27,21 +27,14 @@
         </tr>
         <tr>
             <td>
-                <div>
-                    
-                </div>
-            </td>
-        </tr>
-        <tr>
-        	<td>
-            	<!-- Body section -->
+                <!-- Body section -->
                <div>
-                    <table border="1" width="100%">
+                    <table width="100%" border="1">
                         <!-- User Menu Section -->
-                        <td width="20%">
+                        <td width="20%" valign="top">
                             <fieldset>
                                 <legend>
-									<strong>Personal Information</strong></legend>
+                                    <strong>Personal Information</strong></legend>
                             <ul>
                                 <li><a href="dashboard.php">Dashboard</a></li>
                                 <li><a href="viewprofile.php">View Profile</a></li>
@@ -82,17 +75,17 @@
                                 <li><a href="disanalysis.php">Disease Analysis</a></li>
                             </ul>
                         </fieldset>
-						
-						
-						<fieldset>
+                        
+                        
+                        <fieldset>
                             <legend>
                             <strong>E-consultation</strong></legend>
                            
                             <ul>
-								<li><a href="eConsultation/message.php">New Message</a></li>
+                                <li><a href="eConsultation/message.php">New Message</a></li>
                                 <li><a href="eConsultation/inbox.php">Inbox</a></li>
                                 <li><a href="eConsultation/sentitems.php">Sent Items</a></li>
-							
+                                
                             </ul>
                         </fieldset>
 
@@ -108,8 +101,9 @@
                         </fieldset>
                         </td>
                         <div align="center">
-                        <td width="70%" align="center">
-                           
+                             <td width="70%" align="center">
+
+
 
                              <fieldset>
                                          <legend><b>Medicine  | SEARCH</b></legend>
@@ -284,36 +278,34 @@
 									</fieldset>
 													</table>
                                      </table>
-                                
-							
-							
-							
-							
-							
-                            
-                        </td></div>
+
+
+
+
+                            </td>
+                        </div>
                     </table>
                 </div>
             </td>
         </tr>
         <tr>
-        	<td>
-            	<!-- Footer section -->
+            <td>
+                <!-- Footer section -->
                 <div>
-                	<table align="center">
-						<tr align="center">
-							<td>
-							<a href="https://www.facebook.com/">
-							<img src="../images/facebook.png">
-			                 </a>
-			             </td>
-							<td>
-									<a href="https://www.twitter.com/">
-									<img src="../images/twitter.png">
-								</a>
-							</td>
-						</tr>
-					</table>
+                    <table align="center">
+                        <tr align="center">
+                            <td>
+                            <a href="https://www.facebook.com/">
+                            <img src="../images/facebook.png">
+                             </a>
+                         </td>
+                            <td>
+                                    <a href="https://www.twitter.com/">
+                                    <img src="../images/twitter.png">
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
                     <table align="center">
                         <td>&copy;2017 MediPortal. All rights reserved.</td>
                     </table>
