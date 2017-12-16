@@ -101,10 +101,10 @@
                         </fieldset>
                         </td>
                         <!--Appoinment History-->
-                        <td width="70%" valign="top">
+                        <td width="100%" valign="top">
                             
                               <h1 align="center">Appoinment History</h1>
-                              <table align="center" width="70%">
+                              <table align="center" width="100%">
                                 <tr>
                                   <td>
                                     <fieldset>

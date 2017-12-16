@@ -100,10 +100,10 @@
                             </ul>
                         </fieldset>
                         </td>
-                        <td width="70%" valign="top">
+                        <td width="100%" valign="top">
 							<!------------------------ DESIGN PORTAL PAGE HERE ---------------------------------->
 							
-                            <table align="center" width="80%">
+                            <table align="center" width="100%">
                             	<tr>
                             		<td>
                             			<h1 align="center">Patient History</h1>

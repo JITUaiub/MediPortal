@@ -101,9 +101,9 @@
                         </fieldset>
                         </td>
                         <div align="center">
-                             <td width="70%" align="center" valign="top">
+                             <td width="100%" align="center" valign="top">
                                 <h1 align="center">Pending Online Appointments</h1>
-                                <table align="center" width="80%">
+                                <table align="center" width="100%">
                                     <tr>
                                         <td>
                                             <fieldset>

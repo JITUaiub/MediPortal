@@ -102,8 +102,8 @@
                         </td>
                           
                          <div align="center">
-                        <td width="70%" valign="top">
-                              <table align="center" width="80%">
+                        <td width="100%" valign="top">
+                              <table align="center" width="100%">
                                 
                             <h1 align="center">Prescriptions History</h1> 
 

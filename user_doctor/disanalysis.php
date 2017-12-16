@@ -101,7 +101,7 @@
                         </fieldset>
                         </td>
                         <div align="center">
-                             <td width="70%" align="center">
+                             <td width="100%" align="center">
                                       
 
 
@@ -112,10 +112,9 @@
 
                                          <label>Sort The Page By</label>
                                 <select>
-                                    <option>Name</option>
-                                    <option>Appoinment Date</option>
-                                    <option>Age</option>
-                                    <option>Disease</option>
+                                    <option>Disease Name</option>
+                                    
+                                    <option>Year</option>
                                 </select>
 
                                 <br><br>
