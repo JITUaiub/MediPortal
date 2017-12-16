@@ -105,18 +105,35 @@
                         <td width="70%" valign="top">
                               <table align="center" width="80%">
                                 
-                            <h1 align="center">Prescriptions History</h1>   
+                            <h1 align="center">Prescriptions History</h1> 
+
+                             
                         <tr>
                             <td>
                                 <fieldset>
                                     <div align="center">
+                                       
+                                        <label>Sort The Page By:</label>
+                                <select>
+                                    <option>Name</option>
+                                    <option>Appoinment Date</option>
+                                    <option>Age</option>
+                                    <option>Disease</option>
+                                </select>
+                                        </br>
+                                    </br>
+
                                         <label>Search by: </label>
                                     <select>
                                         <option>Patient Name</option>
                                         <option>Disease</option>
                                         <option>Prescription Name</option>
                                     </select>
+                                     
+                                     <label>Search:</label>
                                     <input type="text" name="text" value="Search Text" /><button>Go</button><br>
+                                      </br>
+                                   
                                     Results per page: 
                                     <select>
                                         <option>10</option>
@@ -148,40 +165,49 @@
                                         <th>
                                             <h3 align="center">Download Prescription File</h3>
                                         </th>
+                                        <th>
+                                            <h3 align="center">Get Details</h3>
+                                        </th>
                                     </tr>
                                     <tr>
                                         <td align="center">
-                                            <h3>10/12/1999</h3>
+                                           <b> 10/12/1999</b>
                                         </td>
                                         <td align="center">
-                                            <h4><a href="patientdetails.php">Bob Marley</a></h4>
+                                           <b> <a href="patientdetails.php">Bob Marley</a></b>
                                         </td>
                                         <td align="center">
-                                            <h3>35</h3>
+                                            <b>35</b>
                                         </td>
                                         <td align="center">
-                                            <h3>HIV(+)</h3>
+                                            <b>Fever</b>
                                         </td>
                                         <td align="center">
                                             <a href="#">fineName.pdf</a>
+                                        </td>
+                                        <td>
+                                            <a href="prescriptionHistory.php">Get details</a>
                                         </td>
                                     </tr>
 
                                     <tr>
                                         <td align="center">
-                                            <h3>10/12/2015</h3>
+                                            <b>10/12/2015</b>
                                         </td>
                                         <td align="center">
-                                            <h4><a href="patientdetails.php">Kent Williams</a></h4>
+                                            <b><a href="patientdetails.php">Kent Williams</a></b>
                                         </td>
                                         <td align="center">
-                                            <h3>40</h3>
+                                            <b>40</b>
                                         </td>
                                         <td align="center">
-                                            <h3>Cancer</h3>
+                                            <b>Cancer</b>
                                         </td>
                                         <td align="center">
                                             <a href="#">cancer_prescription.pdf</a>
+                                        </td>
+                                        <td>
+                                            <a href="prescriptionHistory.php">Get details</a>
                                         </td>
                                     </tr>
                                     

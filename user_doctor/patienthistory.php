@@ -110,7 +110,18 @@
                             <fieldset>
                                     <legend><b>Find Patient Histoy</b></legend>
                               <table align="center">
-                                
+                                <tr align="center">
+                                    <td align="center">
+                                        <label>Sort The Page By</label>
+                                <select>
+                                    <option>Name</option>
+                                    <option>Appoinment Date</option>
+                                    <option>Age</option>
+                                    <option>Disease</option>
+                                </select>
+                                        
+                                    </td>
+                                </tr>
                                 
                             <tr>
                                 <td>
@@ -147,16 +158,16 @@
 									</tr>
 									<tr>
 										<td align="center">
-											<h3>10/12/2011</h3>
+											<b>10/12/2011</b>
 										</td>
 										<td align="center">
-											<h3><a href="patientDetails.php">Bob</a></h3>
+											<b><a href="patientDetails.php">Bob</a></b>
 										</td>
 										<td align="center">
-											<h3>35</h3>
+											<b>35</b>
 										</td>
 										<td align="center">
-											<h3>HIV(+)</h3>
+											<b>HIV(+)</b>
 										</td>
 										<td align="center">
 											<a href="prescriptionHistory.php">Prescriptions</a>
@@ -168,16 +179,16 @@
 
                                     <tr>
                                         <td align="center">
-                                            <h3>10/2/2012</h3>
+                                            <b>10/2/2012</b>
                                         </td>
                                         <td align="center">
-                                            <h3><a href="patientDetails.php">William</a></h3>
+                                            <b><a href="patientDetails.php">William</a></b>
                                         </td>
                                         <td align="center">
-                                            <h3>21</h3>
+                                            <b>21</b>
                                         </td>
                                         <td align="center">
-                                            <h3>Cancer</h3>
+                                            <b>Cancer</b>
                                         </td>
                                         <td align="center">
                                             <a href="prescriptionHistory.php">Prescriptions</a>
