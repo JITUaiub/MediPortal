@@ -111,6 +111,14 @@
                                         <table align="center">
                                     <tr>
                                         <td>
+                                          <label>Sort The Page By</label>
+                                <select>
+                                    <option>Name</option>
+                                    <option>Address</option>
+                                    <option>Age</option>
+                                    <option>Disease</option>
+                                </select></br></br>
+
                                 <label>Search By</label>
                                 <select>
                                     <option>Name</option>

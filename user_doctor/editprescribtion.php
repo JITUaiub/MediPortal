@@ -229,6 +229,7 @@
                             </br>
                             <a href="pescriptions.php">Prescription History</a>|
                             <a href="prescriptionHistory.php">Back</a>
+                            
                             </fieldset>
                                         </td>
                                     </tr>

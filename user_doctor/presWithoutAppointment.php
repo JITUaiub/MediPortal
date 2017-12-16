@@ -227,6 +227,7 @@
                                 <hr/>
                                 <input type="submit" name="submit" value="Finish" />
                             </br>
+                            <a href="newpescriptions.html">Back to Prescription Home Page</a>|
                             <a href="pescriptions.php">Prescription History</a>
                             </fieldset>
                                         </td>

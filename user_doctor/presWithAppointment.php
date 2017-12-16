@@ -107,6 +107,15 @@
                                     <tr>
                                         <td>
                                             <fieldset>
+
+                                                 <label>Sort The Page By</label>
+                                <select>
+                                    <option>Name</option>
+                                    <option>Address</option>
+                                    <option>Age</option>
+                                    <option>Disease</option>
+                                </select></br></br>
+                                
                                              <legend><b>GENERAL USERS | SEARCH</b></legend>
                                             Filter By
                                             <select>
@@ -163,8 +172,13 @@
                                                     <td><a href="eConsultation/conversation.php">Message</a></td>
                                                     <td><button>Delete</button></td>
                                                 </tr>
+
                                              </table>
+                                             <a href="newpescriptions.html">Back to Prescription Home Page</a>
+
                                             </fieldset>
+                                            
+                                            
                                         </td>
                                     </tr>
                                 </table>

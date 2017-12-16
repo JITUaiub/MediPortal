@@ -107,6 +107,13 @@
                                     <tr>
                                         <td>
                                             <fieldset>
+                                                 <label>Sort The Page By</label>
+                                <select>
+                                    <option>Name</option>
+                                    <option>Address</option>
+                                    <option>Age</option>
+                                    <option>Disease</option>
+                                </select></br></br>
                                              <legend><b>GENERAL USERS | SEARCH</b></legend>
                                             Filter By
                                             <select>
@@ -164,7 +171,11 @@
                                                     <td><button>Delete</button></td>
                                                 </tr>
                                              </table>
+                                             <tr>
+                                                <td align="center">
                                              <p align="center"><button>Previous Page</button> | <button>Next Page</button></p>
+                                             <a href="newpescriptions.html">Back</a></td>
+                                         </tr>
                                             </fieldset>
                             
 						</td>

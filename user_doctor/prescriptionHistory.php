@@ -200,7 +200,8 @@
                                         
                                    
 
-                                <p align="center"><a href="editprescribtion.php">Edit Prescription</a> | <a href="appointmenthistory.php">Appointment History</a></p>
+                                <p align="center"><a href="editprescribtion.php">Edit Prescription</a> | <a href="appointmenthistory.php">Appointment History</a>|<a href="pescriptions.php">Go Back To Prescription History</a></p>
+
                             </fieldset>
                       </table>
                                     </td>
