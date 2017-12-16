@@ -110,6 +110,14 @@
 
                              <fieldset>
                                          <legend><b>Medicine  | SEARCH</b></legend>
+                                            <label>Sort The Page By:</label>
+                                <select>
+                                    <option>Medicine Name</option>
+                                    <option>Number Of Prescribe</option>
+                                    
+                                </select>
+                                        </br>
+                                    </br>
                                         Filter By
                                         <select>
                                             <option>Any</option>

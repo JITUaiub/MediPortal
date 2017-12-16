@@ -112,6 +112,15 @@
 							   <table>
                                 <tr>
                                     <td>
+                                           <label>Sort The Page By:</label>
+                                <select>
+                                    <option>Doctor Name</option>
+                                    <option>Appoinment Date</option>
+                                    <option>Type</option>
+                                    <option>Status</option>
+                                </select>
+                                        </br>
+                                    </br>
 										Filter By
 										<select>
 											<option>Any</option>

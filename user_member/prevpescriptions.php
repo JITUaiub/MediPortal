@@ -113,6 +113,15 @@
 									<td>
 										<fieldset>
 											<div align="center">
+                                                   <label>Sort The Page By:</label>
+                                <select>
+                                    <option>Date</option>
+                                    <option>Doctor</option>
+                                    
+                                    <option>Disease</option>
+                                </select>
+                                        </br>
+                                    </br>
 												<label>Search by: </label>
 											<select>
 												<option>Doctor's Name</option>

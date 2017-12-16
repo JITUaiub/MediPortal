@@ -107,6 +107,14 @@
 
                                 <fieldset>
                                          <legend><b>Disease  | SEARCH</b></legend>
+                                            <label>Sort The Page By:</label>
+                                <select>
+                                    <option>Disease Name</option>
+                                    <option>Number Of Affected</option>
+                                    
+                                </select>
+                                        </br>
+                                    </br>
                                         Filter By
                                         <select>
                                             <option>Any</option>
