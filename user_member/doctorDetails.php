@@ -223,14 +223,27 @@
                                                         </table>
                                                     </td>
                                                 </tr>
+												<tr>
+													<td>
+														<input id="message" type="submit" value="Message" onclick="message()"/>
+													
+														
+													</td>
+												</tr>
                                             </table>
-                                             <button onclick="goBack()">Go back</button>
+											
+											
+                                            <button onclick="goBack()">Go back</button>
 
-                                                <script>
+                                            <script>
                                                 function goBack() {
                                                     window.history.back();
                                                 }
-                                                </script> 
+												function message(){
+													var x= document.getElementById("message").value;
+													window.location.assign("eConsultation/conversation.php");
+												}
+                                            </script> 
                                     </div>
 							
                             <!------------------------------------------------------ END HERE----------------------------------------------------->

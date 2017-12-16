@@ -142,7 +142,10 @@
                                                   </td>
                                               </tr>
                                              </table>
-                                             <input type="submit" name="Submit" value="Send Message"><br/><br/>
+											 <input id="submit" type="submit" value="Send Message" onclick="submit()"/>
+											 
+                                             <br/><br/>
+											 
                                              <a href="inbox.php">Go to inbox</a>
                                          </fieldset>  
 							</form>
@@ -178,6 +181,13 @@
             </td>
         </tr>
     </table>
+	<script type="text/javascript">
+		function submit(){
+			var x= document.getElementById("submit").value;
+			alert("message sent");
+			window.location.assign("sentitems.php");
+		}
+	</script>
 </body>
 
 </html>

@@ -94,10 +94,10 @@
                             </ul>
                         </fieldset>
                         </td>
-
-                        <td width="70%">
-                        	<!------ UI  -->
-                                <div>
+						<div align="center">
+							<td width="70%"align="center" valign="top">
+								<!------ UI  -->
+									<div>
                                         <h1>EDIT PROFILE</h1>
                                             <table width="65%">
                                                 <tr>
@@ -180,7 +180,12 @@
                                                                 </td>
                                                             </tr>
                                                             <tr><td><hr/></td></tr>
-                                                            <tr><td colspan="4" align="center"><input type="submit" name="submit" value="Update Profile"></td></tr>
+                                                            <tr>
+																<td colspan="4" align="center">
+																	<input type="submit" id="update" value="Update Profile" onclick="update()">
+																</td>
+																
+															</tr>
                                                             <tr>
                                                                 <td>
                                                                     <table width="100%">
@@ -196,7 +201,8 @@
                                             </table>
                                     </div>
                                 <!-- END -->
-                        </td>
+							</td>
+						<div>
                     </table>
 
                 </div>
@@ -227,6 +233,13 @@
             </td>
         </tr>
     </table>
+	<script>
+		function update(){
+			var x= document.getElementById("update").value;
+			alert("Profile is Updated");
+			window.location.assign("viewprofile.php");
+		}
+	</script>
 </body>
 
 </html>
