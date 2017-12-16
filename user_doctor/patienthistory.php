@@ -3,7 +3,7 @@
 <head><title>Home</title></head>
 
 <body>
-	<table border="1" align="center" width="100%">
+	<table align="center" width="100%">
     	<tr>
         	<td>
             	<!-- Header section -->
@@ -29,7 +29,7 @@
         	<td>
             	<!-- Body section -->
                  <div>
-                    <table width="100%">
+                    <table width="100%" border="1">
                         <!-- User Menu Section -->
                         <td width="20%">
                             <fieldset>
@@ -103,7 +103,10 @@
                         <td width="70%" valign="top">
 							<!------------------------ DESIGN PORTAL PAGE HERE ---------------------------------->
 							
-                            <h1 align="center">Patient History</h1>
+                            <table align="center" width="80%">
+                            	<tr>
+                            		<td>
+                            			<h1 align="center">Patient History</h1>
                             <fieldset>
                                     <legend><b>Find Patient Histoy</b></legend>
                               <table align="center">
@@ -126,74 +129,72 @@
 
 								<table border="1" width="100%" >
 									<tr>
-										<td>
-											<h3 align="center">Date</h3>
+										<td width="15%">
+											<h3 align="center">Last Appointment</h3>
 										</td>
-										<td>
+										<td width="20%">
 											<h3 align="center">Name</h3>
 										</td>
-										<td>
+										<td width="10%">
 											<h3 align="center">Age</h3>
 										</td>
-										<td>
-											<h3 align="center">Disease</h3>
+										<td align="center">
+											<h3 align="center" width="35%">Disease</h3>
 										</td>
-										<td>
-											<h3 align="center">Prescription</h3>
-										</td>
-										<td>
-											<h3 align="center">Status</h3>
+										<td colspan="2" width="20%">
+											<h3 align="center">Action</h3>
 										</td>
 									</tr>
 									<tr>
-										<td>
-											<h3>10/12/1999</h3>
+										<td align="center">
+											<h3>10/12/2011</h3>
 										</td>
-										<td>
-											<a href="patientDetails.php">Bob</a>
+										<td align="center">
+											<h3><a href="patientDetails.php">Bob</a></h3>
 										</td>
-										<td>
+										<td align="center">
 											<h3>35</h3>
 										</td>
-										<td>
+										<td align="center">
 											<h3>HIV(+)</h3>
 										</td>
-										<td>
-											<a href="pescriptions.php">Prescription History</a>
+										<td align="center">
+											<a href="prescriptionHistory.php">Prescriptions</a>
 										</td>
-										<td>
-											Pending
+										<td align="center">
+											<a href="eConsultation/conversation.php">Message</a>
 										</td>
 									</tr>
 
                                     <tr>
-                                        <td>
+                                        <td align="center">
                                             <h3>10/2/2012</h3>
                                         </td>
-                                        <td>
-                                            <a href="patientDetails.php">William</a>
+                                        <td align="center">
+                                            <h3><a href="patientDetails.php">William</a></h3>
                                         </td>
-                                        <td>
+                                        <td align="center">
                                             <h3>21</h3>
                                         </td>
-                                        <td>
+                                        <td align="center">
                                             <h3>Cancer</h3>
                                         </td>
-                                        <td>
-                                            <a href="pescriptions.php">Prescription History</a>
+                                        <td align="center">
+                                            <a href="prescriptionHistory.php">Prescriptions</a>
                                         </td>
-                                        <td>
-                                            Active
+                                        <td align="center">
+                                            <a href="eConsultation/conversation.php">Message</a>
                                         </td>
                                     </tr>
-									<tr>
-                                        <td align="center" colspan="6">
-                                             <a href="newpescriptions.html">Create New Prescription</a>
-                                        </td>                           
-                                    </tr>
+                                    
 								</table>
+
+								<p align="center"><a href="newpescriptions.html">New Prescription</a> | <a href="appointmenthistory.php">Appointment History</a></p>
 							</fieldset>
                       </table>
+                            		</td>
+                            	</tr>
+                            </table>
 
 							<!------------------------ FINISH DESIGNING HERE --------------------------------->
 						</td>
