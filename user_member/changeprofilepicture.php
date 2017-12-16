@@ -109,7 +109,7 @@
                                     <br/><br/>
                                     <input type="file" name="newprofilepicture"/>
                                     <hr/>
-                                    <input type="submit" value="Submit"/>
+									<input type="submit" id="submit" value="submit" onclick="submit()">
 
                                     <table width="100%">
                                         <td colspan="2" align="right" width="49%"><a href="editprofile.php">Edit Profile</a></td>
@@ -149,6 +149,12 @@
             </td>
         </tr>
     </table>
+	<script>
+		function submit(){
+			var x= document.getElementById("submit").value;
+			window.location.assign("viewprofile.php");
+		}
+	</script>
 </body>
 
 </html>

@@ -106,77 +106,95 @@
                         <div align="center">
                         <td width="70%" align="center">
                             <!--------------------------------------------------- DESIGN UI HERE-------------------------------------------------->
+							<table align="center" width="80%">
+                                
+								<h1 align="center">Prescriptions History</h1>   
+								<tr>
+									<td>
+										<fieldset>
+											<div align="center">
+												<label>Search by: </label>
+											<select>
+												<option>Doctor's Name</option>
+												<option>Disease</option>
+												<option>Prescription Name</option>
+												<option>Date</option>
+											</select>
+											<input type="text" name="text" value="Search Text" /><button>Go</button><br>
+											Results per page: 
+											<select>
+												<option>10</option>
+												<option>20</option>
+												<option>30</option>
+											</select>
+											<button>Go</button>
+											</div>
+										</fieldset><br>
 
-                                <fieldset>
-                                <legend>Prescriptions History</legend>
-								Filter By
-								<select>
-									<option>Any</option>
-									<option>Date</option>
-									<option>Doctor's name</option>
-									<option>Disease</option>
-								</select>
-								<input />
-								<input type="submit" value="Search" />
-								<br/><br/><br/>
-								
-								
-                                <table width="100%" cellspacing="0" border="1" cellpadding="5">
-                                    <tr height="10%">
-                                        <th>
-                                            <h2 align="center">Date</h2>
-                                        </th>
-                                        <th>
-                                            <h2 align="center">Doctor</h2>
-                                        </th>
-                                        <th>
-                                            <h2 align="center">Time</h2>
-                                        </th>
-                                        <th>
-                                            <h2 align="center">Disease</h2>
-                                        </th>
-                                        <th>
-                                            <h2 align="center">Prescription</h2>
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <h3>10/12/1999</h3>
-                                        </td>
-                                        <td>
-                                            <a href="doctordetails.php"><h4>Dr.poran</h4></a>
-                                        </td>
-                                        <td>
-                                            <h3>10:20</h3>
-                                        </td>
-                                        <td>
-                                            <h3>HIV(+)</h3>
-                                        </td>
-                                        <td>
-                                            <i>fineName.pdf</i>
-                                        </td>
-                                    </tr>
-									<tr>
-                                        <td>
-                                            <h3>10/12/2017</h3>
-                                        </td>
-                                        <td>
-                                            <a href="doctordetails.php"><h4>Dr.arif</h4></a>
-                                        </td>
-                                        <td>
-                                            <h3>12:00</h3>
-                                        </td>
-                                        <td>
-                                            <h3>heart disease</h3>
-                                        </td>
-                                        <td>
-                                            <i>fineName.pdf</i>
-                                        </td>
-                                    </tr>
-                                    
-                                </table>
-                            </fieldset>
-
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<table width="100%" cellspacing="0" border="1" cellpadding="5">
+											<tr height="10%">
+												<th>
+													<h2 align="center">Date</h2>
+												</th>
+												<th>
+													<h2 align="center">Doctor</h2>
+												</th>
+												<th>
+													<h2 align="center">Time</h2>
+												</th>
+												<th>
+													<h2 align="center">Disease</h2>
+												</th>
+												<th>
+													<h2 align="center">Prescription</h2>
+												</th>
+											</tr>
+											<tr>
+												<td>
+													<h3>10/12/1999</h3>
+												</td>
+												<td>
+													<a href="doctordetails.php"><h4>Dr.poran</h4></a>
+												</td>
+												<td>
+													<h3>10:20</h3>
+												</td>
+												<td>
+													<h3>HIV(+)</h3>
+												</td>
+												<td>
+													<a href="#">fineName.pdf</a>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<h3>10/12/2017</h3>
+												</td>
+												<td>
+													<a href="doctordetails.php"><h4>Dr.arif</h4></a>
+												</td>
+												<td>
+													<h3>12:00</h3>
+												</td>
+												<td>
+													<h3>heart disease</h3>
+												</td>
+												<td>
+													<a href="#">fineName.pdf</a>
+												</td>
+											</tr>
+											
+										</table><br><br>
+										<p align="center"><button>Previous Page</button> | <button>Next Page</button></p>
+										<p align="center"><a href="newappointment.html">Create New Appointment</a></p>
+									</td>
+								</tr>
+                           
+							</table>
                             <!------------------------------------------------------ END HERE----------------------------------------------------->
                         </td></div>
                     </table>

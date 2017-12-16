@@ -132,7 +132,7 @@
                                             </tr>
                                             <tr>
                                                 <td><a href="medicineblog.php">Napa</a></td>
-                                                <td>17</td>
+                                                <td>102</td>
                                                
                                             </tr>
 											<tr>
@@ -147,7 +147,7 @@
                                             </tr>
 											<tr>
                                                 <td><a href="medicineblog.php">Zantac 150</a></td>
-                                                <td>1</td>
+                                                <td>17</td>
                                                 
                                             </tr>
                                             <table id="bar" align="center" border="0" cellspacing="10">
@@ -204,11 +204,11 @@
 														<td height="400" >
 													<table  width="100%" height="100%" >
 														<tr>
-															<td height="30%" ></td>
+															<td height="0%" ></td>
 															
 														</tr>
 														<tr>
-															<td align="up" id="napa"height="17%"  title="17"></td>
+															<td align="up" id="napa"height="102%"  title="102"></td>
 														</tr>
 													</table>
 												</td>
@@ -241,7 +241,7 @@
 															
 														</tr>
 														<tr>
-															<td id="zantac" height="1%"  title="1"></td>
+															<td id="zantac" height="17%"  title="17"></td>
 														</tr>
 													</table>
 												</td>

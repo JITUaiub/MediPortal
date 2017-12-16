@@ -98,9 +98,9 @@
                         </fieldset>
                         </td>
 
-
-                        <td width="70%">
-                        	<!------ UI  -->
+						<div align="canter">
+							<td width="70%"align="center" valign="top" >
+								<!------ UI  -->
                                     <div>
                                         <h1>PROFILE</h1>
                                             <table width="100%">
@@ -210,7 +210,8 @@
                                             </table>
                                     </div>
                                 <!-- END -->
-                        </td>
+							</td>
+						</div>
                     </table>
                 </div>
             </td>
