@@ -100,62 +100,7 @@
                         <div align="center">
                              <td width="70%" align="center" valign="top">
                                
-                                <h1>Disease Symptoms </h1>
-                                   <div>
-                                    <fieldset>
-                                        <legend><b><h2>Fever</h2></b></legend>
-                                        <table align="left">
-                                            <tr>
-                                                <h1>Symptoms</h1>
-                                                <table>
-                                                    <tr>
-                                               <td align="center" >
-                                                1.Sweating</br>
-                                                2.Chills and shivering</br>
-                                                3.Headache</br>
-                                                4.Muscle aches</br>
-                                                5.Loss of appetite</br>
-                                                6.Irritability</br>
-                                                7.Dehydration</br>
-                                                8.General weakness
-
-                                               </td>
-                                           </tr>
-                                       </table>
-
-                                    <hr>
-                                                <h1>Causes</h1>
-                                                <table>
-                                                    <tr>
-                                               <td align="center" colspan="3">
-                                                Fever occurs when an area in your brain called the hypothalamus (hi-poe-THAL-uh-muhs)  also known as your body's "thermostat"  shifts the set point of your normal body temperature upward. When this happens, you may feel chilled and add layers of clothing or wrap up in a blanket, or you may shiver to generate more body heat, eventually resulting in an elevated body temperature.
-                                                Normal body temperature varies throughout the day it's lower in the morning and higher in the late afternoon and evening. Although most people consider 98.6 F (37 C) normal, your body temperature can vary by a degree or more  from about 97 F (36.1 C) to 99 F (37.2 C)  and still be considered normal.</br>
-                                               Fever or elevated body temperature might be caused by:</br>
-                                               1.A virus</br>
-                                               2.A bacterial infection</br>
-                                               3.Heat exhaustion</br>
-                                               4.Certain inflammatory conditions such as rheumatoid arthritis inflammation of the lining of your joints (synovium)</br>
-                                               5.A malignant tumor</br>
-                                               Some medications, such as antibiotics and drugs used to treat high blood pressure or seizures
-                                               Some immunizations, such as the diphtheria, tetanus and acellular pertussis (DTaP) or pneumococcal vaccine
-                                              Sometimes the cause of a fever can't be identified. If you have a fever for more than three weeks and your doctor isn't able to find the cause after extensive evaluation, the diagnosis may be fever of unknown origin.
-
-                                               </td>
-                                           </tr>
-                                           
-                                           <tr>
-                                                <td align="center">
-                                                    <a href="disanalysis.php">Back</a>
-                                                </td>
-                                            </tr>
-
-                                       </table>
-                                                  
-                                                
-                                            </tr>
-                                            
-                                        </table>
-                            </fieldset>
+                                
 
 
                                 

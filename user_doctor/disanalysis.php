@@ -137,7 +137,7 @@
                                     <br><br>
                                     <table width="100%" cellspacing="0" border="1" cellpadding="5">
                                             <tr>
-                                        <b>Year:2013</b>
+                                        
                                     </tr>
                                             <tr>                  
                                                 <th >Disease Name</th>  
@@ -172,42 +172,7 @@
 
                                         </table>
 
-                                        <table width="100%" cellspacing="0" border="1" cellpadding="5">
-                                    <tr>
-                                        <b>Year:2014</b>
-                                    </tr>
-                                            <tr>                  
-                                                <th >Disease Name</th>  
-                                                <th >Number Of Affected</th>
-                                                <th>Disease Symptoms</th>
-                                                
-                                            </tr>
-                                            <tr>
-                                                <td>Fever</td>
-                                                <td>7</td>
-                                                <td><a href="symptoms.php">Check Symptoms</a></td>
-                                               
-                                            </tr>
-                                            <tr>
-                                                <td>Dengue</td>
-                                                <td>2</td>
-                                                <td><a href="symptoms.php">Check Symptoms</a></td>
-                                                
-                                            </tr>
-                                            <tr>
-                                                <td>Hepatitis B</td>
-                                                <td>1</td>
-                                                <td><a href="symptoms.php">Check Symptoms</a></td>
-                                                
-                                            </tr>
-                                             <tr>
-                                                <td>Malaria</td>
-                                                <td>1</td>
-                                                <td><a href="symptoms.php">Check Symptoms</a></td>
-                                                
-                                            </tr>
-
-                                        </table>
+                                      
 
 
 
