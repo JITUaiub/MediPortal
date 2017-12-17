@@ -184,6 +184,44 @@
                                                                 </td>
                                                             </tr>
                                                             <tr><td><hr/></td></tr>
+
+                                                             <tr>
+                                                    <td>
+                                                        <table width="100%">
+                                                            <td width="10%"></td>
+                                                            <td width="30%"><strong>Blood Donation</strong></td>
+                                                            <td><strong>:</strong></td>
+                                                            <td>
+                                                                <fieldset>
+                                                                    <table>
+                                                                        <tr>
+                                                                            <td>Blood Group</td>
+                                                                            <td>:</td>
+                                                                            <td>A+</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Weight</td>
+                                                                            <td>:</td>
+                                                                            <td>Over 50 Kg</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Heart Condition</td>
+                                                                            <td>:</td>
+                                                                            <td>Good</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Injected Drugs</td>
+                                                                            <td>:</td>
+                                                                            <td>No</td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </fieldset>
+                                                            </td>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                            <tr><td><hr/></td></tr>
+
                                                             <tr>
                                                                 <td>
                                                                     <table width="100%">

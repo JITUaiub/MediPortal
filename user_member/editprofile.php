@@ -180,6 +180,45 @@
                                                                 </td>
                                                             </tr>
                                                             <tr><td><hr/></td></tr>
+
+                                                            <tr>
+                                                    <td>
+                                                        <table width="100%">
+                                                            <td width="10%"></td>
+                                                            <td width="30%"><strong>Blood Donation</strong></td>
+                                                            <td><strong>:</strong></td>
+                                                            <td>
+                                                                <fieldset>
+                                                                    <table>
+                                                                        <tr>
+                                                                            <td>Blood Group</td>
+                                                                            <td>:</td>
+                                                                            <td><input type="text" name="" value="A+" disabled="true"></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Weight</td>
+                                                                            <td>:</td>
+                                                                            <td><input type="text" name="" value="Over 50 kg"></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Heart Condition</td>
+                                                                            <td>:</td>
+                                                                            <td><input type="text" name="" value="Good"></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Injected Drugs</td>
+                                                                            <td>:</td>
+                                                                            <td><input type="text" name="" value="No"></td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </fieldset>
+                                                            </td>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+
+
+                                                <tr><td></td></tr>
                                                             <tr>
 																<td colspan="4" align="center">
 																	<input type="submit" id="update" value="Update Profile" onclick="update()">
