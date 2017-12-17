@@ -31,7 +31,7 @@
                 <div>
                     <table border="1" width="100%">
                         <!-- User Menu Section -->
-                        <td width="20%">
+                        <td width="20%" valign="top">
                             <fieldset>
                                 <legend>
                             <strong>Personal Information</strong></legend>
@@ -99,9 +99,187 @@
                         </td>
                         <div align="center">
                              <td width="70%" align="center" valign="top">
-                               
-                                
+                               <h2><b>Disease Statistics View</b></h2>
+                               <h3><b>Disease Name:Fever</b></h3>
 
+                               <fieldset>
+                                             <legend><b>Statistics View</b></legend>
+                                 <table width="100%" cellspacing="0" border="1" cellpadding="5">
+                                            <br> <br>
+
+                                            <tr>                  
+                                                <th >Area</th>  
+                                                <th >Number Of Affected</th>
+                                                
+                                            </tr>
+                                            <tr>
+                                                <td>Gazipur</td>
+                                                <td>45</td>
+                                               
+                                            </tr>
+                                            <tr>
+                                                <td>Jamalpur</td>
+                                                <td>49</td>
+                                                
+                                            </tr>
+                                            <tr>
+                                                <td>Jaypurhat</td>
+                                                <td>72</td>
+                                                
+                                            </tr>
+                                            <tr>
+                                                <td>Saidpur</td>
+                                                <td>105</td>
+                                                
+                                            </tr>
+                                        </table>
+                                           </fieldset>
+
+                                        
+
+                                            <table id="bar" align="center" border="0" cellspacing="10">
+                                            <tr >
+                                                <td height="400" >
+                                                    <table width="100%" height="100%" border="0">
+                                                        <tr>
+                                                            <td height="9.1%" >100+</td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="9.1%" >90</td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="9.1%" >80</td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="9.1%" >70</td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="9.1%" >60</td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="9.1%" >50</td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="9.1%" >40</td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="9.1%">30</td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="9.1%" >20</td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="9.1%" >10</td>
+
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="9.1%" >0</td>
+                                                            
+                                                            
+                                                        </tr>
+                                                    </table>
+                                                        <td height="400" >
+                                                    <table  width="100%" height="100%" >
+                                                        <tr>
+                                                            <td height="0%" ></td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td align="up" id="napa" height="45%"  title="45"></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                                <td height="400" >
+                                                    <table width="100%" height="100%">
+                                                        <tr>
+                                                            <td height="0%" ></td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td id="naloxegol" height="49%"  title="49"></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                                <td height="400" >
+                                                    <table width="100%" height="100%">
+                                                        <tr>
+                                                            <td height="0%" ></td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td id="naltrexone" height="72%"  title="72"></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                                <td height="400" >
+                                                    <table width="100%" height="100%">
+                                                        <tr>
+                                                            <td height="0%" ></td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td id="zantac" height="105%"  title="105"></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                                <tr>
+                                                <th height="10" >
+                                                    <h5>No</h5>
+                                                </th>
+                                                <th height="10" >
+                                                    <h5>Gazipur</h5>
+                                                </th>
+                                                <th height="10" >
+                                                    <h5>Jamalpur</h5>
+                                                </th>
+                                                <th height="10" >
+                                                    <h5>Jaypurhat</h5>
+                                                </th>
+                                                <th height="10" >
+                                                    <h5>Saidpur</h5>
+                                                </th>
+                                                
+
+                                            </tr>
+                                        </table>
+                                        <script type="text/javascript">
+                                            //var bar=document.getElementById("bar");
+                                                //bar.style.backgroundColor = "DodgerBlue";
+                                                napa.style.backgroundColor="green";
+                                                naloxegol.style.backgroundColor="blue";
+                                                naltrexone.style.backgroundColor="red";
+                                                zantac.style.backgroundColor="orange";
+                                                
+                                                
+                                        </script>
+                                            <h4 align="center">Number of Patient who are effected in this area</h4>
+
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                              <script type="text/javascript">
+                                                    function goBack(){
+                                                        window.history.back();
+                                                    }
+                                                </script>
+                                                <tr>
+                                                    <td align="center">
+                                                        <button onclick="goBack()">Go Back</button>
+                                                    </td>
+                                                </tr>
+                                            </td>
+                                        </tr>
+                                    </table>
 
                                 
                             </td>

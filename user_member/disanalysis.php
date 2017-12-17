@@ -137,30 +137,35 @@
                                             <tr>                  
                                                 <th >Disease Name</th>  
                                                 <th >Number Of Affected</th>
+                                                <th>Statistics View</th>
                                                 
                                                 
                                             </tr>
                                             <tr>
                                                 <td>Fever</td>
                                                 <td>7</td>
+                                                <td><a href="symptoms.php">See Statistics View</a></td>
                                                 
                                                
                                             </tr>
                                             <tr>
                                                 <td>Dengue</td>
                                                 <td>2</td>
+                                                 <td><a href="symptoms.php">See Statistics View</a></td>
                                                 
                                                 
                                             </tr>
                                             <tr>
                                                 <td>Hepatitis B</td>
                                                 <td>1</td>
+                                                 <td><a href="symptoms.php">See Statistics View</a></td>
                                                 
                                                 
                                             </tr>
                                              <tr>
                                                 <td>Malaria</td>
                                                 <td>1</td>
+                                                 <td><a href="symptoms.php">See Statistics View</a></td>
                                                 
                                                 
                                             </tr>
@@ -229,7 +234,7 @@
                                                             
                                                         </tr>
                                                         <tr>
-                                                            <td align="up" id="napa"height="17%"  title="17"></td>
+                                                            <td align="up" id="fever" height="17%"  title="17"></td>
                                                         </tr>
                                                     </table>
                                                 </td>
@@ -240,7 +245,7 @@
                                                             
                                                         </tr>
                                                         <tr>
-                                                            <td id="naloxegol" height="9%"  title="9"></td>
+                                                            <td id="dengue" height="9%"  title="9"></td>
                                                         </tr>
                                                     </table>
                                                 </td>
@@ -251,7 +256,7 @@
                                                             
                                                         </tr>
                                                         <tr>
-                                                            <td id="naltrexone" height="2%"  title="2"></td>
+                                                            <td id="hepatisis" height="2%"  title="2"></td>
                                                         </tr>
                                                     </table>
                                                 </td>
@@ -262,7 +267,7 @@
                                                             
                                                         </tr>
                                                         <tr>
-                                                            <td id="zantac" height="1%"  title="1"></td>
+                                                            <td id="malaria" height="1%"  title="1"></td>
                                                         </tr>
                                                     </table>
                                                 </td>
@@ -271,16 +276,16 @@
                                                     <h5>No</h5>
                                                 </th>
                                                 <th height="10" >
-                                                    <h5>Napa</h5>
+                                                    <h5>Fever</h5>
                                                 </th>
                                                 <th height="10" >
-                                                    <h5>Naloxegol</h5>
+                                                    <h5>Dengue</h5>
                                                 </th>
                                                 <th height="10" >
-                                                    <h5>Naltrexone</h5>
+                                                    <h5>Hepatitis B</h5>
                                                 </th>
                                                 <th height="10" >
-                                                    <h5>Zantac 150</h5>
+                                                    <h5>Malaria</h5>
                                                 </th>
                                                 
 
