@@ -302,15 +302,22 @@
 			window.location.assign("appointmentstatus.php");
 		}
 		function add(){
+			
 			var index = document.getElementById('select_doctor').selectedIndex;
 			var option = document.getElementById('select_doctor').options
 			var doctor_name = option[index].text;
-			if(doctor_name=="Select one"){
-				doctor_name="";
-			}
+			if(index ==0){
+						alert("Select a doctor")
+					}
 			else
 				{
-					document.getElementById('d_name').innerHTML += "<strong align=\"left\">Doctor's name :</strong><td align=\"right\"><a href=\"doctorDetails.php\">" + doctor_name + "</a></td>";
+					//if(var counter=1){
+					document.getElementById('d_name').innerHTML += "<strong align=\"left\">Doctor's name :</strong><td align=\"right\"><a href=\"doctorDetails.php\">" + doctor_name + "</a></td><br>";
+					//counter=2;
+					//}
+					//else{
+					//	alert("one  doctor is selected")
+					//}
 				}
 			
 		}
