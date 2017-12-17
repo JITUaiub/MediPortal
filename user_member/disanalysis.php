@@ -296,7 +296,7 @@
                                                 //bar.style.backgroundColor = "DodgerBlue";
                                                 fever.style.backgroundColor="green";
                                                 dengue.style.backgroundColor="green";
-                                                Hepatitis.style.backgroundColor="green";
+                                                hepatisis.style.backgroundColor="green";
                                                 malaria.style.backgroundColor="green";
                                                 
                                                 
