@@ -134,7 +134,7 @@
                                                     
                                     
                                     <table width="100%" cellspacing="0" border="1" cellpadding="5">
-                                            <b>Year:2013</b>
+                                            <br> <br>
 
                                             <tr>                  
                                                 <th >Medicine Name</th>  
@@ -164,34 +164,7 @@
                                         </table>
 
 
-                                         <table width="100%" cellspacing="0" border="1" cellpadding="5">
-                                                     <b>Year:2014</b>
-                                            <tr>                  
-                                                <th >Medicine Name</th>  
-                                                <th >Number Of Prescribed</th>
-                                                
-                                            </tr>
-                                            <tr>
-                                                <td><a href="medicineblog.php">Napa</a></td>
-                                                <td>17</td>
-                                               
-                                            </tr>
-                                            <tr>
-                                                <td><a href="medicineblog.php">Naloxegol</a></td>
-                                                <td>9</td>
-                                                
-                                            </tr>
-                                            <tr>
-                                                <td><a href="medicineblog.php">Naltrexone</a></td>
-                                                <td>2</td>
-                                                
-                                            </tr>
-                                            <tr>
-                                                <td><a href="medicineblog.php">Zantac 150</a></td>
-                                                <td>1</td>
-                                                
-                                            </tr>
-                                        </table>
+                                        
 
                                             <table id="bar" align="center" border="0" cellspacing="10">
 											<tr >

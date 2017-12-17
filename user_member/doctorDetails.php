@@ -213,6 +213,44 @@
                                                                 </td>
                                                             </tr>
                                                             <tr><td><hr/></td></tr>
+
+                                                            <tr>
+                                                    <td>
+                                                        <table width="100%">
+                                                            <td width="10%"></td>
+                                                            <td width="30%"><strong>Education</strong></td>
+                                                            <td><strong>:</strong></td>
+                                                            <td>
+                                                               
+                                                                    <table>
+                                                                        <tr>
+                                                                            <td>Degree Name</td>
+                                                                            <td>:</td>
+                                                                            <td>MBBS</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Passed Year</td>
+                                                                            <td>:</td>
+                                                                            <td>2015</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>University</td>
+                                                                            <td>:</td>
+                                                                            <td>DMC</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Description</td>
+                                                                            <td>:</td>
+                                                                            <td>Bla bla bla bla</td>
+                                                                        </tr>
+                                                                    </table>
+                                                               
+                                                            </td>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                        <tr><td><hr/></td></tr>
+
                                                         </table>
                                                     </td>
                                                     <td width="40%">
@@ -224,26 +262,28 @@
                                                     </td>
                                                 </tr>
 												<tr>
-													<td>
+													<td align="center">
 														<input id="message" type="submit" value="Message" onclick="message()"/>
-													
+
+
+													 <button onclick="goBack()">Go back</button>
+
+                                            <script>
+                                                function goBack() {
+                                                    window.history.back();
+                                                }
+                                                function message(){
+                                                    var x= document.getElementById("message").value;
+                                                    window.location.assign("eConsultation/conversation.php");
+                                                }
+                                            </script>
 														
 													</td>
 												</tr>
                                             </table>
 											
 											
-                                            <button onclick="goBack()">Go back</button>
-
-                                            <script>
-                                                function goBack() {
-                                                    window.history.back();
-                                                }
-												function message(){
-													var x= document.getElementById("message").value;
-													window.location.assign("eConsultation/conversation.php");
-												}
-                                            </script> 
+                                            
                                     </div>
 							
                             <!------------------------------------------------------ END HERE----------------------------------------------------->
