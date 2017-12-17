@@ -108,9 +108,9 @@
                                     <div align="center">
                                         <label>Search by: </label>
                                     <select>
-                                        <option>Patient Name</option>
+                                        <option>Doctor Name</option>
+                                        <option>Appointment Date</option>
                                         <option>Disease</option>
-                                        <option>Prescription Name</option>
                                     </select>
                                     <input type="text" name="text" value="Search Text" /><button>Go</button><br>
                                     Results per page: 
