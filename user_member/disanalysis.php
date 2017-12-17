@@ -294,10 +294,10 @@
                                         <script type="text/javascript">
                                             //var bar=document.getElementById("bar");
                                                 //bar.style.backgroundColor = "DodgerBlue";
-                                                napa.style.backgroundColor="green";
-                                                naloxegol.style.backgroundColor="green";
-                                                naltrexone.style.backgroundColor="green";
-                                                zantac.style.backgroundColor="green";
+                                                fever.style.backgroundColor="green";
+                                                dengue.style.backgroundColor="green";
+                                                Hepatitis.style.backgroundColor="green";
+                                                malaria.style.backgroundColor="green";
                                                 
                                                 
                                         </script>
