@@ -188,6 +188,7 @@
                                                             <td width="30%"><strong>Blood Donation</strong></td>
                                                             <td><strong>:</strong></td>
                                                             <td>
+                                                                <input type="checkbox" name=""> Blood Donation
                                                                 <fieldset>
                                                                     <table>
                                                                         <tr>

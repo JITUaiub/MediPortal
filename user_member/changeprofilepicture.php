@@ -25,13 +25,7 @@
                 </div>
             </td>
         </tr>
-        <tr>
-            <td>
-                <div>
-                    
-                </div>
-            </td>
-        </tr>
+
         <tr>
             <td>
                 <!-- Body section -->
