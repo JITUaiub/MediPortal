@@ -101,28 +101,67 @@
                         </fieldset>
                         </td>
                         <div align="center">
-                             <td width="70%" valign="top">
+                             <td width="70%" align="center">
                             <!------------------------ DESIGN PORTAL PAGE HERE ------------------------------>
-                            <h1 align="center">ANALYSIS</h1>
-                            <table align="center" width="60%">
-                                <tr>
-                                    <td width="30%"><a href="analysis_with_bar.php"><img src="images/barChart.png" width="150"></a></td>
-                                    <td width="40%">&nbsp;</td>
-                                    <td width="30%"><a href="analysis_with_table.php"><img src="images/table.png" width="150"></a></td>
-                                </tr>
-                                <tr>
-                                    <td width="30%" align="center"><a href="analysis_with_bar.php">Analysis in Bar Chart</a></td>
-                                    <td width="40%">&nbsp;</td>
-                                    <td width="30%" align="center"><a href="analysis_with_table.php">Analysis in Table</a></td>
-                                </tr>
+                             <fieldset>
+                                         <legend><b>Medicine  | ANALYSIS</b></legend>
+                                            <label>Sort The Page By:</label>
+                                <select>
+                                    <option>Medicine Name</option>
+                                    <option>Number Of Prescribe</option>
+                                </select>
+                                        </br>
+                                    </br>
+                                        Filter By
+                                        <select>
+                                            <option>Any</option>
+                                            <option>Name</option>
+                                        </select>
+                                          <input />
+                                        
+										
+                                  Date: <input name="blockdate1" value="2013-01-08"  type="date">
+                                     to <input name="blockdate2" value="2014-01-08" type="date">
+                                        <input type="submit" value="Search" />
+										<input type="submit" value="Print"/>
+                                                    
+                                    
+                                    <table width="100%" cellspacing="0" border="1" cellpadding="5">
+                                            <br> <br>
 
-
-                               <tr>
-                                   <td align="center" colspan="3">
-                                        <a href="disanalysis.php">Go to Disease Analysis</a>
-                                   </td>
-                               </tr>
-                            </table>
+                                            <tr>                  
+                                                <th >Medicine Name</th>  
+                                                <th >Number Of Prescribed</th>
+                                                
+                                            </tr>
+                                            <tr>
+                                                <td><a href="medicineblog.php">Napa</a></td>
+                                                <td>17</td>
+                                               
+                                            </tr>
+											<tr>
+                                                <td><a href="medicineblog.php">Naloxegol</a></td>
+                                                <td>9</td>
+                                                
+                                            </tr>
+											<tr>
+                                                <td><a href="medicineblog.php">Naltrexone</a></td>
+                                                <td>2</td>
+                                                
+                                            </tr>
+											<tr>
+                                                <td><a href="medicineblog.php">Zantac 150</a></td>
+                                                <td>1</td>
+                                                
+                                            </tr>
+                                        </table>
+										<input id="bar" type="submit" value="Show in Bar Chart" onclick="bar_chart()">
+										<a href="disanalysis.php">Go to Disease Analysis</a>
+									</fieldset>
+													</table>
+                                     </table>
+							
+							
                             <!------------------------ FINISH DESIGNING HERE ------------------------------>
                             </td>
                         </div>
@@ -155,6 +194,12 @@
             </td>
         </tr>
     </table>
+	<script type="text/javascript">
+		function bar_chart(){
+			var x= document.getElementById("bar").value;
+			window.location.assign("analysis_with_bar.php");
+		}
+	</script>
 </body>
 
 </html>

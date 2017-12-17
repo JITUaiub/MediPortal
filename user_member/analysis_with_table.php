@@ -165,13 +165,6 @@
 									</fieldset>
 													</table>
                                      </table>
-                                
-							
-							
-							
-							
-							
-                            
                         </td></div>
                     </table>
                 </div>

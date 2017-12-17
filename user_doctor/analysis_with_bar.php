@@ -101,28 +101,164 @@
                         </fieldset>
                         </td>
                         <div align="center">
-                             <td width="70%" valign="top">
+                             <td width="70%" align="center">
                             <!------------------------ DESIGN PORTAL PAGE HERE ------------------------------>
-                            <h1 align="center">ANALYSIS</h1>
-                            <table align="center" width="60%">
-                                <tr>
-                                    <td width="30%"><a href="analysis_with_bar.php"><img src="images/barChart.png" width="150"></a></td>
-                                    <td width="40%">&nbsp;</td>
-                                    <td width="30%"><a href="analysis_with_table.php"><img src="images/table.png" width="150"></a></td>
-                                </tr>
-                                <tr>
-                                    <td width="30%" align="center"><a href="analysis_with_bar.php">Analysis in Bar Chart</a></td>
-                                    <td width="40%">&nbsp;</td>
-                                    <td width="30%" align="center"><a href="analysis_with_table.php">Analysis in Table</a></td>
-                                </tr>
+								<fieldset>
+                                         <legend><b>Medicine  | ANALYSIS</b></legend>
+                                            <label>Sort The Chart By:</label>
+                                <select>
+                                    <option>Medicine Name</option>
+                                    <option>Number Of Prescribe</option>
+                                </select>
+                                        </br>
+                                    </br>
+                                        Filter By
+                                        <select>
+                                            <option>Any</option>
+                                            <option>Name</option>
+                                        </select>
+                                          <input />
+                                        
+										
+                                  Date: <input name="blockdate1" value="2013-01-08"  type="date">
+                                     to <input name="blockdate2" value="2014-01-08" type="date">
+                                        <input type="submit" value="Search" />
+										<input type="submit" value="Print"/>
+                                                   
+                                            <table id="bar" align="center" border="0" cellspacing="10">
+											<tr >
+												<td height="400" >
+													<table width="100%" height="100%" border="0">
+														<tr>
+															<td height="9.1%" >100+</td>
+															
+														</tr>
+														<tr>
+															<td height="9.1%" >90</td>
+															
+														</tr>
+														<tr>
+															<td height="9.1%" >80</td>
+															
+														</tr>
+														<tr>
+															<td height="9.1%" >70</td>
+															
+														</tr>
+														<tr>
+															<td height="9.1%" >60</td>
+															
+														</tr>
+														<tr>
+															<td height="9.1%" >50</td>
+															
+														</tr>
+														<tr>
+															<td height="9.1%" >40</td>
+															
+														</tr>
+														<tr>
+															<td height="9.1%">30</td>
+															
+														</tr>
+														<tr>
+															<td height="9.1%" >20</td>
+															
+														</tr>
+														<tr>
+															<td height="9.1%" >10</td>
 
+															
+														</tr>
+														<tr>
+															<td height="9.1%" >0</td>
+															
+															
+														</tr>
+													</table>
+														<td height="400" >
+													<table  width="100%" height="100%" >
+														<tr>
+															<td height="0%" ></td>
+															
+														</tr>
+														<tr>
+															<td align="up" id="napa"height="102%"  title="102"></td>
+														</tr>
+													</table>
+												</td>
+												<td height="400" >
+													<table width="100%" height="100%">
+														<tr>
+															<td height="0%" ></td>
+															
+														</tr>
+														<tr>
+															<td id="naloxegol" height="9%"  title="9"></td>
+														</tr>
+													</table>
+												</td>
+												<td height="400" >
+													<table width="100%" height="100%">
+														<tr>
+															<td height="0%" ></td>
+															
+														</tr>
+														<tr>
+															<td id="naltrexone" height="2%"  title="2"></td>
+														</tr>
+													</table>
+												</td>
+												<td height="400" >
+													<table width="100%" height="100%">
+														<tr>
+															<td height="0%" ></td>
+															
+														</tr>
+														<tr>
+															<td id="zantac" height="17%"  title="17"></td>
+														</tr>
+													</table>
+												</td>
+												<tr>
+												<th height="10" >
+													<h5>No</h5>
+												</th>
+												<th height="10" >
+													<h5>Napa</h5>
+												</th>
+												<th height="10" >
+													<h5>Naloxegol</h5>
+												</th>
+												<th height="10" >
+													<h5>Naltrexone</h5>
+												</th>
+												<th height="10" >
+													<h5>Zantac 150</h5>
+												</th>
+												
 
-                               <tr>
-                                   <td align="center" colspan="3">
-                                        <a href="disanalysis.php">Go to Disease Analysis</a>
-                                   </td>
-                               </tr>
-                            </table>
+											</tr>
+										</table>
+										<script type="text/javascript">
+											//var bar=document.getElementById("bar");
+												//bar.style.backgroundColor = "DodgerBlue";
+												napa.style.backgroundColor="green";
+												naloxegol.style.backgroundColor="green";
+												naltrexone.style.backgroundColor="green";
+												zantac.style.backgroundColor="green";
+												
+												
+										</script>
+										<h4 align="center">Number of Medicine which is Prescrib to Patient</h4>
+
+										<input id="table" type="submit" value="Show In Table" onclick="table()">
+										<a href="disanalysis.php">Go to Disease Analysis</a>
+									</fieldset>
+													</table>
+                                     </table>
+							
+							
                             <!------------------------ FINISH DESIGNING HERE ------------------------------>
                             </td>
                         </div>
@@ -155,6 +291,12 @@
             </td>
         </tr>
     </table>
+	<script type="text/javascript">
+		function table(){
+			var x= document.getElementById("table").value;
+			window.location.assign("analysis_with_table.php");
+		}
+	</script>
 </body>
 
 </html>
