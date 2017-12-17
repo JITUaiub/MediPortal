@@ -158,6 +158,9 @@
 												<th>
 													<h2 align="center">Disease</h2>
 												</th>
+                                                <th>
+                                                    <h2 align="center">Medicine</h2>
+                                                </th>
 												<th>
 													<h2 align="center">Prescription</h2>
 												</th>
@@ -175,6 +178,9 @@
 												<td>
 													<h3>HIV(+)</h3>
 												</td>
+                                                <td>
+                                                    <h3>Sufoxil</h3>
+                                                </td>
 												<td>
 													<a href="#">fineName.pdf</a>
 												</td>
@@ -192,6 +198,9 @@
 												<td>
 													<h3>heart disease</h3>
 												</td>
+                                                <td>
+                                                    <h3>Zanetoxil 500</h3>
+                                                </td>
 												<td>
 													<a href="#">fineName.pdf</a>
 												</td>
