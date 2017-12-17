@@ -187,13 +187,18 @@
 																<strong>Doctor :</strong>
 															</td>
 															<td>
-																<select>
+																<select id="select_doctor">
 																	<option>Select one</option>
 																	<option>Dr.poran</option>
 																	<option>Dr.Arif</option>
 																	<option>Dr.eshtiak</option>
 																	<option>Dr.pronob</option>
 																</select>
+															</td>
+														</tr>
+														<tr>
+															<td colspan="2">
+																<input id="add_doctor" type="submit" value="add" onclick="add()">
 															</td>
 														</tr>
 													</table>
@@ -203,7 +208,14 @@
 									</table>
 								</fieldset>
                                     <table border="0">
-                                        <tr>
+										<tr>
+											<td colspan="2">
+											<div id ="d_name">
+												
+											</div>
+											</td>
+										</tr>
+										<tr>
                                             
                                             <td width="30%" align="right">
 												<strong>Appointment For :</strong>
@@ -287,10 +299,20 @@
 		function status(){
 			var x= document.getElementById("submit").value;
 			alert("Request is pending");
-        window.location.assign("appointmentstatus.php");
-		
-		
-		
+			window.location.assign("appointmentstatus.php");
+		}
+		function add(){
+			var index = document.getElementById('select_doctor').selectedIndex;
+			var option = document.getElementById('select_doctor').options
+			var doctor_name = option[index].text;
+			if(doctor_name=="Select one"){
+				doctor_name="";
+			}
+			else
+				{
+					document.getElementById('d_name').innerHTML += "<strong align=\"left\">Doctor's name :</strong><td align=\"right\"><a href=\"doctorDetails.php\">" + doctor_name + "</a></td>";
+				}
+			
 		}
 	</script>
 </body>
