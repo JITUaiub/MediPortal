@@ -38,7 +38,7 @@
                <div>
                     <table border="1" width="100%">
                         <!-- User Menu Section -->
-                        <td width="20%">
+                        <td width="20%" valign="top">
                             <fieldset>
                                 <legend>
 									<strong>Personal Information</strong>
@@ -114,6 +114,7 @@
                                 <select>
                                     <option>Medicine Name</option>
                                     <option>Number Of Prescribe</option>
+                                    <option>Year</option>
                                     
                                 </select>
                                         </br>
@@ -133,6 +134,8 @@
                                                     
                                     
                                     <table width="100%" cellspacing="0" border="1" cellpadding="5">
+                                            <b>Year:2013</b>
+
                                             <tr>                  
                                                 <th >Medicine Name</th>  
                                                 <th >Number Of Prescribed</th>
@@ -140,7 +143,7 @@
                                             </tr>
                                             <tr>
                                                 <td><a href="medicineblog.php">Napa</a></td>
-                                                <td>102</td>
+                                                <td>17</td>
                                                
                                             </tr>
 											<tr>
@@ -155,9 +158,41 @@
                                             </tr>
 											<tr>
                                                 <td><a href="medicineblog.php">Zantac 150</a></td>
-                                                <td>17</td>
+                                                <td>1</td>
                                                 
                                             </tr>
+                                        </table>
+
+
+                                         <table width="100%" cellspacing="0" border="1" cellpadding="5">
+                                                     <b>Year:2014</b>
+                                            <tr>                  
+                                                <th >Medicine Name</th>  
+                                                <th >Number Of Prescribed</th>
+                                                
+                                            </tr>
+                                            <tr>
+                                                <td><a href="medicineblog.php">Napa</a></td>
+                                                <td>17</td>
+                                               
+                                            </tr>
+                                            <tr>
+                                                <td><a href="medicineblog.php">Naloxegol</a></td>
+                                                <td>9</td>
+                                                
+                                            </tr>
+                                            <tr>
+                                                <td><a href="medicineblog.php">Naltrexone</a></td>
+                                                <td>2</td>
+                                                
+                                            </tr>
+                                            <tr>
+                                                <td><a href="medicineblog.php">Zantac 150</a></td>
+                                                <td>1</td>
+                                                
+                                            </tr>
+                                        </table>
+
                                             <table id="bar" align="center" border="0" cellspacing="10">
 											<tr >
 												<td height="400" >
