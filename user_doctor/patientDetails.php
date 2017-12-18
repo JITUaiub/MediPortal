@@ -225,9 +225,14 @@
                                                         </table>
                                                     </td>
                                                 </tr>
+                                               <script type="text/javascript">
+                                                    function goBack(){
+                                                        window.history.back();
+                                                    }
+                                                </script>
                                                 <tr>
                                                     <td align="center">
-                                                        <a href="patienthistory.php">Back to Patient History</a>
+                                                        <button onclick="goBack()">Go Back</button> | <button>Report this user</button>
                                                     </td>
                                                 </tr>
                                             </table>

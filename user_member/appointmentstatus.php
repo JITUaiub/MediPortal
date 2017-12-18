@@ -26,13 +26,6 @@
             </td>
         </tr>
         <tr>
-            <td>
-                <div>
-                    
-                </div>
-            </td>
-        </tr>
-        <tr>
         	<td>
             	<!-- Body section -->
                <div>
@@ -108,7 +101,7 @@
                         <td width="70%" align="center">
                            
                            <fieldset>
-                              <legend>Appoinment History</legend><br>
+                              <legend><h3>APPOINTMENT HISTORY | SEARCH</h3></legend><br>
 							   <table>
                                 <tr>
                                     <td>
@@ -131,9 +124,9 @@
 										<input />
 										<input type="submit" value="Search" />
 									</td>
-									
 								</tr>
                             </table>
+                            </fieldset>
 							<br/><br/><br/>
                               <table width="100%" cellspacing="0" border="1" cellpadding="5">
                                   <tr>
@@ -215,9 +208,6 @@
                                   </tr>
 								  
                               </table>   <br>                  
-                            </fieldset>
-
-
 
                         </td></div>
                     </table>
