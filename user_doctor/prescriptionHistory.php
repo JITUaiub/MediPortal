@@ -1,7 +1,7 @@
 
 <html>
 
-<head><title>Home</title></head>
+<head><title>Prescription History</title></head>
 
 <body>
     <table align="center" width="100%">

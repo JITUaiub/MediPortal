@@ -1,6 +1,6 @@
 <html>
 
-<head><title>Home</title></head>
+<head><title>Medicine Analysis</title></head>
 
 <body>
 	<table border="0" align="center" width="100%">
@@ -224,7 +224,7 @@
 															
 														</tr>
 														<tr>
-															<td align="up" id="napa"height="102%"  title="102"></td>
+															<td align="up" id="napa"height="17%"  title="102"></td>
 														</tr>
 													</table>
 												</td>
@@ -257,7 +257,7 @@
 															
 														</tr>
 														<tr>
-															<td id="zantac" height="17%"  title="17"></td>
+															<td id="zantac" height="1%"  title="17"></td>
 														</tr>
 													</table>
 												</td>

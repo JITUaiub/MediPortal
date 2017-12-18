@@ -1,6 +1,6 @@
 <html>
 
-<head><title>Home</title></head>
+<head><title>Patient History</title></head>
 
 <body>
 	<table align="center" width="100%">
@@ -115,7 +115,7 @@
                                         <label>Sort The Page By</label>
                                 <select>
                                     <option>Name</option>
-                                    <option>Appoinment Date</option>
+                                    <option>Last Appointment Date</option>
                                     <option>Age</option>
                                     <option>Disease</option>
                                 </select>
@@ -128,8 +128,9 @@
                                  <label>Search By</label>
                                 <select>
                                     <option>Name</option>
-                                    <option>Appoinment Date</option>
-                                    <option>Status</option>
+                                    <option>Last Appointment</option>
+                                    <option>Disease</option>
+                                    
                                 </select>
                             </td>
                             </br>

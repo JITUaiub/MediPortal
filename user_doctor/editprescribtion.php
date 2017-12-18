@@ -1,6 +1,6 @@
 <html>
 
-<head><title>Home</title></head>
+<head><title>Edite Prescription</title></head>
 
 <body>
     <table align="center" width="100%">

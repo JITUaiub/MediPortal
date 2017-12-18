@@ -1,6 +1,6 @@
 <html>
 
-<head><title>Home</title></head>
+<head><title>Medicine Analysis</title></head>
 
 <body>
     <table align="center" width="100%">
@@ -115,7 +115,7 @@
                                 <select>
                                     <option>Medicine Name</option>
                                     <option>Year</option>
-                                    
+                                    <option>Number Of Prescribed</option>
                                 </select>
 
                                 <br><br>

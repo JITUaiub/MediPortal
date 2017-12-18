@@ -1,6 +1,6 @@
 <html>
 
-<head><title>Home</title></head>
+<head><title>Appointmet Status</title></head>
 
 <body>
 	<table align="center" width="100%">
@@ -113,6 +113,7 @@
                                     <option>Address</option>
                                     <option>Age</option>
                                     <option>Disease</option>
+                                    <option>Time|Date</option>
                                 </select></br></br>
                                              <legend><b>GENERAL USERS | SEARCH</b></legend>
                                             Filter By
@@ -120,7 +121,8 @@
                                                 <option>Select One</option>
                                                 <option>Name</option>   
                                                 <option>Age</option>
-                                                <option>Problem</option>
+                                                <option>Patient Problem</option>
+                                                <option>Time|Date</option>
                                             </select>
                                               <input />
                                             <input type="submit" value="Search" />

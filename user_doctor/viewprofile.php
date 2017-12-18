@@ -1,6 +1,6 @@
 <html>
 
-<head><title>Home</title></head>
+<head><title>View Profile</title></head>
 
 <body>
 	<table align="center" width="100%">

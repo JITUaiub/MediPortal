@@ -1,6 +1,6 @@
 <html>
 
-<head><title>Home</title></head>
+<head><title>Doctor Details</title></head>
 
 <body>
 	<table border="0" align="center" width="100%">

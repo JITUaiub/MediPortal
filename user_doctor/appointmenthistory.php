@@ -1,6 +1,6 @@
 <html>
 
-<head><title>Home</title></head>
+<head><title>Appoinment History</title></head>
 
 <body>
 	<table align="center" width="100%">
@@ -114,9 +114,9 @@
                                           <label>Sort The Page By</label>
                                 <select>
                                     <option>Name</option>
-                                    <option>Address</option>
-                                    <option>Age</option>
-                                    <option>Disease</option>
+                                    <option>Appoinment Date</option>
+                                    <option> Status</option>
+                                    
                                 </select></br></br>
 
                                 <label>Search By</label>
