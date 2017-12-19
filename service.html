@@ -6,7 +6,8 @@
 <body>
 	<table>
 		<div>
-		<div><table align="center" width="100%">
+		<div>
+				<table align="center" width="100%">
 					<tr align="right">
 						<td width="10%">
 							<fieldset><a href="Home.html"><img src="images/logo.png" align="left"></a></fieldset>
@@ -28,91 +29,10 @@
 				</table>
 		</div>
 
-
-<div align="center">
-	<script>
-	var i=0;
-	var images=[];
-	var time=3000;
-
-	images[0]="images/1.jpg";
-	images[1]="images/2.jpg";
-	images[2]="images/3.jpg";
-
-	function changeImage()
-	{
-	   document.slide.src=images[i];
-
-	   if(i<images.length-1)
-	   {
-	      i++;
-	   }
-	   else
-	   {
-	     i=0;
-	   }
-
-	   setTimeout("changeImage()",time);
-
-	}
-	window.onload=changeImage;
-	</script>
-
-	<img name="slide" width="100%" height="70%">
-
-</div>
-
-<div>
-	<h1 align="center"><i>Welcome to MediPortal</i></h1>
-</div>
-
-<br><br>
-<div align="center">
-	<table width="60%" align="center">
-		<tr>
-			<td>
-				<fieldset>
-					<h1 align="center">Get an Appointment now</h1>
-					<table align="center">
-				<form action="php/loginRedirect.php">
-					<tr><td>
-					<label>Select City</label>
-					<select>
-							<option selected="true">Select City</option>
-						<optgroup label="Dhaka Division">
-							<option>Dhaka</option>
-							<option>Gazipur</option>
-						</optgroup>
-					</select></td></tr>
-
-					<tr><td>
-					<label>Looking for</label>
-					<select>
-						<option>Doctor</option>
-						<option>Blood Donor</option>
-					</select>
-					<select>
-						<optgroup label="Doctor Name">
-							<option>Mr. X</option>
-							<option>Mr. Y</option>
-						</optgroup>
-						<optgroup label="Donor Name">
-							<option>Mr. X</option>
-							<option>Mr. Y</option>
-						</optgroup>
-					</select></td></tr>
-					<tr><td align="center">
-					<input type="submit" value="Get an appointment now" id="Sub"/></td></tr>
-				</form>
-			</table>
-			</fieldset>
-			</td>
-		</tr>
-	</table>
-</div>	
-
-<br><hr>
-				<fieldset>                   <div>
+		<div>
+			<img src="images/serviceimage.png" width="100%" height="70%">
+		</div>
+                  <fieldset>                   <div>
                    	<h1 align="center"><b>Our Service</b></h1>
                    </div>
                </div>
@@ -121,9 +41,13 @@
 						<tr>
 							<td align="center">
 								<fieldset>
-									<a href="service.html"><img src="images/appointment.png" align="center" width="30%"></a>
+									<a href="appointment.html"><img src="images/appointment.png" align="center" width="30%"></a>
 									<h1>Get Appointment From Home</h1>
-									
+									<hr>
+									<p>
+										Find your doctor and get an appointment today.
+										       Now You can find your choosable doctor at home and get an appointment by staying at home.
+									</p>
 								</fieldset>
 							</td>
 						</tr>
@@ -133,9 +57,14 @@
 						<tr>
 							<td align="center">
 								<fieldset>
-									<a href="service.html"><img src="images/contact.png" width="30%" align="center"></a>
+									<img src="images/contact.png" width="30%" align="center">
 									<h1>Search for a blood donors</h1>
-									
+									<hr>
+									<p>
+										Find a donor and get an appointment today.
+
+										      In Emergency Cases now you donot face any problem for blood. We inform you available blood donar at 24 hours. You now find blood donar in your own area easily.
+									</p>
 								</fieldset>
 							</td>
 						</tr>
@@ -148,16 +77,20 @@
 						<tr>
 							<td align="center">
 								<fieldset>
-									<a href="service.html"><img src="images/contact.png" width="30%" align="center"></a>
+									<img src="images/contact.png" width="30%" align="center">
 									<h1>Contact with your doctor</h1>
-									
+									<hr>
+									<p>
+										With e-consultation you can talk to your doctor from home or anywhere.
+
+										We are care about your advantage. We provide you to consult with a doctor stay at home. Now you can be connected with a doctor at any time from anywhere
+									</p>
 								</fieldset>
 							</td>
 						</tr>
 					</table>
 				</div>
 			</fieldset>
-
 
 <br><br><br><br><br><br><br><br>
 
@@ -211,4 +144,3 @@
 </div>
 </body>
 </html>
-       
