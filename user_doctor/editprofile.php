@@ -105,159 +105,186 @@
                                 <!------ UI  -->
                                 <div>
                                         <h1>EDIT PROFILE</h1>
-                                            <table width="65%">
+                                          <table width="100%">
+                                        <td width="60%">
+                                            <fieldset>
+
+                                            <table width="100%">
+
                                                 <tr>
-                                                    <td width="60%" align="center">
-                                                        <table width="100%" align="center">
-                                                            <tr>
-                                                                <td>
-                                                                    <table width="100%" align="center">
-                                                                        <td width="10%" align="center">&nbsp;</td>
-                                                                        <td width="30%" align="center"><strong>Name</strong></td>
-                                                                        <td align="center"><strong>:</strong></td>
-                                                                        <td align="center"><input type="text" name="name" value="Dread Pirate Robert"></td>
-                                                                    </table>
-                                                                </td>
-                                                            </tr>
-                                                            <tr><td><hr/></td></tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <table width="100%">
-                                                                        <td align="center" width="10%">&nbsp;</td>
-                                                                        <td align="center" width="30%"><strong>Username</strong></td>
-                                                                        <td align="center"><strong>:</strong></td>
-                                                                        <td align="center"><input type="text" name="username" value="Robert123"></td>
-                                                                    </table>
-                                                                </td>
-                                                            </tr>
-                                                            <tr><td><hr/></td></tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <table width="100%">
-                                                                        <td align="center" width="10%">&nbsp;</td>
-                                                                        <td align="center" width="30%"><strong>Gender</strong></td>
-                                                                        <td align="center"><strong>:</strong></td>
-                                                                        <td align="center"><input type="text" disabled="true" value="Male"></td>
-                                                                    </table>
-                                                                </td>
-                                                            </tr>
-                                                            <tr><td><hr/></td></tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <table width="100%">
-                                                                        <td align="center" width="10%">&nbsp;</td>
-                                                                        <td align="center" width="30%"><strong>Email</strong></td>
-                                                                        <td align="center"><strong>:</strong></td>
-                                                                        <td align="center"><input type="text" name="email" value="robert@example.com"></td>
-                                                                    </table>
-                                                                </td>
-                                                            </tr>
-                                                            <tr><td><hr/></td></tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <table width="100%">
-                                                                        <td align="center" width="10%">&nbsp;</td>
-                                                                        <td align="center" width="30%"><strong>Phone</strong></td>
-                                                                        <td align="center"><strong>:</strong></td>
-                                                                        <td align="center"><input type="text" name="phone" value="01700000000"></td>
-                                                                    </table>
-                                                                </td>
-                                                            </tr>
-                                                            <tr><td><hr/></td></tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <table width="100%">
-                                                                        <td align="center" width="10%">&nbsp;</td>
-                                                                        <td align="center" width="30%"><strong>Date of Birth</strong></td>
-                                                                        <td align="center"><strong>:</strong></td>
-                                                                        <td align="center"><input type="date" name="DOB" value="2013-01-08"></td>
-                                                                    </table>
-                                                                </td>
-                                                            </tr>
-                                                            <tr><td><hr/></td></tr>
-                                                             <tr>
-                                                                <td>
-                                                                    <table width="100%">
-                                                                        <td align="center" width="10%">&nbsp;</td>
-                                                                        <td align="center" width="30%"><strong>BMDC Number</strong></td>
-                                                                        <td align="center"><strong>:</strong></td>
-                                                                        <td align="center"><input type="text" name="bmdc_no" value="DMC-017000BMDC-P0" disabled="true"></td>
-                                                                    </table>
-                                                                </td>
-                                                            </tr>
-                                                                                                            <tr><td><hr/></td></tr>
-                                                <tr>
-                                                    <td>
-                                                        <table width="100%">
-                                                            <td width="30%"><strong>Education</strong></td>
-                                                            <td><strong>:</strong></td>
-                                                            <td>
-                                                                <fieldset>
-                                                                    <table>
-                                                                        <tr>
-                                                                            <td>Degree Name</td>
-                                                                            <td>:</td>
-                                                                            <td><input type="text" name="" value="MBBS"></td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>Passed Year</td>
-                                                                            <td>:</td>
-                                                                            <td><input type="text" name="" value="2015"></td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>University</td>
-                                                                            <td>:</td>
-                                                                            <td><input type="text" name="" value="DMC"></td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>Description</td>
-                                                                            <td>:</td>
-                                                                            <td><textarea>Bla bla bla bla</textarea></td>
-                                                                        </tr>
-                                                                    </table>
-                                                                </fieldset>
-                                                            </td>
-                                                        </table>
+                                                    <td width="20%" valign="top"><label><b><i>General Information:</i></b></label>
                                                     </td>
-                                                </tr>
-                                                                                                <tr><td><hr/></td></tr>
-                                                <tr>
-                                                    <td>
+                                                    <td align="center">
+                                                        <fieldset>
                                                         <table width="100%">
-                                                            <td width="30%"><strong>Chambers</strong></td>
+                                                        <tr>
+                                                            <td width="30%"><strong>Name</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td>
-                                                                <fieldset>
-                                                                    <table>
-                                                                        <tr>
-                                                                            <td>Chamber Name</td>
-                                                                            <td>:</td>
-                                                                            <td>XYZ</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>Chamber Location</td>
-                                                                            <td>:</td>
-                                                                            <td>Dhaka</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>Working Days</td>
-                                                                            <td>:</td>
-                                                                            <td>SAT, SUN, TUES</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>Time</td>
-                                                                            <td>:</td>
-                                                                            <td>8.30PM to 10.30PM</td>
-                                                                        </tr>
-                                                                        <tr><td><a href="managechamber.html">Edit Chambers</a></td></tr>
-                                                                    </table>
-                                                                </fieldset>
-                                                            </td>
-                                                        </table>
+                                                            <td ><input type="text" name="name" value="Bob"></td>
+                                                        </tr>
+                                                         
+                                                         <tr>
+                                                            
+                                                            <td width="30%"><strong>Gender</strong></td>
+                                                            <td><strong>:</strong></td>
+                                                            <td ><input type="text" name="gender" value="Male" disabled="true"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="30%"><strong>User Name</strong></td>
+                                                            <td><strong>:</strong></td>
+                                                            <td ><input type="text" name="username" value="Bob Marley"></td>
+                                                        </tr>
+                                                        
+
+                                                    </table>
+                                                </fieldset>
+                                                </td>
+                                            </tr>
+                                                
+
+                                                <tr>
+                                                    <td width="20%" valign="top"><label><b><i>Educational Information:</i></b></label>
                                                     </td>
-                                                </tr>
-                                                            <tr><td><hr/></td></tr>
-                                                            <tr><td><hr/></td></tr>
+                                                    <td>
+                                                        <fieldset>
+                                                        <table width="100%">
+                                                        <tr>
+                                                            <td width="30%"><strong>Degree Name</strong></td>
+                                                            <td><strong>:</strong></td>
+                                                            <td width="65%"><input type="text" name="degree" value="MBBS"></td>
+                                                        </tr>
+                                                         <tr>
+                                                            
+                                                            <td width="30%"><strong>Passed Year</strong></td>
+                                                            <td><strong>:</strong></td>
+                                                            <td><input type="text" name="passyear" value="2015"></td>
+                                                         </tr>
+                                                         <tr>
+                                                            
+                                                            <td width="30%"><strong>Passing College</strong></td>
+                                                            <td><strong>:</strong></td>
+                                                            <td><input type="text" name="passcollege" value="Dhaka Medical College"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="30%"><strong>Description</strong></td>
+                                                            <td><strong>:</strong></td>
+                                                            <td><input type="text" name="description" value="Bla Bla Bla"></td>
+                                                        </tr>
+                                                        
+
+                                                    </table>
+                                                </fieldset>
+                                                </td>
+                                            </tr>
+
+
+                                                <tr>
+                                                    <td width="20%" valign="top"><label><b><i>Proffesional Information:</i></b></label>
+                                                    </td>
+                                                    <td>
+                                                        <fieldset>
+                                                        <table width="100%">
+                                                        <tr>
+                                                            <td width="30%"><strong>Title</strong></td>
+                                                            <td><strong>:</strong></td>
+                                                            <td width="65%"><input type="text" name="title" value="Assistant Professor"></td>
+                                                        </tr>
+                                                         <tr>
+                                                            
+                                                            <td width="30%"><strong>Medical College</strong></td>
+                                                            <td><strong>:</strong></td>
+                                                            <td><input type="text" name="medicalcollege" value="Sir Sollimullah Medical College"></td>
+                                                         </tr>
+
+                                                         <tr>
+                                                            
+                                                            <td width="30%"><strong>BMDC Number</strong></td>
+                                                            <td><strong>:</strong></td>
+                                                            <td><input type="text" name="bmdc_number" value="0168-DMC594/0625"></td>
+                                                         </tr>
+                                                    </table>
+                                                </fieldset>
+                                                </td>
+                                            </tr>
+
+
+                                                 <tr>
+                                                    <td width="20%" valign="top"><label><b><i>Chamber Information:</i></b></label>
+                                                    </td>
+                                                    <td>
+                                                        <fieldset>
+                                                        <table width="100%">
+                                                        <tr>
+                                                            <td width="30%"><strong>Chamber Name</strong></td>
+                                                            <td><strong>:</strong></td>
+                                                            <td width="65%">Mr.XYZ</td>
+                                                        </tr>
+                                                         <tr>
+                                                            
+                                                            <td width="30%"><strong>Chamber Location</strong></td>
+                                                            <td><strong>:</strong></td>
+                                                            <td>Dhaka</td>
+                                                         </tr>
+
+                                                         <tr>
+                                                            
+                                                            <td width="30%"><strong>Working Days</strong></td>
+                                                            <td><strong>:</strong></td>
+                                                            <td>SAT, SUN, TUES</td>
+                                                         </tr>
+
+                                                         <tr>
+                                                            
+                                                            <td width="30%"><strong>Time</strong></td>
+                                                            <td><strong>:</strong></td>
+                                                            <td>8.30PM to 10.30PM</td>
+                                                         </tr>
+                                                         
+                                                        <tr>
+                                                        	<td colspan="3" align="center"><a href="editchamber.php">Edit Chamber</td>
+                                                        </tr>
+
+                                                    </table>
+                                                </fieldset>
+                                                </td>
+                                            </tr>
+
+
+                                                  <tr>
+                                                    <td width="20%" valign="top"><label><b><i>Others Information:</i></b></label>
+                                                    </td>
+                                                    <td>
+                                                        <fieldset>
+                                                        <table width="100%">
+                                                        <tr>
+                                                            <td width="30%"><strong>Date Of Birth</strong></td>
+                                                            <td><strong>:</strong></td>
+                                                            <td width="65%"><input type="date" name="dob" value="19/9/1998"></td>
+                                                        </tr>
+
+                                                         <tr>
+                                                            
+                                                            <td width="30%"><strong>Mobile Number</strong></td>
+                                                            <td><strong>:</strong></td>
+                                                            <td><input type="text" name="mobilenumber" value="01685940625"></td>
+                                                         </tr>
+
+                                                         <tr>
+                                                            
+                                                            <td width="30%"><strong>Email</strong></td>
+                                                            <td><strong>:</strong></td>
+                                                            <td><input type="text" name="email" value="bob@aiub.edu"></td>
+                                                         </tr>
+                                                    </table>
+                                                </fieldset>
+                                                </td>
+                                            </tr>
+
+                                        </td>
+                                        
+                                    </table>
+
+                                         
                                                             <tr><td colspan="4" align="center"><input type="submit" name="submit" value="Update Profile"></td></tr>
                                                             <tr>
                                                                 <td>
