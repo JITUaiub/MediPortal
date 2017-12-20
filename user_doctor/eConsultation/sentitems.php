@@ -107,23 +107,10 @@
                                 <input type="submit" name="search" value="Search"><br><br>
                                 <table width="100%">
                                     <tr>
-                                        <td align="center">
-                                             <strong>Receiver</strong>
-                                        </td>
-                                        <td align="center">
-                                             <strong>Subject</strong>
-                                        </td>
-                                        <td align="center">
-                                             <strong>Message</strong>
-                                        </td>
-                                        <td align="center">
-                                             <strong>Time | Date</strong>
-                                        </td>
-                                        <td align="center">
-                                            <strong>Attachment</strong>
-                                        </td>
-                                        <td align="center">
+                                       
+                                        <td align="right" colspan="7">
                                              <strong>
+                                                <label>Actions:</label>
                                                 <select >
                                                     <optgroup label="Actions">
                                                         <option selected="true" value="all">Select none</option>

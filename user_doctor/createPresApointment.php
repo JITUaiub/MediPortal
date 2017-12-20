@@ -31,7 +31,7 @@
                <div>
                     <table width="100%" border="1">
                         <!-- User Menu Section -->
-                        <td width="20%">
+                        <td width="20%" valign="top">
                             <fieldset>
                                 <legend>
                                     <strong>Personal Information</strong></legend>
@@ -101,11 +101,13 @@
                         </fieldset>
                         </td>
                         <div align="center">
-                             <td width="70%" align="center" valign="top">
+                             <td width="100%" align="center" valign="top">
+                                
+
                                 <h1 align="center">Create Prescription</h1>
-                                <table align="center" width="80%">
+                                <table align="center" width="100%">
                                     <tr>
-                                        <td>
+                                        <td >
                                             <fieldset>
                                 <table width="100%">
                                    <tr align="center">
@@ -148,6 +150,9 @@
                                             <strong><input type="date" name="date" value="21-07-2017"></strong>
                                         </td>
                                     </tr>
+
+
+
                                     
                                 </table>
                                 <table align="center" border="1" width="100%">
@@ -203,18 +208,153 @@
                                                         <input type="text" id="medicineName" name="medicineName" value="Medicine Name">
                                                     </td>
                                                     <td>&nbsp;</td>
-                                                    <td align="center">Day: <input type="text" id="day" name="day" value="Mon, Wed, Thus"></td>
-                                                    <td align="center"><input type="text" name="times" id="times" value="2" size="5"> times</td>
+                                                    <td align="center">Day:</td>
+                                                    <td><input type="text" id="day" name="day" value="Mon, Wed, Thus"></td>
+                                                    <td><input type="text" name="times" id="times" value="2" size="5"> </td>
+                                                     <td align="center">times</td>
                                                 </tr>
 
                                                 <tr>
-                                                    <td colspan="6" align="right"><button onclick="add()">Add another</button></td>
+                                                    <td colspan="6" align="center"><button onclick="add()">Add another</button></td>
                                                     
                                                 </tr>
                                             </table>
                                         </td>
+
+
+                                        <td>
+                                            <table id="bar" align="center" border="0" cellspacing="10">
+                                            <tr >
+                                                <td height="400" >
+                                                    <table width="100%" height="100%" border="0">
+                                                        <tr>
+                                                            <td height="9.1%" >100+</td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="9.1%" >90</td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="9.1%" >80</td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="9.1%" >70</td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="9.1%" >60</td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="9.1%" >50</td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="9.1%" >40</td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="9.1%">30</td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="9.1%" >20</td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="9.1%" >10</td>
+
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="9.1%" >0</td>
+                                                            
+                                                            
+                                                        </tr>
+                                                    </table>
+                                                        <td height="400" >
+                                                    <table  width="100%" height="100%" >
+                                                        <tr>
+                                                            <td height="0%" ></td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td align="up" id="napa"height="102%"  title="102"></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                                <td height="400" >
+                                                    <table width="100%" height="100%">
+                                                        <tr>
+                                                            <td height="0%" ></td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td id="naloxegol" height="9%"  title="9"></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                                <td height="400" >
+                                                    <table width="100%" height="100%">
+                                                        <tr>
+                                                            <td height="0%" ></td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td id="naltrexone" height="2%"  title="2"></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                                <td height="400" >
+                                                    <table width="100%" height="100%">
+                                                        <tr>
+                                                            <td height="0%" ></td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td id="zantac" height="17%"  title="17"></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                                <tr>
+                                                <th height="10" >
+                                                    <h5>No</h5>
+                                                </th>
+                                                <th height="10" >
+                                                    <h5>Napa</h5>
+                                                </th>
+                                                <th height="10" >
+                                                    <h5>Naloxegol</h5>
+                                                </th>
+                                                <th height="10" >
+                                                    <h5>Naltrexone</h5>
+                                                </th>
+                                                <th height="10" >
+                                                    <h5>Zantac 150</h5>
+                                                </th>
+                                                
+
+                                            </tr>
+                                        </table>
+                                        <script type="text/javascript">
+                                            //var bar=document.getElementById("bar");
+                                                //bar.style.backgroundColor = "DodgerBlue";
+                                                napa.style.backgroundColor="green";
+                                                naloxegol.style.backgroundColor="green";
+                                                naltrexone.style.backgroundColor="green";
+                                                zantac.style.backgroundColor="green";
+                                                
+                                                
+                                        </script>
+                                        <h4 align="center">Number of Medicine which is Prescrib to Patient</h4>
+
+                                        </td>
                                     </tr>
                                 </table>
+
+                            
                             </br>
 
                                         <label align="center"><strong>Next Meeting: </strong></label>
@@ -223,14 +363,22 @@
                                     
                                     </tr>
                                 </table>
+                                
                                 <hr/>
+
                                 <input type="submit" name="submit" value="Finish" />
                             </br>
                             <a href="pescriptions.php">Prescription History</a>
                             </fieldset>
                                         </td>
                                     </tr>
+                                    
+
                                 </table>
+
+
+                            </td>
+
                                 
                                 
                             </td>
