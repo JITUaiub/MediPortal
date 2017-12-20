@@ -26,17 +26,10 @@
             </td>
         </tr>
         <tr>
-            <td>
-                <div>
-                    
-                </div>
-            </td>
-        </tr>
-        <tr>
           <td>
               <!-- Body section -->
                <div>
-                    <table width="100%">
+                    <table width="100%" valign="top"  cellspacing="0" cellpadding="0">
                         <!-- User Menu Section -->
                         <td width="30%">
                             <fieldset>
@@ -57,6 +50,8 @@
                             <ul>
                                 <li><a href="normalUsers.php">General Users</a></li>
                                 <li><a href="doctorUsers.php">Doctor</a></li>
+                                <li><a href="pendingRequest.php">Pending Sign Up Requests</a></li>
+                                <li><a href="reportedUsers.php">Reported Users</a></li>
                             </ul>
                         </fieldset>
 

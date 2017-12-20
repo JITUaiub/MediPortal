@@ -30,7 +30,7 @@
             <td>
                 <!-- Body section -->
                <div>
-                    <table width="100%" border="1">
+                    <table width="100%" border="1" cellspacing="0" cellpadding="0">
                         <!-- User Menu Section -->
                         <td width="20%">
                             <fieldset>

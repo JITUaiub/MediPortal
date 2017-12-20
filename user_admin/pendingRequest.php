@@ -85,7 +85,7 @@
                                 <li><a href="eConsultation/message.php">New Message</a></li>
                                 <li><a href="eConsultation/inbox.php">Inbox</a></li>
                                 <li><a href="eConsultation/sentitems.php">Sent items</a></li>
-                                <li><a href="eConsultation/promoMail.php">Promotional Mail</a></li>
+                <li><a href="eConsultation/promoMail.php">Promotional Mail</a></li>
                             </ul>
                         </fieldset>
 
@@ -104,77 +104,59 @@
                              <td width="70%" align="center" valign="top">
                                 <!------ UI  -->
                                     <fieldset>
-                                <table width="100%" cellpadding="0" cellspacing="0">
-                                    <tr>
-                                        <td>
-                                            <b>OVERALL | STATISTICS</b>
-                                        </td>
-                                        <td align="right">
-                                            <input type="submit" value="Print"/>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </fieldset>
-                            <br/>
-                        <table width="100%" cellspacing="0" border="1" cellpadding="5">
-                            <tr>
-                                <th align="left">ROLE</th>
-                                <th align="center" width="110">NO OF USERS</th>
-                            </tr>
-                            <tr>
-                                <td>Doctors</td>
-                                <td align="center">7</td>        
-                            </tr>
-                            <tr>
-                                <td>General Users</td>
-                                <td align="center">43</td>        
-                            </tr>
-                            <tr>
-                                <td>Blood Donors</td>
-                                <td align="center">24</td>        
-                            </tr>
-                        </table>
-                                <br><br>
-                                <table width="100%" cellspacing="0" border="1" cellpadding="5">
-                                    <tr>
-                                        <th align="left">BLOCKED USER</th>
-                                        <th align="right">Date: <input type="date" name="blockdate1" value="2013-01-08"> to <input type="date" name="blockdate2" value="2013-01-08"> <button>Go</button></th>
-                                        <th align="center" width="110">NO OF USERS</th>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2">Doctors</td>
-                                        <td align="center">2</td>        
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2">General Users</td>
-                                        <td align="center">7</td>        
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2">Blood Donors</td>
-                                        <td align="center">6</td>        
-                                    </tr>
-                                </table>
-                                <br><br>
-                                <table width="100%" cellspacing="0" border="1" cellpadding="5">
-                                    <tr>
-                                        <th align="left">USER'S ACTIVITY</th>
-                                        <th align="center" width="110">NO OF USERS</th>
-                                    </tr>
-                                    <tr>
-                                        <td>Active Users</td>
-                                        <td align="center">58</td>        
-                                    </tr>
-                                    <tr>
-                                        <td>Last Login before 1 months</td>
-                                        <td align="center">12</td>        
-                                    </tr>
-                                    <tr>
-                                        <td>Last Login before 3 months</td>
-                                        <td align="center">6</td>        
-                                    </tr>
-                                </table><br><br>
-                                Want to send a Greetings or any NOTICE ?<br>
-                                <a href="eConsultation/promoMail.php">Send Promotional Emails</a>
+                                         <legend><b>PENDING JOINING | SEARCH</b></legend>
+                                        Filter By
+                                        <select>
+                                            <option>Any</option>
+                                            <option>Name</option>   
+                                            <option>Email</option>
+                                            <option>BMDC Reg. No</option>
+                                            <option>Phone</option>
+                                            <option>Blocked</option>
+                                        </select>
+                                          <input />
+                                        <input type="submit" value="Search" />
+                                        <button onclick="ResultPerPage()">Go</button>
+                                        <script>
+                                            function ResultPerPage()
+                                            {
+
+                                            }
+                                        </script>
+                                    </fieldset>
+                                        <br/>
+                                    <table width="100%" cellspacing="0" border="1" cellpadding="5">
+                                            <tr>                  
+                                                <th >NAME</th>  
+                                                <th >EMAIL</th>
+                                                <th >Phone</th>
+                                                <th>BMDC Reg. No</th>
+                                                <th colspan="4">Action</th>
+                                            </tr>
+                                            <tr>
+                                                <td>Dr. ABC</td>
+                                                <td>abc@gmail.com</td>
+                                                <td>01400400000</td>
+                                                <td>B656C45A5S5</td>
+                                                <td width="40"><a href="doctorDetails.php">Profile</a></td>
+                                                <td width="30"><a href="eConsultation/conversation.php">Message</a></td>
+                                                <td width="30"><button>Delete</button></td>
+                                                <td width="30"><button>Accept</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Dr. Merlin</td>
+                                                <td>merlin@gmail.com</td>
+                                                <td>01600000000</td>
+                                                <td>C95236524AD</td>
+                                                <td width="40"><a href="doctorDetails.php">Profile</a></td>
+                                                <td width="30"><a href="eConsultation/conversation.php">Message</a></td>
+                                                <td width="30"><button>Delete</button></td>
+                                                <td width="30"><button>Accept</button></td>
+                                            </tr>
+                                     </table>
+
+
+                                        <p align="center"><button>Previous Page</button> | <button>Next Page</button></p><br>
                                 <!-- END -->
                             </td>
                         </div>
