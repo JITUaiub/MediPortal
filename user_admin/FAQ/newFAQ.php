@@ -107,7 +107,10 @@
                                 <h1 align="center">New FAQ</h1>
                                 <p align="center"><strong>Fill in the form below</strong></p>
                                 <form>
-                                    <fieldset>
+                                    <table align="center" width="60%">
+                                        <tr>
+                                            <td>
+                                                <fieldset>
                                         <table align="center">
                                         <tr>
                                             <td>
@@ -156,9 +159,12 @@
                                             <td><input type="reset" name="" value="Reset"></td>
                                         </tr>
                                         <tr><td>&nbsp;</td></tr>
-                                        <tr><td colspan="3" align="center"><a href="manageFAQ.php">Go to Manage FAQ</a></td></tr>
+                                        <tr><td colspan="3" align="center"><a href="manageFAQ.php">Manage FAQ</a></td></tr>
                                     </table>
                                     </fieldset>
+                                            </td>
+                                        </tr>
+                                    </table>
                                 </form>
                             </td>
                         </div>
