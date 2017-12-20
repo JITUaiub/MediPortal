@@ -104,17 +104,59 @@
                              <td width="70%" align="center">    <h2><img src="images/usericon.png"/><br/>
                                 Welcome Doctor  
                                 <h3>11 DEC, 2017</h3>
-                                <table width="50%">
+                                <table width="80%">
                                     <tr>
-                                        <td align="right" width="30%""><h1><a href="appointmentstatus.php">0</a></h1></td>
-                                        <td align="left">new appointment today</td>
-                                    </tr>
-                                    <tr>
-                                        <td align="right" width="30%""><h1><a href="newpescriptions.html">2</a></h1></td>
-                                        <td align="left">Pending Prescriptions</td>
+                                        
+                                        <td align="center" width="35%"">
+                                            <fieldset>
+                                                <h2 align="center">new appointment today</h2></br>
+                                                <h1 align="center"><a href="appointmentstatus.php">0</a></h1>
+                                                <h4 align="center"><b>See Appointment Status</b></h4>
+                                        </fieldset>
+                                    </td>
+                                    
+                                  
+                                        <td align="center" width="35%">
+                                              <fieldset>
+                                                <h2 align="center">Pending Prescriptions</h2></br>
+                                                <h1 align="center"><a href="newpescriptions.html">2</a></h1>
+                                                <h4 align="center"><b>Check Prescriptions Status</b></h4>
+                                        </fieldset>
+                                    </td>
                                     </tr>
                                     
+                                    
+                                    <tr align="center">
+                                        <td align="center" width="35%" colspan="2">
+                                           
+                                              <fieldset>
+                                                <h2 align="center">Last Week Patient List</h2></br>
+                                                <table>
+                                                    <tr>
+                                                        <td><label><b>Patient Name</b></label></td>
+                                                        <td><label><b>Disease</b></label></td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>Mr.Karim</td>
+                                                        <td>Numonia</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>Mr.Rahim</td>
+                                                        <td>Cancer</td>
+                                                    </tr>
+
+                                                </table>
+                                                
+                                                
+                                        </fieldset>
+
+                                    </td>
                                     </tr>
+                                
+                                    
+                                    
                                 </table>
                             </td>
                         </div>
