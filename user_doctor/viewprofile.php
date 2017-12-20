@@ -138,12 +138,7 @@
                                                             <td><strong>:</strong></td>
                                                             <td >Bob</td>
                                                         </tr>
-                                                         <tr>
-                                                            
-                                                            <td width="30%"><strong>Email</strong></td>
-                                                            <td><strong>:</strong></td>
-                                                            <td >bob@aiub.edu</td>
-                                                         </tr>
+                                                         
                                                          <tr>
                                                             
                                                             <td width="30%"><strong>Gender</strong></td>

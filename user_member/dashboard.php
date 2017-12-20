@@ -100,19 +100,40 @@
 							<td width="70%" align="center">    <h2><img src="images/usericon.png"/><br/>
                                 <h2>Welcome,<a href="viewprofile.php"> Bob</a></h2>  
                                 <h3>11 DEC, 2017</h3>
-                                <table width="50%">
+                                <table width="80%">
                                     <tr>
-                                        <td align="right" width="30%""><h1><a href="appointmentstatus.php">1 </a></h1></td>
-                                        <td align="left"> appointment accepted today</td>
+                                        
+                                        <td align="center" width="35%"">
+                                            <fieldset>
+                                                <h2 align="center">Appointment accepted today</h2></br>
+                                                <h1 align="center"><a href="appointmentstatus.php">1</a></h1>
+                                                <h4 align="center"><b>See Appointment Status</b></h4>
+                                        </fieldset>
+                                    </td>
+                                    
+                                  
+                                        <td align="center" width="35%">
+                                              <fieldset>
+                                                <h2 align="center">Appointment still pending</h2></br>
+                                                <h1 align="center"><a href="appointmentstatus.php">2</a></h1>
+                                                <h4 align="center"><b>Check Appointment Status</b></h4>
+                                        </fieldset>
+                                    </td>
+
+                                    <td align="center" width="35%">
+                                              <fieldset>
+                                                <h2 align="center">Appointment was rejected</h2></br>
+                                                <h1 align="center"><a href="appointmentstatus.php">2</a></h1>
+                                                <h4 align="center"><b>Check Appointment Status</b></h4>
+                                        </fieldset>
+                                    </td>
                                     </tr>
-									<tr>
-                                        <td align="right" width="30%""><h1><a href="appointmentstatus.php">1 </a></h1></td>
-                                        <td align="left"> appointment still pending </td>
-                                    </tr>
-									<tr>
-                                        <td align="right" width="30%""><h1><a href="appointmentstatus.php">1 </a></h1></td>
-                                        <td align="left"> appointment was REJECTED</td>
-                                    </tr>
+                                    
+                                    
+                                    
+                                
+                                    
+                                    
                                 </table>
                             </td>
 						</div>

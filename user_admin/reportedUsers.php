@@ -141,7 +141,7 @@
                                             <strong>Bob<strong>
                                         </td>
                                         <td align="center">
-                                             <a href="reportReview.php"><strong>Harrasement</strong></a>
+                                             <a href="reportReview.php"><strong>Harrasement <img src="images/newStatus.png"></strong></a>
                                         </td>
                                         <td align="center">
                                              <strong>3:06AM | 24-11-2017</strong>
@@ -181,7 +181,8 @@
                                             <strong>Ashley<strong>
                                         </td>
                                         <td align="center">
-                                             <a href="reportReview.php"><strong>virus from attachments..</strong></a>
+                                        	<a href="reportReview.php"><strong>virus from attachments..</strong></a>
+                                             <img src="images/newStatus.png">
                                         </td>
                                         <td align="center">
                                              <strong>1:39PM | 21-11-2017</strong>
