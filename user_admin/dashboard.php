@@ -105,23 +105,31 @@
                        		 <td width="70%" align="center">	<h2><img src="images/usericon.png"/><br/>
                        		 	Welcome Admin 
                        		 	<h3>11 DEC, 2017</h3>
-                       		 	<table width="50%">
-                       		 		<tr>
-                       		 			<td align="right" width="30%""><h1><a href="normalUsers.php">0</a></h1></td>
-                       		 			<td align="left">new general members joined today</td>
-                       		 		</tr>
-                       		 		<tr>
-                       		 			<td align="right" width="30%""><h1><a href="doctorUsers.php">0</a></h1></td>
-                       		 			<td align="left">doctors need approval</td>
-                       		 		</tr>
-                       		 		<tr>
-                       		 			<td>&nbsp;</td>
-                       		 		</tr>
-                       		 		<tr>
-                       		 			<td align="right" width="30%""><h1><a href="reportedUsers.php">0</a></h1></td>
-                       		 			<td align="left">reported users need action</td>
-                       		 		</tr>
-                       		 	</table>
+
+
+                                <table width="80%">
+                                    <tr>
+                                        
+                                        <td align="center" width="35%"">
+                                            <fieldset>
+                                                <h2 align="center">Pending Sign Up Requests</h2></br>
+                                                <h1 align="center"><a href="pendingRequest.php">0</a></h1>
+                                                <h4 align="center"><b>Doctors need approval to join</b></h4>
+                                        </fieldset>
+                                    </td>
+                                    
+                                  
+                                        <td align="center" width="35%">
+                                              <fieldset>
+                                                <h2 align="center">Review Reported Users</h2></br>
+                                                <h1 align="center"><a href="newpescriptions.html">2</a></h1>
+                                                <h4 align="center"><b>Users pending for action</b></h4>
+                                        </fieldset>
+                                    </td>
+                                    </tr>  
+                                </table>
+
+
                     		</td>
                     	</div>
                     </table>
