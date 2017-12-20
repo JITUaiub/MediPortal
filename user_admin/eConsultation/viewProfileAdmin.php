@@ -51,6 +51,7 @@
                             <ul>
                                 <li><a href="../normalUsers.php">General Users</a></li>
                                 <li><a href="../doctorUsers.php">Doctors</a></li>
+                                <li><a href="../pendingRequest.php">Pending Sign Up Requests</a></li>
                                 <li><a href="../reportedUsers.php">Reported Users</a></li>
                             </ul>
                         </fieldset>
