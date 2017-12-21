@@ -106,30 +106,30 @@
                                              <legend><b>Statistics View</b></legend>
                                  <table width="100%" cellspacing="0" border="1" cellpadding="5">
                                             <br> <br>
-
+                                                  <h3>See The Statistics View of disease in your area</h3>
                                             <tr>                  
-                                                <th >Area</th>  
+                                                <th >Month</th>  
                                                 <th >Number Of Affected</th>
                                                 
                                             </tr>
                                             <tr>
-                                                <td>Gazipur</td>
-                                                <td>45</td>
+                                                <td>January</td>
+                                                <td>45%</td>
                                                
                                             </tr>
                                             <tr>
-                                                <td>Jamalpur</td>
-                                                <td>49</td>
+                                                <td>February</td>
+                                                <td>49%</td>
                                                 
                                             </tr>
                                             <tr>
-                                                <td>Jaypurhat</td>
-                                                <td>72</td>
+                                                <td>March</td>
+                                                <td>72%</td>
                                                 
                                             </tr>
                                             <tr>
-                                                <td>Saidpur</td>
-                                                <td>105</td>
+                                                <td>Aprill</td>
+                                                <td>10%</td>
                                                 
                                             </tr>
                                         </table>
@@ -237,16 +237,16 @@
                                                     <h5>No</h5>
                                                 </th>
                                                 <th height="10" >
-                                                    <h5>Gazipur</h5>
+                                                    <h5>January</h5>
                                                 </th>
                                                 <th height="10" >
-                                                    <h5>Jamalpur</h5>
+                                                    <h5>February</h5>
                                                 </th>
                                                 <th height="10" >
-                                                    <h5>Jaypurhat</h5>
+                                                    <h5>March</h5>
                                                 </th>
                                                 <th height="10" >
-                                                    <h5>Saidpur</h5>
+                                                    <h5>Aprill</h5>
                                                 </th>
                                                 
 

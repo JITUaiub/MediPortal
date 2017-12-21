@@ -99,7 +99,7 @@
                         <div align="center">
                         <td width="70%" align="center" valign="top">
                             <!--------------------------------------------------- DESIGN UI HERE-------------------------------------------------->
-							<table align="center" width="80%">
+							<table align="center" width="100%">
                                 
                             <h1 align="center">Prescriptions History</h1>   
                         <tr>

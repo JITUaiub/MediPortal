@@ -104,88 +104,86 @@
                                 <!------ UI  -->
                                 <div>
                                         <h1>EDIT PROFILE</h1>
-                                            <table width="65%">
+                                            <table width="100%">
+                                        <td width="60%">
+                                            <fieldset>
+
+                                            <table width="100%">
+
                                                 <tr>
-                                                    <td width="60%" align="center">
-                                                        <table width="100%" align="center">
+                                                    <td width="20%" valign="top"><label><b><i>General Information:</i></b></label>
+                                                    </td>
+                                                    <td align="center">
+                                                        <fieldset>
+                                                        <table width="100%">
+                                                        <tr>
+                                                            <td width="30%"><strong>Name</strong></td>
+                                                            <td><strong>:</strong></td>
+                                                            <td ><input type="text" name="name" value="Bob Pirate"></td>
+                                                        </tr>
+                                                         
+                                                         <tr>
+                                                            
+                                                            <td width="30%"><strong>Gender</strong></td>
+                                                            <td><strong>:</strong></td>
+                                                            <td ><input type="text" name="gender" value="Male" disabled="true"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="30%"><strong>User Name</strong></td>
+                                                            <td><strong>:</strong></td>
+                                                            <td ><input type="text" name="username" value="Bob Pirate123"></td>
+                                                        </tr>
+                                                        
+
+                                                    </table>
+                                                </fieldset>
+                                                </td>
+                                            </tr>
+
+
+                                                 <tr>
+                                                    <td width="20%" valign="top"><label><b><i>Others Information:</i></b></label>
+                                                    </td>
+                                                    <td>
+                                                        <fieldset>
+                                                        <table width="100%">
+                                                        <tr>
+                                                            <td width="30%"><strong>Date Of Birth</strong></td>
+                                                            <td><strong>:</strong></td>
+                                                            <td width="65%"><input type="date" name="dob" value="19/9/1998"></td>
+                                                        </tr>
+
+                                                         <tr>
+                                                            
+                                                            <td width="30%"><strong>Mobile Number</strong></td>
+                                                            <td><strong>:</strong></td>
+                                                            <td><input type="text" name="mobilenumber" value="01685940625"></td>
+                                                         </tr>
+
+                                                         <tr>
+                                                            
+                                                            <td width="30%"><strong>Email</strong></td>
+                                                            <td><strong>:</strong></td>
+                                                            <td><input type="text" name="email" value="bob@aiub.edu"></td>
+                                                         </tr>
+                                                    </table>
+                                                </fieldset>
+                                                </td>
+                                            </tr>
+
+                                        </td>
+                                        
+                                    </table>
+
+
+
+                                                <tr><td></td></tr>
                                                             <tr>
-                                                                <td>
-                                                                    <table width="100%" align="center">
-                                                                        <td width="10%" align="center">&nbsp;</td>
-                                                                        <td width="30%" align="center"><strong>Name</strong></td>
-                                                                        <td align="center"><strong>:</strong></td>
-                                                                        <td align="center"><input type="text" name="name" value="Dread Pirate Robert"></td>
-                                                                    </table>
+                                                                <td colspan="4" align="center">
+                                                                    <input type="submit" id="update" value="Update Profile" onclick="update()">
                                                                 </td>
+                                                                
                                                             </tr>
-                                                            <tr><td><hr/></td></tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <table width="100%">
-                                                                        <td align="center" width="10%">&nbsp;</td>
-                                                                        <td align="center" width="30%"><strong>Username</strong></td>
-                                                                        <td align="center"><strong>:</strong></td>
-                                                                        <td align="center"><input type="text" name="username" value="admin"></td>
-                                                                    </table>
-                                                                </td>
-                                                            </tr>
-                                                            <tr><td><hr/></td></tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <table width="100%">
-                                                                        <td align="center" width="10%">&nbsp;</td>
-                                                                        <td align="center" width="30%"><strong>Gender</strong></td>
-                                                                        <td align="center"><strong>:</strong></td>
-                                                                        <td align="center"><input type="text" disabled="true" value="Male"></td>
-                                                                    </table>
-                                                                </td>
-                                                            </tr>
-                                                            <tr><td><hr/></td></tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <table width="100%">
-                                                                        <td align="center" width="10%">&nbsp;</td>
-                                                                        <td align="center" width="30%"><strong>Email</strong></td>
-                                                                        <td align="center"><strong>:</strong></td>
-                                                                        <td align="center"><input type="text" name="email" value="robert@example.com"></td>
-                                                                    </table>
-                                                                </td>
-                                                            </tr>
-                                                            <tr><td><hr/></td></tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <table width="100%">
-                                                                        <td align="center" width="10%">&nbsp;</td>
-                                                                        <td align="center" width="30%"><strong>Phone</strong></td>
-                                                                        <td align="center"><strong>:</strong></td>
-                                                                        <td align="center"><input type="text" name="phone" value="01700000000"></td>
-                                                                    </table>
-                                                                </td>
-                                                            </tr>
-                                                            <tr><td><hr/></td></tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <table width="100%">
-                                                                        <td align="center" width="10%">&nbsp;</td>
-                                                                        <td align="center" width="30%"><strong>Date of Birth</strong></td>
-                                                                        <td align="center"><strong>:</strong></td>
-                                                                        <td align="center"><input type="date" name="DOB" value="2013-01-08"></td>
-                                                                    </table>
-                                                                </td>
-                                                            </tr>
-                                                            <tr><td><hr/></td></tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <table width="100%">
-                                                                        <td align="center" width="10%">&nbsp;</td>
-                                                                        <td align="center" width="30%"><strong>Country</strong></td>
-                                                                        <td align="center"><strong>:</strong></td>
-                                                                        <td align="center"><input type="text" value="Bangladesh" disabled="true"></td>
-                                                                    </table>
-                                                                </td>
-                                                            </tr>
-                                                            <tr><td><hr/></td></tr>
-                                                            <tr><td colspan="4" align="center"><input type="submit" name="submit" value="Update Profile"></td></tr>
                                                             <tr>
                                                                 <td>
                                                                     <table width="100%">
@@ -199,6 +197,7 @@
                                                     </td>
                                                 </tr>
                                             </table>
+                                    
                                     </div>
                                 <!-- END -->
                             </td>

@@ -9,7 +9,7 @@
                 <!-- Header section -->
                 <div>
                     <table align="center" width="100%">
-                        <td width="20%">
+                        <td width="20%" valign="top">
                             <a href="dashboard.php"><img src="images/pageicon.png"/></a>
                         </td>
                         <td width="40%">&nbsp;</td>
@@ -237,18 +237,17 @@ Napa
         <a href="medianalysis.php">Back</a></td>
 </tr>
                                             </p>
-
-
-
-                                
                             </td>
                         </div>
                     </table>
                 </div>
             </td>
         </tr>
-        <tr>
-            <td>
+         
+
+
+
+
                 <!-- Footer section -->
                 <div>
                     <table align="center">

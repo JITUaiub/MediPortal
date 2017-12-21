@@ -10,15 +10,18 @@
             	<div>
                     <table align="center" width="100%">
                         <td width="20%">
-                           <a href="dashboard.php"><img src="images/pageicon.png"/></a>
+                            <a href="dashboard.php"><img src="../user_member/images/pageicon.png"/></a>
                         </td>
                         <td width="40%">&nbsp;</td>
                         <td width="40%">
                             <table align="right">
                                 <td><strong>Logged in as </strong></td>
-                                <td><a href="viewprofile.php">Bob<img src="images/user.png"></a></td>
+                                <td><a href="../user_member/viewprofile.php">Bob<img src="../user_member/images/user.png"></a></td>
                                 <td><hr width="1" size="15"></td>
-                                <td><a href="../index.html">Logout<img src="images/logout.png"></a></td>
+                                 <td><a href="../Registration/DonorSubscription.html">Profile</a></td>
+                                <td><hr width="1" size="15"></td>
+                                <td><a href="../index.html">Logout<img src="../user_member/images/logout.png"></a></td>
+
                             </table> 
                         </td>
                     </table>
@@ -97,7 +100,9 @@
                         </fieldset>
                         </td>
                         <div align="center">
-							<td width="70%" align="center">    <h2><img src="images/usericon.png"/><br/>
+							<td width="70%" align="center"> 
+                            <h1>Last Week you have suffered in fever. This week you are ok?? If not ok get an appointment now.Click here</h1>   
+                                <h2><img src="images/usericon.png"/><br/>
                                 <h2>Welcome,<a href="viewprofile.php"> Bob</a></h2>  
                                 <h3>11 DEC, 2017</h3>
                                 <table width="80%">
