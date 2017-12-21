@@ -29,7 +29,7 @@
             <td>
                 <!-- Body section -->
                <div>
-                    <table width="100%" border="1">
+                    <table width="100%" border="1" cellspacing="0" cellpadding="0">
                         <!-- User Menu Section -->
                         <td width="20%">
                             <fieldset>
@@ -50,6 +50,7 @@
                             <ul>
                                 <li><a href="../normalUsers.php">General Users</a></li>
                                 <li><a href="../doctorUsers.php">Doctors</a></li>
+                                <li><a href="../pendingRequest.php">Pending Sign Up Requests</a></li>
                                 <li><a href="../reportedUsers.php">Reported Users</a></li>
                             </ul>
                         </fieldset>
@@ -106,7 +107,10 @@
                                 <h1 align="center">New FAQ</h1>
                                 <p align="center"><strong>Fill in the form below</strong></p>
                                 <form>
-                                    <fieldset>
+                                    <table align="center" width="60%">
+                                        <tr>
+                                            <td>
+                                                <fieldset>
                                         <table align="center">
                                         <tr>
                                             <td>
@@ -155,9 +159,12 @@
                                             <td><input type="reset" name="" value="Reset"></td>
                                         </tr>
                                         <tr><td>&nbsp;</td></tr>
-                                        <tr><td colspan="3" align="center"><a href="manageFAQ.php">Go to Manage FAQ</a></td></tr>
+                                        <tr><td colspan="3" align="center"><a href="manageFAQ.php">Manage FAQ</a></td></tr>
                                     </table>
                                     </fieldset>
+                                            </td>
+                                        </tr>
+                                    </table>
                                 </form>
                             </td>
                         </div>

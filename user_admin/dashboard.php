@@ -29,7 +29,7 @@
         	<td>
             	<!-- Body section -->
                <div>
-                    <table width="100%" border="1">
+                    <table width="100%" border="1" cellspacing="0" cellpadding="0">
                         <!-- User Menu Section -->
                         <td width="20%">
                             <fieldset>
@@ -50,6 +50,7 @@
                             <ul>
                                 <li><a href="normalUsers.php">General Users</a></li>
                                 <li><a href="doctorUsers.php">Doctors</a></li>
+                                <li><a href="pendingRequest.php">Pending Sign Up Requests</a></li>
                                 <li><a href="reportedUsers.php">Reported Users</a></li>
                             </ul>
                         </fieldset>
@@ -110,15 +111,16 @@
                                         
                                         <td align="center" width="35%"">
                                             <fieldset>
-                                                <h2 align="center">new general members joined today</h2></br>
-                                                <h1 align="center"><a href="normalUsers.php">1</a></h1>
-                                                <h4 align="center"><b>See Appointment Status</b></h4>
+                                                <h2 align="center">Pending Sign Up Requests</h2></br>
+                                                <h1 align="center"><a href="pendingRequest.php">0</a></h1>
+                                                <h4 align="center"><b>Doctors need approval to join</b></h4>
                                         </fieldset>
                                     </td>
                                     
                                   
                                         <td align="center" width="35%">
                                               <fieldset>
+
                                                 <h2 align="center">doctors need approval</h2></br>
                                                 <h1 align="center"><a href="doctorUsers.php">0</a></h1>
                                                 <h4 align="center"><b>Check Appointment Status</b></h4>
@@ -137,6 +139,12 @@
                                 </table>
                             </td>
                         </div>
+
+
+
+                    		</td>
+                    	</div>
+
                     </table>
                 </div>
             </td>

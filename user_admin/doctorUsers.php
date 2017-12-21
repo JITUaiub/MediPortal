@@ -29,7 +29,7 @@
             <td>
                 <!-- Body section -->
                <div>
-                    <table width="100%" border="1">
+                    <table width="100%" border="1" cellspacing="0" cellpadding="0">
                         <!-- User Menu Section -->
                         <td width="20%">
                             <fieldset>
@@ -50,6 +50,7 @@
                             <ul>
                                 <li><a href="normalUsers.php">General Users</a></li>
                                 <li><a href="doctorUsers.php">Doctors</a></li>
+                                <li><a href="pendingRequest.php">Pending Sign Up Requests</a></li>
                                 <li><a href="reportedUsers.php">Reported Users</a></li>
                             </ul>
                         </fieldset>
@@ -102,60 +103,6 @@
                         <div align="center">
                              <td width="70%" align="center" valign="top">
                                 <!------ UI  -->
-                                    <fieldset>
-                                         <legend><b>PENDING JOINING | SEARCH</b></legend>
-                                        Filter By
-                                        <select>
-                                            <option>Any</option>
-                                            <option>Name</option>   
-                                            <option>Email</option>
-                                            <option>BMDC Reg. No</option>
-                                            <option>Phone</option>
-                                            <option>Blocked</option>
-                                        </select>
-                                          <input />
-                                        <input type="submit" value="Search" />
-                                        <button onclick="ResultPerPage()">Go</button>
-                                        <script>
-                                            function ResultPerPage()
-                                            {
-
-                                            }
-                                        </script>
-                                    </fieldset>
-                                        <br/>
-                                    <table width="100%" cellspacing="0" border="1" cellpadding="5">
-                                            <tr>                  
-                                                <th >NAME</th>  
-                                                <th >EMAIL</th>
-                                                <th >Phone</th>
-                                                <th>BMDC Reg. No</th>
-                                                <th colspan="4">Action</th>
-                                            </tr>
-                                            <tr>
-                                                <td>Dr. ABC</td>
-                                                <td>abc@gmail.com</td>
-                                                <td>01400400000</td>
-                                                <td>B656C45A5S5</td>
-                                                <td width="40"><a href="doctorDetails.php">Profile</a></td>
-                                                <td width="30"><a href="eConsultation/conversation.php">Message</a></td>
-                                                <td width="30"><button>Delete</button></td>
-                                                <td width="30"><button>Accept</button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Dr. Merlin</td>
-                                                <td>merlin@gmail.com</td>
-                                                <td>01600000000</td>
-                                                <td>C95236524AD</td>
-                                                <td width="40"><a href="doctorDetails.php">Profile</a></td>
-                                                <td width="30"><a href="eConsultation/conversation.php">Message</a></td>
-                                                <td width="30"><button>Delete</button></td>
-                                                <td width="30"><button>Accept</button></td>
-                                            </tr>
-                                     </table>
-
-
-                                        <p align="center"><button>Previous Page</button> | <button>Next Page</button></p><br><br>
                                     <fieldset>
                                          <legend><b>DOCTOR USERS | SEARCH</b></legend>
                                         Filter By

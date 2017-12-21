@@ -30,7 +30,7 @@
             <td>
                 <!-- Body section -->
                <div>
-                    <table width="100%" border="1">
+                    <table width="100%" border="1" cellspacing="0" cellpadding="0">
                         <!-- User Menu Section -->
                         <td width="20%">
                             <fieldset>
@@ -51,6 +51,7 @@
                             <ul>
                                 <li><a href="../normalUsers.php">General Users</a></li>
                                 <li><a href="../doctorUsers.php">Doctors</a></li>
+                                <li><a href="../pendingRequest.php">Pending Sign Up Requests</a></li>
                                 <li><a href="../reportedUsers.php">Reported Users</a></li>
                             </ul>
                         </fieldset>
@@ -105,11 +106,14 @@
                                 <!------ UI  -->
                               
               <form action="" method="post">
-                              <h1>Promotional Email</h1>
-                              <legend align="center"><h4>Type a message here</h4></legend>
-                               <fieldset>
+                <h1>Promotional Email</h1>
+                <legend align="center"><h4>Type a message here</h4></legend>
+                <table align="center" width="60%">
+                  <tr>
+                    <td>
+                      <fieldset>
                                              
-                                             <table>
+                                             <table align="center">
                                              <tr>
                                                  <td align="center">To</td><td>:</td>
                                                  <td align="left"><select>
@@ -144,10 +148,13 @@
                                                   </td>
                                               </tr>
                                              </table>
-                                             <input type="checkbox" name="replyflag" checked="true"> Turn off reply to this mail<br><br>
+                                             <p align="center"><input type="checkbox" name="replyflag" checked="true"> Turn off reply to this mail<br><br>
                                              <input type="submit" name="Submit" value="Send Message"><br/><br/>
-                                             <a href="../reportsAdmin.php">Go to overall statistic</a>
-                                         </fieldset>  
+                                             <a href="../reportsAdmin.php">Overall Statistic</a></p>
+                                         </fieldset>
+                    </td>
+                  </tr>
+                </table>                 
               </form>
 
             </td>
