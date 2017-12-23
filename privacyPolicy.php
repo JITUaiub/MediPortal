@@ -10,17 +10,17 @@
 				<table align="center" width="100%">
 					<tr align="right">
 						<td width="30%">
-							<a href="Home.html"><img src="images/logo.png" align="left"></a>
+							<a href="Home.php"><img src="images/logo.png" align="left"></a>
 						</td>
 						<td width="30%">&nbsp;</td>
 						<td>
-							<a href="Home.html" >Home <img src="images/home.png"></a>
+							<a href="Home.php" >Home <img src="images/home.png"></a>
 						</td>
 						<td width="10%">
-							<a href="Registration.html">Registration<img src="images/registration.png"></a>
+							<a href="Registration.php">Registration<img src="images/registration.png"></a>
 						</td>
 						<td width="10%">
-							<a href="Login.html">Login<img src="images/login.png"></a>
+							<a href="Login.php">Login<img src="images/login.png"></a>
 						</td>
 					</tr>
 				</table>
@@ -84,16 +84,16 @@ Please note that we may update, modify or revise this Privacy Policy at any time
 		<table align="center">
 			<tr>
 				<td align="center" colspan="3">
-				<a href="About_Us.html">About Us   </a>
+				<a href="About_Us.php">About Us   </a>
 			</td>
 			<td align="center" colspan="3">
-				<a href="Contact_Us.html">Contact Us   </a>
+				<a href="Contact_Us.php">Contact Us   </a>
 			</td>
 			<td align="center" colspan="3">
-				<a href="privacyPolicy.html">Privacy Policy   </a>
+				<a href="privacyPolicy.php">Privacy Policy   </a>
 			</td>
 			<td align="center" colspan="3">
-				<a href="faq.html">FAQ</a>
+				<a href="faq.php">FAQ</a>
 			</td>
 			</tr>
 		</table>
