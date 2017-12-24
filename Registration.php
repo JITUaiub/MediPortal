@@ -44,82 +44,82 @@
 <body class="container">
 	<table>
 	<div>
-				<div>
-					 <?php
+		<div>
+			<?php
 
-$nameErr = $emailErr = $genderErr = $unameErr =$passErr=$compassErr=$dobErr= "";
-$name = $email = $gender = $pass = $uname =$compass=$dob= "";
+				$nameErr = $emailErr = $genderErr = $unameErr =$passErr=$compassErr=$dobErr= "";
+				$name = $email = $gender = $pass = $uname =$compass=$dob= "";
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (empty($_POST["name"])) {
-    $nameErr = "Name is required";
-  } else {
-    $name = test_input($_POST["name"]);
-    
-    if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
-      $nameErr = "Only letters and white space allowed";
-    }
-  }
-  
-  if (empty($_POST["email"])) {
-    $emailErr = "Email is required";
-  } else {
-    $email = test_input($_POST["email"]);
-    // check if e-mail address is well-formed
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-      $emailErr = "Invalid email format";
-    }
-  }
-    if (empty($_POST["password"])) {
-    $passErr = "Password is required";
-  } else {
-    $pass = test_input($_POST["password"]);
-    
-    if (!preg_match("/^d{10}$|^d{12}$/",$pass)) {
-      $passErr = "Passport must be 10 or 12 digits";
-    }
-  }
-  if (empty($_POST["compass"])) {
-    $compassErr = "Password didn't match";
-  }
-  
-  	else{
-  		$compass=test_input($_POST("compass"));
-  		if($compass!=$pass)
-  		{
-  			$compassErr="Password didn't match";
-  		}
-  }
+				if ($_SERVER["REQUEST_METHOD"] == "POST") {
+				  if (empty($_POST["name"])) {
+					$nameErr = "Name is required";
+				  } else {
+					$name = test_input($_POST["name"]);
+					
+					if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+					  $nameErr = "Only letters and white space allowed";
+					}
+				  }
+				  
+				  if (empty($_POST["email"])) {
+					$emailErr = "Email is required";
+				  } else {
+					$email = test_input($_POST["email"]);
+					// check if e-mail address is well-formed
+					if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+					  $emailErr = "Invalid email format";
+					}
+				  }
+					if (empty($_POST["password"])) {
+					$passErr = "Password is required";
+				  } else {
+					$pass = test_input($_POST["password"]);
+					
+					if (!preg_match("/^d{10}$|^d{12}$/",$pass)) {
+					  $passErr = "Passport must be 10 or 12 digits";
+					}
+				  }
+				  if (empty($_POST["compass"])) {
+					$compassErr = "Password didn't match";
+				  }
+				  
+					else{
+						$compass= test_input($_POST["compass"]);
+						if($compass!=$pass)
+						{
+							$compassErr="Password didn't match";
+						}
+				  }
 
-  if (empty($_POST["Dob"])) {
-    $dobErr = "Enter a DOB";
-  } /*else {
-    $uname = test_input($_POST["uname"]);
-    // check if URL address syntax is valid
-    if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$website)) {
-      $websiteErr = "Invalid URL";
-    }    
-  }*/
-   if (empty($_POST["uname"])) {
-    $unameErr = "Enter a valid user name";
-  }
-
-
-  if (empty($_POST["gender"])) {
-    $genderErr = "Gender is required";
-  } else {
-    $gender = test_input($_POST["gender"]);
-  }
-}
+				  if (empty($_POST["Dob"])) {
+					$dobErr = "Enter a DOB";
+				  } /*else {
+					$uname = test_input($_POST["uname"]);
+					// check if URL address syntax is valid
+					if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$website)) {
+					  $websiteErr = "Invalid URL";
+					}    
+				  }*/
+				   if (empty($_POST["uname"])) {
+					$unameErr = "Enter a valid user name";
+				  }
 
 
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
-?>
+				  if (empty($_POST["gender"])) {
+					$genderErr = "Gender is required";
+				  } else {
+					$gender = test_input($_POST["gender"]);
+				  }
+				}
+
+
+				function test_input($data) {
+				  $data = trim($data);
+				  $data = stripslashes($data);
+				  $data = htmlspecialchars($data);
+				  return $data;
+				}
+				?>
 				<table align="center" width="100%">
 					<tr align="right">
 						<td width="10%">
@@ -142,22 +142,24 @@ function test_input($data) {
 				</table>
 		</div>
 
-<div>
-				<h1 align="center">Its time to be a part with us.<br>Thank You</h1>
-			</div>
-			<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-  <div class="inner">
-  	<fieldset class="inner2">
-  	<h3 align="center">Register yourself as</h3>
+		<div>
+			<h1 align="center">Its time to be a part with us.<br>Thank You</h1>
+		</div>
+		<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+			<div class="inner">
+			<fieldset class="inner2">
+			<h3 align="center">Register yourself as</h3>
 
-  	<table align="center">
-  		 	<tr><td><p><span class="error">* required field.</span></p></td></tr>
+		<table align="center">
+  		 	<tr>
+				<td><p><span class="error">* required field.</span></p></td>
+			</tr>
   		<tr>
   			<td width="20%">
   				&nbsp;
   			</td>
-  			<table align="center">
-  				<div >
+				<div >
+  				<table align="center">
 									<tr>
 										<td>
 											<label style="color: #F0F8FF"><b>Name</b></label>
@@ -238,8 +240,7 @@ function test_input($data) {
 											<input type="checkbox" name="check"/>Agree with the <a href="../privacypolicy.php">Privacy Policy</a>
 										<td>
 									</tr>
-									<tr><td></td></tr>
-									<tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+									
 									
 									<tr align="center">
 										<td align="center" colspan="3">
@@ -248,15 +249,17 @@ function test_input($data) {
 										</td>
 									</tr>
 									
-								</td>
-							</td>
-						</tr>
+					
+						</table>
 					</div>
+					</tr>
 					</table>
+					</fieldset>
+					</div>
 				</form>
 				</tr>
 			</table>
-		</fieldset>
+		
 	</div>
 	
 <br>
