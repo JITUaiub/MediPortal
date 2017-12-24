@@ -75,8 +75,8 @@
 				  } else {
 					$pass = test_input($_POST["password"]);
 					
-					if (!preg_match("/^d{10}$|^d{12}$/",$pass)) {
-					  $passErr = "Passport must be 10 or 12 digits";
+					if (!preg_match("/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{8,12}$/",$pass)) {
+					  $passErr = "the password does not meet the requirements!";
 					}
 				  }
 				  if (empty($_POST["compass"])) {
@@ -91,21 +91,11 @@
 						}
 				  }
 
-<<<<<<< HEAD
-				  if (empty($_POST["Dob"])) {
-					$dobErr = "Enter a DOB";
-				  } /*else {
-					$uname = test_input($_POST["uname"]);
-					// check if URL address syntax is valid
-					if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$website)) {
-					  $websiteErr = "Invalid URL";
-					}    
-				  }*/
-				   if (empty($_POST["uname"])) {
-					$unameErr = "Enter a valid user name";
-				  }
-=======
-  if (empty($_POST["Dob"])) {
+
+				  
+				   
+
+  if (empty($_POST["dob"])) {
     $dobErr = "Enter a DOB";
   } 
   if (empty($_POST["UserName"])) {
@@ -117,7 +107,7 @@
       $unameErr = "can contain alphanumeric & longer than or equals 5 chars";
     }    
   }
->>>>>>> de51b22d3d86a405b86a63242c482ab2bb1efc61
+
 
 
 				  if (empty($_POST["gender"])) {
