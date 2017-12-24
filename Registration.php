@@ -91,6 +91,7 @@
 						}
 				  }
 
+<<<<<<< HEAD
 				  if (empty($_POST["Dob"])) {
 					$dobErr = "Enter a DOB";
 				  } /*else {
@@ -103,6 +104,20 @@
 				   if (empty($_POST["uname"])) {
 					$unameErr = "Enter a valid user name";
 				  }
+=======
+  if (empty($_POST["Dob"])) {
+    $dobErr = "Enter a DOB";
+  } 
+  if (empty($_POST["UserName"])) {
+    $unameErr = "Enter a valid UserName";
+  }else {
+    $uname = test_input($_POST["UserName"]);
+    
+    if (!preg_match("/^[a-zA-Z0-9]{5}$/",$uname)) {
+      $unameErr = "can contain alphanumeric & longer than or equals 5 chars";
+    }    
+  }
+>>>>>>> de51b22d3d86a405b86a63242c482ab2bb1efc61
 
 
 				  if (empty($_POST["gender"])) {
@@ -176,7 +191,8 @@
 										</td>
 										<td>:</td>
 										<td>
-											<input type="text" name="UserName" value="xyz"/>
+											<input type="text" name="UserName" value=""/>
+											<span class="error">* <?php echo $unameErr;?></span>
 										</td>
 									</tr>
 									<tr>
