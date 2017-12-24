@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 24, 2017 at 01:54 PM
--- Server version: 10.1.26-MariaDB
--- PHP Version: 7.1.9
+-- Generation Time: Dec 24, 2017 at 02:37 PM
+-- Server version: 10.1.13-MariaDB
+-- PHP Version: 7.0.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -146,6 +144,20 @@ INSERT INTO `educational_info` (`id`, `doctor_id`, `degree_name`, `passed_year`,
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `inbox`
+--
+
+CREATE TABLE `inbox` (
+  `SenderName` varchar(100) NOT NULL,
+  `RecipientName` varchar(100) NOT NULL,
+  `ChatID` int(11) NOT NULL,
+  `Subject` varchar(200) DEFAULT NULL,
+  `Status` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `medicine`
 --
 
@@ -190,6 +202,20 @@ CREATE TABLE `member` (
 
 INSERT INTO `member` (`member_id`, `username`, `name`, `gender`, `email`, `dob`, `mobile`, `blood_group`, `profile_picture`, `account_status`, `last_login`, `address`) VALUES
 (1, 'rifat', 'rufat hasan', 'male', 'rifat@gmail.com', '1999-10-01', '012547895', 'a+', 0x702e706e67, 'active', '0000-00-00 00:00:00', 'o/26,mohammodpur');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `messages`
+--
+
+CREATE TABLE `messages` (
+  `ChatID` int(11) NOT NULL,
+  `Body` text NOT NULL,
+  `attachment` blob,
+  `Time` varchar(20) NOT NULL,
+  `Date` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -299,6 +325,12 @@ ALTER TABLE `educational_info`
   ADD KEY `doctor_id` (`doctor_id`);
 
 --
+-- Indexes for table `inbox`
+--
+ALTER TABLE `inbox`
+  ADD PRIMARY KEY (`ChatID`);
+
+--
 -- Indexes for table `medicine`
 --
 ALTER TABLE `medicine`
@@ -341,55 +373,51 @@ ALTER TABLE `user`
 --
 ALTER TABLE `admin`
   MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT for table `appoinment`
 --
 ALTER TABLE `appoinment`
   MODIFY `appoinment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT for table `chamber`
 --
 ALTER TABLE `chamber`
   MODIFY `chamber_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT for table `doctor`
 --
 ALTER TABLE `doctor`
   MODIFY `doctor_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT for table `educational_info`
 --
 ALTER TABLE `educational_info`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
+--
+-- AUTO_INCREMENT for table `inbox`
+--
+ALTER TABLE `inbox`
+  MODIFY `ChatID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 --
 -- AUTO_INCREMENT for table `medicine`
 --
 ALTER TABLE `medicine`
   MODIFY `medicine_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT for table `member`
 --
 ALTER TABLE `member`
   MODIFY `member_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT for table `prescription`
 --
 ALTER TABLE `prescription`
   MODIFY `prescription_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT for table `professional_info`
 --
 ALTER TABLE `professional_info`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- Constraints for dumped tables
 --
@@ -444,7 +472,6 @@ ALTER TABLE `prescription`
 --
 ALTER TABLE `professional_info`
   ADD CONSTRAINT `professional_info_ibfk_1` FOREIGN KEY (`doctor_id`) REFERENCES `doctor` (`doctor_id`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
