@@ -47,8 +47,8 @@
 		<div>
 			<?php
 
-				$nameErr = $emailErr = $genderErr = $unameErr =$passErr=$compassErr=$dobErr= "";
-				$name = $email = $gender = $pass = $uname =$compass=$dob= "";
+				$nameErr = $emailErr = $genderErr = $unameErr =$passErr=$compassErr=$dobErr= $checkErr= $user_typeErr= "";
+				$name = $email = $gender = $pass = $uname =$compass=$dob= $check = $user_type= "";
 
 				if ($_SERVER["REQUEST_METHOD"] == "POST") {
 				  if (empty($_POST["name"])) {
@@ -90,6 +90,13 @@
 							$compassErr="Password didn't match";
 						}
 				  }
+				  if (empty($_POST["check"])) {
+    $checkErr = "Field is required";
+  }
+
+if (empty($_POST["user_type"])) {
+    $user_typeErr = "Field is required";
+  }
 
 
 				  
@@ -239,11 +246,13 @@
 										<td style="color: #F0F8FF">
 											<input type="radio" name="user_type" >Doctor
 											<input type="radio" name="user_type">Patient
+											<span class="error">* <?php echo $user_typeErr;?></span>
 										</td>
 									</tr>
 									<tr>
 										<td colspan="3">
 											<input type="checkbox" name="check"/>Agree with the <a href="../privacypolicy.php">Privacy Policy</a>
+											<span class="error">* <?php echo $checkErr;?></span>
 										<td>
 									</tr>
 									
