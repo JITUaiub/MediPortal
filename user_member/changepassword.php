@@ -168,9 +168,7 @@
             </td>
         </tr>
     </table>
-	<script type="text/javascript" src="valid.js"> 
-						
-	</script>
+	<script type="text/javascript" src="valid.js"></script>
 </body>
 
 </html>

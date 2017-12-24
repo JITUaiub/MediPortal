@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 24, 2017 at 06:10 PM
+-- Generation Time: Dec 24, 2017 at 07:57 PM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -122,10 +122,10 @@ CREATE TABLE `doctor` (
   `gender` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `dob` date NOT NULL,
-  `mobile` varchar(50) NOT NULL,
-  `bmdc_license` varchar(50) NOT NULL,
+  `mobile` varchar(50) DEFAULT NULL,
+  `bmdc_license` varchar(50) DEFAULT NULL,
   `account_status` varchar(50) NOT NULL,
-  `profile_picture` longblob NOT NULL,
+  `profile_picture` longblob,
   `last_login` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -205,12 +205,12 @@ CREATE TABLE `member` (
   `gender` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `dob` date NOT NULL,
-  `mobile` varchar(50) NOT NULL,
-  `blood_group_id` int(11) NOT NULL,
-  `profile_picture` longblob NOT NULL,
+  `mobile` varchar(50) DEFAULT NULL,
+  `blood_group_id` int(11) DEFAULT NULL,
+  `profile_picture` longblob,
   `account_status` varchar(50) NOT NULL,
   `last_login` datetime NOT NULL,
-  `address` text NOT NULL
+  `address` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
