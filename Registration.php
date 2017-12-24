@@ -93,15 +93,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   if (empty($_POST["Dob"])) {
     $dobErr = "Enter a DOB";
-  } /*else {
-    $uname = test_input($_POST["uname"]);
-    // check if URL address syntax is valid
-    if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$website)) {
-      $websiteErr = "Invalid URL";
+  } 
+  if (empty($_POST["UserName"])) {
+    $unameErr = "Enter a valid UserName";
+  }else {
+    $uname = test_input($_POST["UserName"]);
+    
+    if (!preg_match("/^[a-zA-Z0-9]{5}$/",$uname)) {
+      $unameErr = "can contain alphanumeric & longer than or equals 5 chars";
     }    
-  }*/
-   if (empty($_POST["uname"])) {
-    $unameErr = "Enter a valid user name";
   }
 
 
@@ -174,7 +174,8 @@ function test_input($data) {
 										</td>
 										<td>:</td>
 										<td>
-											<input type="text" name="UserName" value="xyz"/>
+											<input type="text" name="UserName" value=""/>
+											<span class="error">* <?php echo $unameErr;?></span>
 										</td>
 									</tr>
 									<tr>
