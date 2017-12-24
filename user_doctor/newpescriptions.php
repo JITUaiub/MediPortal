@@ -1,6 +1,6 @@
 <html>
 
-<head><title>Home</title></head>
+<head><title>New Prescriptions</title></head>
 
 <body>
     <table align="center" width="100%">
@@ -18,7 +18,7 @@
                                 <td><strong>Logged in as </strong></td>
                                 <td><a href="viewprofile.php">Bob<img src="images/user.png"></a></td>
                                 <td><hr width="1" size="15"></td>
-                                <td><a href="../index.html">Logout<img src="images/logout.png"></a></td>
+                                <td><a href="../index.php">Logout<img src="images/logout.png"></a></td>
                             </table> 
                         </td>
                     </table>
@@ -28,8 +28,8 @@
         <tr>
             <td>
                 <!-- Body section -->
-               <div>
-                    <table width="100%" border="1" cellspacing="0" cellpadding="0">
+                <div>
+                    <table width="100%" border="1">
                         <!-- User Menu Section -->
                         <td width="20%">
                             <fieldset>
@@ -40,52 +40,52 @@
                                 <li><a href="viewprofile.php">View Profile</a></li>
                                 <li><a href="editprofile.php">Edit Profile</a></li>
                                 <li><a href="changeprofilepicture.php">Change Profile Picture</a></li>
+                                <li><a href="managechamber.php">Manage Chambers</a></li>
+                            </ul>
+                        </fieldset>
+
+
+                        <fieldset>
+                            <legend>
+                            <strong>Manage Prescriptions</strong></legend>
+                                <ul>
+                                <li><a href="newpescriptions.php">Create new Prescriptions</a></li>
+                                <li><a href="pescriptions.php">Previous Prescriptions</a></li>
                             </ul>
                         </fieldset>
 
                         <fieldset>
                             <legend>
-                            <strong>Manage Users</strong></legend>
+                            <strong>Appointments Information</strong></legend>
                            
                             <ul>
-                                <li><a href="normalUsers.php">General Users</a></li>
-                                <li><a href="doctorUsers.php">Doctors</a></li>
-                                <li><a href="pendingRequest.php">Pending Sign Up Requests</a></li>
-                                <li><a href="reportedUsers.php">Reported Users</a></li>
+                                <li><a href="appointmentstatus.php">Appointment Status</a></li>
+                                <li><a href="appointmenthistory.php">Appointment History</a></li>
                             </ul>
                         </fieldset>
 
-                        <fieldset>
-                            <legend>
-                            <strong>FAQ Section</strong></legend>
-                           
-                            <ul>
-                                <li><a href="FAQ/newFAQ.php">New FAQ</a></li>
-                                <li><a href="FAQ/requestedFAQ.php">User Requested FAQ</a></li>
-                                <li><a href="FAQ/manageFAQ.php">Manage FAQ</a></li>
-                            </ul>
-                        </fieldset>
+
                         <fieldset>
                             <legend>
                             <strong>Reports</strong></legend>
                            
                             <ul>
-                                <li><a href="reportsNormalUsers.php">General Users Statistics</a></li>
-                                <li><a href="reportsDoctorUsers.php">Doctor's Statistics</a></li>
-                                <li><a href="reportsAdmin.php">Overall Statistics</a></li>
+                                <li><a href="patienthistory.php">Patient History</a></li>
+                                <li><a href="medianalysis.php">Medicine Analysis</a></li>
+                                <li><a href="disanalysis.php">Disease Analysis</a></li>
                             </ul>
                         </fieldset>
                         
                         
                         <fieldset>
                             <legend>
-                            <strong>Email</strong></legend>
+                            <strong>E-consultation</strong></legend>
                            
                             <ul>
                                 <li><a href="eConsultation/message.php">New Message</a></li>
                                 <li><a href="eConsultation/inbox.php">Inbox</a></li>
-                                <li><a href="eConsultation/sentitems.php">Sent items</a></li>
-                                <li><a href="eConsultation/promoMail.php">Promotional Mail</a></li>
+                                <li><a href="eConsultation/sentitems.php">Sent Items</a></li>
+                                
                             </ul>
                         </fieldset>
 
@@ -95,44 +95,36 @@
                             <strong>Account</strong></legend>
                            
                             <ul>
-                                <li><a href="changepassword.html">Change Password</a></li>
-                                <li><a href="../index.html">Logout</a></li>
+                                <li><a href="changepassword.php">Change Password</a></li>
+                                <li><a href="../index.php">Logout</a></li>
                             </ul>
                         </fieldset>
                         </td>
-                        <div align="center">
-                             <td width="70%" align="center" valign="top">
-                                <!------ UI  -->
-                                    <form>
-                                    <h1>CHANGE PASSWORD</h1>
-                                    <table>
-                                        <tr>
-                                            <td><strong>Current Password</strong></td>
-                                            <td><strong>:</strong></td>
-                                            <td><input type="password" name="currentpassword"/></td>  
-                                        </tr>
-                                        <tr>
-                                            <td><strong>New Password</strong></td>
-                                            <td><strong>:</strong></td>
-                                            <td><input type="password" name="newpassword"/></td>  
-                                        </tr>
-                                        <tr>
-                                            <td><strong>Retype New Password</strong></td>
-                                            <td><strong>:</strong></td>
-                                            <td><input type="password" name="retypepassword"/></td>  
-                                        </tr>
-                                    </table>
-                                    <hr/>
-                                    <input type="submit" value="Submit"/>
-                                </form>
-                                <table width="100%">
-                                        <td colspan="2" align="right" width="49%"><a href="editprofile.php">Edit Profile</a></td>
-                                        <td width="2%"><strong><hr width="1" size="15"></strong></td>
-                                        <td colspan="2" align="left" width="49%"><a href="changeprofilepicture.php">Change Profile Picture</a></td>
-                                    </table>
-                                <!-- END -->
-                            </td>
-                        </div>
+
+                        <td width="70%" valign="top">
+                            <!------------------------ DESIGN PORTAL PAGE HERE ------------------------------>
+                            <h1 align="center">Create prescription</h1>
+                            <table align="center" width="60%">
+                                <tr>
+                                    <td width="30%"><a href="presWithAppointment.php"><img src="images/onlineAppointment.gif"></a></td>
+                                    <td width="40%">&nbsp;</td>
+                                    <td width="30%"><a href="presWithoutAppointment.php"><img src="images/Prescription.png"></a></td>
+                                </tr>
+                                <tr>
+                                    <td width="30%" align="center"><a href="presWithAppointment.php">Patient with online appointment</a></td>
+                                    <td width="40%">&nbsp;</td>
+                                    <td width="30%" align="center"><a href="presWithoutAppointment.php">Patient without Appointment</a></td>
+                                </tr>
+
+
+                               <tr>
+                                   <td align="center" colspan="3">
+                                        <a href="pescriptions.php">Go to Previous Prescription</a>
+                                   </td>
+                               </tr>
+                            </table>
+                            <!------------------------ FINISH DESIGNING HERE ------------------------------>
+                        </td>
                     </table>
                 </div>
             </td>
