@@ -42,7 +42,17 @@
 										<tr>
 											<td><label>Passed Year</label></td>
 											<td>:</td>
-											<td><input type="text" name="passedYear" value="2015" /></td>
+											<td><select>
+												<?php
+												$y=2017;
+											
+												for($y=2017;$y>=1990;$y--)
+												{
+												echo "<option>$y</option>";
+											}
+											?>
+										</select>
+									</td>
 										</tr>
 										<tr>
 											<td><label>University</label></td>
@@ -57,11 +67,11 @@
 										<script type="text/javascript">
 											function add()
 											{
-												window.location.href = "docRegAddEducation.html";
+												window.location.href = "docRegAddEducation.php";
 											}
 											function next()
 											{
-												window.location.href = "docRegAddChamber.html";
+												window.location.href = "docRegAddChamber.php";
 											}
 										</script>
 										<tr>
