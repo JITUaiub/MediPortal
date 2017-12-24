@@ -2,6 +2,9 @@
 <html>
 <head>
 	<title>Doctor Registration</title>
+	<style>
+		.error {color: #FF0000;}
+	</style>
 </head>
 <body>
 	<table>
@@ -27,17 +30,19 @@
 			</div>
 
 			<div>
-				<form action="">
+				<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 					<h1 align="center">Add Education Background</h1>
 					<table align="center" width="60%">
 						<tr>
 							<td>
 								<fieldset>	
 									<table align="center" >
+										<tr><td><p><span class="error">* required field.</span></p></td></tr>
 										<tr>
 											<td><label>Degree</label></td>
 											<td>:</td>
-											<td><input type="text" name="degreeName" value="MBBS" /></td>
+											<td><input type="text" name="degreeName" value="MBBS" />
+											<span class="error">* </td>
 										</tr>
 										<tr>
 											<td><label>Passed Year</label></td>
@@ -52,30 +57,25 @@
 											}
 											?>
 										</select>
+										<span class="error">* 
 									</td>
 										</tr>
 										<tr>
 											<td><label>University</label></td>
 											<td>:</td>
-											<td><input type="text" name="university" value="DMC" /></td>
+											<td><input type="text" name="university" value="DMC" />
+											<span class="error">* </td>
 										</tr>
 										<tr>
 											<td><label>Description</label></td>
 											<td>:</td>
 											<td><textarea name="description">Bla bla bla</textarea></td>
 										</tr>
-										<script type="text/javascript">
-											function add()
-											{
-												window.location.href = "docRegAddEducation.php";
-											}
-											function next()
-											{
-												window.location.href = "docRegAddChamber.php";
-											}
-										</script>
+										
 										<tr>
-											<td colspan="3" align="center"><input type="button" value="Add another" onclick="add()" /> |	<input type="button" value="Next Step" onclick="next()" /></td>
+											<td colspan="3" align="center">
+												<input type="Submit" name="Submit" value="Add another"  >
+												<input type="button" value="Next Step"></td>
 										</tr>
 										<tr>
 											<td colspan="3" align="center"><a href="docRegAddChamber.php">Skip for now</a></td>
