@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 23, 2017 at 11:54 PM
+-- Generation Time: Dec 24, 2017 at 01:54 PM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -44,7 +44,8 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`admin_id`, `username`, `name`, `gender`, `email`, `dob`, `mobile`, `profile_picture`) VALUES
-(1, 'shuvo', 'mehedi hasan shuvo', 'male', 'rpm_shuvo@outlook.com', '1995-03-19', '01521493732', 0x702e706e67);
+(1, 'shuvo', 'mehedi hasan shuvo', 'male', 'rpm_shuvo@outlook.com', '1995-03-19', '01521493732', 0x702e706e67),
+(2, 'jitu', 'nashid kamal', 'male', 'kamal@gmail.com', '1995-12-12', '01758478754', 0x702e706e67);
 
 -- --------------------------------------------------------
 
@@ -62,6 +63,13 @@ CREATE TABLE `appoinment` (
   `prescription_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `appoinment`
+--
+
+INSERT INTO `appoinment` (`appoinment_id`, `doctor_id`, `member_id`, `date`, `time`, `status`, `prescription_id`) VALUES
+(1, 1, 1, '2017-12-24', '03:00:00', 'pending', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -78,6 +86,13 @@ CREATE TABLE `chamber` (
   `description` text NOT NULL,
   `visit` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `chamber`
+--
+
+INSERT INTO `chamber` (`chamber_id`, `doctor_id`, `name`, `location`, `days`, `time`, `description`, `visit`) VALUES
+(1, 1, 'United Hospital', 'Gulshan, Dhaka1230', 'Sat,Sun', '05:00:00', 'Saturday and Sunday I am available in united Hospital from 10 am to 5 pm . So you can contact with me', '');
 
 -- --------------------------------------------------------
 
@@ -121,6 +136,13 @@ CREATE TABLE `educational_info` (
   `description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `educational_info`
+--
+
+INSERT INTO `educational_info` (`id`, `doctor_id`, `degree_name`, `passed_year`, `college`, `description`) VALUES
+(1, 1, 'MBBS', 2012, 'Dhaka Medical College', 'bla bla bla bla');
+
 -- --------------------------------------------------------
 
 --
@@ -133,6 +155,13 @@ CREATE TABLE `medicine` (
   `time` time NOT NULL,
   `totaldays` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `medicine`
+--
+
+INSERT INTO `medicine` (`medicine_id`, `name`, `time`, `totaldays`) VALUES
+(1, 'napa', '06:00:03', '');
 
 -- --------------------------------------------------------
 
@@ -148,7 +177,7 @@ CREATE TABLE `member` (
   `email` varchar(50) NOT NULL,
   `dob` date NOT NULL,
   `mobile` varchar(50) NOT NULL,
-  `blood_donation` varchar(50) NOT NULL,
+  `blood_group` varchar(50) NOT NULL,
   `profile_picture` longblob NOT NULL,
   `account_status` varchar(50) NOT NULL,
   `last_login` datetime NOT NULL,
@@ -159,7 +188,7 @@ CREATE TABLE `member` (
 -- Dumping data for table `member`
 --
 
-INSERT INTO `member` (`member_id`, `username`, `name`, `gender`, `email`, `dob`, `mobile`, `blood_donation`, `profile_picture`, `account_status`, `last_login`, `address`) VALUES
+INSERT INTO `member` (`member_id`, `username`, `name`, `gender`, `email`, `dob`, `mobile`, `blood_group`, `profile_picture`, `account_status`, `last_login`, `address`) VALUES
 (1, 'rifat', 'rufat hasan', 'male', 'rifat@gmail.com', '1999-10-01', '012547895', 'a+', 0x702e706e67, 'active', '0000-00-00 00:00:00', 'o/26,mohammodpur');
 
 -- --------------------------------------------------------
@@ -179,6 +208,13 @@ CREATE TABLE `prescription` (
   `disease` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `prescription`
+--
+
+INSERT INTO `prescription` (`prescription_id`, `doctor_id`, `member_id`, `date`, `medicine_id`, `next_appoinment`, `symptoms`, `disease`) VALUES
+(1, 1, 1, '0000-00-00', 1, '0000-00-00', 'bla,bla,bla', 'fiver');
+
 -- --------------------------------------------------------
 
 --
@@ -191,6 +227,13 @@ CREATE TABLE `professional_info` (
   `title` varchar(50) NOT NULL,
   `medical_college` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `professional_info`
+--
+
+INSERT INTO `professional_info` (`id`, `doctor_id`, `title`, `medical_college`) VALUES
+(1, 1, 'Assistant Professor', 'Sir Sollimullah Medical College');
 
 -- --------------------------------------------------------
 
@@ -209,6 +252,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`username`, `type`, `password`) VALUES
+('jitu', 'admin', 'jitu'),
 ('rashed', 'doctor', '154rsss'),
 ('rifat', 'member', 'mmmmmm'),
 ('shuvo', 'admin', 'rpm7876');
@@ -230,7 +274,8 @@ ALTER TABLE `admin`
 ALTER TABLE `appoinment`
   ADD PRIMARY KEY (`appoinment_id`),
   ADD KEY `doctor_id` (`doctor_id`),
-  ADD KEY `member_id` (`member_id`);
+  ADD KEY `member_id` (`member_id`),
+  ADD KEY `prescription_id` (`prescription_id`);
 
 --
 -- Indexes for table `chamber`
@@ -295,19 +340,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `appoinment`
 --
 ALTER TABLE `appoinment`
-  MODIFY `appoinment_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `appoinment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `chamber`
 --
 ALTER TABLE `chamber`
-  MODIFY `chamber_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `chamber_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `doctor`
@@ -319,13 +364,13 @@ ALTER TABLE `doctor`
 -- AUTO_INCREMENT for table `educational_info`
 --
 ALTER TABLE `educational_info`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `medicine`
 --
 ALTER TABLE `medicine`
-  MODIFY `medicine_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `medicine_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `member`
@@ -337,13 +382,13 @@ ALTER TABLE `member`
 -- AUTO_INCREMENT for table `prescription`
 --
 ALTER TABLE `prescription`
-  MODIFY `prescription_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `prescription_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `professional_info`
 --
 ALTER TABLE `professional_info`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
@@ -360,7 +405,8 @@ ALTER TABLE `admin`
 --
 ALTER TABLE `appoinment`
   ADD CONSTRAINT `appoinment_ibfk_1` FOREIGN KEY (`doctor_id`) REFERENCES `doctor` (`doctor_id`),
-  ADD CONSTRAINT `appoinment_ibfk_2` FOREIGN KEY (`member_id`) REFERENCES `member` (`member_id`);
+  ADD CONSTRAINT `appoinment_ibfk_2` FOREIGN KEY (`member_id`) REFERENCES `member` (`member_id`),
+  ADD CONSTRAINT `appoinment_ibfk_3` FOREIGN KEY (`prescription_id`) REFERENCES `prescription` (`prescription_id`);
 
 --
 -- Constraints for table `chamber`

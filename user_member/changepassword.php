@@ -102,7 +102,7 @@
 
                         <td width="70%" valign="top">
                             
-							<!-- <form> -->
+							<!--	<form> -->	
 							
                                 <h1 align="center">CHANGE PASSWORD</h1>
                                 <table align="center" width="70%">
@@ -113,28 +113,22 @@
                                                     <tr>
                                                         <td><strong>Current Password</strong></td>
                                                         <td><strong>:</strong></td>
-                                                        <td><input type="password" name="currentpassword" value="ratul@aiub" /></td>  
+                                                        <td><input id ="currentpassword" type="password" name="currentpassword"/></td>  
                                                     </tr>
                                                     <tr>
                                                         <td><strong>New Password</strong></td>
                                                         <td><strong>:</strong></td>
-                                                        <td><input type="password" name="newpassword" value="kumar@ai" /></td>  
+                                                        <td><input id="newpassword" type="password" name="newpassword"  /></td>  
                                                     </tr>
                                                     <tr>
                                                         <td><strong>Retype New Password</strong></td>
                                                         <td><strong>:</strong></td>
-                                                        <td><input type="password" name="retypepassword" value="kumar@ai"  /></td>  
+                                                        <td><input id ="retypepassword" type="password" name="retypepassword"  /></td>  
                                                     </tr>
                                                 </table>
                                                 <hr/>
-                                                <p align="center"><input id="password_change" type="submit" value="Submit" onclick="password_change_function()"/></p>
-												<script type="text/javascript">
-													function password_change_function(){
-														var x= document.getElementById("password_change").value;
-														alert("Password is changed");
-														window.location.assign("viewprofile.php");
-													}
-												</script>
+                                                <p align="center"><input id="password_change" type="submit" value="Submit" onclick="return password_change_function()"/></p>
+												
 												
                                                 <p align="center"><a href="editprofile.php">Edit Profile</a> | <a href="changeprofilepicture.php">Change Profile Picture</a></p>
                                             </fieldset>
@@ -142,7 +136,7 @@
                                     </tr>
                                 </table> 
 								
-							<!-- </form> -->	
+						<!--	</form> -->	
                             
                         </td>
                     </table>
@@ -174,6 +168,9 @@
             </td>
         </tr>
     </table>
+	<script type="text/javascript" src="valid.js"> 
+						
+	</script>
 </body>
 
 </html>
