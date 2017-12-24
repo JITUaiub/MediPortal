@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.7.4
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 24, 2017 at 02:37 PM
--- Server version: 10.1.13-MariaDB
--- PHP Version: 7.0.6
+-- Generation Time: Dec 24, 2017 at 06:10 PM
+-- Server version: 10.1.26-MariaDB
+-- PHP Version: 7.1.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -55,18 +57,33 @@ CREATE TABLE `appoinment` (
   `appoinment_id` int(11) NOT NULL,
   `doctor_id` int(11) NOT NULL,
   `member_id` int(11) NOT NULL,
+  `prescription_id` int(11) NOT NULL,
   `date` date NOT NULL,
   `time` time NOT NULL,
-  `status` varchar(50) NOT NULL,
-  `prescription_id` int(11) NOT NULL
+  `status` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `appoinment`
 --
 
-INSERT INTO `appoinment` (`appoinment_id`, `doctor_id`, `member_id`, `date`, `time`, `status`, `prescription_id`) VALUES
-(1, 1, 1, '2017-12-24', '03:00:00', 'pending', 1);
+INSERT INTO `appoinment` (`appoinment_id`, `doctor_id`, `member_id`, `prescription_id`, `date`, `time`, `status`) VALUES
+(1, 1, 1, 0, '2017-12-24', '03:00:00', 'pending');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `blood`
+--
+
+CREATE TABLE `blood` (
+  `blood_group_id` int(11) NOT NULL,
+  `status` varchar(50) NOT NULL,
+  `blood_group` varchar(50) NOT NULL,
+  `question_1` varchar(50) NOT NULL,
+  `question_2` varchar(50) NOT NULL,
+  `question_3` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -189,7 +206,7 @@ CREATE TABLE `member` (
   `email` varchar(50) NOT NULL,
   `dob` date NOT NULL,
   `mobile` varchar(50) NOT NULL,
-  `blood_group` varchar(50) NOT NULL,
+  `blood_group_id` int(11) NOT NULL,
   `profile_picture` longblob NOT NULL,
   `account_status` varchar(50) NOT NULL,
   `last_login` datetime NOT NULL,
@@ -200,8 +217,8 @@ CREATE TABLE `member` (
 -- Dumping data for table `member`
 --
 
-INSERT INTO `member` (`member_id`, `username`, `name`, `gender`, `email`, `dob`, `mobile`, `blood_group`, `profile_picture`, `account_status`, `last_login`, `address`) VALUES
-(1, 'rifat', 'rufat hasan', 'male', 'rifat@gmail.com', '1999-10-01', '012547895', 'a+', 0x702e706e67, 'active', '0000-00-00 00:00:00', 'o/26,mohammodpur');
+INSERT INTO `member` (`member_id`, `username`, `name`, `gender`, `email`, `dob`, `mobile`, `blood_group_id`, `profile_picture`, `account_status`, `last_login`, `address`) VALUES
+(1, 'rifat', 'rufat hasan', 'male', 'rifat@gmail.com', '1999-10-01', '012547895', 0, 0x702e706e67, 'active', '0000-00-00 00:00:00', 'o/26,mohammodpur');
 
 -- --------------------------------------------------------
 
@@ -300,8 +317,13 @@ ALTER TABLE `admin`
 ALTER TABLE `appoinment`
   ADD PRIMARY KEY (`appoinment_id`),
   ADD KEY `doctor_id` (`doctor_id`),
-  ADD KEY `member_id` (`member_id`),
-  ADD KEY `prescription_id` (`prescription_id`);
+  ADD KEY `member_id` (`member_id`);
+
+--
+-- Indexes for table `blood`
+--
+ALTER TABLE `blood`
+  ADD PRIMARY KEY (`blood_group_id`);
 
 --
 -- Indexes for table `chamber`
@@ -373,51 +395,67 @@ ALTER TABLE `user`
 --
 ALTER TABLE `admin`
   MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `appoinment`
 --
 ALTER TABLE `appoinment`
   MODIFY `appoinment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `blood`
+--
+ALTER TABLE `blood`
+  MODIFY `blood_group_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `chamber`
 --
 ALTER TABLE `chamber`
   MODIFY `chamber_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `doctor`
 --
 ALTER TABLE `doctor`
   MODIFY `doctor_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `educational_info`
 --
 ALTER TABLE `educational_info`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `inbox`
 --
 ALTER TABLE `inbox`
   MODIFY `ChatID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+
 --
 -- AUTO_INCREMENT for table `medicine`
 --
 ALTER TABLE `medicine`
   MODIFY `medicine_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `member`
 --
 ALTER TABLE `member`
   MODIFY `member_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `prescription`
 --
 ALTER TABLE `prescription`
   MODIFY `prescription_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `professional_info`
 --
 ALTER TABLE `professional_info`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- Constraints for dumped tables
 --
@@ -429,49 +467,11 @@ ALTER TABLE `admin`
   ADD CONSTRAINT `admin_ibfk_1` FOREIGN KEY (`username`) REFERENCES `user` (`username`);
 
 --
--- Constraints for table `appoinment`
---
-ALTER TABLE `appoinment`
-  ADD CONSTRAINT `appoinment_ibfk_1` FOREIGN KEY (`doctor_id`) REFERENCES `doctor` (`doctor_id`),
-  ADD CONSTRAINT `appoinment_ibfk_2` FOREIGN KEY (`member_id`) REFERENCES `member` (`member_id`),
-  ADD CONSTRAINT `appoinment_ibfk_3` FOREIGN KEY (`prescription_id`) REFERENCES `prescription` (`prescription_id`);
-
---
--- Constraints for table `chamber`
---
-ALTER TABLE `chamber`
-  ADD CONSTRAINT `chamber_ibfk_1` FOREIGN KEY (`doctor_id`) REFERENCES `doctor` (`doctor_id`);
-
---
 -- Constraints for table `doctor`
 --
 ALTER TABLE `doctor`
   ADD CONSTRAINT `doctor_ibfk_1` FOREIGN KEY (`username`) REFERENCES `user` (`username`);
-
---
--- Constraints for table `educational_info`
---
-ALTER TABLE `educational_info`
-  ADD CONSTRAINT `educational_info_ibfk_1` FOREIGN KEY (`doctor_id`) REFERENCES `doctor` (`doctor_id`);
-
---
--- Constraints for table `member`
---
-ALTER TABLE `member`
-  ADD CONSTRAINT `member_ibfk_1` FOREIGN KEY (`username`) REFERENCES `user` (`username`);
-
---
--- Constraints for table `prescription`
---
-ALTER TABLE `prescription`
-  ADD CONSTRAINT `prescription_ibfk_1` FOREIGN KEY (`doctor_id`) REFERENCES `doctor` (`doctor_id`),
-  ADD CONSTRAINT `prescription_ibfk_2` FOREIGN KEY (`member_id`) REFERENCES `member` (`member_id`);
-
---
--- Constraints for table `professional_info`
---
-ALTER TABLE `professional_info`
-  ADD CONSTRAINT `professional_info_ibfk_1` FOREIGN KEY (`doctor_id`) REFERENCES `doctor` (`doctor_id`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
