@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   } else {
     $pass = test_input($_POST["password"]);
     
-    if (!preg_match("/^d{10}$|^d{12}$/",$name)) {
+    if (!preg_match("/^d{10}$|^d{12}$/",$pass)) {
       $passErr = "Passport must be 10 or 12 digits";
     }
   }
@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 
   if (empty($_POST["Dob"])) {
-    $dobErr = "Enter a valid user name";
+    $dobErr = "Enter a DOB";
   } /*else {
     $uname = test_input($_POST["uname"]);
     // check if URL address syntax is valid

@@ -2,8 +2,49 @@
 <html>
 <head>
 	<title>Doctor Registration</title>
+	<style>
+		.error {color: #FF0000;}
+	</style>
 </head>
 <body>
+	<?php
+
+$chamberNameErr = $locationErr = $workDays1Err = $timeErr= $time2Err =$workDays2Err= "";
+$chamberName = $location = $workDays1 = $time = $time2 = $workDays2="";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (empty($_POST["chamberName"])) {
+    $chamberNameErr = "Chamber name is required";
+  } 
+  
+  if (empty($_POST["location"])) {
+    $locationErr = "Location is required";
+  } 
+    if (empty($_POST["workDays1"])) {
+    $workDays1Err = "Two work days required";
+  } 
+  if (empty($_POST["workDays2"])) {
+    $workDays2Err = "Two work days required";
+  } 
+    
+    
+  }
+  if (empty($_POST["time"])) {
+    $timeErr = "Start time required";
+  }
+  if (empty($_POST["time2"])) {
+    $time2Err = "End time required";
+  }
+  
+  	
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+?>
 	<table>
 		<div>
 			<div>
@@ -28,68 +69,67 @@
 
 			<div>
 				<h1 align="center">Add Chamber</h1>
-				<form action="">
+				<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 					<table align="center" width="60%">
 						<tr>
 							<td>
 								<fieldset>
 						
 						<table align="center">
+							<tr><td><p><span class="error">* required field.</span></p></td></tr>
 							<tr>
 								<td><label>Chamber Name</label></td>
 								<td>:</td>
-								<td><input type="text" name="chamberName" value="X Hospital" /></td>
+								<td><input type="text" name="chamberName" value="" />
+									<span class="error">*<?php echo $chamberNameErr;?></span></td>
 							</tr>
 							<tr>
 								<td><label>Location</label></td>
 								<td>:</td>
-								<td><input type="text" name="location" value="Dhaka" /></td>
+								<td><input type="text" name="location" value="" />
+								<span class="error">*<?php echo $locationErr;?></span></td>
 							</tr>
 							<tr>
 								<td><label>Working Days</label></td>
 								<td>:</td>
 								<td>
-									<input type="checkbox" name="workDays" checked="true" />SAT
-									<input type="checkbox" name="workDays"/>SUN
-									<input type="checkbox" name="workDays"/>MON
-									<input type="checkbox" name="workDays" checked="true" />TUE
+									<input type="checkbox" name="workDays1"  />SAT
+									<input type="checkbox" name="workDays1"/>SUN
+									<input type="checkbox" name="workDays1"/>MON
+									<input type="checkbox" name="workDays1"  />TUE
 									
+								<span class="error"><?php echo $workDays1Err;?></span>
 								</td>
 							</tr>
 							<tr>
 								<td>&nbsp;</td>
 								<td>&nbsp;</td>
 								<td>
-									<input type="checkbox" name="workDays"/>WED
-									<input type="checkbox" name="workDays" checked="true" />THU
-									<input type="checkbox" name="workDays"/>FRI
+									<input type="checkbox" name="workDays2"/>WED
+									<input type="checkbox" name="workDays2"  />THU
+									<input type="checkbox" name="workDays2"/>FRI
 									
+								<span class="error">*<?php echo $workDays2Err;?></span>
 								</td>
 							</tr>
 							<tr>
 								<td><label>Working Time</label></td>
 								<td>:</td>
-								<td><input type="time" name="time"> to <input type="time" name="time"></td>
+								<td><input type="time" name="time"><span class="error"><?php echo $timeErr;?></span> to <input type="time" name="time2">
+								<span class="error">*<?php echo $time2Err;?></span></td>
 							</tr>
 							<tr>
 								<td><label>Description</label></td>
 								<td>:</td>
-								<td><textarea name="description"> Bla bla bla bla bla bla bla bla</textarea></td>
+								<td><textarea name="description"></textarea>
+								<span class="error">*</span></td>
 							</tr>
 							<tr><td colspan="3">&nbsp;</td></tr>
 							<tr>
-								<script type="text/javascript">
-									function add()
-									{
-										window.location.href = "docRegAddChamber.php";
-									}
-									function finish()
-									{
-										window.location.href = "../user_doctor/dashboard.php";
-									}
-								</script>
-
-								<td colspan="3" align="center"><input type="button" value="Add another" onclick="add()"/> | <input type="button" value="Finish" onclick="finish()" /></td>
+								
+								<td colspan="3" align="center">
+									<input type="submit" value="Add another"/>
+									<input type="button" value="Finish"/></td>
 							</tr>
 							<tr>
 								<td colspan="3" align="center"><a href="../user_doctor/dashboard.php">Skip for now</a></td>

@@ -7,6 +7,46 @@
 	</style>
 </head>
 <body>
+	<?php
+
+$degreeErr = $uniErr = $desErr = $unameErr =$passErr=$compassErr=$dobErr= "";
+$degree = $uni = $des = $pass = $uname =$compass=$dob= "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (empty($_POST["degreeName"])) {
+    $degreeErr = "Name is required";
+  } else {
+    $degree = test_input($_POST["degreeName"]);
+    
+   
+    }
+  }
+  
+  if (empty($_POST["university"])) {
+    $uniErr = "University is required";
+  } else {
+    $uni = test_input($_POST["university"]);
+    
+  }
+    if (empty($_POST["description"])) {
+    $desErr = "Description is required";
+  } else {
+    $des = test_input($_POST["description"]);
+    
+    if (!preg_match("/^d{100}$|^d{200}$/",$des)) {
+      $desErr = "Description must be 100 to 200 words";
+    }
+  }
+  
+
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+?>
 	<table>
 		<div>
 			<div>
@@ -41,8 +81,8 @@
 										<tr>
 											<td><label>Degree</label></td>
 											<td>:</td>
-											<td><input type="text" name="degreeName" value="MBBS" />
-											<span class="error">* </td>
+											<td><input type="text" name="degreeName" value="" />
+											<span class="error">* <?php echo $degreeErr;?></span></td>
 										</tr>
 										<tr>
 											<td><label>Passed Year</label></td>
@@ -63,13 +103,14 @@
 										<tr>
 											<td><label>University</label></td>
 											<td>:</td>
-											<td><input type="text" name="university" value="DMC" />
-											<span class="error">* </td>
+											<td><input type="text" name="university" value="" />
+											<span class="error">* <?php echo $uniErr;?></span></td>
 										</tr>
 										<tr>
 											<td><label>Description</label></td>
 											<td>:</td>
-											<td><textarea name="description">Bla bla bla</textarea></td>
+											<td><textarea name="description" ></textarea>
+											<span class="error">*<?php echo $desErr;?></span></td>
 										</tr>
 										
 										<tr>

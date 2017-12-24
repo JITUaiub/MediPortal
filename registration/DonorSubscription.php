@@ -2,8 +2,43 @@
 <html>
 <head>
 	<title>Patient Registration</title>
+	<style>
+		.error {color: #FF0000;}
+	</style>
 </head>
 <body>
+	<?php
+
+$bloodsubErr = $weightErr = $heartconditionErr = $drugsErr = "";
+$bloodsub = $weight = $heartcondition = $drugs = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (empty($_POST["bloodSubscription"])) {
+    $bloodsubErr = "Checkbox is required";
+  } 
+  
+  if (empty($_POST["weight"])) {
+    $weightErr = "Field is required";
+  } 
+    if (empty($_POST["heartcondition"])) {
+    $heartconditionErr = "Field is required";
+  } 
+    
+    
+  }
+  if (empty($_POST["drugs"])) {
+    $drugsErr = "Field is required";
+  }
+  
+  	
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+?>
 	<table>
 	<div>
 				<div>
@@ -28,21 +63,25 @@
 
 			<div>
 				<h1 align="center">Blood Donation Subscription Form</h1>
+				<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 				
 				<table align="center" width="60%">
 					<tr>
 						<td>
 							<fieldset>
-								<form action="">
+                               
+								
 									<table align="center">
 							
 										<tr>
 											<td colspan="3">
 													<table align="center">
+														 <tr><td><p><span class="error">* required field.</span></p></td></tr>
 														<tr>
 															<td>
 																<input type="checkbox" name="bloodSubscription">
 																I'm sure i want to donate Blood?
+																<span class="error">*<?php echo $bloodsubErr;?></span>
 															</td>
 														</tr>
 														<tr><td>&nbsp;</td></tr>
@@ -62,6 +101,7 @@
 																	<option>O(+)</option>
 																	<option>Don't Know</option>
 																</select>
+																<span class="error">*</span>
 												</td>
 											</tr>
 											
@@ -79,6 +119,7 @@
 												<td colspan="2">
 													<input name="weight" type="radio" value="yes"/>Yes
 													<input name="weight" type="radio" value="no"/>No
+													<span class="error">*<?php echo $weightErr;?></span>
 												</td>
 														
 											</tr>
@@ -97,6 +138,7 @@
 												<td colspan="2">
 													<input name="heartcondition" type="radio" value="yes"/>Yes
 													<input name="heartcondition" type="radio" value="no"/>No
+													<span class="error">*<?php echo $heartconditionErr;?></span>
 												</td>
 											
 											</tr>
@@ -115,6 +157,7 @@
 												<td colspan="2">
 													<input name="drugs" type="radio" value="yes"/>Yes
 													<input name="drugs" type="radio" value="no"/>No
+													<span class="error">*<?php echo $drugsErr;?></span>
 												</td>
 											
 											</tr>
@@ -123,15 +166,11 @@
 								</td>
 							</tr>
 							<tr><td>&nbsp;</td></tr>
-							<script type="text/javascript">
-								function finish()
-								{
-									window.location.href = "../user_member/dashboard.php";
-								}
-							</script>
+							
 							<tr>
 								<td colspan="3" align="center">
-							<input type="reset" name="reset" value="Reset" align="center"> | <input type="button" name="Submit" value="Finish" align="center" onclick="finish()">
+							<input type="reset" name="reset" value="Reset" align="center"> 
+							<input type="Submit" name="Submit" value="Finish" align="center" >
 							<tr>
 								<td colspan="3" align="center"><a href="../user_member/dashboard.php">Skip for now</a></td>
 							</tr>
@@ -142,7 +181,7 @@
 						</td>
 					</tr>
 				</table>	
-
+                 </form>
 			</div>
 	
       <br><br><br><br>
