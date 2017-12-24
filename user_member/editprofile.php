@@ -18,7 +18,9 @@
                                 <td><strong>Logged in as </strong></td>
                                 <td><a href="viewprofile.php">Bob<img src="images/user.png"></a></td>
                                 <td><hr width="1" size="15"></td>
-                                <td><a href="../index.html">Logout<img src="images/logout.png"></a></td>
+								<td><a href="../Registration/DonorSubscription.php">Profile</a></td>
+                                <td><hr width="1" size="15"></td>
+                                <td><a href="../index.php">Logout<img src="images/logout.png"></a></td>
                             </table> 
                         </td>
                     </table>
@@ -57,7 +59,7 @@
                             <strong>Appointments Information</strong></legend>
                            
                             <ul>
-                                <li><a href="newappointment.html">New Appointment</a></li>
+                                <li><a href="newappointment.php">New Appointment</a></li>
                                 <li><a href="appointmentstatus.php">Appointment Status</a></li>
                             </ul>
                         </fieldset>
@@ -89,8 +91,8 @@
                             <strong>Account</strong></legend>
                            
                             <ul>
-                                <li><a href="changepassword.html">Change Password</a></li>
-                                <li><a href="../index.html">Logout</a></li>
+                                <li><a href="changepassword.php">Change Password</a></li>
+                                <li><a href="../index.php">Logout</a></li>
                             </ul>
                         </fieldset>
                         </td>
@@ -224,7 +226,7 @@
                                                                     <table width="100%">
                                                                         <td colspan="2" align="right"><a href="changeprofilepicture.php">Change Profile Picture</a></td>
                                                                         <td><strong><hr width="1" size="15"></strong></td>
-                                                                        <td colspan="2" align="left"><a href="changepassword.html">Change Password</a></td>
+                                                                        <td colspan="2" align="left"><a href="changepassword.php">Change Password</a></td>
                                                                     </table>
                                                                 </td>
                                                             </tr>

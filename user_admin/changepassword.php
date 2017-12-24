@@ -85,7 +85,7 @@
                                 <li><a href="eConsultation/message.php">New Message</a></li>
                                 <li><a href="eConsultation/inbox.php">Inbox</a></li>
                                 <li><a href="eConsultation/sentitems.php">Sent items</a></li>
-                <li><a href="eConsultation/promoMail.php">Promotional Mail</a></li>
+                                <li><a href="eConsultation/promoMail.php">Promotional Mail</a></li>
                             </ul>
                         </fieldset>
 
@@ -103,69 +103,33 @@
                         <div align="center">
                              <td width="70%" align="center" valign="top">
                                 <!------ UI  -->
-                                        <fieldset>
-                                            <table width="100%" cellpadding="0" cellspacing="0">
-                                                <tr>
-                                                    <td>
-                                                        <b>General Users | STATISTICS</b>
-                                                    </td>
-                                                    <td>Date: <input name="blockdate1" value="2013-01-08" type="date">
-                                                        to <input name="blockdate2" value="2013-01-08" type="date">
-                                                        <button>Go</button></td>
-                                                    <td align="right">
-                                                        <input type="submit" value="Print"/>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </fieldset>
-                                        <br/>
-
-                                        <table border="1" align="center" width="100%" cellpadding="0" cellspacing="0">
-                                            <tr>
-                                                <th width="80%">TOP 3 TOTAL APPOINTMENT</th>
-                                                <th>NO of appointment</th>
-                                            </tr>
-                                            <tr>
-                                                <td width="80%" align="center"><a href="normalUserdetails.php">Ashley</a></td>
-                                                <td align="center">9</td>
-                                            </tr>
-                                            <tr>
-                                                <td width="80%" align="center"><a href="normalUserdetails.php">Shaun</a></td>
-                                                <td align="center">5</td>
-                                            </tr>
-                                            <tr>
-                                                <td width="80%" align="center"><a href="normalUserdetails.php">John</a></td>
-                                                <td align="center">2</td>
-                                            </tr>
-                                            <tr>
-                                                <td width="80%" align="center"><strong>Total</strong></td>
-                                                <td align="center">16</td>
-                                            </tr>
-                                        </table>
-                                        <br><br>
-                                        <table border="1" align="center" width="100%" cellpadding="0" cellspacing="0">
-                                            <tr>
-                                                <th width="80%">TOP 3 BLOOD DONOR</th>
-                                                <th>Times of donation</th>
-                                            </tr>
-                                            <tr>
-                                                <td width="80%" align="center"><a href="normalUserdetails.php">Ashley</a></td>
-                                                <td align="center">25</td>
-                                            </tr>
-                                            <tr>
-                                                <td width="80%" align="center"><a href="normalUserdetails.php">Shaun</a></td>
-                                                <td align="center">16</td>
-                                            </tr>
-                                            <tr>
-                                                <td width="80%" align="center"><a href="normalUserdetails.php">John</a></td>
-                                                <td align="center">5</td>
-                                            </tr>
-                                            <tr>
-                                                <td width="80%" align="center"><strong>Total</strong></td>
-                                                <td align="center">46</td>
-                                            </tr>
-                                        </table>
-
+                                    <form>
+                                    <h1>CHANGE PASSWORD</h1>
+                                    <table>
+                                        <tr>
+                                            <td><strong>Current Password</strong></td>
+                                            <td><strong>:</strong></td>
+                                            <td><input type="password" name="currentpassword"/></td>  
+                                        </tr>
+                                        <tr>
+                                            <td><strong>New Password</strong></td>
+                                            <td><strong>:</strong></td>
+                                            <td><input type="password" name="newpassword"/></td>  
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Retype New Password</strong></td>
+                                            <td><strong>:</strong></td>
+                                            <td><input type="password" name="retypepassword"/></td>  
+                                        </tr>
+                                    </table>
+                                    <hr/>
+                                    <input type="submit" value="Submit"/>
+                                </form>
+                                <table width="100%">
+                                        <td colspan="2" align="right" width="49%"><a href="editprofile.php">Edit Profile</a></td>
+                                        <td width="2%"><strong><hr width="1" size="15"></strong></td>
+                                        <td colspan="2" align="left" width="49%"><a href="changeprofilepicture.php">Change Profile Picture</a></td>
+                                    </table>
                                 <!-- END -->
                             </td>
                         </div>

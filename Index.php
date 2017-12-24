@@ -6,31 +6,35 @@
 <body>
 	<table>
 		<div>
-		<div><table align="center" width="100%">
+		<div>
+				<table align="center" width="100%">
 					<tr align="right">
 						<td width="10%">
-							<a href="Home.html"><img src="images/logo.png" align="left"></a>
+							<a href="Home.php"><img src="images/logo.png" align="left"></a>
 						</td>
 						<td width="30%">&nbsp;</td>
 						<td align="center" width="10%">
-							<fieldset><a href="Home.html" >Home <img src="images/home.png"></a></fieldset>
+							<fieldset><a href="Home.php" >Home <img src="images/home.png"></a></fieldset>
 						</td>
 						<td width="10%" align="center">
-							<fieldset><a href="Registration.html">Registration<img src="images/registration.png"></a></fieldset>
+							<fieldset><a href="Registration.php">Registration<img src="images/registration.png"></a></fieldset>
 						</td>
 						<td width="10%" align="center">
-							<fieldset><a href="service.html">Our Service<img src="images/service.png"></a></fieldset>
+							<fieldset><a href="service.php">Our Service<img src="images/service.png"></a></fieldset>
 						</td>
 						<td width="10%" align="center">
-							<fieldset><a href="Login.html">Login<img src="images/login.png"></a></fieldset>
+							<fieldset><a href="Login.php">Login<img src="images/login.png"></a></fieldset>
 						</td>
 					</tr>
 				</table>
 		</div>
 
+<br>
 
 <div align="center">
 	<script>
+		
+		
 	var i=0;
 	var images=[];
 	var time=3000;
@@ -42,6 +46,7 @@
 
 	function changeImage()
 	{
+		
 	   document.slide.src=images[i];
 
 	   if(i<images.length-1)
@@ -62,13 +67,16 @@
 	<img name="slide" width="100%" height="70%">
 
 </div>
-
+<br><br>
 <div>
 	<h1 align="center"><i>Welcome to MediPortal</i></h1>
 </div>
 
 <div>
-	<fieldset>
+	<table>
+		<tr>
+			<td width="50%">
+				<fieldset>
 		<h1 align="center">About us</h1>
 
 		<p>
@@ -77,12 +85,12 @@
 					
 					Helping peoples accross the world by providing commiunication between doctor and patient.We try to provide the best facilities to patient and doctor so that they can now easily be connected with each other. Patient can easily take treatment from doctor and doctor also can freely give consultation to patient
 		</p>
-		<div align="center"><a href="About_Us.html">Read More</a></div>
+		<div align="center"><a href="About_Us.php">Read More</a></div>
 	</fieldset>
-</div>
+</td>
 
-<br><br>
-<div align="center">
+<td width="50%">
+<div align="center" >
 	<table width="80%" align="center">
 
 			<td>
@@ -141,6 +149,11 @@
 	</table>
 </div>	
 
+</td>
+</tr>
+</table>
+</div>
+
 <br>
 				<fieldset>                   <div>
                    	<h1 align="center"><b>Our Service</b></h1>
@@ -151,7 +164,7 @@
 						<tr>
 							<td align="center">
 								<fieldset>
-									<a href="service.html"><img src="images/appointment.png" align="center" width="30%"></a>
+									<a href="service.php"><img src="images/appointment.png" align="center" width="30%"></a>
 									<h1>Get Appointment From Home</h1>
 									
 								</fieldset>
@@ -163,7 +176,7 @@
 						<tr>
 							<td align="center">
 								<fieldset>
-									<a href="service.html"><img src="images/donar.png" width="30%" align="center"></a>
+									<a href="service.php"><img src="images/donar.png" width="30%" align="center"></a>
 									<h1>Search for a blood donors</h1>
 									
 								</fieldset>
@@ -178,7 +191,7 @@
 						<tr>
 							<td align="center">
 								<fieldset>
-									<a href="service.html"><img src="images/contact.png" width="30%" align="center"></a>
+									<a href="service.php"><img src="images/contact.png" width="30%" align="center"></a>
 									<h1>Contact with your doctor</h1>
 									
 								</fieldset>
@@ -188,14 +201,14 @@
 				</div>
 			</fieldset>
 <br><br>
-			<div align="center">
+			<div>
 				<fieldset>
 					<h1 align="center">Our Top User</h1>
 					<div>
 						<fieldset>
 							<h1 align="center"> Top Doctor</h1>
 
-							<table align="center" width="80%">
+							<table align="center" width="50%">
 								<tr align="center">
 									<td align="center">
 										<img src="images/u1.png">
@@ -220,7 +233,7 @@
 
 						<fieldset>
 							<h1 align="center">Top general User</h1>
-							<table align="center" width="80%">
+							<table align="center" width="50%">
 								<tr align="center">
 									<td align="center">
 										<img src="images/u1.png">
@@ -246,14 +259,10 @@
 
 					</div>
 				</fieldset>
-				<br><br><br>
-                
-                <h1 align="center">Our Location</h1>
+
+				<h1 align="center">Our Location</h1>
 				<iframe align="center" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.6717485272!2d90.40031141446606!3d23.794700593000627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c711d13bbec7%3A0xc47f7c3e8e2263f2!2sAmerican+International+University+Bangladesh+(AIUB)!5e0!3m2!1sen!2sbd!4v1507242789312" width="100%" height="50%" frameborder="0" style="border:0" allowfullscreen></iframe>
-
-
 			</div>
-
 
 <br><br><br><br><br><br><br><br>
 
@@ -281,17 +290,17 @@
 		<table align="center">
 			<tr>
 				<td align="center" colspan="3">
-				<a href="About_Us.html">About Us   </a>
+				<a href="About_Us.php">About Us   </a>
 		
 			</td>
 			<td align="center" colspan="3">
-				<a href="Contact_Us.html">Contact Us   </a>
+				<a href="Contact_Us.php">Contact Us   </a>
 			</td>
 			<td align="center" colspan="3">
-				<a href="privacyPolicy.html">Privacy Policy   </a>
+				<a href="privacyPolicy.php">Privacy Policy   </a>
 			</td>
 			<td align="center" colspan="3">
-				<a href="faq.html">FAQ</a>
+				<a href="faq.php">FAQ</a>
 			</td>
 			</tr>
 		</table>

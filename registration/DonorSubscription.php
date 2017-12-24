@@ -17,9 +17,9 @@
                                 <td><strong>Logged in as </strong></td>
                                 <td><a href="../user_member/viewprofile.php">Bob<img src="../user_member/images/user.png"></a></td>
                                 <td><hr width="1" size="15"></td>
-                                 <td><a href="../Registration/DonorSubscription.html">Profile</a></td>
+                                 <td><a href="../Registration/DonorSubscription.php">Profile</a></td>
                                 <td><hr width="1" size="15"></td>
-                                <td><a href="../index.html">Logout<img src="../user_member/images/logout.png"></a></td>
+                                <td><a href="../index.php">Logout<img src="../user_member/images/logout.png"></a></td>
 
                             </table> 
                         </td>

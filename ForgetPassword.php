@@ -10,20 +10,20 @@
 				<table align="center" width="100%">
 					<tr align="right">
 						<td width="10%">
-							<a href="Home.html"><img src="images/logo.png" align="left"></a>
+							<a href="Home.php"><img src="images/logo.png" align="left"></a>
 						</td>
 						<td width="30%">&nbsp;</td>
 						<td align="center" width="10%">
-							<fieldset><a href="Home.html" >Home <img src="images/home.png"></a></fieldset>
+							<fieldset><a href="Home.php" >Home <img src="images/home.png"></a></fieldset>
 						</td>
 						<td width="10%" align="center">
-							<fieldset><a href="Registration.html">Registration<img src="images/registration.png"></a></fieldset>
+							<fieldset><a href="Registration.php">Registration<img src="images/registration.png"></a></fieldset>
 						</td>
 						<td width="10%" align="center">
-							<fieldset><a href="service.html">Our Service<img src="images/service.png"></a></fieldset>
+							<fieldset><a href="service.php">Our Service<img src="images/service.png"></a></fieldset>
 						</td>
 						<td width="10%" align="center">
-							<fieldset><a href="Login.html">Login<img src="images/login.png"></a></fieldset>
+							<fieldset><a href="Login.php">Login<img src="images/login.png"></a></fieldset>
 						</td>
 					</tr>
 				</table>
@@ -51,7 +51,7 @@
 					</tr>
 					<tr><td><br></td></tr>
 					<tr><td align="center" colspan="3"><input type="submit" value="Reset Password"/></td></tr>
-					<tr><td colspan="3" align="center"><a href="Login.html">Back To Login</a></td></tr></td></tr>	
+					<tr><td colspan="3" align="center"><a href="Login.php">Back To Login</a></td></tr></td></tr>	
 					
 				</table>
 				</fieldset>
@@ -79,16 +79,16 @@
 		<table align="center">
 			<tr>
 				<td align="center" colspan="3">
-				<a href="About_Us.html">About Us   </a>
+				<a href="About_Us.php">About Us   </a>
 			</td>
 			<td align="center" colspan="3">
-				<a href="Contact_Us.html">Contact Us   </a>
+				<a href="Contact_Us.php">Contact Us   </a>
 			</td>
 			<td align="center" colspan="3">
-				<a href="privacyPolicy.html">Privacy Policy   </a>
+				<a href="privacyPolicy.php">Privacy Policy   </a>
 			</td>
 			<td align="center" colspan="3">
-				<a href="faq.html">FAQ</a>
+				<a href="faq.php">FAQ</a>
 			</td>
 			</tr>
 		</table>

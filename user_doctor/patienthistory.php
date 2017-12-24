@@ -18,7 +18,9 @@
                                 <td><strong>Logged in as </strong></td>
                                 <td><a href="viewprofile.php">Bob<img src="images/user.png"></a></td>
                                 <td><hr width="1" size="15"></td>
-                                <td><a href="../index.html">Logout<img src="images/logout.png"></a></td>
+                                <td><a href="../Registration/DocRegAddEducation.php">Profile</a></td>
+                                                                 <td><hr width="1" size="15"></td>
+                                <td><a href="../index.php">Logout<img src="images/logout.png"></a></td>
                             </table> 
                         </td>
                     </table>
@@ -40,7 +42,7 @@
                                 <li><a href="viewprofile.php">View Profile</a></li>
                                 <li><a href="editprofile.php">Edit Profile</a></li>
                                 <li><a href="changeprofilepicture.php">Change Profile Picture</a></li>
-                                <li><a href="managechamber.html">Manage Chambers</a></li>
+                                <li><a href="managechamber.php">Manage Chambers</a></li>
                             </ul>
                         </fieldset>
 
@@ -49,7 +51,7 @@
                             <legend>
                             <strong>Manage Prescriptions</strong></legend>
                                 <ul>
-                                <li><a href="newpescriptions.html">Create new Prescriptions</a></li>
+                                <li><a href="newpescriptions.php">Create new Prescriptions</a></li>
                                 <li><a href="pescriptions.php">Previous Prescriptions</a></li>
                             </ul>
                         </fieldset>
@@ -95,8 +97,8 @@
                             <strong>Account</strong></legend>
                            
                             <ul>
-                                <li><a href="changepassword.html">Change Password</a></li>
-                                <li><a href="../index.html">Logout</a></li>
+                                <li><a href="changepassword.php">Change Password</a></li>
+                                <li><a href="../index.php">Logout</a></li>
                             </ul>
                         </fieldset>
                         </td>
@@ -201,7 +203,7 @@
                                     
 								</table>
 
-								<p align="center"><a href="newpescriptions.html">New Prescription</a> | <a href="appointmenthistory.php">Appointment History</a></p>
+								<p align="center"><a href="newpescriptions.php">New Prescription</a> | <a href="appointmenthistory.php">Appointment History</a></p>
 							</fieldset>
                       </table>
                             		</td>
