@@ -18,6 +18,8 @@
                                 <td><strong>Logged in as </strong></td>
                                 <td><a href="viewprofile.php">Bob<img src="images/user.png"></a></td>
                                 <td><hr width="1" size="15"></td>
+								<td><a href="../../Registration/DonorSubscription.php">Profile</a></td>
+                                <td><hr width="1" size="15"></td>
                                 <td><a href="../index.php">Logout<img src="images/logout.png"></a></td>
                             </table> 
                         </td>

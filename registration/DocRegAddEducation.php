@@ -17,9 +17,9 @@
                                 <td><strong>Logged in as </strong></td>
                                 <td><a href="../user_doctor/viewprofile.php">Bob<img src="../user_doctor/images/user.png"></a></td>
                                 <td><hr width="1" size="15"></td>
-                                 <td><a href="../Registration/DocRegAddEducation.html">Profile</a></td>
+                                 <td><a href="../Registration/DocRegAddEducation.php">Profile</a></td>
                                 <td><hr width="1" size="15"></td>
-                                <td><a href="../index.html">Logout<img src="../user_doctor/images/logout.png"></a></td>
+                                <td><a href="../index.php">Logout<img src="../user_doctor/images/logout.png"></a></td>
 
                             </table> 
                         </td>
@@ -57,18 +57,18 @@
 										<script type="text/javascript">
 											function add()
 											{
-												window.location.href = "docRegAddEducation.html";
+												window.location.href = "docRegAddEducation.php";
 											}
 											function next()
 											{
-												window.location.href = "docRegAddChamber.html";
+												window.location.href = "docRegAddChamber.php";
 											}
 										</script>
 										<tr>
 											<td colspan="3" align="center"><input type="button" value="Add another" onclick="add()" /> |	<input type="button" value="Next Step" onclick="next()" /></td>
 										</tr>
 										<tr>
-											<td colspan="3" align="center"><a href="docRegAddChamber.html">Skip for now</a></td>
+											<td colspan="3" align="center"><a href="docRegAddChamber.php">Skip for now</a></td>
 										</tr>
 									</table>
 								
