@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 25, 2017 at 06:54 AM
--- Server version: 10.1.26-MariaDB
--- PHP Version: 7.1.9
+-- Generation Time: Dec 25, 2017 at 03:32 PM
+-- Server version: 10.1.21-MariaDB
+-- PHP Version: 7.0.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -101,7 +99,7 @@ CREATE TABLE `chamber` (
   `name` varchar(255) NOT NULL,
   `location` text NOT NULL,
   `days` text NOT NULL,
-  `time` time NOT NULL,
+  `schedule` varchar(100) NOT NULL,
   `description` text NOT NULL,
   `visit` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -110,8 +108,10 @@ CREATE TABLE `chamber` (
 -- Dumping data for table `chamber`
 --
 
-INSERT INTO `chamber` (`chamber_id`, `doctor_id`, `name`, `location`, `days`, `time`, `description`, `visit`) VALUES
-(1, 1, 'United Hospital', 'Gulshan, Dhaka1230', 'Sat,Sun', '05:00:00', 'Saturday and Sunday I am available in united Hospital from 10 am to 5 pm . So you can contact with me', '');
+INSERT INTO `chamber` (`chamber_id`, `doctor_id`, `name`, `location`, `days`, `schedule`, `description`, `visit`) VALUES
+(1, 1, 'United Hospital', 'Gulshan, Dhaka1230', 'Sat,Sun', '05:00:00', 'Saturday and Sunday I am available in united Hospital from 10 am to 5 pm . So you can contact with me', ''),
+(5, 8, 'apollo', 'basundhara', 'sun,wed', '02:00 - 05:00', 'I am present', ''),
+(6, 18, 'Square', 'Dhanmondi', 'mon,tue', '14:34 - 17:06', 'I am available at this time', '');
 
 -- --------------------------------------------------------
 
@@ -157,7 +157,7 @@ CREATE TABLE `educational_info` (
   `id` int(11) NOT NULL,
   `doctor_id` int(11) NOT NULL,
   `degree_name` varchar(50) NOT NULL,
-  `passed_year` year(4) NOT NULL,
+  `passed_year` int(5) NOT NULL,
   `college` varchar(255) NOT NULL,
   `description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -167,7 +167,9 @@ CREATE TABLE `educational_info` (
 --
 
 INSERT INTO `educational_info` (`id`, `doctor_id`, `degree_name`, `passed_year`, `college`, `description`) VALUES
-(1, 1, 'MBBS', 2012, 'Dhaka Medical College', 'bla bla bla bla');
+(1, 1, 'MBBS', 2012, 'Dhaka Medical College', 'bla bla bla bla'),
+(2, 8, 'FCPS', 2013, 'Dhaka Medical College', 'my best part'),
+(3, 18, 'Frcs', 2007, 'London Medical College', 'I am graduated');
 
 -- --------------------------------------------------------
 
@@ -422,67 +424,56 @@ ALTER TABLE `user`
 --
 ALTER TABLE `admin`
   MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT for table `appointment`
 --
 ALTER TABLE `appointment`
   MODIFY `appointment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- AUTO_INCREMENT for table `blood`
 --
 ALTER TABLE `blood`
   MODIFY `blood_group_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `chamber`
 --
 ALTER TABLE `chamber`
-  MODIFY `chamber_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
+  MODIFY `chamber_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `doctor`
 --
 ALTER TABLE `doctor`
   MODIFY `doctor_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
-
 --
 -- AUTO_INCREMENT for table `educational_info`
 --
 ALTER TABLE `educational_info`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `inbox`
 --
 ALTER TABLE `inbox`
   MODIFY `ChatID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
-
 --
 -- AUTO_INCREMENT for table `medicine`
 --
 ALTER TABLE `medicine`
   MODIFY `medicine_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT for table `member`
 --
 ALTER TABLE `member`
   MODIFY `member_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
 --
 -- AUTO_INCREMENT for table `prescription`
 --
 ALTER TABLE `prescription`
   MODIFY `prescription_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT for table `professional_info`
 --
 ALTER TABLE `professional_info`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- Constraints for dumped tables
 --
@@ -498,7 +489,6 @@ ALTER TABLE `admin`
 --
 ALTER TABLE `doctor`
   ADD CONSTRAINT `doctor_ibfk_1` FOREIGN KEY (`username`) REFERENCES `user` (`username`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
