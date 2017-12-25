@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 25, 2017 at 03:18 AM
+-- Generation Time: Dec 25, 2017 at 06:54 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -50,28 +50,29 @@ INSERT INTO `admin` (`admin_id`, `username`, `name`, `gender`, `email`, `dob`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `appoinment`
+-- Table structure for table `appointment`
 --
 
-CREATE TABLE `appoinment` (
-  `appoinment_id` int(11) NOT NULL,
+CREATE TABLE `appointment` (
+  `appointment_id` int(11) NOT NULL,
   `doctor_id` int(11) NOT NULL,
   `member_id` int(11) NOT NULL,
   `prescription_id` int(11) DEFAULT NULL,
   `date` date NOT NULL,
   `time` time NOT NULL,
   `status` varchar(50) NOT NULL,
-  `problem` text
+  `problem` text,
+  `appointment_type` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `appoinment`
+-- Dumping data for table `appointment`
 --
 
-INSERT INTO `appoinment` (`appoinment_id`, `doctor_id`, `member_id`, `prescription_id`, `date`, `time`, `status`, `problem`) VALUES
-(1, 1, 1, 0, '2017-12-24', '03:00:00', 'pending', NULL),
-(2, 1, 1, NULL, '2017-12-12', '05:00:00', 'pending', NULL),
-(3, 2, 2, NULL, '2017-12-12', '05:00:00', 'pending', NULL);
+INSERT INTO `appointment` (`appointment_id`, `doctor_id`, `member_id`, `prescription_id`, `date`, `time`, `status`, `problem`, `appointment_type`) VALUES
+(1, 1, 1, 0, '2017-12-24', '03:00:00', 'pending', NULL, ''),
+(2, 1, 1, NULL, '2017-12-12', '05:00:00', 'pending', NULL, ''),
+(3, 2, 2, NULL, '2017-12-12', '05:00:00', 'pending', NULL, '');
 
 -- --------------------------------------------------------
 
@@ -138,7 +139,13 @@ CREATE TABLE `doctor` (
 
 INSERT INTO `doctor` (`doctor_id`, `username`, `name`, `gender`, `email`, `dob`, `mobile`, `bmdc_license`, `account_status`, `profile_picture`, `last_login`) VALUES
 (8, 'rashed', 'xxxxx', 'male', 'x@gmail.com', '2017-05-04', NULL, NULL, 'pending', NULL, '2017-04-04 05:00:00'),
-(12, 'erfefe', 'efre', 'Other', 'eeewjndjwbdhjw', '2017-12-01', NULL, NULL, 'pending', NULL, '2017-12-25 02:35:06');
+(12, 'erfefe', 'efre', 'Other', 'eeewjndjwbdhjw', '2017-12-01', NULL, NULL, 'pending', NULL, '2017-12-25 02:35:06'),
+(13, 'adadadad', 'adad adad', 'Female', 'a@gmail.com', '2017-12-07', NULL, NULL, 'pending', NULL, '2017-12-25 06:38:03'),
+(14, 'adadadad', 'adad adad', 'Female', 'a@gmail.com', '2017-12-07', NULL, NULL, 'pending', NULL, '2017-12-25 06:38:13'),
+(15, 'adadadad', 'adad adad', 'Female', 'a@gmail.com', '2017-12-07', NULL, NULL, 'pending', NULL, '2017-12-25 06:38:13'),
+(16, 'dbdbdbd', 'dbdbdbdbbd', 'Male', 'a@gmail.com', '2017-12-03', NULL, NULL, 'pending', NULL, '2017-12-25 06:42:12'),
+(17, 'popopopo', 'popopop', 'Male', 'a@gmail.com', '2017-12-05', NULL, NULL, 'pending', NULL, '2017-12-25 06:46:35'),
+(18, 'lasttest', 'Last test', 'Male', 'a@gmail.com', '2017-12-06', NULL, NULL, 'pending', NULL, '2017-12-25 06:50:45');
 
 -- --------------------------------------------------------
 
@@ -224,7 +231,9 @@ CREATE TABLE `member` (
 INSERT INTO `member` (`member_id`, `username`, `name`, `gender`, `email`, `dob`, `mobile`, `blood_group_id`, `profile_picture`, `account_status`, `last_login`, `address`) VALUES
 (1, 'rifat', 'rufat hasan', 'male', 'rifat@gmail.com', '1999-10-01', '012547895', 0, 0x702e706e67, 'active', '0000-00-00 00:00:00', 'o/26,mohammodpur'),
 (2, 'israk', 'israk', 'Male', 'israk@gmail.com', '2017-12-01', NULL, NULL, NULL, '', '0000-00-00 00:00:00', NULL),
-(8, 'aaaaa', 'aaaaa', 'Female', 'a@gmail.com', '2017-12-14', NULL, NULL, NULL, 'active', '2017-12-25 02:30:51', NULL);
+(8, 'aaaaa', 'aaaaa', 'Female', 'a@gmail.com', '2017-12-14', NULL, NULL, NULL, 'active', '2017-12-25 02:30:51', NULL),
+(9, 'adadadad', 'adad adad', 'Female', 'a@gmail.com', '2017-12-07', NULL, NULL, NULL, 'active', '2017-12-25 06:38:03', NULL),
+(10, 'testdb', 'gcghf fghf  f', 'Other', 'a@gmail.com', '2017-12-01', NULL, NULL, NULL, 'active', '2017-12-25 06:40:22', NULL);
 
 -- --------------------------------------------------------
 
@@ -303,13 +312,19 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`username`, `type`, `password`) VALUES
 ('aaaaa', 'patient', 'aaaaaaaa'),
+('adadadad', 'doctor', 'adadadad'),
+('dbdbdbd', 'doctor', 'dddddddd'),
 ('erfefe', 'doctor', '12345678'),
 ('jitu', 'admin', 'jitu'),
+('lasttest', 'doctor', 'qqqqqqqq'),
+('popopopo', 'doctor', 'pppppppp'),
 ('pppppp', 'doctor', 'pppppppp'),
 ('qqqqq', 'patient', 'qqqqqqqq'),
 ('rashed', 'doctor', '154rsss'),
 ('rifat', 'member', 'mmmmmm'),
 ('shuvo', 'admin', 'rpm7876'),
+('testaaa', 'doctor', 'aaaaaaaa'),
+('testdb', 'patient', '11111111'),
 ('xxxxxx', 'doctor', 'xxxxxxxx');
 
 --
@@ -324,10 +339,10 @@ ALTER TABLE `admin`
   ADD KEY `username` (`username`);
 
 --
--- Indexes for table `appoinment`
+-- Indexes for table `appointment`
 --
-ALTER TABLE `appoinment`
-  ADD PRIMARY KEY (`appoinment_id`),
+ALTER TABLE `appointment`
+  ADD PRIMARY KEY (`appointment_id`),
   ADD KEY `doctor_id` (`doctor_id`),
   ADD KEY `member_id` (`member_id`);
 
@@ -409,10 +424,10 @@ ALTER TABLE `admin`
   MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `appoinment`
+-- AUTO_INCREMENT for table `appointment`
 --
-ALTER TABLE `appoinment`
-  MODIFY `appoinment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE `appointment`
+  MODIFY `appointment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `blood`
@@ -430,7 +445,7 @@ ALTER TABLE `chamber`
 -- AUTO_INCREMENT for table `doctor`
 --
 ALTER TABLE `doctor`
-  MODIFY `doctor_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `doctor_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `educational_info`
@@ -454,7 +469,7 @@ ALTER TABLE `medicine`
 -- AUTO_INCREMENT for table `member`
 --
 ALTER TABLE `member`
-  MODIFY `member_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `member_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `prescription`
