@@ -69,7 +69,7 @@
        		
 			<script>
 				function login() {
-			        var id = document.getElementById("name").value;
+			        /*var id = document.getElementById("name").value;
 			        var pass = document.getElementById("password").value;
 			        if (id == "admin" && pass == "admin")
 			            {
@@ -82,12 +82,38 @@
 					else if (id == "doctor" && pass == "doctor")
 						{
 							window.location.href = "user_doctor/dashboard.php";
-						}
+						}*/
+
+					var flag = true;
+					var msg1 = document.getElementById('msg1');
+					var msg2 = document.getElementById('msg2');
+					//var username = document.getElementById('name');
+					//var password = document.getElementById('password');
+
+					if (document.myForm.name.value.length == 0) {
+						msg1.innerHTML = "You must input your username";
+						msg1.style.color = "red";
+						flag = false;
+					}
+					else if(document.myForm.name.value.length > 0) {
+						msg1.innerHTML = " ";
+					}
+
+					if(document.myForm.password.value.length == 0) {
+						msg2.innerHTML = "You must input your password";
+						msg2.style.color = "red";
+						flag = false;
+					}
+					else if(document.myForm.password.value.length > 0) {
+						msg2.innerHTML = " ";
+					}
+
+					return flag;
 				}
 			</script>
 
 			<div class="inner">
-				<form name="myForm" onsubmit="return validateForm()" method="POST" action="#" >
+				<form name="myForm" method="post" action="database_login.php" >
 					<table align="center" width="100%">
 						<tr>
 							<td>
@@ -97,18 +123,20 @@
 										<tr>
 											<td><label>User Name</label></td>
 											<td>:</td>
-											<td><input type="name" id="name" name="name" value="admin" placeholder="Enter username"/></td>
+											<td><input type="text" id="name" name="name" placeholder="Enter username"/></td>
+											<td><span id="msg1"></td>
 											<td><img src="images/person.png"></td>
 										</tr>
 										<tr>
 											<td><label>Password</label></td>
 											<td>:</td>
-											<td><input type="password" id="password" name="password" value="admin" placeholder="Enter Password" /></td>
+											<td><input type="password" id="password" name="password" placeholder="Enter Password" /></td>
+											<td><span id="msg2"></td>
 											<td><img src="images/password.png"></td>
 										</tr>
 										<tr>
 											<td align="center" colspan="4">
-												<input type="button" value="Login" onClick="login()" />
+												<input type="submit" name="sbt" value="Login" onClick="return login();" />
 												<input type="reset" name="reset" value="Reset">
 										</tr>
 										<tr>
@@ -173,3 +201,11 @@
 </table>
 </div>
 </body>
+<?php 
+	if(isset($_REQUEST["error"])){
+	echo "<script>alert('".$_REQUEST["error"]."');</script>";
+	//echo "<h2>".$_REQUEST["error"]."</h2>";
+	
+}
+ ?>
+

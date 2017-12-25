@@ -70,7 +70,7 @@ function test_input($data) {
 			</div>
 
 			<div>
-				<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+				<form method="post" action="../user_doctor/database_education.php">
 					<h1 align="center">Add Education Background</h1>
 					<table align="center" width="60%">
 						<tr>
@@ -87,13 +87,13 @@ function test_input($data) {
 										<tr>
 											<td><label>Passed Year</label></td>
 											<td>:</td>
-											<td><select>
+											<td><select name="passing_year">
 												<?php
 												$y=2017;
 											
 												for($y=2017;$y>=1990;$y--)
 												{
-												echo "<option>$y</option>";
+												echo "<option value = '$y'>$y</option>";
 											}
 											?>
 										</select>
