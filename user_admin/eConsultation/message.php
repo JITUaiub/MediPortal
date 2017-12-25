@@ -72,7 +72,7 @@
 			//}
 
 			header("location: message.php");
-			1457exit;
+			exit;
         }
         mysqli_close($connection);
 
