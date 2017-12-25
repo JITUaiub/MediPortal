@@ -5,46 +5,97 @@
 	<style>
 		.error {color: #FF0000;}
 	</style>
+
+	<script type="text/javascript">
+		function validation_chamber() {
+					var counter;
+					var check = 0;
+					var flag = true;
+					var c_name = document.getElementById('c_name');
+					var loc = document.getElementById('loc');
+					var working_days_check = document.getElementById('working_days');
+					var working_days = document.getElementsByName('workDays1[]');
+					var time1 = document.getElementById('time1');
+					var time2 = document.getElementById('time2');
+					var desc = document.getElementById('desc');
+					//var username = document.getElementById('name');
+					//var password = document.getElementById('password');
+
+					if (document.myForm.chamberName.value.length == 0) {
+						c_name.innerHTML = "You must input your chamberName";
+						c_name.style.color = "red";
+						flag = false;
+					}
+					else if(document.myForm.chamberName.value.length > 0) {
+						c_name.innerHTML = " ";
+					}
+
+					if(document.myForm.location.value.length == 0) {
+						loc.innerHTML = "You must input your location";
+						loc.style.color = "red";
+						flag = false;
+					}
+					else if(document.myForm.location.value.length > 0) {
+						loc.innerHTML = " ";
+					}
+
+					for (counter = 0; counter < working_days.length; counter++) {
+						if (working_days[counter].checked == true) 
+							{
+								check++;
+							}
+					}
+
+					if (check == 0) {
+						working_days_check.innerHTML = "You must input your working days";
+						working_days_check.style.color = "red";
+						flag = false;
+					}
+					else if(check > 0) {
+						working_days_check.innerHTML = " ";
+					}
+					/*if(working_days[0].checked == false && working_days[1].checked == false && working_days[2].checked == false && working_days[3].checked == false && working_days[4].checked == false && working_days[5].checked == false && working_days[6].checked == false) {
+						working_days_check.innerHTML = "You must input your working days";
+						working_days_check.style.color = "red";
+						flag = false;
+					}
+					else if(working_days[0].checked == true || working_days[1].checked == true || working_days[2].checked == true || working_days[3].checked == true || working_days[4].checked == true || working_days[5].checked == true || working_days[6].checked == true) {
+							working_days_check.innerHTML = " ";
+					}*/
+
+					if(document.myForm.description.value.length == 0) {
+						desc.innerHTML = "You must input your description";
+						desc.style.color = "red";
+						flag = false;
+					}
+					else if(document.myForm.description.value.length > 0) {
+						desc.innerHTML = " ";
+					}
+
+					if(document.myForm.time.value.length == 0) {
+						time1.innerHTML = "You must input your start time";
+						time1.style.color = "red";
+						flag = false;
+					}
+					else if(document.myForm.time.value.length > 0) {
+						time1.innerHTML = " ";
+					}
+
+					if(document.myForm.time2.value.length == 0) {
+						time2.innerHTML = "You must input your end time";
+						time2.style.color = "red";
+						flag = false;
+					}
+					else if(document.myForm.time2.value.length > 0) {
+						time2.innerHTML = " ";
+					}
+
+					return flag;
+		}
+	</script>
 </head>
 <body>
-	<?php
-
-$chamberNameErr = $locationErr = $workDays1Err = $timeErr= $time2Err =$workDays2Err= "";
-$chamberName = $location = $workDays1 = $time = $time2 = $workDays2="";
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (empty($_POST["chamberName"])) {
-    $chamberNameErr = "Chamber name is required";
-  } 
-  
-  if (empty($_POST["location"])) {
-    $locationErr = "Location is required";
-  } 
-    if (empty($_POST["workDays1"])) {
-    $workDays1Err = "Two work days required";
-  } 
-  if (empty($_POST["workDays2"])) {
-    $workDays2Err = "Two work days required";
-  } 
-    
-    
-  }
-  if (empty($_POST["time"])) {
-    $timeErr = "Start time required";
-  }
-  if (empty($_POST["time2"])) {
-    $time2Err = "End time required";
-  }
-  
-  	
-
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
-?>
+	
 	<table>
 		<div>
 			<div>
@@ -69,66 +120,61 @@ function test_input($data) {
 
 			<div>
 				<h1 align="center">Add Chamber</h1>
-				<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+				<form method="post" name="myForm" action="../user_doctor/database_chamber.php">
 					<table align="center" width="60%">
 						<tr>
 							<td>
 								<fieldset>
 						
 						<table align="center">
-							<tr><td><p><span class="error">* required field.</span></p></td></tr>
+							<!-- <tr><td><p><span class="error">* required field.</span></p></td></tr> -->
 							<tr>
 								<td><label>Chamber Name</label></td>
 								<td>:</td>
 								<td><input type="text" name="chamberName" value="" />
-									<span class="error">*<?php echo $chamberNameErr;?></span></td>
+									<!-- <span class="error"></span></td> -->
+								<td><span id="c_name"></span></td>
 							</tr>
+							
 							<tr>
 								<td><label>Location</label></td>
 								<td>:</td>
-								<td><input type="text" name="location" value="" />
-								<span class="error">*<?php echo $locationErr;?></span></td>
+								<td><input type="text" name="location" value="" /></td>
+								<td><span id="loc"></span></td>
 							</tr>
 							<tr>
 								<td><label>Working Days</label></td>
 								<td>:</td>
 								<td>
-									<input type="checkbox" name="workDays1"  />SAT
-									<input type="checkbox" name="workDays1"/>SUN
-									<input type="checkbox" name="workDays1"/>MON
-									<input type="checkbox" name="workDays1"  />TUE
-									
-								<span class="error"><?php echo $workDays1Err;?></span>
+									<input type="checkbox" name="workDays1[]"  value="sat"/>SAT
+									<input type="checkbox" name="workDays1[]" value="sun"/>SUN
+									<input type="checkbox" name="workDays1[]" value="mon"/>MON <br/>
+									<input type="checkbox" name="workDays1[]" value="tue" />TUE
+									<input type="checkbox" name="workDays1[]" value="wed"/>WED
+									<input type="checkbox" name="workDays1[]" value="thu" />THU
+									<input type="checkbox" name="workDays1[]" value="fri"/>FRI
 								</td>
+								<td><span id="working_days"></span></td>
 							</tr>
-							<tr>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>
-									<input type="checkbox" name="workDays2"/>WED
-									<input type="checkbox" name="workDays2"  />THU
-									<input type="checkbox" name="workDays2"/>FRI
-									
-								<span class="error">*<?php echo $workDays2Err;?></span>
-								</td>
-							</tr>
+						
 							<tr>
 								<td><label>Working Time</label></td>
 								<td>:</td>
-								<td><input type="time" name="time"><span class="error"><?php echo $timeErr;?></span> to <input type="time" name="time2">
-								<span class="error">*<?php echo $time2Err;?></span></td>
+								<td><input type="time" name="time"><span id="time1"></span> to <input type="time" name="time2"><span id="time2"></span>
+							</td>
+
 							</tr>
 							<tr>
 								<td><label>Description</label></td>
 								<td>:</td>
-								<td><textarea name="description"></textarea>
-								<span class="error">*</span></td>
+								<td><textarea name="description"></textarea></td>
+								<td><span id="desc"></span></td>
 							</tr>
 							<tr><td colspan="3">&nbsp;</td></tr>
 							<tr>
 								
 								<td colspan="3" align="center">
-									<input type="submit" value="Add another"/>
+									<input type="submit" value="Add another" onclick="return validation_chamber();" />
 									<input type="button" value="Finish"/></td>
 							</tr>
 							<tr>
