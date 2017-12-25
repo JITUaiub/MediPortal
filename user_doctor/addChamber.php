@@ -1,7 +1,93 @@
 <html>
 
 <head><title>Add Chamber</title></head>
+<script type="text/javascript">
+        function validation_chamber() {
+                    var counter;
+                    var check = 0;
+                    var flag = true;
+                    var c_name = document.getElementById('c_name');
+                    var loc = document.getElementById('loc');
+                    var working_days_check = document.getElementById('working_days');
+                    var working_days = document.getElementsByName('workDays1[]');
+                    var time1 = document.getElementById('time1');
+                    var time2 = document.getElementById('time2');
+                    var desc = document.getElementById('desc');
+                    //var username = document.getElementById('name');
+                    //var password = document.getElementById('password');
 
+                    if (document.myForm.chamberName.value.length == 0) {
+                        c_name.innerHTML = "You must input your chamberName";
+                        c_name.style.color = "red";
+                        flag = false;
+                    }
+                    else if(document.myForm.chamberName.value.length > 0) {
+                        c_name.innerHTML = " ";
+                    }
+
+                    if(document.myForm.location.value.length == 0) {
+                        loc.innerHTML = "You must input your location";
+                        loc.style.color = "red";
+                        flag = false;
+                    }
+                    else if(document.myForm.location.value.length > 0) {
+                        loc.innerHTML = " ";
+                    }
+
+                    for (counter = 0; counter < working_days.length; counter++) {
+                        if (working_days[counter].checked == true) 
+                            {
+                                check++;
+                            }
+                    }
+
+                    if (check == 0) {
+                        working_days_check.innerHTML = "You must input your working days";
+                        working_days_check.style.color = "red";
+                        flag = false;
+                    }
+                    else if(check > 0) {
+                        working_days_check.innerHTML = " ";
+                    }
+                    /*if(working_days[0].checked == false && working_days[1].checked == false && working_days[2].checked == false && working_days[3].checked == false && working_days[4].checked == false && working_days[5].checked == false && working_days[6].checked == false) {
+                        working_days_check.innerHTML = "You must input your working days";
+                        working_days_check.style.color = "red";
+                        flag = false;
+                    }
+                    else if(working_days[0].checked == true || working_days[1].checked == true || working_days[2].checked == true || working_days[3].checked == true || working_days[4].checked == true || working_days[5].checked == true || working_days[6].checked == true) {
+                            working_days_check.innerHTML = " ";
+                    }*/
+
+                    if(document.myForm.description.value.length == 0) {
+                        desc.innerHTML = "You must input your description";
+                        desc.style.color = "red";
+                        flag = false;
+                    }
+                    else if(document.myForm.description.value.length > 0) {
+                        desc.innerHTML = " ";
+                    }
+
+                    if(document.myForm.time.value.length == 0) {
+                        time1.innerHTML = "You must input your start time";
+                        time1.style.color = "red";
+                        flag = false;
+                    }
+                    else if(document.myForm.time.value.length > 0) {
+                        time1.innerHTML = " ";
+                    }
+
+                    if(document.myForm.time2.value.length == 0) {
+                        time2.innerHTML = "You must input your end time";
+                        time2.style.color = "red";
+                        flag = false;
+                    }
+                    else if(document.myForm.time2.value.length > 0) {
+                        time2.innerHTML = " ";
+                    }
+
+                    return flag;
+        }
+    </script>
 <body>
     <table align="center" width="100%">
         <tr>
@@ -104,49 +190,55 @@
                         </td>
                              <!--Manage Chamber Information -->
                          <td width="70%" valign="top">
-                             <form action="docChamber.php">
                              	<h1 align="center">Add Chamber</h1>
+                                <form method="post" name="myForm" action="database_addchamber.php">
 					<table align="center" width="60%">
 						<tr>
 							<td>
 								<fieldset>
 						<table align="center">
 							<tr>
-								<td><label>Name</label></td>
-								<td>:</td>
-								<td><input type="text" name="chamberName" value="DMC" /></td>
-							</tr>
+                                <td><label>Chamber Name</label></td>
+                                <td>:</td>
+                                <td><input type="text" name="chamberName" value="" />
+                                    <!-- <span class="error"></span></td> -->
+                                <td><span id="c_name"></span></td>
+                            </tr>
 							<tr>
-								<td><label>Location</label></td>
-								<td>:</td>
-								<td><input type="text" name="location" value="Dhaka" /></td>
-							</tr>
+                                <td><label>Location</label></td>
+                                <td>:</td>
+                                <td><input type="text" name="location" value="" /></td>
+                                <td><span id="loc"></span></td>
+                            </tr>
 							<tr>
-								<td><label>Working Days</label></td>
-								<td>:</td>
-								<td>
-									<input type="checkbox" name="workDays" checked="true" />SAT
-									<input type="checkbox" name="workDays"/>SUN
-									<input type="checkbox" name="workDays"/>MON
-									<input type="checkbox" name="workDays" checked="true" />TUE
-									<input type="checkbox" name="workDays"/>WED
-									<input type="checkbox" name="workDays"/>THU
-									<input type="checkbox" name="workDays"/>FRI
-									
-								</td>
-							</tr>
+                                <td><label>Working Days</label></td>
+                                <td>:</td>
+                                <td>
+                                    <input type="checkbox" name="workDays1[]"  value="sat"/>SAT
+                                    <input type="checkbox" name="workDays1[]" value="sun"/>SUN
+                                    <input type="checkbox" name="workDays1[]" value="mon"/>MON <br/>
+                                    <input type="checkbox" name="workDays1[]" value="tue" />TUE
+                                    <input type="checkbox" name="workDays1[]" value="wed"/>WED
+                                    <input type="checkbox" name="workDays1[]" value="thu" />THU
+                                    <input type="checkbox" name="workDays1[]" value="fri"/>FRI
+                                </td>
+                                <td><span id="working_days"></span></td>
+                            </tr>
 							<tr>
-								<td><label>Working Time</label></td>
-								<td>:</td>
-								<td><input type="time" name="time"> to <input type="time" name="time"></td>
-							</tr>
+                                <td><label>Working Time</label></td>
+                                <td>:</td>
+                                <td><input type="time" name="time"><span id="time1"></span> to <input type="time" name="time2"><span id="time2"></span>
+                            </td>
+
+                            </tr>
 							<tr>
-								<td><label>Description</label></td>
-								<td>:</td>
-								<td><textarea name="description">Bla bla bla bla</textarea></td>
-							</tr>
+                                <td><label>Description</label></td>
+                                <td>:</td>
+                                <td><textarea name="description"></textarea></td>
+                                <td><span id="desc"></span></td>
+                            </tr>
 							<tr>
-								<td align="center" colspan="3"><input type="button" value="Add another"/>	<input type="submit" value="Finish"/></td>
+								<td align="center" colspan="3"><input type="submit" value="Add another" onclick="return validate();" />	<input type="submit" value="Finish"/></td>
 							</tr>
 							<tr>
 								<td align="center" colspan="3"><a href="managechamber.php">Go to Manage Chamber</a>
@@ -156,8 +248,10 @@
 					</fieldset>
 							</td>
 						</tr>
-					</table>		
-				</form>
+					</table>	
+
+                    </form>	
+				
                         </td>
                     </table>
                 </fieldset>

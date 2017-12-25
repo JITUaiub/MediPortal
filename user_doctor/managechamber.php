@@ -1,3 +1,13 @@
+<?php 
+    session_start();
+
+ $conn = mysqli_connect("localhost", "root", "", "mediportal_db");
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+
+?>
+
 <html>
 
 <head><title>Manage chamber</title></head>
@@ -146,43 +156,47 @@
                                     
                                     <table align="center">
                                         <td width="60%">
-                                            <table width="100%" cellpadding="1" cellspacing="1">
+                                            <table width="100%" cellpadding="1" cellspacing="10">
                                                 <tr>
                                                             <td width="20%"><strong>Chamber Name</strong></td>
                                                              <td width="20%"><strong>Chamber Location</strong></td>
                                                              <td width="20%"><strong>Working Days</strong></td>
                                                              <td width="20%"><strong>Working Time</strong></td>
                                                              <td width="20%"><strong>Description</strong></td>
+                                                             <td width="40%" colspan="2"><strong>Action</strong></td>
                                                 </tr>
+                                                <?php if(isset($_SESSION['doctor_username']) && isset($_SESSION['doctor_type'])) {
+    $chamber_information = "SELECT * from chamber where doctor_id = ".$_SESSION['doctor_id'];
+     $result = mysqli_query($conn, $chamber_information)or die(mysqli_error($conn)); 
+     
+  }
+
+  while($row = mysqli_fetch_assoc($result)) {
+?>
                                                 <tr>
                                                             
-                                                            <td>United Hospital</td>
-                                                            <td>Gulshan, Dhaka1230</td>
+                                                            <td><?php echo $row['name']; ?></td>
+                                                            <td><?php echo $row['location']; ?></td>
                             
-                                                            <td>Sat,Sun</td>
+                                                            <td><?php echo $row['days']; ?></td>
             
-                                                            <td>10 am - 5 pm</td>
-                                                            <td>Saturday and Sunday I am available in united Hospital from 10 am to 5 pm . So you can contact with me</td>
-                                                            <td><button>Delete</button></td>
+                                                            <td><?php echo $row['schedule']; ?></td>
+                                                            <td><?php echo $row['description']; ?></td>
+                                                            <td><a href="database_deletechamber.php?cid=<?php echo $row['chamber_id'];?>">Delete</td>
+                                                                <td ><a href="editchamber.php?cid=<?php echo $row['chamber_id'];?>">Edit Chamber</a> </td>
                                                         </tr>
-                                                        <tr><td colspan="6"><hr></td></tr>
-                                                        <tr>
-                                                            
-                                                            <td>Apollo Hospital</td>
-                                                            <td>Bashundhara, Dhaka1230</td>
-                            
-                                                            <td>Thursday,Sun</td>
-            
-                                                            <td>7 pm-11 pm</td>
-                                                            <td>Thursday  and Sunday I am available in united Hospital from 7 Pm to 11 pm. So you can contact with me</td>
-                                                            <td><button>Delete</button></td>
-                                                        </tr>
+                                                    <?php 
+
+                                                    }
+                                                    mysqli_close($conn) ?>
                                             </table>
                                         </td>
+
+                                        
                                     
                                     </table>
                                     <hr/>
-                                    <p align="center"><a href="editchamber.php">Edit Chamber</a> | <a href="addChamber.php">Add Chamber</a>| <a href="editprofile.php">Back to Edit Profile</a></br></p>
+                                    <p align="center">| <a href="addChamber.php">Add Chamber</a>| <a href="editprofile.php">Back to Edit Profile</a></br></p>
                                      
                                 </fieldset>
                                         </td>

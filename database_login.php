@@ -8,9 +8,12 @@
 
 	$username = $_REQUEST['name'];
 	$password = $_REQUEST['password'];
+	
 	$_SESSION['doctor_username'];
-	$_SESSION['patient_username'];
 	$_SESSION['doctor_type'];
+	$_SESSION['doctor_id'];
+
+	$_SESSION['patient_username'];
 	$_SESSION['patient_type'];
 
 	// query being inserted in database
@@ -28,6 +31,12 @@
             //$_SESSION['admin_role'] = $row['role'];
             $_SESSION['doctor_username'] = $row['username'];
             $_SESSION['doctor_type'] = $row['type'];
+
+            $file = "select doctor_id from doctor where username = '".$_SESSION['doctor_username']."'";
+			$result = mysqli_query($conn, $file)or die(mysqli_error($conn));
+			while($row = mysqli_fetch_assoc($result)) {
+				$_SESSION['doctor_id'] = $row['doctor_id'];
+			}
 
             header("Location:user_doctor/dashboard.php");
             $check = 1;

@@ -242,7 +242,21 @@
                                                 </td>
                                             </tr>
 
-<?php 
+
+                                                 <tr>
+                                                    <td width="10%" valign="top"><label><b><i>Chamber Information:</i></b></label>
+                                                    </td>
+                                                    <td>
+                                                        <fieldset>
+                                                        <table width="100%" cellpadding="1" cellspacing="1">
+                                                <tr>
+                                                            <td width="20%"><strong>Chamber Name</strong></td>
+                                                             <td width="20%"><strong>Chamber Location</strong></td>
+                                                             <td width="20%"><strong>Working Days</strong></td>
+                                                             <td width="20%"><strong>Working Time</strong></td>
+                                                             <td width="20%"><strong>Description</strong></td>
+                                                </tr>
+                                                <?php 
 
     if(isset($_SESSION['doctor_username']) && isset($_SESSION['doctor_type'])) {
     $doctor_chamber_information = "SELECT * from chamber where doctor_id=(select doctor_id from doctor where username = '".$_SESSION['doctor_username']."')";
@@ -251,50 +265,28 @@
      
      while($chamber_row = mysqli_fetch_assoc($chamber_result)) {
         ?>
-                                                 <tr>
-                                                    <td width="20%" valign="top"><label><b><i>Chamber Information:</i></b></label>
-                                                    </td>
-                                                    <td>
-                                                        <fieldset>
-                                                        <table width="100%">
-                                                        <tr>
-                                                            <td width="30%"><strong>Chamber Name</strong></td>
-                                                            <td><strong>:</strong></td>
-                                                            <td width="65%"><?php echo $chamber_row['name']; ?></td>
-                                                        </tr>
-                                                         <tr>
+                                                <tr>
                                                             
-                                                            <td width="30%"><strong>Chamber Location</strong></td>
-                                                            <td><strong>:</strong></td>
+                                                            <td><?php echo $chamber_row['name']; ?></td>
                                                             <td><?php echo $chamber_row['location']; ?></td>
-                                                         </tr>
-
-                                                         <tr>
-                                                            
-                                                            <td width="30%"><strong>Working Days</strong></td>
-                                                            <td><strong>:</strong></td>
+                            
                                                             <td><?php echo $chamber_row['days']; ?></td>
-                                                         </tr>
-
-                                                         <tr>
-                                                            
-                                                            <td width="30%"><strong>Time</strong></td>
-                                                            <td><strong>:</strong></td>
+            
                                                             <td><?php echo $chamber_row['schedule']; ?></td>
-                                                         </tr>
-                                                         
-                                                        <tr>
-                                                        	<td colspan="3" align="center"><a href="editchamber.php">Edit Chamber</td>
+                                                            <td><?php echo $chamber_row['description']; ?></td>
+                                                           <td><a href="editchamber.php?cid=<?php echo $chamber_row['chamber_id']; ?>">Edit Chamber</a></td>
                                                         </tr>
 
-                                                    </table>
+                                                        <?php 
+                                                }
+                                             ?>
+                                                        
+                                            </table>
                                                 </fieldset>
                                                 </td>
                                             </tr>
 
-                                        <?php 
-                                                }
-                                             ?>
+                                        
                                                   <tr>
                                                     <td width="20%" valign="top"><label><b><i>Others Information:</i></b></label>
                                                     </td>
@@ -304,7 +296,7 @@
                                                         <tr>
                                                             <td width="30%"><strong>Date Of Birth</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td width="65%"><input type="date" name="dob" value="<?php echo $row['dob'];?>"></td>
+                                                            <td width="65%"><input type="date" name="dob" value="<?php echo $row['dob'];?>" disabled="true"></td>
                                                         </tr>
 
                                                          <tr>
@@ -388,3 +380,10 @@
 </body>
 
 </html>
+<?php 
+    if(isset($_REQUEST["pro_update"])){
+    echo "<script>alert('".$_REQUEST["pro_update"]."');</script>";
+    //echo "<h2>".$_REQUEST["error"]."</h2>";
+    
+}
+ ?>

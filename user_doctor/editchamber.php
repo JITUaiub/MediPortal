@@ -1,3 +1,20 @@
+<?php 
+    session_start();
+
+
+     $conn = mysqli_connect("localhost", "root", "","mediportal_db");
+   
+             if (!$conn) {
+         die("Connection failed: " . mysqli_connect_error()); 
+  }
+ if(isset($_SESSION['doctor_username']) && isset($_SESSION['doctor_type'])) {
+    $chamber_information = "SELECT * from chamber where doctor_id = ".$_SESSION['doctor_id']." and chamber_id=".$_REQUEST['cid'].";";
+     $result = mysqli_query($conn, $chamber_information)or die(mysqli_error($conn)); 
+     
+  }
+while($row = mysqli_fetch_assoc($result)) {
+?>
+
 <html>
 
 <head><title>Edite Chamber</title></head>
@@ -103,6 +120,8 @@
                         </fieldset>
                         </td>
                         <div align="center">
+
+                            <form method="post" action="database_editchamber.php">
                              <td width="70%" align="center" valign="top">
                                 <h1>Edit Chamber</h1>
                              	<form action="docChamber.php">
@@ -116,32 +135,65 @@
 														<tr>
 															<td><label>Name</label></td>
 															<td>:</td>
-															<td><input type="text" name="chamberName" value="Apollo Hospital" /></td>
+															<td><input type="text" name="chamberName" value="<?php echo $row['name']; ?>" /></td>
 														</tr>
 														<tr>
 															<td><label>Location</label></td>
 															<td>:</td>
-															<td><input type="text" name="location" value="Bashundhara, Dhaka" /></td>
+															<td><input type="text" name="location" value="<?php echo $row['location']; ?>" /></td>
 														</tr>
+
+                                                        <?php 
+                                                            }
+
+    if(isset($_SESSION['doctor_username']) && isset($_SESSION['doctor_type'])) {
+    $chamber_information_days = "SELECT days from chamber where doctor_id = ".$_SESSION['doctor_id']." and chamber_id=".$_REQUEST['cid'].";";
+     $result = mysqli_query($conn, $chamber_information_days)or die(mysqli_error($conn)); 
+     
+    }
+while($row_days = mysqli_fetch_assoc($result)) {
+    $days = $row_days['days'];
+    $workDays1=explode("," , $days);
+
+?>
+
 														<tr>
 															<td><label>Working Days</label></td>
 															<td>:</td>
 															<td>
-																<input type="checkbox" name="workDays"/>SAT
-																<input type="checkbox" name="workDays"/>SUN
-																<input type="checkbox" name="workDays"/>MON
-																<input type="checkbox" name="workDays"/>TUE
-																<input type="checkbox" name="workDays"/>WED
-																<input type="checkbox" name="workDays"/>THU
-																<input type="checkbox" name="workDays" checked="true" />FRI
+                               
+<input type="checkbox" name="workDays1[]" value="sat" <?php if(in_array("sat",$workDays1)) { ?> checked="checked" <?php } ?> />SAT
+<input type="checkbox" name="workDays1[]" value="sun" <?php if(in_array("sun",$workDays1)) { ?> checked="checked" <?php } ?> />SUN
+<input type="checkbox" name="workDays1[]" value ="mon" <?php if(in_array("mon",$workDays1)) { ?> checked="checked" <?php } ?> />MON
+<input type="checkbox" name="workDays1[]" value ="tue" <?php if(in_array("tue",$workDays1)) { ?> checked="checked" <?php } ?> />TUE
+<input type="checkbox" name="workDays1[]" value ="wed" <?php if(in_array("wed",$workDays1)) { ?> checked="checked" <?php } ?> />WED
+<input type="checkbox" name="workDays1[]" value ="thu" <?php if(in_array("thu",$workDays1)) { ?> checked="checked" <?php } ?> />THU
+<input type="checkbox" name="workDays1[]" value ="fri" <?php if(in_array("fri",$workDays1)) { ?> checked="checked" <?php } ?> />FRI
 																
 															</td>
 														</tr>
+                                    <?php 
+                                        }
+if(isset($_SESSION['doctor_username']) && isset($_SESSION['doctor_type'])) {
+    $chamber_information_time= "SELECT schedule from chamber where doctor_id = ".$_SESSION['doctor_id']." and chamber_id=".$_REQUEST['cid'].";";
+     $result = mysqli_query($conn, $chamber_information_time)or die(mysqli_error($conn)); 
+     
+    }
+while($row_time = mysqli_fetch_assoc($result)) {
+    $time = $row_time['schedule'];
+    $worktime=explode(" - ", $time);?>
+
+
+
 														<tr>
 															<td><label>Working Time</label></td>
 															<td>:</td>
-															<td><input type="time" name="time" value="19:00:00"> to <input type="time" name="time" value="23:00:00"></td>
+															<td><input type="time" name="time" value="<?php echo $worktime[0]; ?>"> to <input type="time" name="time1" value="<?php echo $worktime[1]; ?>"></td>
 														</tr>
+
+
+                                                        <?php }
+                                                         ?>
 														<tr>
 															<td><label>Description</label></td>
 															<td>:</td>
@@ -149,7 +201,7 @@
 														</tr>
 														<tr>
 															<td align="center" colspan="3">
-																<input type="button" name="btn_edit" value="Save">
+																<input type="submit" name="btn_edit" value="Save">
 															</td>
 
 														</tr>
@@ -201,3 +253,8 @@
 </body>
 
 </html>
+
+<?php 
+    
+    mysql_close($conn);
+ ?>
