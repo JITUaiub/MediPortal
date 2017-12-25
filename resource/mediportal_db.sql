@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 24, 2017 at 07:57 PM
+-- Generation Time: Dec 25, 2017 at 03:18 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -57,18 +57,21 @@ CREATE TABLE `appoinment` (
   `appoinment_id` int(11) NOT NULL,
   `doctor_id` int(11) NOT NULL,
   `member_id` int(11) NOT NULL,
-  `prescription_id` int(11) NOT NULL,
+  `prescription_id` int(11) DEFAULT NULL,
   `date` date NOT NULL,
   `time` time NOT NULL,
-  `status` varchar(50) NOT NULL
+  `status` varchar(50) NOT NULL,
+  `problem` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `appoinment`
 --
 
-INSERT INTO `appoinment` (`appoinment_id`, `doctor_id`, `member_id`, `prescription_id`, `date`, `time`, `status`) VALUES
-(1, 1, 1, 0, '2017-12-24', '03:00:00', 'pending');
+INSERT INTO `appoinment` (`appoinment_id`, `doctor_id`, `member_id`, `prescription_id`, `date`, `time`, `status`, `problem`) VALUES
+(1, 1, 1, 0, '2017-12-24', '03:00:00', 'pending', NULL),
+(2, 1, 1, NULL, '2017-12-12', '05:00:00', 'pending', NULL),
+(3, 2, 2, NULL, '2017-12-12', '05:00:00', 'pending', NULL);
 
 -- --------------------------------------------------------
 
@@ -134,7 +137,8 @@ CREATE TABLE `doctor` (
 --
 
 INSERT INTO `doctor` (`doctor_id`, `username`, `name`, `gender`, `email`, `dob`, `mobile`, `bmdc_license`, `account_status`, `profile_picture`, `last_login`) VALUES
-(1, 'rashed', 'rashed ahmed', 'male', 'rashed@gmail.com', '1995-01-10', '01521493732', '15-45848', 'active', 0x702e706e67, '0000-00-00 00:00:00');
+(8, 'rashed', 'xxxxx', 'male', 'x@gmail.com', '2017-05-04', NULL, NULL, 'pending', NULL, '2017-04-04 05:00:00'),
+(12, 'erfefe', 'efre', 'Other', 'eeewjndjwbdhjw', '2017-12-01', NULL, NULL, 'pending', NULL, '2017-12-25 02:35:06');
 
 -- --------------------------------------------------------
 
@@ -218,7 +222,9 @@ CREATE TABLE `member` (
 --
 
 INSERT INTO `member` (`member_id`, `username`, `name`, `gender`, `email`, `dob`, `mobile`, `blood_group_id`, `profile_picture`, `account_status`, `last_login`, `address`) VALUES
-(1, 'rifat', 'rufat hasan', 'male', 'rifat@gmail.com', '1999-10-01', '012547895', 0, 0x702e706e67, 'active', '0000-00-00 00:00:00', 'o/26,mohammodpur');
+(1, 'rifat', 'rufat hasan', 'male', 'rifat@gmail.com', '1999-10-01', '012547895', 0, 0x702e706e67, 'active', '0000-00-00 00:00:00', 'o/26,mohammodpur'),
+(2, 'israk', 'israk', 'Male', 'israk@gmail.com', '2017-12-01', NULL, NULL, NULL, '', '0000-00-00 00:00:00', NULL),
+(8, 'aaaaa', 'aaaaa', 'Female', 'a@gmail.com', '2017-12-14', NULL, NULL, NULL, 'active', '2017-12-25 02:30:51', NULL);
 
 -- --------------------------------------------------------
 
@@ -268,6 +274,7 @@ CREATE TABLE `professional_info` (
   `id` int(11) NOT NULL,
   `doctor_id` int(11) NOT NULL,
   `title` varchar(50) NOT NULL,
+  `department` varchar(50) NOT NULL,
   `medical_college` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -275,8 +282,8 @@ CREATE TABLE `professional_info` (
 -- Dumping data for table `professional_info`
 --
 
-INSERT INTO `professional_info` (`id`, `doctor_id`, `title`, `medical_college`) VALUES
-(1, 1, 'Assistant Professor', 'Sir Sollimullah Medical College');
+INSERT INTO `professional_info` (`id`, `doctor_id`, `title`, `department`, `medical_college`) VALUES
+(1, 1, 'Assistant Professor', '', 'Sir Sollimullah Medical College');
 
 -- --------------------------------------------------------
 
@@ -295,10 +302,15 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`username`, `type`, `password`) VALUES
+('aaaaa', 'patient', 'aaaaaaaa'),
+('erfefe', 'doctor', '12345678'),
 ('jitu', 'admin', 'jitu'),
+('pppppp', 'doctor', 'pppppppp'),
+('qqqqq', 'patient', 'qqqqqqqq'),
 ('rashed', 'doctor', '154rsss'),
 ('rifat', 'member', 'mmmmmm'),
-('shuvo', 'admin', 'rpm7876');
+('shuvo', 'admin', 'rpm7876'),
+('xxxxxx', 'doctor', 'xxxxxxxx');
 
 --
 -- Indexes for dumped tables
@@ -400,7 +412,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `appoinment`
 --
 ALTER TABLE `appoinment`
-  MODIFY `appoinment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `appoinment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `blood`
@@ -418,7 +430,7 @@ ALTER TABLE `chamber`
 -- AUTO_INCREMENT for table `doctor`
 --
 ALTER TABLE `doctor`
-  MODIFY `doctor_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `doctor_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `educational_info`
@@ -442,7 +454,7 @@ ALTER TABLE `medicine`
 -- AUTO_INCREMENT for table `member`
 --
 ALTER TABLE `member`
-  MODIFY `member_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `member_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `prescription`
