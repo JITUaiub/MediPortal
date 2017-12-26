@@ -1,3 +1,40 @@
+<?php
+	ini_set('mysql.connect_timeout', 300);
+	ini_set('default_socket_timeout', 300);
+
+	$db_host = 'localhost';
+	$db_user = 'root';
+	$db_pass = '';
+	$db_name = 'mediportal_db';
+
+	$connection = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
+	mysqli_set_charset($connection, "utf8");
+	$inbox_array = array();
+	$query1 = "select senderName, RecipientName, ChatID, Subject, Status from inbox where senderName = 'Jitu'";
+	$result = mysqli_query($connection, $query1);
+
+	while($row = mysqli_fetch_assoc($result) != NULL){
+		$inbox_array[] = array('senderName'=>$row['senderName'],'RecipientName'=>$row['RecipientName'],'ChatID'=>$row['ChatID'],'Subject'=>$row['Subject'],'Status'=>$row['Status']);
+	}
+
+	var_dump($inbox_array);
+
+	$query2 = "select * from messages where chatID = 1 order by date desc, time desc limit 1";
+
+	if(isset($_POST['prev'])){
+
+	}
+
+	if(isset($_POST['next'])){
+		
+	}
+
+	if(isset($_POST['search'])){
+		
+	}
+
+?>
+
 <html>
 
 <head><title>Home</title></head>
@@ -103,10 +140,11 @@
                         <div align="center">
                              <td width="70%" align="center" valign="top">
                                 <!------ UI  -->
+                                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                                 <h1>Inbox</h1>
                                 <strong>Search Message: </strong><input type="text" name="senderName" value="Sender Name">
                                 <input type="submit" name="search" value="Search"><br><br>
-                                <table width="100%">
+                                	<table width="100%">
                                     <tr>
                                         <td align="center">
                                              <strong>Sender</strong>
@@ -207,7 +245,7 @@
                                     
                                     <tr><td colspan="6"><hr></td></tr>
                                 </table>
-                                <button>Previous Page</button><button>Next Page</button>
+                                <input type="submit" name="prev" value="Previous Page"><input type="submit" name="next" value="Next Page">
                                 <br>
                                 <br>
                                 Show Email Per Page: <select>
@@ -220,6 +258,7 @@
                             </td>
                        </div>
                      </table>
+                                </form>
                 </div>
             </td>
         </tr>
