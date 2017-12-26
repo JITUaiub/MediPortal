@@ -20,6 +20,9 @@
 	$_SESSION['admin_username'];
 	$_SESSION['admin_type'];
 
+
+	
+
 	// query being inserted in database
 	if(isset($_REQUEST["name"]) && isset($_REQUEST["password"]))
 		$sql = "SELECT * FROM user where username = '".$username ."' AND password = '".$password."'";
