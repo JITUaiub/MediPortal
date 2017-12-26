@@ -1,6 +1,46 @@
+<?php 
+session_start();
+
+ 
+  $currentpasswordErr = $newpasswordErr = $retypepasswordErr="";
+  $newpassword=$retypepassword=$currentpassword="";
+
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (empty($_POST["currentpassword"])) {
+    $currentpasswordErr = "Current Password is required";
+  }
+  if (empty($_POST["newpassword"])) {
+    $newpasswordErr = "New Password is required";
+  }
+  if (empty($_POST["retypepassword"])) {
+    $retypepasswordErr = "Retry Password is required";
+  }
+}
+$conn = mysqli_connect("localhost", "root", "","mediportal_db");
+
+   
+             if (!$conn) {
+         die("Connection failed: " . mysqli_connect_error()); 
+  }
+  if(isset($_POST['currentpassword']) && isset($_POST['newpassword']))
+  {
+  	
+  	if($_POST['newpassword']==$_POST['retypepassword'])
+  	{
+  		$sql="UPDATE user SET password='".$_POST['newpassword']."' where username='".$_SESSION['doctor_username']."'";
+  		$result=mysqli_query($conn, $sql)or die(mysqli_error($conn));
+
+  	}
+  }
+  mysqli_close($conn);
+  ?>
 <html>
 
-<head><title>Change Password</title></head>
+<head><title>Change Password</title>
+	<style>
+		.error {color: #FF0000;}
+	</style>
+</head>
 
 <body>
 	<table align="center" width="100%">
@@ -102,7 +142,7 @@
                         </td>
 
                         <td width="70%" valign="top">
-                        	<form>
+                        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                                 <h1 align="center">CHANGE PASSWORD</h1>
                                 <table align="center" width="70%">
                                     <tr>
@@ -112,17 +152,24 @@
                                                     <tr>
                                                         <td><strong>Current Password</strong></td>
                                                         <td><strong>:</strong></td>
-                                                        <td><input type="password" name="currentpassword" value="ratul@aiub" /></td>  
+                                                        <td><input type="password" name="currentpassword"  /><br>
+                                                        	<span class="error"> <?php echo $currentpasswordErr;?></span></td>  
                                                     </tr>
                                                     <tr>
                                                         <td><strong>New Password</strong></td>
                                                         <td><strong>:</strong></td>
-                                                        <td><input type="password" name="newpassword" value="kumar@ai" /></td>  
+                                                        <td><input type="password" name="newpassword" value="" />
+                                                        <br>
+                                                        	<span class="error"> <?php echo $newpasswordErr;?></span></td>  
                                                     </tr>
                                                     <tr>
                                                         <td><strong>Retype New Password</strong></td>
                                                         <td><strong>:</strong></td>
-                                                        <td><input type="password" name="retypepassword" value="kumar@ai" /></td>  
+                                                        <td><input type="password" name="retypepassword" value="" />
+                                                        	<br>
+                                                        	<span class="error"> <?php echo $retypepasswordErr;?></span>
+
+                                                        </td>  
                                                     </tr>
                                                 </table>
                                                 <hr/>
