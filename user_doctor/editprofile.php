@@ -213,6 +213,18 @@
                                             <?php 
                                                 }
                                              ?>
+
+<?php 
+
+    if(isset($_SESSION['doctor_username']) && isset($_SESSION['doctor_type'])) {
+    $doctor_professioanl_information = "SELECT * from professional_info where doctor_id=(select doctor_id from doctor where username = '".$_SESSION['doctor_username']."')";
+     $education_result = mysqli_query($conn, $doctor_professioanl_information)or die(mysqli_error($conn)); 
+ }
+     
+     while($education_row = mysqli_fetch_assoc($education_result)) {
+  
+                                                 ?>
+
                                                 <tr>
                                                     <td width="20%" valign="top"><label><b><i>Proffesional Information:</i></b></label>
                                                     </td>
@@ -222,26 +234,30 @@
                                                         <tr>
                                                             <td width="30%"><strong>Title</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td width="65%"><input type="text" name="title" value="Assistant Professor"></td>
+                                                            <td width="65%"><input type="text" name="title" value="<?php echo $education_row['title']; ?>"></td>
                                                         </tr>
+                                                        <tr>
+                                                            
+                                                            <td width="30%"><strong>Department</strong></td>
+                                                            <td><strong>:</strong></td>
+<td><input type="text" name="department" value="<?php echo $education_row['department']; ?>"></td>
+                                                         </tr>
+
                                                          <tr>
                                                             
                                                             <td width="30%"><strong>Medical College</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td><input type="text" name="medicalcollege" value="Sir Sollimullah Medical College"></td>
+                                                            <td><input type="text" name="medicalcollege" value="<?php echo $education_row['medical_college']; ?>"></td>
                                                          </tr>
 
-                                                         <tr>
-                                                            
-                                                            <td width="30%"><strong>BMDC Number</strong></td>
-                                                            <td><strong>:</strong></td>
-                                                            <td><input type="text" name="bmdc_number" value="0168-DMC594/0625"></td>
-                                                         </tr>
+                                                         
                                                     </table>
                                                 </fieldset>
                                                 </td>
                                             </tr>
-
+                                <?php 
+                                       }
+                                 ?>
 
                                                  <tr>
                                                     <td width="10%" valign="top"><label><b><i>Chamber Information:</i></b></label>
@@ -298,6 +314,12 @@
                                                             <td><strong>:</strong></td>
                                                             <td width="65%"><input type="date" name="dob" value="<?php echo $row['dob'];?>" disabled="true"></td>
                                                         </tr>
+                                                        <tr>
+                                                            
+                                                            <td width="30%"><strong>BMDC Number</strong></td>
+                                                            <td><strong>:</strong></td>
+                                                            <td><input type="text" name="bmdc_number" value="0168-DMC594/0625"></td>
+                                                         </tr>
 
                                                          <tr>
                                                             

@@ -1,3 +1,24 @@
+<?php 
+session_start();
+
+ $conn = mysqli_connect("localhost", "root", "","mediportal_db");
+   
+             if (!$conn) {
+         die("Connection failed: " . mysqli_connect_error()); 
+  }
+
+  if(isset($_SESSION['doctor_username']) && isset($_SESSION['doctor_type'])) {
+    $doctor_information = "SELECT * from doctor where username = '".$_SESSION['doctor_username']."';";
+     $result = mysqli_query($conn, $doctor_information)or die(mysqli_error($conn)); 
+     
+  }
+ 
+    while($row = mysqli_fetch_assoc($result)) {
+    
+?>
+ ?>
+
+
 <html>
 
 <head><title>Dashboard</title></head>
@@ -16,7 +37,7 @@
                         <td width="40%">
                             <table align="right">
                                 <td><strong>Logged in as </strong></td>
-                                <td><a href="viewprofile.php">Bob<img src="images/user.png"></a></td>
+                                <td><a href="viewprofile.php"><?php echo $row['username']; ?><img src="images/user.png"></a></td>
                                 <td><hr width="1" size="15"></td>
                                  <td><a href="../Registration/DocRegAddEducation.php">Profile</a></td>
                                                                  <td><hr width="1" size="15"></td>
@@ -169,6 +190,9 @@
         </tr>
         <tr>
             <td>
+
+                <?php 
+                } ?>
                 <!-- Footer section -->
                 <div>
                     <table align="center">

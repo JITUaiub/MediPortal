@@ -229,7 +229,15 @@
                                             <?php 
                                                 }
                                              ?>
-
+<?php
+if(isset($_SESSION['doctor_username']) && isset($_SESSION['doctor_type'])) {
+    $doctor_professional_information = "SELECT * from professional_info where doctor_id=(select doctor_id from doctor where username = '".$_SESSION['doctor_username']."')";
+     $education_result = mysqli_query($conn, $doctor_professional_information)or die(mysqli_error($conn)); 
+ }
+     
+     while($education_row = mysqli_fetch_assoc($education_result)) {
+  
+                                                 ?>
 
                                                 <tr>
                                                     <td width="10%" valign="top"><label><b><i>Proffesional Information:</i></b></label>
@@ -240,13 +248,20 @@
                                                         <tr>
                                                             <td width="30%"><strong>Title</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td width="65%">Assistant Professor</td>
+                                                            <td width="65%"><?php echo $education_row['title']; ?></td>
                                                         </tr>
+                                                            <tr>
+                                                            
+                                                            <td width="30%"><strong>Department College</strong></td>
+                                                            <td><strong>:</strong></td>
+                                                            <td><?php echo $education_row['department']; ?></td>
+                                                         </tr>
+                                                        
                                                          <tr>
                                                             
                                                             <td width="30%"><strong>Medical College</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td>Sir Sollimullah Medical College</td>
+                                                            <td><?php echo $education_row['medical_college']; ?></td>
                                                          </tr>
 
                                                          
@@ -254,6 +269,10 @@
                                                 </fieldset>
                                                 </td>
                                             </tr>
+
+                                            <?php 
+                                                           }
+                                                         ?>
 
                 
                                                  <tr>

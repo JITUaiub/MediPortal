@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 25, 2017 at 03:32 PM
+-- Generation Time: Dec 26, 2017 at 08:30 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.0.16
 
@@ -110,8 +110,8 @@ CREATE TABLE `chamber` (
 
 INSERT INTO `chamber` (`chamber_id`, `doctor_id`, `name`, `location`, `days`, `schedule`, `description`, `visit`) VALUES
 (1, 1, 'United Hospital', 'Gulshan, Dhaka1230', 'Sat,Sun', '05:00:00', 'Saturday and Sunday I am available in united Hospital from 10 am to 5 pm . So you can contact with me', ''),
-(5, 8, 'apollo', 'basundhara', 'sun,wed', '02:00 - 05:00', 'I am present', ''),
-(6, 18, 'Square', 'Dhanmondi', 'mon,tue', '14:34 - 17:06', 'I am available at this time', '');
+(6, 18, 'Square', 'Dhanmondi', 'mon,tue', '14:34 - 17:06', 'I am available at this time', ''),
+(7, 8, 'popular', 'uttara', 'sun,wed', '14:00 - 08:00', 'i am available', '');
 
 -- --------------------------------------------------------
 
@@ -138,7 +138,7 @@ CREATE TABLE `doctor` (
 --
 
 INSERT INTO `doctor` (`doctor_id`, `username`, `name`, `gender`, `email`, `dob`, `mobile`, `bmdc_license`, `account_status`, `profile_picture`, `last_login`) VALUES
-(8, 'rashed', 'xxxxx', 'male', 'x@gmail.com', '2017-05-04', NULL, NULL, 'pending', NULL, '2017-04-04 05:00:00'),
+(8, 'rashed', 'rashed ', 'male', 'rashed@gmail.com', '2017-05-04', NULL, NULL, 'pending', NULL, '2017-04-04 05:00:00'),
 (12, 'erfefe', 'efre', 'Other', 'eeewjndjwbdhjw', '2017-12-01', NULL, NULL, 'pending', NULL, '2017-12-25 02:35:06'),
 (13, 'adadadad', 'adad adad', 'Female', 'a@gmail.com', '2017-12-07', NULL, NULL, 'pending', NULL, '2017-12-25 06:38:03'),
 (14, 'adadadad', 'adad adad', 'Female', 'a@gmail.com', '2017-12-07', NULL, NULL, 'pending', NULL, '2017-12-25 06:38:13'),
@@ -168,7 +168,7 @@ CREATE TABLE `educational_info` (
 
 INSERT INTO `educational_info` (`id`, `doctor_id`, `degree_name`, `passed_year`, `college`, `description`) VALUES
 (1, 1, 'MBBS', 2012, 'Dhaka Medical College', 'bla bla bla bla'),
-(2, 8, 'FCPS', 2013, 'Dhaka Medical College', 'my best part'),
+(2, 8, 'FCPS', 2011, 'Dhaka Medical College', 'my best part'),
 (3, 18, 'Frcs', 2007, 'London Medical College', 'I am graduated');
 
 -- --------------------------------------------------------
@@ -294,7 +294,10 @@ CREATE TABLE `professional_info` (
 --
 
 INSERT INTO `professional_info` (`id`, `doctor_id`, `title`, `department`, `medical_college`) VALUES
-(1, 1, 'Assistant Professor', '', 'Sir Sollimullah Medical College');
+(2, 8, 'Assitant professor', 'Medicine', 'Dhaka Medical College'),
+(3, 12, 'junior assistant', 'cancer', 'solimulla'),
+(4, 18, 'consultant', 'medicine', 'rajshahi'),
+(5, 13, 'Assitant professor', 'Surgery', 'sylhet');
 
 -- --------------------------------------------------------
 
@@ -438,7 +441,7 @@ ALTER TABLE `blood`
 -- AUTO_INCREMENT for table `chamber`
 --
 ALTER TABLE `chamber`
-  MODIFY `chamber_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `chamber_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `doctor`
 --
@@ -453,7 +456,7 @@ ALTER TABLE `educational_info`
 -- AUTO_INCREMENT for table `inbox`
 --
 ALTER TABLE `inbox`
-  MODIFY `ChatID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `ChatID` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `medicine`
 --
@@ -473,7 +476,7 @@ ALTER TABLE `prescription`
 -- AUTO_INCREMENT for table `professional_info`
 --
 ALTER TABLE `professional_info`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- Constraints for dumped tables
 --
