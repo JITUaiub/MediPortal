@@ -26,6 +26,7 @@
 <head><title>Home</title></head>
 
 <body>
+    <form method="post" action="database_admin_profileupdate.php">
     <table align="center" width="100%">
         <tr>
             <td>
@@ -181,7 +182,7 @@
                                                             
                                                             <td width="30%"><strong>Mobile Number</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td><input type="text" name="mobilenumber" value="<?php echo $row['mobile'] ;?>"></td>
+                                                            <td><input type="text" name="mobile" value="<?php echo $row['mobile'] ;?>"></td>
                                                          </tr>
 
                                                          <tr>
@@ -208,7 +209,7 @@
                                                 <tr><td></td></tr>
                                                             <tr>
                                                                 <td colspan="4" align="center">
-                                                                    <input type="submit" id="update" value="Update Profile" onclick="update()">
+                                                                    <input type="submit" id="update" value="Update Profile">
                                                                 </td>
                                                                 
                                                             </tr>
@@ -225,7 +226,7 @@
                                                     </td>
                                                 </tr>
                                             </table>
-                                    
+                                    </form>
                                     </div>
                                 <!-- END -->
                             </td>
@@ -262,3 +263,10 @@
 </body>
 
 </html>
+<?php 
+    if(isset($_REQUEST["pro_update"])){
+    echo "<script>alert('".$_REQUEST["pro_update"]."');</script>";
+    //echo "<h2>".$_REQUEST["error"]."</h2>";
+    
+}
+ ?>

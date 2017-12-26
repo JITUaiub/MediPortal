@@ -16,7 +16,7 @@ session_start();
     while($row = mysqli_fetch_assoc($result)) {
     
 ?>
- ?>
+
 
 
 <html>
