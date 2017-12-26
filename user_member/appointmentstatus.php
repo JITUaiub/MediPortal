@@ -1,3 +1,12 @@
+<?php 
+    session_start();
+
+    $conn = mysqli_connect("localhost", "root", "", "mediportal_db");
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+ ?>
+
 <html>
 
 <head><title>Appoinment Status</title></head>

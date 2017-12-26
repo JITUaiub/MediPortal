@@ -178,7 +178,7 @@
 									<input type="button" value="Finish"/></td>
 							</tr>
 							<tr>
-								<td colspan="3" align="center"><a href="../user_doctor/dashboard.php">Skip for now</a></td>
+								<td colspan="3" align="center"><a href="addpersonalinfo.php">Skip for now</a></td>
 							</tr>
 						</table>
 					</fieldset>
