@@ -6,6 +6,9 @@
 	if (!$conn) {
   		die("Connection failed: " . mysqli_connect_error());
 	}
+    // $update_doctor_user="UPDATE user SET username='".$_REQUEST['username']."' WHERE doctor_id=".$_SESSION['doctor_id'];
+     //$result_update_doctor_userinfo=mysqli_query($conn,$update_doctor_user) or (mysqli_error($conn));
+
 
 	$update_doctor = "UPDATE doctor SET name='".$_REQUEST['name']."', username='".$_REQUEST['username']."', email='".$_REQUEST['email']."' WHERE doctor_id=".$_SESSION['doctor_id'];
 

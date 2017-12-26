@@ -1,3 +1,22 @@
+<?php 
+    session_start();
+
+
+     $conn = mysqli_connect("localhost", "root", "","mediportal_db");
+   
+             if (!$conn) {
+         die("Connection failed: " . mysqli_connect_error()); 
+  }
+ if(isset($_SESSION['patient_username']) && isset($_SESSION['patient_type'])) {
+    $member_information = "SELECT * from member where username = '".$_SESSION['patient_username']."';";
+     $result = mysqli_query($conn, $member_information)or die(mysqli_error($conn)); }
+
+      while($row = mysqli_fetch_assoc($result)) {
+
+
+  ?>
+
+
 <html>
 
 <head><title>View profile</title></head>
@@ -18,7 +37,7 @@
                                 <td><strong>Logged in as </strong></td>
                                 <td><a href="viewprofile.php">Bob<img src="images/user.png"></a></td>
                                 <td><hr width="1" size="15"></td>
-								<td><a href="../../Registration/DonorSubscription.php">Profile</a></td>
+								<td><a href="../Registration/DonorSubscription.php">Profile</a></td>
                                 <td><hr width="1" size="15"></td>
                                 <td><a href="../index.php">Logout<img src="images/logout.png"></a></td>
                             </table> 
@@ -135,26 +154,23 @@
                                                         <tr>
                                                             <td width="30%"><strong>Name</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td >Bob Pirate</td>
+                                                            <td ><?php echo $row['name'];?></td>
                                                         </tr>
+
+                                                      
                                                          
                                                          <tr>
                                                             
                                                             <td width="30%"><strong>Gender</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td >Male</td>
+                                                            <td ><?php echo $row['gender'];?></td>
                                                         </tr>
                                                         <tr>
                                                             <td width="30%"><strong>User Name</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td >Bob Pirate123</td>
+                                                            <td ><?php echo $row['username'];?></td>
                                                         </tr>
-                                                        <tr>
-                                                            <td width="30%"><strong>Password</strong></td>
-                                                            <td><strong>:</strong></td>
-                                                            <td width="65%">Bob123</td>
-                                                        </tr>
-
+                                                        
                                                     </table>
                                                 </fieldset>
                                                 </td>
@@ -211,23 +227,26 @@
                                                         <tr>
                                                             <td width="30%"><strong>Date Of Birth</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td width="65%">19/9/1998</td>
+                                                            <td width="65%"><?php echo $row['dob'];?></td>
                                                         </tr>
 
                                                          <tr>
                                                             
                                                             <td width="30%"><strong>Mobile Number</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td>01685940625</td>
+                                                            <td><?php echo $row['mobile'];?></td>
                                                          </tr>
 
                                                          <tr>
                                                             
                                                             <td width="30%"><strong>Email</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td>bob@aiub.edu</td>
+                                                            <td><?php echo $row['email'];?></td>
                                                          </tr>
                                                     </table>
+                                          <?php }
+                                          mysqli_close($conn) ?>
+                                                       
                                                 </fieldset>
                                                 </td>
                                             </tr>

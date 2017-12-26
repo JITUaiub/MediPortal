@@ -1,3 +1,26 @@
+<?php 
+    session_start();
+
+
+     $conn = mysqli_connect("localhost", "root", "","mediportal_db");
+   
+             if (!$conn) {
+         die("Connection failed: " . mysqli_connect_error()); 
+  }
+
+  if(isset($_SESSION['admin_username']) && isset($_SESSION['admin_type'])) {
+    $admin_information = "SELECT * from admin where username = '".$_SESSION['admin_username']."';";
+     $result = mysqli_query($conn, $admin_information)or die(mysqli_error($conn)); 
+     
+  }
+ 
+    while($row = mysqli_fetch_assoc($result)) {
+    
+?>
+
+
+
+
 <html>
 
 <head><title>Home</title></head>
@@ -120,19 +143,19 @@
                                                         <tr>
                                                             <td width="30%"><strong>Name</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td ><input type="text" name="name" value="Bob Pirate"></td>
+                                                            <td ><input type="text" name="name" value="<?php echo $row['name'] ;?>"></td>
                                                         </tr>
                                                          
                                                          <tr>
                                                             
                                                             <td width="30%"><strong>Gender</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td ><input type="text" name="gender" value="Male" disabled="true"></td>
+                                                            <td ><input type="text" name="gender" value="<?php echo $row['gender'] ;?>" disabled="true"></td>
                                                         </tr>
                                                         <tr>
                                                             <td width="30%"><strong>User Name</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td ><input type="text" name="username" value="Bob Pirate123"></td>
+                                                            <td ><input type="text" name="username" value="<?php echo $row['username'] ;?>"></td>
                                                         </tr>
                                                         
 
@@ -151,23 +174,27 @@
                                                         <tr>
                                                             <td width="30%"><strong>Date Of Birth</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td width="65%"><input type="date" name="dob" value="19/9/1998"></td>
+                                                            <td width="65%"><input type="date" name="dob" value="<?php echo $row['dob'] ;?>" disabled="true"></td>
                                                         </tr>
 
                                                          <tr>
                                                             
                                                             <td width="30%"><strong>Mobile Number</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td><input type="text" name="mobilenumber" value="01685940625"></td>
+                                                            <td><input type="text" name="mobilenumber" value="<?php echo $row['mobile'] ;?>"></td>
                                                          </tr>
 
                                                          <tr>
                                                             
                                                             <td width="30%"><strong>Email</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td><input type="text" name="email" value="bob@aiub.edu"></td>
+                                                            <td><input type="text" name="email" value="<?php echo $row['email'] ;?>"></td>
                                                          </tr>
                                                     </table>
+
+                                                    <?php 
+                                                    mysqli_close($conn);
+                                                    } ?>
                                                 </fieldset>
                                                 </td>
                                             </tr>

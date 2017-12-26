@@ -1,13 +1,38 @@
+<?php 
+    session_start();
+
+
+     $conn = mysqli_connect("localhost", "root", "","mediportal_db");
+   
+             if (!$conn) {
+         die("Connection failed: " . mysqli_connect_error()); 
+  }
+
+  if(isset($_SESSION['patient_username']) && isset($_SESSION['patient_type'])) {
+    $member_information = "SELECT * from member where username = '".$_SESSION['patient_username']."';";
+     $result = mysqli_query($conn, $member_information)or die(mysqli_error($conn)); 
+     
+  }
+ 
+    while($row = mysqli_fetch_assoc($result)) {
+    
+?>
+
+
+
+
 <html>
 
 <head><title>Edit Profile</title></head>
 
 <body>
-	<table border="0" align="center" width="100%">
-    	<tr>
-        	<td>
-            	<!-- Header section -->
-            	<div>
+
+    <form method="post" action="update_database_memberinfo.php">
+        <table border="0" align="center" width="100%">
+        <tr>
+            <td>
+                <!-- Header section -->
+                <div>
                     <table width="100%">
                         <td width="20%">
                             <a href="dashboard.php"><img src="images/pageicon.png"/></a>
@@ -18,7 +43,7 @@
                                 <td><strong>Logged in as </strong></td>
                                 <td><a href="viewprofile.php">Bob<img src="images/user.png"></a></td>
                                 <td><hr width="1" size="15"></td>
-								<td><a href="../Registration/DonorSubscription.php">Profile</a></td>
+                                <td><a href="../Registration/DonorSubscription.php">Profile</a></td>
                                 <td><hr width="1" size="15"></td>
                                 <td><a href="../index.php">Logout<img src="images/logout.png"></a></td>
                             </table> 
@@ -28,8 +53,8 @@
             </td>
         </tr>
         <tr>
-        	<td>
-            	<!-- Body section -->
+            <td>
+                <!-- Body section -->
                 <div>
                     <table border="1" width="100%">
                         <!-- User Menu Section -->
@@ -74,7 +99,7 @@
                                 <li><a href="disanalysis.php">Disease Analysis</a></li>
                             </ul>
                         </fieldset>
-						<fieldset>
+                        <fieldset>
                             <legend>
                             <strong>E-consultation</strong></legend>
                            
@@ -96,10 +121,10 @@
                             </ul>
                         </fieldset>
                         </td>
-						<div align="center">
-							<td width="70%"align="center" valign="top">
-								<!------ UI  -->
-									<div>
+                        <div align="center">
+                            <td width="70%"align="center" valign="top">
+                                <!------ UI  -->
+                                    <div>
                                         <h1>EDIT PROFILE</h1>
                                             <table width="100%">
                                         <td width="60%">
@@ -116,19 +141,19 @@
                                                         <tr>
                                                             <td width="30%"><strong>Name</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td ><input type="text" name="name" value="Bob Pirate"></td>
+                                                            <td ><input type="text" name="name" value="<?php echo $row['name'];?>"></td>
                                                         </tr>
                                                          
                                                          <tr>
                                                             
                                                             <td width="30%"><strong>Gender</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td ><input type="text" name="gender" value="Male" disabled="true"></td>
+                                                            <td ><input type="text" name="gender" value="<?php echo $row['gender'];?>" disabled="true"></td>
                                                         </tr>
                                                         <tr>
                                                             <td width="30%"><strong>User Name</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td ><input type="text" name="username" value="Bob Pirate123"></td>
+                                                            <td ><input type="text" name="username" value="<?php echo $row['username'];?>"></td>
                                                         </tr>
                                                         
 
@@ -187,23 +212,29 @@
                                                         <tr>
                                                             <td width="30%"><strong>Date Of Birth</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td width="65%"><input type="date" name="dob" value="19/9/1998"></td>
+                                                            <td width="65%"><input type="date" name="dob" value="<?php echo $row['dob'];?>" disabled="true"></td>
                                                         </tr>
 
                                                          <tr>
                                                             
                                                             <td width="30%"><strong>Mobile Number</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td><input type="text" name="mobilenumber" value="01685940625"></td>
+                                                            <td><input type="text" name="mobilenumber" value="<?php echo $row['mobile'];?>"></td>
                                                          </tr>
 
                                                          <tr>
                                                             
                                                             <td width="30%"><strong>Email</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td><input type="text" name="email" value="bob@aiub.edu"></td>
+                                                            <td><input type="text" name="email" value="<?php echo $row['email'];?>"></td>
                                                          </tr>
                                                     </table>
+
+                                                     <?php 
+                                            }
+                                            mysqli_close($conn);
+
+                                     ?> 
                                                 </fieldset>
                                                 </td>
                                             </tr>
@@ -216,11 +247,11 @@
 
                                                 <tr><td></td></tr>
                                                             <tr>
-																<td colspan="4" align="center">
-																	<input type="submit" id="update" value="Update Profile" onclick="update()">
-																</td>
-																
-															</tr>
+                                                                <td colspan="4" align="center">
+                                                                    <input type="submit" id="update" value="Update Profile" onclick="update()">
+                                                                </td>
+                                                                
+                                                            </tr>
                                                             <tr>
                                                                 <td>
                                                                     <table width="100%">
@@ -236,16 +267,16 @@
                                             </table>
                                     </div>
                                 <!-- END -->
-							</td>
-						<div>
+                            </td>
+                        <div>
                     </table>
 
                 </div>
             </td>
         </tr>
         <tr>
-        	<td>
-            	<!-- Footer section -->
+            <td>
+                <!-- Footer section -->
                 <div>
                     <table align="center">
                         <tr align="center">
@@ -268,13 +299,23 @@
             </td>
         </tr>
     </table>
-	<script>
-		function update(){
-			var x= document.getElementById("update").value;
-			alert("Profile is Updated");
-			window.location.assign("viewprofile.php");
-		}
-	</script>
+    <script>
+        function update(){
+            var x= document.getElementById("update").value;
+            alert("Profile is Updated");
+            window.location.assign("viewprofile.php");
+        }
+    </script>
+
+</form>
 </body>
 
 </html>
+
+<?php 
+    if(isset($_REQUEST["pro_update"])){
+    echo "<script>alert('".$_REQUEST["pro_update"]."');</script>";
+    //echo "<h2>".$_REQUEST["error"]."</h2>";
+    
+}
+ ?>

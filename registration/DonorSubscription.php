@@ -117,8 +117,8 @@ function test_input($data) {
 												</td>
 												<td>:</td>
 												<td colspan="2">
-													<input name="weight" type="radio" value="yes"/>Yes
-													<input name="weight" type="radio" value="no"/>No
+													<input name="weight" type="radio" value="Over 50 Kg"/>Yes
+													<input name="weight" type="radio" value="Under 50 Kg"/>No
 													<span class="error">*<?php echo $weightErr;?></span>
 												</td>
 														

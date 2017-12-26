@@ -16,6 +16,10 @@
 	$_SESSION['patient_username'];
 	$_SESSION['patient_type'];
 
+
+	$_SESSION['admin_username'];
+	$_SESSION['admin_type'];
+
 	// query being inserted in database
 	if(isset($_REQUEST["name"]) && isset($_REQUEST["password"]))
 		$sql = "SELECT * FROM user where username = '".$username ."' AND password = '".$password."'";
@@ -57,6 +61,14 @@
             header("Location:user_member/dashboard.php");
             $check = 1;
 		}
+
+
+
+		else if ($username == $row['username'] && $password == $row['password'] && $row['type'] =="admin") {
+			$_SESSION['admin_username'] = $row['username'];
+            $_SESSION['admin_type'] = $row['type'];
+            header("Location:user_admin/dashboard.php");
+            $check = 1;		}
 		
 	}
 
