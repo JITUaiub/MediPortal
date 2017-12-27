@@ -1,18 +1,15 @@
 <?php 
     session_start();
 
- if(isset($_SESSION['patient_username']) && isset($_SESSION['patient_type'])) {
-		 $conn = mysqli_connect("localhost", "root", "","mediportal_db");
+
+     $conn = mysqli_connect("localhost", "root", "","mediportal_db");
    
              if (!$conn) {
          die("Connection failed: " . mysqli_connect_error()); 
-		$member_information = "SELECT * from member where username = '".$_SESSION['patient_username']."';";
-        $result = mysqli_query($conn, $member_information)or die(mysqli_error($conn));
-    }else
-	{
-		header("Location:../login.php");
-		exit;
-	}
+  }
+ if(isset($_SESSION['patient_username']) && isset($_SESSION['patient_type'])) {
+    $member_information = "SELECT * from member where username = '".$_SESSION['patient_username']."';";
+     $result = mysqli_query($conn, $member_information)or die(mysqli_error($conn)); }
 
       while($row = mysqli_fetch_assoc($result)) {
 

@@ -1,3 +1,19 @@
+<?php 
+    session_start();
+
+     $conn = mysqli_connect("localhost", "root", "","mediportal_db");
+   
+             if (!$conn) {
+         die("Connection failed: " . mysqli_connect_error()); 
+  }
+
+?>
+
+
+
+
+
+
 <html>
 
 <head><title>Prescriptions</title></head>
@@ -171,47 +187,54 @@
                                             <h3 align="center">Get Details</h3>
                                         </th>
                                     </tr>
-                                    <tr>
-                                        <td align="center">
-                                           <b> 10/12/1999</b>
-                                        </td>
-                                        <td align="center">
-                                           <b> <a href="patientdetails.php">Bob Marley</a></b>
-                                        </td>
-                                        <td align="center">
-                                            <b>35</b>
-                                        </td>
-                                        <td align="center">
-                                            <b>Fever</b>
-                                        </td>
-                                        <td align="center">
-                                            <a href="#">fineName.pdf</a>
-                                        </td>
-                                        <td>
-                                            <a href="prescriptionHistory.php">Get details</a>
-                                        </td>
-                                    </tr>
+
+
+                                    <?php 
+                       
+                           $load_member_information = "SELECT * FROM member,prescription,appointment where member.member_id = prescription.member_id and appointment.member_id = prescription.member_id";  
+
+
+
+                           $result = mysqli_query($conn, $load_member_information)or die(mysqli_error($conn)); 
+
+                           while($row = mysqli_fetch_assoc($result)){           
+                              $current_year = date("Y");
+                              $dob_year = explode("-",$row['dob']);
+
+
+
+
+
+                     ?>  
+
 
                                     <tr>
                                         <td align="center">
-                                            <b>10/12/2015</b>
+                                           <b><?php echo $row['date']; ?></b>
                                         </td>
                                         <td align="center">
-                                            <b><a href="patientdetails.php">Kent Williams</a></b>
+                                           <b> <a href="patientdetails.php?mid=<?php echo $row['member_id']; ?>"><?php echo $row['name']; ?></a></b>
                                         </td>
                                         <td align="center">
-                                            <b>40</b>
+                                            <b><?php 
+
+                                        $age = $current_year - $dob_year[0];    
+                                        echo $age;
+
+                                     ?></b>
                                         </td>
                                         <td align="center">
-                                            <b>Cancer</b>
+                                            <b><?php echo $row['disease']; ?></b>
                                         </td>
                                         <td align="center">
-                                            <a href="#">cancer_prescription.pdf</a>
+                                            <a href="#"></a>
                                         </td>
                                         <td>
                                             <a href="prescriptionHistory.php">Get details</a>
                                         </td>
                                     </tr>
+<?php } ?>
+                                    
                                     
                                 </table><br><br>
                                 <p align="center"><button>Previous Page</button> | <button>Next Page</button></p>
@@ -257,3 +280,8 @@
 </body>
 
 </html>
+
+<?php 
+mysqli_close($conn);
+
+ ?>

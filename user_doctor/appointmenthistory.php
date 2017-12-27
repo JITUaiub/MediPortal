@@ -1,3 +1,21 @@
+<?php 
+
+ session_start();
+
+     $conn = mysqli_connect("localhost", "root", "","mediportal_db");
+   
+             if (!$conn) {
+         die("Connection failed: " . mysqli_connect_error()); 
+  }
+
+
+
+
+ ?>
+
+
+
+
 <html>
 
 <head><title>Appoinment History</title></head>
@@ -143,31 +161,30 @@
                                       <td  width="25%"><strong>Status</strong></td>
                                      
                                   </tr>
+<?php 
+                       
+                           $load_member_information = "SELECT * from member,appointment where member.member_id = appointment.member_id";  
 
+
+
+                           $result = mysqli_query($conn, $load_member_information)or die(mysqli_error($conn)); 
+
+                           while($row = mysqli_fetch_assoc($result)){           
+                              $current_year = date("Y");
+                              $dob_year = explode("-",$row['dob']);
+
+
+
+
+
+                     ?>  
                                   <tr>
                                       
-                                      <td>25 January</td>
-                                      <td>8 am</td>
-                                      <td><a href="patientDetails.php">Bob Marley</a></td>
-                                      <td>Deleted</td>
-                                     
-                                  </tr>
-
-                                   <tr>
-
-                                      <td>11 January</td>
-                                      <td>9:05 am</td>
-                                      <td><a href="patientDetails.php">David Batista</a></td>
-                                      <td>Pending</td>
-                                     
-                                  </tr>
-                                  <tr>
-
-                                      <td>09 January</td>
-                                      <td>7:05 pm</td>
-                                      <td><a href="patientDetails.php">John Paul</a></td>
-                                      <td>Confirmed</td>
-                                     
+                                      <td><?php echo $row['date'] ?></td>
+                                      <td><?php echo $row['time']?></td>
+                                      <td><a href="patientDetails.php?mid=<?php echo $row['member_id']; ?>"><?php echo $row['name']; ?></a></td>
+                                      <td><?php echo $row['status'] ?></td>
+                                      <?php } ?>
                                   </tr>
                               </table>
                                       <p align="center"><button>Previous Page</button> | <button>Next Page</button></p>

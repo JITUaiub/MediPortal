@@ -212,7 +212,7 @@
                                 <td><?php echo $row['time']." | ".$row['date']; ?> </td>
                                 <td><a href="database_confirm_appointment.php?mid=<?php echo $row['member_id']; ?>">Confirm Appointment</a></td>
                                 <td><a href="eConsultation/conversation.php">Message</a></td>
-                                <td><a href="database_delete_appointment.php">Delete</button></td>
+                                <td><a href="database_delete_appointment.php?aid=<?php echo $row['appointment_id']?>">Delete</a></td>
                             </tr>
 
                             <?php } ?>
