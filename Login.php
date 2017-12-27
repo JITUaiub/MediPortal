@@ -13,7 +13,7 @@
               width: 100%;
               height: 100vh;
               position: relative;
-              background-image: url(images/new.jpg);
+              //background-image: url(images/new.jpg);
               background-size: cover;
 	}
 	.container .inner
@@ -172,7 +172,6 @@
 			</div>
 <br><br><br><br><br><br><br><br><br>
 <br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br>
 
 			<div  class="footer">
 				<table align="center">
