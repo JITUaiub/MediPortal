@@ -38,7 +38,11 @@
                         <td width="40%">
                             <table align="right">
                                 <td><strong>Logged in as </strong></td>
-                                <td><a href="viewprofile.php"><?php echo $row['username']; ?><img src="images/user.png"></a></td>
+                                <td><a href="viewprofile.php"><?php echo $row['username']; ?><?php if($row['profile_picture'] == ""){
+                                        echo "<img width='20' height='20' src='pictures/default.jpg' alt='Default Profile Pic'>";
+                                } else {
+                                        echo "<img width='20' height='20' src='images/".$row['profile_picture']."' alt='Profile Pic'>";
+                                }?></a></td>
                                 <td><hr width="1" size="15"></td>
 								<td><a href="../Registration/DonorSubscription.php">Profile</a></td>
                                 <td><hr width="1" size="15"></td>
@@ -138,7 +142,11 @@
                                                     <td width="40%" align="center" colspan="3">
                                             <table align="center">
                                                 <tr>
-                                                    <td align="center"><img src="images/usericon.png"/></td>
+                                                    <td align="center"><?php if($row['profile_picture'] == ""){
+                                        echo "<img width='200' height='200' src='pictures/default.jpg' alt='Default Profile Pic'>";
+                                } else {
+                                        echo "<img width='200' height='200' src='images/".$row['profile_picture']."' alt='Profile Pic'>";
+                                }?></td>
                                                 </tr>
                                                 <tr>
                                                     <td align="center"><a href="changeprofilepicture.php">Change</a></td>

@@ -1,10 +1,29 @@
 <?php
 	session_start();
+    $con = mysqli_connect("localhost","root","","mediportal_db");
 	
 	if(!isset($_SESSION['patient_username']) || empty($_SESSION['patient_username'])){
 		  header("location: ../Login.php");
 		  exit;
 		}
+        if(isset($_SESSION['patient_username']) && isset($_SESSION['patient_type'])) {
+        $member_information = "SELECT * from member where username = '".$_SESSION['patient_username']."';";
+        $result = mysqli_query($con, $member_information)or die(mysqli_error($con)); 
+    }else
+    {
+        header("Location:../login.php");
+        exit;
+    }
+    $row = mysqli_fetch_assoc($result);
+    if(isset($_POST['submit'])){
+        
+               
+                move_uploaded_file($_FILES['file']['tmp_name'],"images/".$_FILES['file']['name']);
+                $con = mysqli_connect("localhost","root","","mediportal_db");
+                $q = mysqli_query($con,"UPDATE member SET profile_picture = '".$_FILES['file']['name']."' WHERE username = '".$_SESSION['patient_username']."'");
+        }
+               
+        
 
 ?>
 <html>
@@ -42,7 +61,7 @@
                 <!-- Body section -->
                <div>
                     <table border="1" width="100%">
-                        <!-- User Menu Section -->
+                  
                         <td width="20%">
                             <fieldset>
                                 <legend>
@@ -106,15 +125,16 @@
                             </ul>
                         </fieldset>
                         </td>
+                        <form action="viewprofile.php" method="post" enctype="multipart/form-data">
                         <div align="center">
                              <td width="70%" align="center" valign="top">
                                 <!------ UI  -->
                                     <h1>CHANGE PROFILE PICTURE</h1>
-                                    <img src="images/usericon.png"/>
+                                    <img src="images/default.png"/>
                                     <br/><br/>
-                                    <input type="file" name="newprofilepicture"/>
+                                    <input type="file" name="file"/>
                                     <hr/>
-									<input type="submit" id="submit" value="submit" onclick="submit()">
+									<input type="submit" name="submit"  value="submit" >
 
                                     <table width="100%">
                                         <td colspan="2" align="right" width="49%"><a href="editprofile.php">Edit Profile</a></td>
@@ -123,7 +143,7 @@
                                     </table>
                                 <!-- END -->
                             </td>
-
+</form>
                         </div>
                     </table>
                 </div>
@@ -154,12 +174,7 @@
             </td>
         </tr>
     </table>
-	<script>
-		function submit(){
-			var x= document.getElementById("submit").value;
-			window.location.assign("viewprofile.php");
-		}
-	</script>
+	
 </body>
 
 </html>
