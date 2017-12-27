@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 27, 2017 at 06:01 AM
--- Server version: 10.1.26-MariaDB
--- PHP Version: 7.1.9
+-- Generation Time: Dec 27, 2017 at 05:11 PM
+-- Server version: 10.1.13-MariaDB
+-- PHP Version: 7.0.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -186,6 +184,31 @@ INSERT INTO `educational_info` (`id`, `doctor_id`, `degree_name`, `passed_year`,
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `faq`
+--
+
+CREATE TABLE `faq` (
+  `id` int(11) NOT NULL,
+  `category` varchar(30) NOT NULL,
+  `Author` varchar(100) NOT NULL,
+  `Question` text NOT NULL,
+  `Answer` text
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `faq`
+--
+
+INSERT INTO `faq` (`id`, `category`, `Author`, `Question`, `Answer`) VALUES
+(1, 'Mediportal', 'Admin', 'What is Mediportal?', 'Mediportal is a online doctor appointment system made for general users and doctor''s accross the world. Get an appointment today. '),
+(2, 'Mediportal', 'Admin', 'What is Mediportal''s Hotline?', 'Currently we don''t have any helpline number. Soon we''ll add hotline number(toll free).'),
+(3, 'Appointments', 'Admin', 'How to get an appointment?', 'Get an appointment by following these step: 1. Register with us with email and a username. \r\n2. Login and go to new Appointment. \r\n3. Fill in the details. \r\n4. You''re now good to go. '),
+(4, 'Mediportal', 'Admin', 'Can any doctor turn off taking appointment?', 'Yes. You can change that option under Manage Appointments. '),
+(5, 'Mediportal', 'Admin', 'How to get econsultation?', 'Currently we don''t have any facilities for live consultation, We are working on it. Please wait for further updates. ');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `inbox`
 --
 
@@ -202,7 +225,7 @@ CREATE TABLE `inbox` (
 --
 
 INSERT INTO `inbox` (`SenderName`, `RecipientName`, `ChatID`, `Subject`, `Status`) VALUES
-('Jitu', 'aaaaa', 1, 'aaaaaaa', 'Unread');
+('Jitu', 'aaaaa', 1, 'aaaaaaa', 'Read');
 
 -- --------------------------------------------------------
 
@@ -406,6 +429,12 @@ ALTER TABLE `educational_info`
   ADD KEY `doctor_id` (`doctor_id`);
 
 --
+-- Indexes for table `faq`
+--
+ALTER TABLE `faq`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `inbox`
 --
 ALTER TABLE `inbox`
@@ -454,67 +483,61 @@ ALTER TABLE `user`
 --
 ALTER TABLE `admin`
   MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT for table `appointment`
 --
 ALTER TABLE `appointment`
   MODIFY `appointment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
 --
 -- AUTO_INCREMENT for table `blood`
 --
 ALTER TABLE `blood`
   MODIFY `blood_group_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `chamber`
 --
 ALTER TABLE `chamber`
   MODIFY `chamber_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
 --
 -- AUTO_INCREMENT for table `doctor`
 --
 ALTER TABLE `doctor`
   MODIFY `doctor_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
-
 --
 -- AUTO_INCREMENT for table `educational_info`
 --
 ALTER TABLE `educational_info`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
+--
+-- AUTO_INCREMENT for table `faq`
+--
+ALTER TABLE `faq`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `inbox`
 --
 ALTER TABLE `inbox`
   MODIFY `ChatID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT for table `medicine`
 --
 ALTER TABLE `medicine`
   MODIFY `medicine_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT for table `member`
 --
 ALTER TABLE `member`
   MODIFY `member_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
 --
 -- AUTO_INCREMENT for table `prescription`
 --
 ALTER TABLE `prescription`
   MODIFY `prescription_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT for table `professional_info`
 --
 ALTER TABLE `professional_info`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
 --
 -- Constraints for dumped tables
 --
@@ -530,7 +553,6 @@ ALTER TABLE `admin`
 --
 ALTER TABLE `doctor`
   ADD CONSTRAINT `doctor_ibfk_1` FOREIGN KEY (`username`) REFERENCES `user` (`username`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
