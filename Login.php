@@ -132,8 +132,11 @@
 											<td><label>Password</label></td>
 											<td>:</td>
 											<td><input type="password" id="password" name="password" placeholder="Enter Password" /></td>
+
+											
+
 											<td><span id="msg2"></td>
-											<td><img src="images/password.png"></td>
+											<td><img src="images/eye.PNG" onclick="myFunction()"></td>
 										</tr>
 										<tr>
 											<td align="center" colspan="4">
@@ -147,6 +150,20 @@
 											</td>
 										</tr>
 									</table>
+
+									<!-- visible password -->
+									<script>
+												function myFunction() {
+												    var x = document.getElementById("password");
+												    if (x.type == "password") {
+												        x.type = "text";
+												    } else {
+												        x.type = "password";
+												    }
+												}
+									</script>
+
+
 								</fieldset>
 							</td>
 						</tr>

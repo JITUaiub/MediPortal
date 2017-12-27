@@ -160,21 +160,60 @@ session_start();
                                            
                                               <fieldset>
                                                 <h2 align="center">Last Week Patient List</h2></br>
-                                                <table>
-                                                    <tr>
-                                                        <td><label><b>Patient Name</b></label></td>
-                                                        <td><label><b>Disease</b></label></td>
-                                                    </tr>
 
-                                                    <tr>
-                                                        <td>Mr.Karim</td>
-                                                        <td>Numonia</td>
-                                                    </tr>
 
-                                                    <tr>
-                                                        <td>Mr.Rahim</td>
-                                                        <td>Cancer</td>
-                                                    </tr>
+<table>
+
+     <tr>
+        <td><label><b>Patient Name</b></label></td>
+        <td><label><b>Disease</b></label></td>
+    </tr>
+<?php 
+    
+    //$curr = date("Y-M-D");
+
+     $curr = date('Y-m-d', strtotime('-7 days'));
+
+
+    $last_week = "SELECT * from member,prescription,appointment where member.member_id = appointment.member_id and prescription.member_id = appointment.member_id and appointment.status='active' and appointment.date <='".$curr."'";
+     $result = mysqli_query($conn, $last_week)or die(mysqli_error($conn)); 
+     
+    while($last = mysqli_fetch_assoc($result)) {
+
+        /*
+        $appointment_date = explode("-",$last['date']);
+        $appointment_day = $appointment_date[2];
+        $last_date = $appointment_day-7;
+
+        */
+        
+
+        //if($appointment_day>$last_date){
+
+        //$date = $last['date']-strtotime("7 days");
+
+
+       
+         
+
+        ?>
+                 <tr>
+                 
+                        <td><?php echo $last['name']; ?></td>
+                        <td><?php echo $last['disease']; ?></td>
+                        
+                </tr>
+
+            <?php 
+                 
+               
+            //}
+
+        }
+           // echo $last_date;
+
+
+            ?>
 
                                                 </table>
                                                 
@@ -197,7 +236,11 @@ session_start();
             <td>
 
                 <?php 
-                } ?>
+                
+
+            }
+
+            ?>
                 <!-- Footer section -->
                 <div>
                     <table align="center">

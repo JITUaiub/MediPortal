@@ -181,7 +181,7 @@
 
                      ?>  
                                                 <tr>
-                                                    <td><a href="patientDetails.php"><?php echo $row['name']; ?></a></td>
+                                                    <td><a href="patientDetails.php?mid=<?php echo $row['member_id'];?>"><?php echo $row['name']; ?></a></td>
                                                     <td><?php echo $row['address']; ?></td>
                                         <td><?php 
 

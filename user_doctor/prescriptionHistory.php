@@ -1,4 +1,12 @@
+<?php 
+session_start();
 
+ $conn = mysqli_connect("localhost", "root", "","mediportal_db");
+   
+             if (!$conn) {
+         die("Connection failed: " . mysqli_connect_error()); 
+  }
+  ?>
 <html>
 
 <head><title>Prescription History</title></head>
@@ -149,35 +157,52 @@
                                             <h3 align="center">Prescription File</h3>
                                         </th>
                                     </tr>
+
+<?php 
+    
+    //$curr = date("Y-M-D");
+ 
+     $curr = date('Y-m-d', strtotime('-7 days'));
+    
+
+    $last_week = "SELECT * from member,prescription,appointment,medicine where member.member_id = appointment.member_id and prescription.member_id = appointment.member_id and prescription.medicine_id = medicine.medicine_id and appointment.status='active' and appointment.date <='".$curr."' and member.member_id=".$_REQUEST['mid'];
+     $result = mysqli_query($conn, $last_week)or die(mysqli_error($conn)); 
+     
+    while($last = mysqli_fetch_assoc($result)) {
+
+     // $current_year = date("Y");
+      //$dob_year = explode("-",$last['dob']);
+
+        ?>
+
+
+
+
+
                                     <tr>
                                         <td align="center">
-                                            <h3>10/12/2010</h3>
+                                            <h3><?php echo $last['date']; ?></h3>
                                         </td>
                                         <td align="center">
-                                            <h3>Fever</h3>
+                                            <h3><?php echo $last['disease']; ?></h3>
                                         </td>
                                         <td align="center">
-                                            <h3>Paracitamol</h3>
+                                            <h3><?php echo $last['name']; ?></h3>
                                         </td>
                                         <td align="center">
                                             <a href="#">fineName.pdf</a>
                                         </td>
                                     </tr>
 
-                                    <tr>
-                                        <td align="center">
-                                            <h3>9/12/2010</h3>
-                                        </td>
-                                        <td align="center">
-                                            <h3>Maleria</h3>
-                                        </td>
-                                        <td align="center">
-                                            <h3>Nothing</h3>
-                                        </td>
-                                        <td align="center">
-                                            <a href="#">cancer_prescription.pdf</a>
-                                        </td>
-                                    </tr>
+                                  
+
+
+
+                                    <?php 
+
+                                }
+
+                            ?>
                                     
                                 </table><br><br>
                                 <p align="center"><button>Previous Page</button> | <button>Next Page</button></p>
@@ -223,3 +248,9 @@
 </body>
 
 </html>
+
+<?php 
+    
+    mysqli_close();
+
+ ?>

@@ -183,7 +183,10 @@
 
                            $result = mysqli_query($conn, $load_member_information)or die(mysqli_error($conn)); 
 
-                           while($row = mysqli_fetch_assoc($result)){           
+                           while($row = mysqli_fetch_assoc($result)){  
+                           if ($row['status'] == 'pending') {
+                                        
+                                          
                               $current_year = date("Y");
                               $dob_year = explode("-",$row['dob']);
 
@@ -213,9 +216,16 @@
                                 <td><a href="database_confirm_appointment.php?mid=<?php echo $row['member_id']; ?>">Confirm Appointment</a></td>
                                 <td><a href="eConsultation/conversation.php">Message</a></td>
                                 <td><a href="database_delete_appointment.php?aid=<?php echo $row['appointment_id']?>">Delete</a></td>
+                                <td>
+                                    <?php echo $row['status']; ?>
+                                </td>
                             </tr>
 
-                            <?php } ?>
+                            <?php }
+
+                            } 
+
+                            ?>
 
 
 
