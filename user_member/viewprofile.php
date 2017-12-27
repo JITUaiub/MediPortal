@@ -143,7 +143,7 @@
                                             <table align="center">
                                                 <tr>
                                                     <td align="center"><?php if($row['profile_picture'] == ""){
-                                        echo "<img width='200' height='200' src='pictures/default.jpg' alt='Default Profile Pic'>";
+                                        echo "<img width='200' height='200' src='images/default.jpg' alt='Default Profile Pic'>";
                                 } else {
                                         echo "<img width='200' height='200' src='images/".$row['profile_picture']."' alt='Profile Pic'>";
                                 }?></td>

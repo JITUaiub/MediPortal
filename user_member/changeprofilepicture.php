@@ -17,10 +17,11 @@
     $row = mysqli_fetch_assoc($result);
     if(isset($_POST['submit'])){
         
-               
+              
                 move_uploaded_file($_FILES['file']['tmp_name'],"images/".$_FILES['file']['name']);
                 $con = mysqli_connect("localhost","root","","mediportal_db");
                 $q = mysqli_query($con,"UPDATE member SET profile_picture = '".$_FILES['file']['name']."' WHERE username = '".$_SESSION['patient_username']."'");
+                header('Location: viewprofile.php');
         }
                
         
@@ -125,7 +126,7 @@
                             </ul>
                         </fieldset>
                         </td>
-                        <form action="viewprofile.php" method="post" enctype="multipart/form-data">
+                        <form action="" method="post" enctype="multipart/form-data">
                         <div align="center">
                              <td width="70%" align="center" valign="top">
                                 <!------ UI  -->
