@@ -1,3 +1,47 @@
+<?php
+    ini_set('mysql.connect_timeout', 300);
+    ini_set('default_socket_timeout', 300);
+    $conn = mysqli_connect("localhost", "root", "", "mediportal_db", 3306);
+    $questionErr = "";
+    $answerErr = "";
+    $err1 = false;
+    $err2 = false;
+    if(isset($_POST['submit'])){   
+
+        $category = $_POST['category'];
+        $author = "Admin";
+        $question = $_POST['question'];
+        $answer = $_POST['answer'];
+
+        $question = addslashes($_POST['question']);
+        $answer = addslashes($_POST['answer']);
+
+        if(empty($question)){
+            $questionErr = "Must Need a Question";
+            $err1 = false;
+        }
+        else {
+            $err1 = true;
+            $questionErr = "";
+        } 
+        if(empty($answer)){
+            $answerErr = "Provide an answer";
+            $err2 = false;
+        }
+        else {
+            $err2 = true; 
+            $answerErr = "";         
+        }
+//        var_dump($err1);var_dump($err2);
+        if ($err1 == true && $err2 == true) {
+            $query = "INSERT INTO `faq`(`category`, `Author`, `Question`, `Answer`) VALUES ('$category','$author','$question','$answer')";
+            var_dump($query);
+            mysqli_query($conn, $query);
+            header("location: newFAQ.php");
+            exit;
+        }
+    }
+?> 
 <html>
 
 <head><title>Home</title></head>
@@ -106,7 +150,7 @@
                                 <!-- FAQ DESIGN -->
                                 <h1 align="center">New FAQ</h1>
                                 <p align="center"><strong>Fill in the form below</strong></p>
-                                <form>
+                                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
                                     <table align="center" width="60%">
                                         <tr>
                                             <td>
@@ -118,7 +162,7 @@
                                             </td>
                                             <td>:</td>
                                             <td>
-                                                <select>
+                                                <select name="category">
                                                     <option>Mediportal</option>
                                                     <option>Appointments</option>
                                                     <option>Econsultation</option>
@@ -127,34 +171,30 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                                <td ><label><strong>Question Title</strong></label></td>
-                                                <td>:</td>
-                                                <td ><input type="text" name="questiontitle" value="Title"></td>
-                                            
-                                        </tr>
-                                        <tr>
                                                 <td ><label><strong>Author</strong></label></td>
                                                 <td>:</td>
-                                                <td ><input type="text" name="askerName" value="John Doe"></td>
+                                                <td ><input type="text" name="Author" value="Admin"></td>
                                             
                                         </tr>
                                         <tr>
                                             <td><label><strong>Write your question</strong></label></td>
                                             <td>:</td>
                                             <td>
-                                                <textarea>bla bla bla</textarea>
+                                                <textarea name="question"></textarea><br>
+                                                <div style="color: RED"><?php echo $questionErr; ?></div>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td><label><strong>Add an Answer</strong></label></td>
                                             <td>:</td>
                                             <td>
-                                                <textarea>bla bla bla</textarea>
+                                                <textarea name="answer"></textarea><br>
+                                                <div style="color: RED"><?php echo $answerErr; ?></div>
                                             </td>
                                         </tr>
                                         <tr><td colspan="3" align="center"><hr></tr>
                                         <tr>
-                                            <td align="right"><button>Add Question</button></td>
+                                            <td align="right"><input type="submit" name="submit" value="Add FAQ"></td>
                                             <td>|</td>
                                             <td><input type="reset" name="" value="Reset"></td>
                                         </tr>

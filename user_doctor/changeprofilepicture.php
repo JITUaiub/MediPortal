@@ -1,3 +1,32 @@
+<?php
+    session_start();
+    $con = mysqli_connect("localhost","root","","mediportal_db");
+    
+    if(!isset($_SESSION['doctor_username']) || empty($_SESSION['doctor_username'])){
+          header("location: ../Login.php");
+          exit;
+        }
+        if(isset($_SESSION['doctor_username']) && isset($_SESSION['doctor_type'])) {
+        $member_information = "SELECT * from doctor where username = '".$_SESSION['doctor_username']."';";
+        $result = mysqli_query($con, $member_information)or die(mysqli_error($con)); 
+    }else
+    {
+        header("Location:../login.php");
+        exit;
+    }
+    $row = mysqli_fetch_assoc($result);
+    if(isset($_POST['submit'])){
+        
+              
+                move_uploaded_file($_FILES['file']['tmp_name'],"images/".$_FILES['file']['name']);
+                $con = mysqli_connect("localhost","root","","mediportal_db");
+                $q = mysqli_query($con,"UPDATE doctor SET profile_picture = '".$_FILES['file']['name']."' WHERE username = '".$_SESSION['doctor_username']."'");
+                header('Location: viewprofile.php');
+        }
+               
+        
+
+?>
 <html>
 
 <head><title>Change Profile Picture</title></head>
@@ -102,15 +131,20 @@
                             </ul>
                         </fieldset>
                         </td>
+                        <form action="" method="post" enctype="multipart/form-data">
                         <div align="center">
                              <td width="70%" align="center" valign="top">
                                 <!------ UI  -->
                                     <h1>CHANGE PROFILE PICTURE</h1>
-                                    <img src="images/usericon.png"/>
+                                     <?php if($row['profile_picture'] == ""){
+                                        echo "<img width='200' height='200' src='images/default.png' alt='Default Profile Pic'>";
+                                } else {
+                                        echo "<img width='200' height='200' src='images/".$row['profile_picture']."' alt='Profile Pic'>";
+                                }?>
                                     <br/><br/>
-                                    <input type="file" name="newprofilepicture"/>
+                                    <input type="file" name="file"/>
                                     <hr/>
-                                    <input type="submit" value="Submit"/>
+                                    <input type="submit" name="submit" value="Submit"/>
 
                                     <table width="100%">
                                         <td colspan="2" align="right" width="49%"><a href="editprofile.php">Edit Profile</a></td>
@@ -124,6 +158,7 @@
                     </table>
                 </div>
             </td>
+        </form>
         </tr>
         <tr>
             <td>
