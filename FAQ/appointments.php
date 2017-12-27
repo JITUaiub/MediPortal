@@ -1,3 +1,25 @@
+<?php
+    ini_set('mysql.connect_timeout', 300);
+    ini_set('default_socket_timeout', 300);
+        $emptyFaq = "";
+        $result = null;
+        $query = "Select * from `faq` where category = 'Appointments'";    
+        $conn = mysqli_connect("localhost", "root", "", "mediportal_db", 3306);
+        mysqli_set_charset($conn,"utf8");
+        $result = mysqli_query($conn, $query);
+
+        $faqArray = array();
+        while(($row = mysqli_fetch_assoc($result))!=null){ 
+                    $faqArray[] = array('id'=>$row['id'],'category'=>$row['category'],'author'=>$row['Author'],'question'=>$row['Question'],'answer'=>$row['Answer'],'time'=>$row['Time'],'date'=>$row['Date'], 'status'=>$row['status']);
+                    }
+        if(empty($faqArray)){
+            $emptyFaq = "<h1 align=\"center\">No New Frequently Asked Question</h1>";
+        }else{
+            $emptyFaq = "";
+        }
+//        var_dump($faqArray);
+?> 
+
 <!DOCTYPE>
 <html>
 <head>
@@ -69,20 +91,22 @@
                                             }
                                         </script>
                                     </fieldset>
-						<h1>How to get an appointment?</h1>
-				<br><hr>
-				<p>
-					Get an appointment by following these step:
-					1. Register with us with email and a username.
-					2. Login and go to new Appointment.
-					3. Fill in the details.
-					4. You're now good to go.
-				</p>
-				<h1>Can any doctor turn off taking appointment?</h1>
-				<br><hr>
-				<p>
-					Yes. You can change that option under Manage Appointments. 
-				</p>
+						<?php
+									for ($i=0; $i < count($faqArray); $i++) { 
+										echo "<h1>";
+										echo $faqArray[$i]['question'];;
+										echo "</h1>";
+										echo "<br/><b>Author: </b>".$faqArray[$i]['author'];
+										echo "  <b>Posted on: </b>".$faqArray[$i]['date']." ".$faqArray[$i]['time'];
+										echo "<br><hr>";
+										echo "<p>";
+
+										echo $faqArray[$i]['answer'];
+
+										echo "</p>";
+										
+									}
+								?>
 			</td>
 		</tr>
 		<tr>
