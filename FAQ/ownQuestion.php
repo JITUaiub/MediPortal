@@ -33,9 +33,12 @@
             $answerErr = "";         
         }
 //        var_dump($err1);var_dump($err2);
+        $time = date("h:i:sa");
+        $date = date("l").' '.date("Y-m-d");
+        
         if ($err1 == true && $err2 == true) {
-            $query = "INSERT INTO `faq`(`category`, `Author`, `Question`, `Answer`) VALUES ('$category','$author','$question','$answer')";
-            var_dump($query);
+            $query = "INSERT INTO `faq`(`category`, `Author`, `Question`, `Answer`, `Time`, `Date`, `status`) VALUES ('$category','$author','$question','$answer', '$time', '$date', 'Read')";
+//            var_dump($query);
             mysqli_query($conn, $query);
             header("location: newFAQ.php");
             exit;

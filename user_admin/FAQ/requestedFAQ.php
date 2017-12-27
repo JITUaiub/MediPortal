@@ -1,3 +1,19 @@
+<?php
+    ini_set('mysql.connect_timeout', 300);
+    ini_set('default_socket_timeout', 300);
+
+        $result = null;
+        $query = "Select * from `faq` where status = 'Unread'";    
+        $conn = mysqli_connect("localhost", "root", "", "mediportal_db", 3306);
+        mysqli_set_charset($conn,"utf8");
+        $result = mysqli_query($conn, $query);
+
+        $faqArray = array();
+        while(($row = mysqli_fetch_assoc($result))!=null){ 
+                    $faqArray[] = array('id'=>$row['id'],'category'=>$row['category'],'author'=>$row['Author'],'question'=>$row['Question'],'answer'=>$row['Answer'],'time'=>$row['Time'],'date'=>$row['Date'], 'status'=>$row['status']);
+                    }
+//        var_dump($faqArray);
+?> 
 <html>
 
 <head><title>Home</title></head>
@@ -109,12 +125,6 @@
                                 
                                 <table width="100%">
                                     <tr>
-                                        <td align="center">
-                                             <strong>Asked By</strong>
-                                        </td>
-                                        <td align="center">
-                                             <strong>Title</strong>
-                                        </td>
                                         <td align="center"><strong>Category</strong></td>
                                         <td align="center">
                                              <strong>Question</strong>
@@ -137,68 +147,32 @@
                                         </td>
                                     </tr>
                                     <tr><td colspan="5"><hr></td></tr>
-                                    <tr>
-                                        <td align="center">
-                                            <strong>John</strong>
-                                        </td>
-                                        <td align="center">
-                                            <strong>Hotline<strong>
-                                        </td>
-                                        <td><strong>Mediportal</strong></td>
-                                        <td align="center">
-                                             <a href="addFAQAnswer.php"><strong>Do you have any hotline number?</strong></a>
-                                        </td>
-                                        <td align="center">
-                                             <strong>3:06AM | 24-11-2017</strong>
-                                        </td>
-                                        <td align="center">
-                                            <strong><input type="checkbox" name="action"></strong>
-                                        </td>
-                                    </tr>
-                                    
-                                    <tr><td colspan="5"><hr></td></tr>
-
-                                    <tr>
-                                        <td align="center">
-                                            Marsh
-                                        </td>
-                                        <td align="center">
-                                            Fees
-                                        </td>
-                                        <td>Price and Fee</td>
-                                        <td align="center">
-                                             <a href="addFAQAnswer.php">What are the fees?</a>
-                                        </td>
-                                        <td align="center">
-                                             9:27AM | 23-11-2017
-                                        </td>
-                                        <td align="center">
-                                            <input type="checkbox" name="action">
-                                        </td>
-                                    </tr>
-                                    
-                                    <tr><td colspan="5"><hr></td></tr>
-
-                                    <tr>
-                                        <td align="center">
-                                            <strong>John</strong>
-                                        </td>
-                                        <td align="center">
-                                            <strong>Payment Gateway<strong>
-                                        </td>
-                                        <td>Price and Fee</td>
-                                        <td align="center">
-                                             <a href="addFAQAnswer.php"><strong>What are the payment gateways?</strong></a>
-                                        </td>
-                                        <td align="center">
-                                             <strong>1:39PM | 21-11-2017</strong>
-                                        </td>
-                                        <td align="center">
-                                            <strong><input type="checkbox" name="action"></strong>
-                                        </td>
-                                    </tr>
-                                    
-                                    <tr><td colspan="5"><hr></td></tr>
+                                    <?php
+                                        for ($i=0; $i < count($faqArray); $i++) { 
+                                            echo "<tr>";
+                                            echo "<td align=\"center\"><strong>";
+                                            echo $faqArray[$i]['category'];
+                                            echo "</strong></td>";
+                                            echo "<td align=\"center\">";
+                                                 echo "<a href=\"addFAQAnswer.php\"><strong>";
+                                                 echo $faqArray[$i]['question'];
+                                                 echo "</strong></a>  <img src=\"../images/newStatus.png\">";
+                                            echo "</td>";
+                                            echo "<td align=\"center\">";
+                                                 echo "<strong>";
+                                                 echo $faqArray[$i]['time'];
+                                                 echo " | ";
+                                                 echo $faqArray[$i]['date'];
+                                                 echo "</strong>";
+                                            echo "</td>";
+                                            echo "<td align=\"center\">";
+                                                echo "<strong><input type=\"checkbox\" name=\"action\"></strong>";
+                                            echo "</td>";
+                                            echo "</tr>";
+                                            
+                                            echo "<tr><td colspan=\"4\"><hr></td></tr>";
+                                        }
+                                    ?>
                                 </table>
                                 <button>Previous Page</button><button>Next Page</button>
                                 <br>
