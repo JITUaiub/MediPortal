@@ -132,10 +132,7 @@
                                         echo "<img width='200' height='200' src='images/default.png' alt='Default Profile Pic'>";
                                 } else {
                                         echo "<img width='200' height='200' src='images/".$row['profile_picture']."' alt='Profile Pic'>";
-                                }?>	<br><h2><?php if($row['profile_picture'] == ""){
-                    echo "<img width='100' height='100' src='images/default.png' alt='Default Profile Pic'>";
-                } 
-                ?><br/>
+                                }?>	<br><h2><br/>
                        		 	Welcome <?php echo $row['username']; ?>
                                 
                        		 	<h3>11 DEC, 2017</h3>

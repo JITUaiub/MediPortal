@@ -343,7 +343,6 @@ $doctor_err=$problem_err=$date_err=$time_err=$appointment_type_err="";
 																</td>
 
 																	<td>
-					<td rowspan="2" align="center"><input type="submit" name="sbt" value="submit"></td>
 				</td>
 															
 															<td>
@@ -416,7 +415,6 @@ $doctor_err=$problem_err=$date_err=$time_err=$appointment_type_err="";
                                             <td>
 												<input type="date" name="date"/>
 												<br><span style="color : RED"><?php echo $date_err;?></span>
-                                                (when you wish to meet)
                                             </td>
                                         </tr>
 										<tr>

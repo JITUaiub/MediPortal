@@ -1,3 +1,73 @@
+<?php
+	session_start();
+	if(!isset($_SESSION['patient_username']) || empty($_SESSION['patient_username'])){
+		  header("location: ../Login.php");
+		  exit;
+		}
+	
+$bloodsubErr = $weightErr = $heartconditionErr = $drugsErr = "";
+$err1=false;
+$err2=false;
+$err3=false;
+$err4=false;
+
+if(isset($_POST['submit'])){
+  
+  $blood_donation_status=$_POST['blood_donation_status'];
+  $weight=$_POST['weight'];
+  $heartcondition=$_POST['heartcondition'];
+  $drugs=$_POST["drugs"];
+  $blood_group=$_POST['blood_group'];
+  
+  if ($blood_donation_status=='') {
+    $bloodsubErr = "Checkbox is required";
+	$err1=false;
+  } else
+  {
+	
+	$bloodsubErr = "";
+	$err1=true; 
+  }
+  
+  if ($weight=="") {
+    $weightErr = "Field is required";
+	$err2=false;
+  } else
+  {
+	$weightErr = "";
+	$err2=true;  
+  }
+ 
+ if ($heartcondition=="") {
+    $heartconditionErr = "Field is required";
+	$err3=false;
+  }else
+  {
+	$heartconditionErr = "";
+	$err3=true;  
+  }	  
+    
+    
+  
+  if ($drugs=="") {
+    $drugsErr = "Field is required";
+	$err4 =false;
+  }
+  else
+  {
+	$drugsErr = "";
+	$err4 =true;  
+  }
+ if($err1==true && $err2==true && $err3==true && $err4==true){
+	 $conn = mysqli_connect("localhost", "root", "", "mediportal_db");
+ 	$sql="INSERT INTO blood(status, blood_group, question_1, question_2, question_3) VALUES ('$blood_donation_status','$blood_group','$weight','$heartcondition','$drugs')";
+	
+	$result = mysqli_query($conn, $sql);
+	
+  }
+}
+?>
+
 <!DOCTYPE>
 <html>
 <head>
@@ -7,38 +77,7 @@
 	</style>
 </head>
 <body>
-	<?php
 
-$bloodsubErr = $weightErr = $heartconditionErr = $drugsErr = "";
-$bloodsub = $weight = $heartcondition = $drugs = "";
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (empty($_POST["bloodSubscription"])) {
-    $bloodsubErr = "Checkbox is required";
-  } 
-  
-  if (empty($_POST["weight"])) {
-    $weightErr = "Field is required";
-  } 
-    if (empty($_POST["heartcondition"])) {
-    $heartconditionErr = "Field is required";
-  } 
-    
-    
-  }
-  if (empty($_POST["drugs"])) {
-    $drugsErr = "Field is required";
-  }
-  
-  	
-
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
-?>
 	<table>
 	<div>
 				<div>
@@ -50,7 +89,7 @@ function test_input($data) {
                         <td width="40%">
                             <table align="right">
                                 <td><strong>Logged in as </strong></td>
-                                <td><a href="../user_member/viewprofile.php">Bob<img src="../user_member/images/user.png"></a></td>
+                                <td><a href="../user_member/viewprofile.php"><?=$_SESSION['patient_username']?><img src="../user_member/images/user.png"></a></td>
                                 <td><hr width="1" size="15"></td>
                                  <td><a href="../Registration/DonorSubscription.php">Profile</a></td>
                                 <td><hr width="1" size="15"></td>
@@ -58,12 +97,12 @@ function test_input($data) {
 
                             </table> 
                         </td>
-                    </table>
+                </table>
 		</div>
 
 			<div>
 				<h1 align="center">Blood Donation Subscription Form</h1>
-				<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+				<form method="post" action="">
 				
 				<table align="center" width="60%">
 					<tr>
@@ -79,7 +118,7 @@ function test_input($data) {
 														 <tr><td><p><span class="error">* required field.</span></p></td></tr>
 														<tr>
 															<td>
-																<input type="checkbox" name="bloodSubscription">
+																<input type="checkbox" name="blood_donation_status">
 																I'm sure i want to donate Blood?
 																<span class="error">*<?php echo $bloodsubErr;?></span>
 															</td>
@@ -89,8 +128,7 @@ function test_input($data) {
 															<td><label>Blood Group</label></td>
 															<td>:</td>
 															<td>
-																<select>
-																	<option>Select one</option>
+																<select name="blood_group">
 																	<option>A(-)</option>
 																	<option>A(+)</option>
 																	<option>B(-)</option>
@@ -136,8 +174,8 @@ function test_input($data) {
 												</td>
 												<td>:</td>
 												<td colspan="2">
-													<input name="heartcondition" type="radio" value="yes"/>Yes
-													<input name="heartcondition" type="radio" value="no"/>No
+													<input name="heartcondition" type="radio" value="Bad"/>Yes
+													<input name="heartcondition" type="radio" value="Good"/>No
 													<span class="error">*<?php echo $heartconditionErr;?></span>
 												</td>
 											
@@ -176,12 +214,11 @@ function test_input($data) {
 							</tr>
 						</td>
 						</table>
-								</form>
+					</form>
 							</fieldset>
 						</td>
 					</tr>
-				</table>	
-                 </form>
+				</table>
 			</div>
 	
       <br><br><br><br>
