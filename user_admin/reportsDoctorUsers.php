@@ -1,3 +1,41 @@
+<?php 
+session_start();
+	
+	if(!isset($_SESSION['patient_username']) || empty($_SESSION['patient_username'])){
+		  header("location: ../Login.php");
+		  exit;
+		}
+
+	$conn = mysqli_connect("localhost", "root", "","mediportal_db");	
+	
+	$app="SELECT COUNT(appointment.doctor_id) AS no, doctor.name, doctor.doctor_id FROM appointment, doctor WHERE appointment.doctor_id = doctor.doctor_id GROUP BY appointment.doctor_id ORDER BY COUNT(appointment.doctor_id) DESC";
+	$result = mysqli_query($conn, $app);
+	
+	$arr=array();
+	while(($row = mysqli_fetch_assoc($result))!=null){ 
+		$arr[] =array(
+				"name"=>$row['name'],
+				"doctor_id"=>$row['doctor_id'],
+				"no"=>$row['no'],			
+				);
+	}
+	
+	$online="SELECT COUNT(appointment.doctor_id) AS no, doctor.name,doctor.doctor_id FROM appointment, doctor WHERE appointment.doctor_id = doctor.doctor_id AND appointment.appointment_type LIKE 'online' GROUP BY appointment.doctor_id ORDER BY COUNT(appointment.doctor_id) DESC";
+	$result = mysqli_query($conn, $online);
+	$trt=array();
+	while(($row = mysqli_fetch_assoc($result))!=null){ 
+		$trt[] =array(
+				"name"=>$row['name'],
+				"doctor_id"=>$row['doctor_id'],
+				"no"=>$row['no'],			
+				);
+	}
+	
+	
+?>
+
+
+
 <html>
 
 <head><title>Home</title></head>
@@ -126,22 +164,12 @@
                                                 <th width="80%">TOP 3 TOTAL APPOINTMENT</th>
                                                 <th>NO of appointment</th>
                                             </tr>
-                                            <tr>
-                                                <td width="80%" align="center"><a href="doctordetails.php">Ashley</a></td>
-                                                <td align="center">12</td>
-                                            </tr>
-                                            <tr>
-                                                <td width="80%" align="center"><a href="doctordetails.php">Shaun</a></td>
-                                                <td align="center">4</td>
-                                            </tr>
-                                            <tr>
-                                                <td width="80%" align="center"><a href="doctordetails.php">John</a></td>
-                                                <td align="center">3</td>
-                                            </tr>
-                                            <tr>
-                                                <td width="80%" align="center"><strong>Total</strong></td>
-                                                <td align="center">19</td>
-                                            </tr>
+                                            <?php if($arr!=null){ for($i=0;$i<3;$i++){ ?>
+											<tr>
+												<td align="center"><a href="doctordetails.php?did=<?= $arr[$i]['doctor_id']?>"><?= $arr[$i]['name']?></a></td>
+												<td align="center"><?= $arr[$i]['no']?></td>
+											</tr>
+											<?php }}else{echo "<tr><td colspan='2'> there is no data</td></tr>";} ?>
                                             
                                         </table>
                                         <br><br>
@@ -150,25 +178,15 @@
                                                 <th width="80%">TOP 3 E-CONSULTATION TREATMENT</th>
                                                 <th>NO of Occurence</th>
                                             </tr>
-                                            <tr>
-                                                <td width="80%" align="center"><a href="doctordetails.php">Lia</a></td>
-                                                <td align="center">25</td>
-                                            </tr>
-                                            <tr>
-                                                <td width="80%" align="center"><a href="doctordetails.php">Gotti</a></td>
-                                                <td align="center">16</td>
-                                            </tr>
-                                            <tr>
-                                                <td width="80%" align="center"><a href="doctordetails.php">John</a></td>
-                                                <td align="center">5</td>
-                                            </tr>
-                                            <tr>
-                                                <td width="80%" align="center"><strong>Total</strong></td>
-                                                <td align="center">46</td>
-                                            </tr>
+                                            <?php if($arr!=null){ for($i=0;$i<3;$i++){ ?>
+											<tr>
+												<td align="center"><a href="doctordetails.php?did=<?= $trt[$i]['doctor_id']?>"><?= $trt[$i]['name']?></a></td>
+												<td align="center"><?= $trt[$i]['no']?></td>
+											</tr>
+											<?php }}else{echo "<tr><td colspan='2'> there is no data</td></tr>";} ?>
                                         </table>
                                         <br><br>
-                                        <table border="1" align="center" width="100%" cellpadding="0" cellspacing="0">
+                           <!--          <table border="1" align="center" width="100%" cellpadding="0" cellspacing="0">
                                             <tr>
                                                 <th width="80%">TOP 3 ACTIVE DOCTORS</th>
                                                 <th>NO of Login</th>
@@ -190,6 +208,7 @@
                                                 <td align="center">46</td>
                                             </tr>
                                         </table>
+										-->
                                 <!-- END -->
                             </td>
                         </div>

@@ -6,11 +6,11 @@
              if (!$conn) {
          die("Connection failed: " . mysqli_connect_error()); 
   }
- if(isset($_SESSION['patient_username']) && isset($_SESSION['patient_type'])) {
+ //if(isset($_SESSION['patient_username']) && isset($_SESSION['patient_type'])) {
     $member_information = "SELECT * from member where member_id=".$_REQUEST['mid'].";";
      $result = mysqli_query($conn, $member_information)or die(mysqli_error($conn)); 
      
-  }
+ // }
 
       while($row = mysqli_fetch_assoc($result)) {
 

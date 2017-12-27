@@ -1,3 +1,31 @@
+<?php
+
+session_start();
+if(!isset($_SESSION['patient_username']) || empty($_SESSION['patient_username'])){
+		  header("location: ../Login.php");
+		  exit;
+		}
+	
+	
+    $conn = mysqli_connect("localhost", "root", "", "mediportal_db");
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+	
+	$doctor_id=$_GET['id'];
+	$doctor_information = "SELECT * from doctor where doctor_id = '".$doctor_id."';";
+    $result = mysqli_query($conn, $doctor_information)or die(mysqli_error($conn)); 
+	
+	while(($row = mysqli_fetch_assoc($result))!=null){ 
+			$username =$row['username'];
+											
+							
+		
+?>
+
+
+
+
 <html>
 
 <head><title>Doctor Details</title></head>
@@ -16,7 +44,7 @@
                         <td width="40%">
                             <table align="right">
                                 <td><strong>Logged in as </strong></td>
-                                <td><a href="viewprofile.php">Bob<img src="images/user.png"></a></td>
+                                <td><a href="viewprofile.php"><?=$_SESSION['patient_username']?><img src="images/user.png"></a></td>
                                 <td><hr width="1" size="15"></td>
 								<td><a href="../Registration/DonorSubscription.php">Profile</a></td>
                                 <td><hr width="1" size="15"></td>
@@ -33,7 +61,8 @@
                <div>
                     <table border="1" width="100%">
                         <!-- User Menu Section -->
-                        <td width="20%" valign="top">
+                        <tr>
+						<td width="20%" valign="top">
                             <fieldset>
                                 <legend>
 									<strong>Personal Information</strong>
@@ -101,14 +130,12 @@
                         </td>
                         <div align="center">
                         <td width="70%" align="center">
-                            <!--------------------------------------------------- DESIGN UI HERE-------------------------------------------------->
-
-                             <div>
-                                        <h1>Mr. XYZ</h1>
-                                            <table width="100%">
+                           <div>
+						   <!--------------------------------------------------- DESIGN UI HERE-------------------------------------------------->
+								 <table width="100%">
                                         <td width="60%">
                                             <fieldset>
-
+												<legend align="center"><h2>DOCTOR'S PROFILE</h2></legend>
                                             <table width="100%">
 
 
@@ -118,13 +145,13 @@
                                                 <tr>
                                                     <td align="center"><img src="images/usericon.png"/></td>
                                                 </tr>
-                                                
                                             </table>
                                         </td>
                                                 </tr>
                                                 
                                                 <tr>
-                                                    <td width="10%" valign="top"><label><b><i>General Information:</i></b></label>
+                                                    <td width="10%" valign="top">
+														<label><b><i>General Information:</i></b></label>
                                                     </td>
                                                     <td align="center">
                                                         <fieldset>
@@ -132,31 +159,31 @@
                                                         <tr>
                                                             <td width="30%"><strong>Name</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td >Bob</td>
+                                                            <td ><?php echo $row['name'];?></td>
                                                         </tr>
                                                          
                                                          <tr>
                                                             
                                                             <td width="30%"><strong>Gender</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td >Male</td>
+                                                            <td><?php echo $row['gender'];?></td>
                                                         </tr>
                                                         <tr>
                                                             <td width="30%"><strong>User Name</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td >Bob Marley</td>
+                                                            <td ><?php echo $row['username'];?></td>
                                                         </tr>
-                                                        <tr>
-                                                            <td width="30%"><strong>Password</strong></td>
-                                                            <td><strong>:</strong></td>
-                                                            <td width="65%">Bob123</td>
-                                                        </tr>
-
-                                                    </table>
-                                                </fieldset>
-                                                </td>
-                                            </tr>
+														</table>
+														</fieldset>
+													</td>
+												</tr>
                                                 
+                                                <?php 
+													$doctor_education_information = "SELECT * from educational_info where doctor_id='".$doctor_id."';";
+													 $education_result = mysqli_query($conn, $doctor_education_information)or die(mysqli_error($conn)); 
+													 while($education_row = mysqli_fetch_assoc($education_result)) {
+												  
+                                                 ?>
 
                                                 <tr>
                                                     <td width="10%" valign="top"><label><b><i>Educational Information:</i></b></label>
@@ -167,32 +194,38 @@
                                                         <tr>
                                                             <td width="30%"><strong>Degree Name</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td width="65%">MBBS</td>
+                                                            <td width="65%"><?php echo $education_row['degree_name']; ?></td>
                                                         </tr>
                                                          <tr>
                                                             
                                                             <td width="30%"><strong>Passed Year</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td>2015</td>
+                                                            <td><?php echo $education_row['passed_year']; ?> </td>
                                                          </tr>
                                                          <tr>
                                                             
                                                             <td width="30%"><strong>Passing College</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td>Dhaka Medical College</td>
+                                                            <td><?php echo $education_row['college']; ?></td>
                                                         </tr>
                                                         <tr>
                                                             <td width="30%"><strong>Description</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td>Bla Bla Bla</td>
+                                                            <td><?php echo $education_row['description']; ?></td>
                                                         </tr>
                                                         
 
-                                                    </table>
-                                                </fieldset>
-                                                </td>
-                                            </tr>
-
+														</table>
+														</fieldset>
+													</td>
+												</tr>
+												<?php
+													}
+													$doctor_professional_information = "SELECT * from professional_info where doctor_id='".$doctor_id."';";
+													 $education_result = mysqli_query($conn, $doctor_professional_information)or die(mysqli_error($conn)); 
+													 while($education_row = mysqli_fetch_assoc($education_result)) {
+												  
+                                                 ?>
 
                                                 <tr>
                                                     <td width="10%" valign="top"><label><b><i>Proffesional Information:</i></b></label>
@@ -203,66 +236,74 @@
                                                         <tr>
                                                             <td width="30%"><strong>Title</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td width="65%">Assistant Professor</td>
+                                                            <td width="65%"><?php echo $education_row['title']; ?></td>
                                                         </tr>
+                                                            <tr>
+                                                            
+                                                            <td width="30%"><strong>Department College</strong></td>
+                                                            <td><strong>:</strong></td>
+                                                            <td><?php echo $education_row['department']; ?></td>
+                                                         </tr>
+                                                        
                                                          <tr>
                                                             
                                                             <td width="30%"><strong>Medical College</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td>Sir Sollimullah Medical College</td>
+                                                            <td><?php echo $education_row['medical_college']; ?></td>
                                                          </tr>
 
-                                                         <tr>
-                                                            
-                                                            <td width="30%"><strong>BMDC Number</strong></td>
-                                                            <td><strong>:</strong></td>
-                                                            <td>0168-DMC594/0625</td>
-                                                         </tr>
+                                                         
                                                     </table>
                                                 </fieldset>
                                                 </td>
                                             </tr>
 
+                                            <?php 
+                                                           }
+                                                         ?>
 
+                
                                                  <tr>
                                                     <td width="10%" valign="top"><label><b><i>Chamber Information:</i></b></label>
                                                     </td>
                                                     <td>
                                                         <fieldset>
-                                                        <table width="100%">
-                                                        <tr>
-                                                            <td width="30%"><strong>Chamber Name</strong></td>
-                                                            <td><strong>:</strong></td>
-                                                            <td width="65%">Mr.XYZ</td>
+                                                        <table width="100%" cellpadding="1" cellspacing="1">
+                                                <tr>
+                                                            <td width="20%"><strong>Chamber Name</strong></td>
+                                                             <td width="20%"><strong>Chamber Location</strong></td>
+                                                             <td width="20%"><strong>Working Days</strong></td>
+                                                             <td width="20%"><strong>Working Time</strong></td>
+                                                             <td width="20%"><strong>Description</strong></td>
+                                                </tr>
+                                                <?php 
+													$doctor_chamber_information = "SELECT * from chamber where doctor_id='".$doctor_id."';";
+													 $chamber_result = mysqli_query($conn, $doctor_chamber_information)or die(mysqli_error($conn)); 
+												 
+													 while($chamber_row = mysqli_fetch_assoc($chamber_result)) {
+														?>
+                                                <tr>
+                                                            
+                                                            <td><?php echo $chamber_row['name']; ?></td>
+                                                            <td><?php echo $chamber_row['location']; ?></td>
+                            
+                                                            <td><?php echo $chamber_row['days']; ?></td>
+            
+                                                            <td><?php echo $chamber_row['schedule']; ?></td>
+                                                            <td><?php echo $chamber_row['description']; ?></td>
+                                                           
                                                         </tr>
-                                                         <tr>
-                                                            
-                                                            <td width="30%"><strong>Chamber Location</strong></td>
-                                                            <td><strong>:</strong></td>
-                                                            <td>Dhaka</td>
-                                                         </tr>
 
-                                                         <tr>
-                                                            
-                                                            <td width="30%"><strong>Working Days</strong></td>
-                                                            <td><strong>:</strong></td>
-                                                            <td>SAT, SUN, TUES</td>
-                                                         </tr>
-
-                                                         <tr>
-                                                            
-                                                            <td width="30%"><strong>Time</strong></td>
-                                                            <td><strong>:</strong></td>
-                                                            <td>8.30PM to 10.30PM</td>
-                                                         </tr>
-                                                         
+                                                        <?php 
+                                                }
+                                             ?>
                                                         
-
-                                                    </table>
+                                            </table>
                                                 </fieldset>
                                                 </td>
                                             </tr>
 
+                                            
 
                                                   <tr>
                                                     <td width="10%" valign="top"><label><b><i>Others Information:</i></b></label>
@@ -273,23 +314,33 @@
                                                         <tr>
                                                             <td width="30%"><strong>Date Of Birth</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td width="65%">19/9/1998</td>
+                                                            <td width="65%"><?php echo $row['dob'];?></td>
                                                         </tr>
+
+                                                        <tr>
+                                                            
+                                                            <td width="30%"><strong>BMDC Number</strong></td>
+                                                            <td><strong>:</strong></td>
+                                                            <td><?php echo $row['bmdc_license'];?></td>
+                                                         </tr>
+                                                         
 
                                                          <tr>
                                                             
                                                             <td width="30%"><strong>Mobile Number</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td>01685940625</td>
+                                                            <td><?php echo $row['mobile'];?></td>
                                                          </tr>
 
                                                          <tr>
                                                             
                                                             <td width="30%"><strong>Email</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td>bob@aiub.edu</td>
+                                                            <td><?php echo $row['email'];?></td>
                                                          </tr>
                                                     </table>
+
+                                                       
                                                 </fieldset>
                                                 </td>
                                             </tr>
@@ -298,34 +349,33 @@
                                         
                                     </table>
 
-												<tr>
-													<td align="center">
-														<input id="message" type="submit" value="Message" onclick="message()"/>
 
+                                    
+                                           <br><br>
+                                           <hr>
+                                    <div>
+                                        <table width="100%">
+											<tr>
+                                                 <td width="10%">&nbsp;</td>
+                                                 <td width="30%" align="right"><a href="editprofile.php">Edit Profile</a></td>
+                                                 <td><strong><hr width="1" size="15"></strong></td>
+                                                 <td><a href="changepassword.php">Change Password</a></td>
+											</tr>
+                                         </table>
+									</div>
 
-													 <button onclick="goBack()">Go back</button>
-
-                                            <script>
-                                                function goBack() {
-                                                    window.history.back();
-                                                }
-                                                function message(){
-                                                    var x= document.getElementById("message").value;
-                                                    window.location.assign("eConsultation/conversation.php");
-                                                }
-                                            </script>
-														
-													</td>
-												</tr>
-                                            </table>
-											
-											
-                                            
-                                    </div>
+                                </fieldset>
+                            </td>
+                        </table>
+						
+						      
 							
                             <!------------------------------------------------------ END HERE----------------------------------------------------->
-                        </td></div>
-                    </table>
+							</div>
+						</td>
+						</div>
+					</tr>
+                  </table>
                 </div>
             </td>
         </tr>
@@ -357,3 +407,8 @@
 </body>
 
 </html>
+ <?php 
+                                            }
+                                            mysqli_close($conn);
+
+                                     ?> 
