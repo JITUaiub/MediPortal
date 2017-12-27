@@ -20,12 +20,12 @@ if(isset($_REQUEST["tit"]) && isset($_REQUEST["dpt"])){
 ?>
 
 <select name="user">
-	<?php for($i=0; $i<count($arr); $i++) {?>
+	<?php if($arr!=null){for($i=0; $i<count($arr); $i++) {?>
 	<option value="<?php echo $arr[$i]; ?>"><?php echo $arr[$i]; ?></option>
 	
-<?php 
-	}
-	?>
+<?php }}else{ ?>
+	<option> error</option>
+	<?php }?>
 </select>
 
 <?php 

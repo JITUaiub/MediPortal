@@ -1,5 +1,10 @@
 <?php 
 session_start();
+	
+	if(!isset($_SESSION['patient_username']) || empty($_SESSION['patient_username'])){
+		  header("location: ../Login.php");
+		  exit;
+		}
 
  
   $currentpasswordErr = $newpasswordErr = $retypepasswordErr="";
@@ -56,7 +61,7 @@ $conn = mysqli_connect("localhost", "root", "","mediportal_db");
                         <td width="40%">
                             <table align="right">
                                 <td><strong>Logged in as </strong></td>
-                                <td><a href="viewprofile.php">Bob<img src="images/user.png"></a></td>
+                                <td><a href="viewprofile.php"><?=$_SESSION['patient_username']?><img src="images/user.png"></a></td>
                                 <td><hr width="1" size="15"></td>
 								<td><a href="../Registration/DonorSubscription.php">Profile</a></td>
                                 <td><hr width="1" size="15"></td>
@@ -214,7 +219,7 @@ $conn = mysqli_connect("localhost", "root", "","mediportal_db");
             </td>
         </tr>
     </table>
-	<script type="text/javascript" src="valid.js"></script>
+	<script type="text/javascript" ></script>
 </body>
 
 </html>

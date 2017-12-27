@@ -1,5 +1,11 @@
 <?php 
     session_start();
+	if(!isset($_SESSION['patient_username']) || empty($_SESSION['patient_username'])){
+		  header("location: ../Login.php");
+		  exit;
+		}
+	
+	
 	$con = mysqli_connect("localhost", "root", "", "mediportal_db");
 	if (!$con) {
 		die("Connection failed: " . mysqli_connect_error());
@@ -14,14 +20,17 @@ $err2=false;
 $err3=false;
 $err4=false;
 $doctor_err=$problem_err=$date_err=$time_err=$appointment_type_err="";
+ 
+
+ 
  if(isset($_POST['submit'])){
-			//$doctor = $_POST['select_doctor'];
+			$doctor = $_POST['user'];
 			$problem=$_POST['problem'];
 			$date=$_POST['date'];
 			$time=$_POST['time'];
 			$appointment_type=$_POST['appointment_type'];
 	
-	/*if($doctor==""){
+	if($doctor==""){
 	$doctor_err="doctor name required";
 	$err1=false;
 	
@@ -29,7 +38,7 @@ $doctor_err=$problem_err=$date_err=$time_err=$appointment_type_err="";
 	else{
 		$err1=true;
 		$doctor_err="";
-	}*/
+	}
 	if($appointment_type==""){
 		$appointment_type_err="appointment type required";
 		$err2=false;
@@ -57,6 +66,56 @@ $doctor_err=$problem_err=$date_err=$time_err=$appointment_type_err="";
 		$err4=true;
 		$time_err="";
 	}
+	if($err1==true && $err2==true && $err3==true && $err4==true){
+		
+		$conn = mysqli_connect("localhost", "root", "", "mediportal_db", 3306);
+		/*doctor id*/ 
+		$sql1="SELECT `doctor_id` FROM `doctor` WHERE `username`='".$doctor."'";
+		$result = mysqli_query($conn, $sql1);
+	
+		while(($row = mysqli_fetch_assoc($result))!=null){ 
+			$doctor_id =$row['doctor_id'];
+											
+							
+		}
+		
+		/*member id*/
+		$sql2="SELECT `member_id` FROM `member` WHERE `username`= '".$_SESSION['patient_username']."';";
+		$result = mysqli_query($conn, $sql2);
+	
+		while(($row = mysqli_fetch_assoc($result))!=null){ 
+			$member_id =$row['member_id'];
+											
+							
+		}
+		
+		
+		/*chamber
+		
+		$sql3="SELECT `name` FROM `chamber` WHERE `doctor_id`='".$doctor_id."'";
+		$result = mysqli_query($conn, $sql3);
+	
+		
+		while(($row = mysqli_fetch_assoc($result))!=null){ 
+			$chamber =$row['name'];
+								
+							
+		}*/
+		
+		
+		
+	
+		$sql ="INSERT INTO appointment(doctor_id, member_id, date, time, status,problem,appointment_type) VALUES ('$doctor_id','$member_id','$date','$time','pending','$problem','$appointment_type')";
+	
+		$result = mysqli_query($conn, $sql);
+		header("location: appointmentstatus.php");
+		exit;
+		
+	mysqli_close($conn);
+	}
+	
+	
+	
 	
  }
 
@@ -275,7 +334,7 @@ $doctor_err=$problem_err=$date_err=$time_err=$appointment_type_err="";
 																		<td>
 																			<td>Doctor name</td>
 					<td>
-						<div id="usrname">
+						<div id="usrname" >
 						</div>
 					</td>
 																		</td>
@@ -323,19 +382,6 @@ $doctor_err=$problem_err=$date_err=$time_err=$appointment_type_err="";
 										</tr>
 										<tr>
 											<td align="center" width="30%">
-												<strong>chamber:</strong>
-											</td>
-											<td>
-												<select name="chamber">
-													<option value="">Select one</option>
-													<option value="online">gulshan</option>
-													<option value="direct">banani </option>
-												</select>
-											<!--	<br><span style="color : RED"><?php echo $appointment_type_err;?></span> -->
-											</td>
-										</tr>
-										<tr>
-											<td align="center" width="30%">
 												<strong>Appointment Type:</strong>
 											</td>
 											<td>
@@ -346,7 +392,23 @@ $doctor_err=$problem_err=$date_err=$time_err=$appointment_type_err="";
 												</select>
 												<br><span style="color : RED"><?php echo $appointment_type_err;?></span>
 											</td>
+											
 										</tr>
+								<!--	<tr>
+											
+											<td align="center" width="30%">
+												<strong>chamber:</strong>
+											</td>
+											<td>
+												<select name="chamber">
+													<option value="">Select one</option>
+													<option> gulshan</option>												
+													</select>
+												<br><span style="color : RED"><?php echo $appointment_type_err;?></span> 
+											</td>
+											
+										</tr>
+								-->
                                         <tr>
                                             <td width="30%" align="center">
 												<strong>Date :</strong>

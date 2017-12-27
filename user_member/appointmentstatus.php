@@ -1,10 +1,50 @@
 <?php 
     session_start();
-
+	
+	if(!isset($_SESSION['patient_username']) || empty($_SESSION['patient_username'])){
+		  header("location: ../Login.php");
+		  exit;
+		}
+	
+	
     $conn = mysqli_connect("localhost", "root", "", "mediportal_db");
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
     }
+	
+	
+	$sql1="SELECT `member_id` FROM `member` WHERE `username`='".$_SESSION['patient_username']."'";
+		$result = mysqli_query($conn, $sql1);
+	
+		while(($row = mysqli_fetch_assoc($result))!=null){ 
+			$member_id =$row['member_id'];
+											
+							
+		}
+	
+	
+	
+	
+	$sql="SELECT * FROM `appointment` WHERE `member_id`=".$member_id."";
+	
+	$result = mysqli_query($conn, $sql);
+	
+		$ff=array();
+		while(($row = mysqli_fetch_assoc($result))!=null){ 
+			$ff[] =array(
+				"doctor_id"=>$row['doctor_id'],
+				"member_id"=>$row['member_id'],
+				"date"=>$row['date'],
+				"time"=>$row['time'],
+				"status"=>$row['status'],
+				"appointment_type"=>$row['appointment_type']			
+				);
+											
+							
+		}
+	
+	
+	
  ?>
 
 <html>
@@ -25,7 +65,7 @@
                         <td width="40%">
                             <table align="right">
                                 <td><strong>Logged in as </strong></td>
-                                <td><a href="viewprofile.php">Bob<img src="images/user.png"></a></td>
+                                <td><a href="viewprofile.php"><?=$_SESSION['patient_username']?><img src="images/user.png"></a></td>
                                 <td><hr width="1" size="15"></td>
 								<td><a href="../Registration/DonorSubscription.php">Profile</a></td>
                                 <td><hr width="1" size="15"></td>
@@ -141,7 +181,7 @@
 							<br/><br/><br/>
                               <table width="100%" cellspacing="0" border="1" cellpadding="5">
                                   <tr>
-									  <th align="left" width="1%">
+								<!--	  <th align="left" width="1%">
                                              <strong>
                                                 <select >
                                                     <optgroup label="Actions">
@@ -155,69 +195,28 @@
                                                 </select>
                                             </strong>
                                         </th>
-
+								-->
                                       <th width="10%"><strong>Doctor Name</strong></th>
                                       <th  width="10%"><strong>Appoinment Date</strong></th>
-                                      <td  width="10%"><strong>Next Appointment Date</strong></th>
                                       <th  width="10%"><strong>Time</strong></th>
 									  <th  width="10%"><strong>Type</strong></th>
 									  <th  width="10%"><strong>Status</strong></th>
+									  <td  width="10%"><strong>Next Appointment Date</strong></th>
                                   </tr>
-
-                                  <tr>
-										<td align="center">
-                                            <input type="checkbox" name="action">
-                                        </td>
-										<td>
-											<a href="doctordetails.php"><h4>Dr.poran</h4></a>
-										</td>
-                                      <td>1/1/2018</td>
-                                      <td>....................</td>
-                                      <td>22:30</td>
-									  <td>Online</td>
-									  <td>Accepted</td>
-                                  </tr>
-
-                                   <tr>
-										<td align="center">
-                                            <input type="checkbox" name="action">
-                                        </td>
-										<td>
-											<a href="doctordetails.php"><h4>Dr.arif</h4></a>
-									    </td>
-                                      <td>7/17/2017</td>
-                                      <td>9/1/2017</td>
-                                      <td>18:25</td>
-									  <td>Direct communication</td>
-									  <td>Done</td>
-                                  </tr>
-								  <tr>
-										<td align="center">
-                                            <input type="checkbox" name="action">
-                                        </td>
-										<td>
-											<a href="doctordetails.php"><h4>Dr.Anne</h4></a>
-									    </td>
-                                      <td>7/17/2017</td>
-                                      <td>............</td>
-                                      <td>18:25</td>
-									  <td>Direct communication</td>
-									  <td>Rejected</td>
-                                  </tr>
-								  <tr>
-										<td align="center">
-                                            <input type="checkbox" name="action">
-                                        </td>
-										<td>
-											<a href="doctordetails.php"><h4>Dr.Robart</h4></a>
-									    </td>
-                                      <td>7/17/2017</td>
-                                      <td>............</td>
-                                      <td>18:25</td>
-									  <td>Direct communication</td>
-									  <td>Pending</td>
-                                  </tr>
-								  
+									<?php for($i=0;$i<count($ff);$i++){ ?>
+							<tr>
+							<!--	<td align="center">
+                                    <input type="checkbox" name="action">
+                                </td>
+							-->	
+								<td><?=$ff[$i]['doctor_id']?></td>
+								<td><?= $ff[$i]['date']?></td>
+								<td><?= $ff[$i]['time']?></td>
+								<td><?= $ff[$i]['status']?></td>
+								<td><?= $ff[$i]['appointment_type']?></td>
+								<td><?php echo "----------";?></td>
+							</tr>
+							<?php } ?>	  
                               </table>   <br>                  
 
                         </td></div>

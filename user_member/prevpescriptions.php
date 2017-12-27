@@ -1,3 +1,46 @@
+<?php
+	session_start();
+	
+	if(!isset($_SESSION['patient_username']) || empty($_SESSION['patient_username'])){
+		  header("location: ../Login.php");
+		  exit;
+		}
+
+	$conn = mysqli_connect("localhost", "root", "","mediportal_db");	
+		
+	/*member id*/
+		$sql2="SELECT `member_id` FROM `member` WHERE `username`= '".$_SESSION['patient_username']."';";
+		$result = mysqli_query($conn, $sql2);
+	
+		while(($row = mysqli_fetch_assoc($result))!=null){ 
+			$member_id =$row['member_id'];
+											
+							
+		}
+		
+
+
+	
+	$sql="SELECT * FROM `prescription` WHERE `member_id`=".$member_id."";
+	
+	$result = mysqli_query($conn, $sql);
+	
+		$arr=array();
+		while(($row = mysqli_fetch_assoc($result))!=null){ 
+			
+			$arr[] =array(
+				"prescription_id"=>$row['prescription_id'],
+				"doctor_id"=>$row['doctor_id'],
+				//"member_id"=>$row['member_id'],
+				"appointment"=>$row['date'],
+				"disease"=>$row['disease'],
+				"next_appointment"=>$row['next_appointment']			
+				);
+										
+							
+		}
+?>
+
 <html>
 
 <head><title>Previous Prescriptions</title></head>
@@ -16,7 +59,7 @@
                         <td width="40%">
                             <table align="right">
                                 <td><strong>Logged in as </strong></td>
-                                <td><a href="viewprofile.php">Bob<img src="images/user.png"></a></td>
+                                <td><a href="viewprofile.php"><?=$_SESSION['patient_username']?><img src="images/user.png"></a></td>
                                 <td><hr width="1" size="15"></td>
 								<td><a href="../Registration/DonorSubscription.php">Profile</a></td>
                                 <td><hr width="1" size="15"></td>
@@ -129,59 +172,36 @@
                         </tr>
                         <tr>
                             <td>
-                                <table border="1" width="100%">
+                                <table width="100%" cellspacing="0" border="1" cellpadding="5">
                                     <tr height="10%">
                                         <th>
-                                            <h3 align="center">Appointment Date</h3>
+                                            <h3 align="center">date</h3>
                                         </th>
                                         <th>
-                                            <h3 align="center">Doctor Name</h3>
+                                            <h3 align="center">Doctor id</h3>
                                         </th>
                                         <th>
                                             <h3 align="center">Disease</h3>
                                         </th>
                                         <th>
-                                            <h3 align="center">Medicines</h3>
-                                        </th>
-                                        <th>
                                             <h3 align="center">Prescription File</h3>
                                         </th>
+                                        <th>
+                                            <h3 align="center">next appointment</h3>
+                                        </th>
                                     </tr>
-                                    <tr>
-                                        <td align="center">
-                                            <h3>10/12/2010</h3>
-                                        </td>
-                                        <td align="center">
-                                            <h3><a href="doctorDetails.php">Dr. XYZ</a></h3>
-                                        </td>
-                                        <td align="center">
-                                            <h3>Fever</h3>
-                                        </td>
-                                        <td align="center">
-                                            <h3>Paracitamol</h3>
-                                        </td>
-                                        <td align="center">
-                                            <a href="#">fineName.pdf</a>
-                                        </td>
-                                    </tr>
+                                    <?php if($arr!=null){ for($i=0;$i<count($arr);$i++){ ?>
+							<tr>
+								
+								<td><?= $arr[$i]['appointment']?></td>
+								<td><a href="doctorDetails.php"><?=$arr[$i]['doctor_id']?></a></td>
+								<td><?= $arr[$i]['disease']?></td>
+								<td><?= $arr[$i]['prescription_id']?></td>
+								<td><?= $arr[$i]['next_appointment']?></td>
+							</tr>
+									<?php }}else{echo "<tr><td colspan='5'>You have no prescription</td></tr>";} ?>	
 
-                                    <tr>
-                                        <td align="center">
-                                            <h3>9/12/2010</h3>
-                                        </td>
-                                        <td align="center">
-                                            <h3><a href="doctorDetails.php">Dr. ABC</a></h3>
-                                        </td>
-                                        <td align="center">
-                                            <h3>Maleria</h3>
-                                        </td>
-                                        <td align="center">
-                                            <h3>Nothing</h3>
-                                        </td>
-                                        <td align="center">
-                                            <a href="#">cancer_prescription.pdf</a>
-                                        </td>
-                                    </tr>
+                                    
                                     
                                 </table><br><br>
                                 <p align="center"><button>Previous Page</button> | <button>Next Page</button></p>
