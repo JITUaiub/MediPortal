@@ -51,7 +51,7 @@
             $check = 1;
 		}
 
-		else if($username == $row['username'] && $password == $row['password'] && $row['type'] =="patient"){
+		else if($username == $row['username'] && $password == $row['password'] && $row['type'] =="patient" && $row['account_status']=="active"){
             // $_SESSION['username'] = $username;
             // $_SESSION['customer_id'] = $row['cust_id'];
             // $_SESSION['customer_name'] = $row['cust_name'];
@@ -71,6 +71,7 @@
             header("Location:user_member/dashboard.php");
             $check = 1;
 		}
+		
 
 
 

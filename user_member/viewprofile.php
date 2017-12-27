@@ -114,7 +114,7 @@
                            
                             <ul>
                                 <li><a href="changepassword.php">Change Password</a></li>
-                                <li><a href="../index.php">Logout</a></li>
+                                <li><a href="member_logout.php">Logout</a></li>
                             </ul>
                         </fieldset>
                         </td>

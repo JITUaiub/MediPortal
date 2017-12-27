@@ -133,8 +133,13 @@ session_start();
                                         
                                         <td align="center" width="35%"">
                                             <fieldset>
+                                              <?php  $count_pending_appointment="select count(*) from appointment where status='pending'";
+                                 $result = mysqli_query($conn, $count_pending_appointment)or die(mysqli_error($conn)); 
+                                 $row = mysqli_fetch_assoc($result);
+
+                                 ?>
                                                 <h2 align="center">new appointment today</h2></br>
-                                                <h1 align="center"><a href="appointmentstatus.php">0</a></h1>
+                                                <h1 align="center"><a href="appointmentstatus.php"><?php echo $row['count(*)'] ?></a></h1>
                                                 <h4 align="center"><b>See Appointment Status</b></h4>
                                         </fieldset>
                                     </td>
@@ -143,7 +148,7 @@ session_start();
                                         <td align="center" width="35%">
                                               <fieldset>
                                                 <h2 align="center">Pending Prescriptions</h2></br>
-                                                <h1 align="center"><a href="newpescriptions.php">2</a></h1>
+                                                <h1 align="center"><a href="presWithAppointment.php">2</a></h1>
                                                 <h4 align="center"><b>Check Prescriptions Status</b></h4>
                                         </fieldset>
                                     </td>

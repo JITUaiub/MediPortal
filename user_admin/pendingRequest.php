@@ -1,3 +1,20 @@
+<?php 
+    session_start();
+
+
+     $conn = mysqli_connect("localhost", "root", "","mediportal_db");
+   
+             if (!$conn) {
+         die("Connection failed: " . mysqli_connect_error()); 
+  }
+ 
+
+
+  ?>
+
+
+
+
 <html>
 
 <head><title>Home</title></head>
@@ -133,26 +150,30 @@
                                                 <th>BMDC Reg. No</th>
                                                 <th colspan="4">Action</th>
                                             </tr>
+
+                                            <?php //if(isset($_SESSION['patient_username']) && isset($_SESSION['patient_type'])) {
+    $doctor_information = "SELECT * from doctor where account_status='pending' ";
+     $result = mysqli_query($conn, $doctor_information)or die(mysqli_error($conn)); 
+     
+  
+
+  while($row = mysqli_fetch_assoc($result)) {
+?>
+
                                             <tr>
-                                                <td>Dr. ABC</td>
-                                                <td>abc@gmail.com</td>
-                                                <td>01400400000</td>
-                                                <td>B656C45A5S5</td>
-                                                <td width="40"><a href="doctorDetails.php">Profile</a></td>
-                                                <td width="30"><a href="eConsultation/conversation.php">Message</a></td>
-                                                <td width="30"><button>Delete</button></td>
-                                                <td width="30"><button>Accept</button></td>
+                                                <td><?php echo $row['username']; ?></td>
+                                                <td><?php echo $row['email']; ?></td>
+                                                <td><?php echo $row['mobile']; ?></td>
+                                                <td><?php echo $row['bmdc_license']; ?></td>
+                                                <td width="40"><a href="doctorDetails.php?did=<?php echo $row['doctor_id'];?>">Profile</a></td>
+                                                <td width="30"><a href="eConsultation/conversation.php?did=<?php echo $row['doctor_id'];?>"">Message</a></td>
+                                                <td width="30"><a href="database_deletedoctors_request.php?did=<?php echo $row['doctor_id'];?>">Delete</td>
+                                                    <td width="30"><a href="database_acceptoctors.php?did=<?php echo $row['doctor_id'];?>">Accept</td>
+
                                             </tr>
-                                            <tr>
-                                                <td>Dr. Merlin</td>
-                                                <td>merlin@gmail.com</td>
-                                                <td>01600000000</td>
-                                                <td>C95236524AD</td>
-                                                <td width="40"><a href="doctorDetails.php">Profile</a></td>
-                                                <td width="30"><a href="eConsultation/conversation.php">Message</a></td>
-                                                <td width="30"><button>Delete</button></td>
-                                                <td width="30"><button>Accept</button></td>
-                                            </tr>
+
+                                            <?php } ?>
+                                            
                                      </table>
 
 

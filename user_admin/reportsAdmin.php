@@ -1,3 +1,16 @@
+<?php 
+    session_start();
+
+
+     $conn = mysqli_connect("localhost", "root", "","mediportal_db");
+   
+             if (!$conn) {
+         die("Connection failed: " . mysqli_connect_error()); 
+  }
+ ?>
+
+
+
 <html>
 
 <head><title>Home</title></head>
@@ -123,15 +136,37 @@
                             </tr>
                             <tr>
                                 <td>Doctors</td>
-                                <td align="center">7</td>        
+                                <?php 
+
+                                 $count_doctors="select count(*) from doctor";
+                                 $result = mysqli_query($conn, $count_doctors)or die(mysqli_error($conn)); 
+                                 $row = mysqli_fetch_assoc($result);
+
+                                 ?>
+                                <td align="center"><?php echo $row['count(*)'] ?></td>        
                             </tr>
+                            
                             <tr>
                                 <td>General Users</td>
-                                <td align="center">43</td>        
+                                <?php 
+
+                                 $count_members="select count(*) from member";
+                                 $result = mysqli_query($conn, $count_members)or die(mysqli_error($conn)); 
+                                 $row = mysqli_fetch_assoc($result);
+
+                                 ?>
+                                <td align="center"><?php echo $row['count(*)'] ?></td>        
                             </tr>
                             <tr>
                                 <td>Blood Donors</td>
-                                <td align="center">24</td>        
+                                <?php 
+
+                                 $count_blood_donars="select count(*) from blood";
+                                 $result = mysqli_query($conn, $count_blood_donars)or die(mysqli_error($conn)); 
+                                 $row = mysqli_fetch_assoc($result);
+
+                                 ?>
+                                <td align="center"><?php echo $row['count(*)'] ?></td>        
                             </tr>
                         </table>
                                 <br><br>
@@ -143,15 +178,36 @@
                                     </tr>
                                     <tr>
                                         <td colspan="2">Doctors</td>
-                                        <td align="center">2</td>        
+                                        <?php 
+
+                                 $count_blocked_doctors="select count(*) from doctor where account_status='blocked'";
+                                 $result = mysqli_query($conn, $count_blocked_doctors)or die(mysqli_error($conn)); 
+                                 $row = mysqli_fetch_assoc($result);
+
+                                 ?>
+                                        <td align="center"><?php echo $row['count(*)'] ?></td>        
                                     </tr>
                                     <tr>
                                         <td colspan="2">General Users</td>
-                                        <td align="center">7</td>        
+                                         <?php 
+
+                                 $count_blocked_users="select count(*) from member where account_status='blocked'";
+                                 $result = mysqli_query($conn, $count_blocked_users)or die(mysqli_error($conn)); 
+                                 $row = mysqli_fetch_assoc($result);
+
+                                 ?>
+                                        <td align="center"><?php echo $row['count(*)'] ?></td>        
                                     </tr>
                                     <tr>
                                         <td colspan="2">Blood Donors</td>
-                                        <td align="center">6</td>        
+                                        <?php 
+
+                                 $count_blocked_blood_donar="select count(*) from blood where status='blocked'";
+                                 $result = mysqli_query($conn, $count_blocked_blood_donar)or die(mysqli_error($conn)); 
+                                 $row = mysqli_fetch_assoc($result);
+
+                                 ?>
+                                        <td align="center"><?php echo $row['count(*)'] ?></td>        
                                     </tr>
                                 </table>
                                 <br><br>
@@ -210,3 +266,4 @@
 </body>
 
 </html>
+<?php mysqli_close($conn); ?>

@@ -6,12 +6,12 @@
   		die("Connection failed: " . mysqli_connect_error());
 	}
 
-	$update_member = "UPDATE member SET name='".$_REQUEST['name']."', username='".$_REQUEST['username']."', email='".$_REQUEST['email']."' WHERE member_id=".$_SESSION['doctor_id'];
+	$update_member = "UPDATE member SET name='".$_REQUEST['name']."', username='".$_REQUEST['username']."', email='".$_REQUEST['email']."' WHERE member_id=".$_SESSION['patient_id'];
 
 	$result_update_member_general = mysqli_query($conn, $update_member)or die(mysqli_error($conn));
 
 	die(mysqli_error($conn));
 	mysqli_close($conn);
-	header('Location:viewprofile.php?pro_update=update succesfully');
+	header('Location:viewprofile.php');
 
 	?>

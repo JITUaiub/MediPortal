@@ -1,3 +1,20 @@
+<?php 
+    session_start();
+
+
+     $conn = mysqli_connect("localhost", "root", "","mediportal_db");
+   
+             if (!$conn) {
+         die("Connection failed: " . mysqli_connect_error()); 
+  }
+ 
+
+
+  ?>
+
+
+
+
 <html>
 
 <head><title>Home</title></head>
@@ -138,26 +155,28 @@
                                                 <th>BMDC Reg. No</th>
                                                 <th colspan="4">Action</th>
                                             </tr>
+
+                                            <?php //if(isset($_SESSION['patient_username']) && isset($_SESSION['patient_type'])) {
+    $doctor_information = "SELECT * from doctor where account_status='active'";
+     $result = mysqli_query($conn, $doctor_information)or die(mysqli_error($conn)); 
+     
+  
+
+  while($row = mysqli_fetch_assoc($result)) {
+?>
+
                                             <tr>
-                                                <td>Dr. XYZ</td>
-                                                <td>xyz@gmail.com</td>
-                                                <td>01700000000</td>
-                                                <td>B86D4629812Z</td>
-                                                <td width="40"><a href="doctorDetails.php">Profile</a></td>
-                                                <td width="30"><a href="useractivity.php">Activity</a></td>
-                                                <td width="30"><a href="eConsultation/conversation.php">Message</a></td>
-                                                <td width="30"><button>BLOCK</button></td>
+                                                <td><?php echo $row['username']; ?></td>
+                                                <td><?php echo $row['email']; ?></td>
+                                                <td><?php echo $row['mobile']; ?></td>
+                                                <td><?php echo $row['bmdc_license']; ?></td>
+                                                <td width="40"><a href="doctorDetails.php?did=<?php echo $row['doctor_id'];?>">Profile</a></td>
+                                                <td width="30"><a href="useractivity.php?did=<?php echo $row['doctor_id'];?>"">Activity</a></td>
+                                                <td width="30"><a href="eConsultation/conversation.php?did=<?php echo $row['doctor_id'];?>"">Message</a></td>
+                                                <td width="30"><a href="database_blockdoctors.php?did=<?php echo $row['doctor_id'];?>">Block</td>
                                             </tr>
-                                            <tr>
-                                                <td>Dr. Shaun</td>
-                                                <td>shaun@gmail.com</td>
-                                                <td>01900000000</td>
-                                                <td>C81D47597191</td>
-                                                <td width="40"><a href="doctorDetails.php">Profile</a></td>
-                                                <td width="30"><a href="useractivity.php">Activity</a></td>
-                                                <td width="30"><a href="eConsultation/conversation.php">Message</a></td>
-                                                <td width="30"><button>UNBLOCK</button></td>
-                                            </tr>
+                                            <?php }?>
+                                            
                                      </table>
                                      
                                         <p align="center"><button>Previous Page</button> | <button>Next Page</button></p>

@@ -116,13 +116,18 @@ function test_input($data) {
 										<tr>
 											<td colspan="3" align="center">
 												<input type="Submit" name="Submit" value="Add another"  >
-												<input type="button" value="Next Step"></td>
+												<input type="button" value="Next Step" onclick="next()"></td>
 										</tr>
 										<tr>
 											<td colspan="3" align="center"><a href="docRegAddChamber.php">Skip for now</a></td>
 										</tr>
 									</table>
-								
+								<script type="text/javascript">
+									function next()
+									{
+										window.location.href="docRegAddChamber.php";
+									}
+								</script>
 								</fieldset>	
 							</td>
 						</tr>

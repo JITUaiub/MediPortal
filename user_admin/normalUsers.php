@@ -1,3 +1,21 @@
+<?php 
+    session_start();
+
+
+     $conn = mysqli_connect("localhost", "root", "","mediportal_db");
+   
+             if (!$conn) {
+         die("Connection failed: " . mysqli_connect_error()); 
+  }
+ 
+
+
+  ?>
+
+
+
+
+
 <html>
 
 <head><title>Home</title></head>
@@ -136,24 +154,26 @@
                                                 <th >Phone</th>
                                                 <th colspan="4">Action</th>
                                             </tr>
+
+                                            <?php //if(isset($_SESSION['patient_username']) && isset($_SESSION['patient_type'])) {
+    $patient_information = "SELECT * from member ";
+     $result = mysqli_query($conn, $patient_information)or die(mysqli_error($conn)); 
+     
+  
+
+  while($row = mysqli_fetch_assoc($result)) {
+?>
                                             <tr>
-                                                <td>Mr. XYZ</td>
-                                                <td>xyz@gmail.com</td>
-                                                <td>01700000000</td>
-                                                <td width="40"><a href="normalUserDetails.php">Profile</a></td>
-                                                <td width="30"><a href="useractivity.php">Activity</a></td>
-                                                <td width="30"><a href="eConsultation/conversation.php">Message</a></td>
-                                                <td width="30"><button>BLOCK</button></td>
+                                                <td><?php echo $row['username']; ?></td>
+                                                <td><?php echo $row['email']; ?></td>
+                                                <td><?php echo $row['mobile']; ?></td> 
+                                                <td width="40"><a href="normalUserDetails.php?mid=<?php echo $row['member_id'];?>">Profile</a></td>
+                                                <td width="30"><a href="useractivity.php?mid=<?php echo $row['member_id'];?>">Activity</a></td>
+                                                <td width="30"><a href="eConsultation/conversation.php?mid=<?php echo $row['member_id'];?>">Message</a></td>
+                                                <td width="30"><a href="database_blockusers.php?mid=<?php echo $row['member_id'];?>">Block</td>
+                                                
                                             </tr>
-                                            <tr>
-                                                <td>Mr. Shaun</td>
-                                                <td>shaun@gmail.com</td>
-                                                <td>01900000000</td>
-                                                <td width="40"><a href="normalUserDetails.php">Profile</a></td>
-                                                <td width="30"><a href="useractivity.php">Activity</a></td>
-                                                <td width="30"><a href="eConsultation/conversation.php">Message</a></td>
-                                                <td width="30"><button>UNBLOCK</button></td>
-                                            </tr>
+                                          <?php } ?>
                                      </table>
                                         <br>
                                         <br>
