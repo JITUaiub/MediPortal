@@ -1,15 +1,18 @@
 <?php 
     session_start();
 
-
-     $conn = mysqli_connect("localhost", "root", "","mediportal_db");
+ if(isset($_SESSION['patient_username']) && isset($_SESSION['patient_type'])) {
+		 $conn = mysqli_connect("localhost", "root", "","mediportal_db");
    
              if (!$conn) {
          die("Connection failed: " . mysqli_connect_error()); 
-  }
- if(isset($_SESSION['patient_username']) && isset($_SESSION['patient_type'])) {
-    $member_information = "SELECT * from member where username = '".$_SESSION['patient_username']."';";
-     $result = mysqli_query($conn, $member_information)or die(mysqli_error($conn)); }
+		$member_information = "SELECT * from member where username = '".$_SESSION['patient_username']."';";
+        $result = mysqli_query($conn, $member_information)or die(mysqli_error($conn));
+    }else
+	{
+		header("Location:../login.php");
+		exit;
+	}
 
       while($row = mysqli_fetch_assoc($result)) {
 
@@ -35,7 +38,7 @@
                         <td width="40%">
                             <table align="right">
                                 <td><strong>Logged in as </strong></td>
-                                <td><a href="viewprofile.php">Bob<img src="images/user.png"></a></td>
+                                <td><a href="viewprofile.php"><?php echo $row['username']; ?><img src="images/user.png"></a></td>
                                 <td><hr width="1" size="15"></td>
 								<td><a href="../Registration/DonorSubscription.php">Profile</a></td>
                                 <td><hr width="1" size="15"></td>
