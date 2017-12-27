@@ -1,3 +1,29 @@
+<?php
+    ini_set('mysql.connect_timeout', 300);
+    ini_set('default_socket_timeout', 300);
+
+    $selectMsg = "";
+    $conn = mysqli_connect("localhost", "root", "", "mediportal_db", 3306);
+    mysqli_set_charset($conn,"utf8");
+
+    $faqArray = array();
+    if(isset($_POST['selectCategory'])){
+        $selectMsg = "";
+        $query = "Select * from `faq` where category = '". $_POST['category'] ."' and status = 'Read'"; 
+        $result = mysqli_query($conn, $query);
+
+        while(($row = mysqli_fetch_assoc($result))!=null){ 
+                    $faqArray[] = array('id'=>$row['id'],'author'=>$row['Author'],'question'=>$row['Question'],'answer'=>$row['Answer']);
+                    }
+//        var_dump($faqArray);
+    }else{
+        $selectMsg = "<br/><br/><h1>Please select a category first.</h1>";
+    }
+
+    if(isset($_POST['search'])){
+        
+    }
+?>
 <html>
 
 <head><title>Home</title></head>
@@ -105,61 +131,44 @@
                        		 <td width="70%" align="center" valign="top">
                        		 	<!-- FAQ DESIGN -->
 
-                                <fieldset>
+                                <form action="" method="post">
+                                    <fieldset>
                                          <legend><b>FAQ | SEARCH</b></legend>
                                          Select a category: 
-                                         <select id="categoryFAQ">
+                                         <select name="category">
                                              <option>Mediportal</option>
                                              <option>Appointments</option>
-                                             <option>E-consultation</option>
-                                             <option>Price and Fee</option>
+                                             <option>Econsultation</option>
+                                             <option>Price and Fees</option>
                                          </select>
-                                         <button onclick="selectCombo()">Select</button><br><br>
+                                         <input type="submit" name="selectCategory" value="Select"><br><br>
                                           Search Question: <input value="What is" />
-                                        <input type="submit" value="Search" />
+                                        <input type="submit" name="search" value="Search" />
                                         Results show per page: <select>
                                             <option>10</option>
                                             <option>20</option>
                                             <option>30</option>
                                         </select>
-                                        <button onclick="ResultPerPage()">Go</button>
-                                        <script>
-                                            function ResultPerPage()
-                                            {
-
+                                        <button">Go</button>
+                                        <div><?php echo $selectMsg; ?></div>
+                                        <?php
+                                            for ($i=0; $i < count($faqArray); $i++) { 
+                                                echo "<h1>";
+                                                echo $faqArray[$i]['question'];
+                                                echo "</h1><b>Author: </b>";
+                                                echo $faqArray[$i]['author'];
+                                                echo "<br/><a href=\"editFAQ.php?faqID=";
+                                                echo $faqArray[$i]['id'];
+                                                echo "\"/>Edit</a><br><hr><p>";
+                                                echo $faqArray[$i]['answer'];
+                                                echo "</p>";
                                             }
-                                        </script>
+                                        ?>
                                     </fieldset>
+                                </form>
 
                                     <!--     FAQ Question will show here -->
 
-                                    <script type="text/javascript">
-                                        function selectCombo()
-                                        {
-                                            var categoryMediportal = "<h1>What is Mediportal?</h1><a href=\"editFAQ.php\"/>Edit</a><br><hr><p>Mediportal is a online doctor appointment system made for general users and doctor's accross the world. Get an appointment today.</p><h1>What is Mediportal's Hotline?</h1><a href=\"editFAQ.php\"/>Edit</a><br><hr><p>Currently we don't have any helpline number. Soon we'll add hotline number(toll free).</p>";
-                                            var categoryAppointments = "<h1>How to get an appointment?</h1><a href=\"editFAQ.php\"/>Edit</a><br><hr><p>Get an appointment by following these step:<br> 1. Register with us with email and a username.<br>2. Login and go to new Appointment.<br>3. Fill in the details.<br>4. You're now good to go.</p><h1>Can any doctor turn off taking appointment?</h1><a href=\"editFAQ.php\"/>Edit</a><br><hr><p>Yes. You can change that option under Manage Appointments. </p>";
-                                            var categoryEconsultation = "<h1>How to get econsultation?</h1><a href=\"editFAQ.php\"/>Edit</a><br><hr><p>Ask your doctor for an econsultation session. Get an appointment and ask him for e-consultation.Doctor's attention required to access that features.</p><h1>Can we make live conversation here?</h1><a href=\"editFAQ.php\"/>Edit</a><br><hr><p>Currently we don't have any facilities for live consultation, We are working on it. Please wait for further updates.</p>";
-                                            var categoryPriceandFee = "<h1>Is Mediportal free?</h1><a href=\"editFAQ.php\"/>Edit</a><br><hr> <p>Mediportal is full free for general users. You can request for an appointment for free.You need to pay 5% of your fee if you register as an doctor.</p><h1>What is Mediportal's Doctor's visit?</h1><a href=\"editFAQ.php\"/>Edit</a><br><hr><p>It differs from doctor to doctor. You can see doctor visit from his profile page.</p>";
-
-                                            var index = document.getElementById('categoryFAQ').selectedIndex;
-                                            var option = document.getElementById('categoryFAQ').options;
-
-                                            if (option[index].text == "Mediportal") {
-                                                document.getElementById('FAQ').innerHTML = categoryMediportal;
-                                            }else if (option[index].text == "Appointments") {
-                                                document.getElementById('FAQ').innerHTML = categoryAppointments;
-                                            }else if (option[index].text == "E-consultation") {
-                                                document.getElementById('FAQ').innerHTML = categoryEconsultation;
-                                            }else if (option[index].text == "Price and Fee") {
-                                                document.getElementById('FAQ').innerHTML = categoryPriceandFee;
-                                            }
-                                        }
-                                        
-                                    </script>
-
-                                    <div id="FAQ">
-                                        <h3 align="center">Select a Category First</h3>
-                                    </div>
                                     <!--     FAQ  END here -->
                     		</td>
                     	</div>
