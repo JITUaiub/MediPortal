@@ -17,5 +17,5 @@
 	
 	
 	mysqli_close($conn);
-	header('Location:editchamber.php');
+	header('Location:viewprofile.php');
  ?>

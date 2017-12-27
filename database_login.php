@@ -13,14 +13,14 @@
 	$_SESSION['doctor_type'];
 	$_SESSION['doctor_id'];
 
-	//$_SESSION['patient_username'];
-	//$_SESSION['patient_type'];
-	//$_SESSION['patient_id'];
+	$_SESSION['patient_username'];
+	$_SESSION['patient_type'];
+	$_SESSION['patient_id'];
 
 
 	$_SESSION['admin_username'];
 	$_SESSION['admin_type'];
-	//$_SESSION['admin_id'];
+	$_SESSION['admin_id'];
 
 
 	
@@ -41,12 +41,12 @@
             $_SESSION['doctor_username'] = $row['username'];
             $_SESSION['doctor_type'] = $row['type'];
 
-           /* $file = "select doctor_id from doctor where username = '".$_SESSION['doctor_username']."'";
+            $file = "select doctor_id from doctor where username = '".$_SESSION['doctor_username']."'";
 			$result = mysqli_query($conn, $file)or die(mysqli_error($conn));
 			while($row = mysqli_fetch_assoc($result)) {
 				$_SESSION['doctor_id'] = $row['doctor_id'];
 			}
-			*/
+			
 
             header("Location:user_doctor/dashboard.php");
             $check = 1;

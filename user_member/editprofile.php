@@ -26,11 +26,19 @@
 
 <html>
 
-<head><title>Edit Profile</title></head>
+<head><title>Edit Profile</title>
+
+
+
+
+
+
+
+</head>
 
 <body>
 
-    <form method="post" action="update_database_memberinfo.php">
+    <form method="post" action="update_database_memberinfo.php" name="myForm">
         <table border="0" align="center" width="100%">
         <tr>
             <td>
@@ -133,7 +141,7 @@
                                         <td width="60%">
                                             <fieldset>
 
-                                            <table width="100%">
+                                            <table width="100%" >
 
                                                 <tr>
                                                     <td width="20%" valign="top"><label><b><i>General Information:</i></b></label>
@@ -145,6 +153,7 @@
                                                             <td width="30%"><strong>Name</strong></td>
                                                             <td><strong>:</strong></td>
                                                             <td ><input id="name" type="text" name="name" value="<?php echo $row['name'];?>"></td>
+                                                            
                                                         </tr>
                                                          
                                                          <tr>
@@ -156,7 +165,7 @@
                                                         <tr>
                                                             <td width="30%"><strong>User Name</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td ><input type="text" name="username" value="<?php echo $row['username'];?>"disabled="true"></td>
+                                                            <td ><input type="text" name="username" value="<?php echo $row['username'];?>"></td>
                                                         </tr>
                                                         
 

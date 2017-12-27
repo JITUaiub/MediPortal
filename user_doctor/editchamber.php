@@ -7,13 +7,7 @@
              if (!$conn) {
          die("Connection failed: " . mysqli_connect_error()); 
   }
- if(isset($_SESSION['doctor_username']) && isset($_SESSION['doctor_type'])) {
-    $chamber_information = "SELECT * from chamber where doctor_id = ".$_SESSION['doctor_id']." and chamber_id=".$_REQUEST['cid'].";";
-     $result = mysqli_query($conn, $chamber_information)or die(mysqli_error($conn)); 
-     
-  }
-while($row = mysqli_fetch_assoc($result)) {
-?>
+ ?>
 
 <html>
 
@@ -124,7 +118,7 @@ while($row = mysqli_fetch_assoc($result)) {
                             <form method="post" action="database_editchamber.php">
                              <td width="70%" align="center" valign="top">
                                 <h1>Edit Chamber</h1>
-                             	<form action="docChamber.php">
+                             	<!-- <form action="docChamber.php"> -->
 									
                              		<table align="center" width="60%">
                              			<tr>
@@ -132,6 +126,13 @@ while($row = mysqli_fetch_assoc($result)) {
                              					<fieldset>
 						
 													<table align="center">
+                                                       <?php if(isset($_SESSION['doctor_username']) && isset($_SESSION['doctor_type'])) {
+    $chamber_information = "SELECT * from chamber where doctor_id = ".$_SESSION['doctor_id']." and chamber_id=".$_REQUEST['cid'].";";
+     $result = mysqli_query($conn, $chamber_information)or die(mysqli_error($conn)); 
+     
+  }
+while($row = mysqli_fetch_assoc($result)) {
+?>
 														<tr>
 															<td><label>Name</label></td>
 															<td>:</td>
@@ -217,7 +218,7 @@ while($row_time = mysqli_fetch_assoc($result)) {
                              			</tr>
                              		</table>
 
-								</form>
+								<!-- </form> -->
 
                             </td>
                         </div>
@@ -256,5 +257,5 @@ while($row_time = mysqli_fetch_assoc($result)) {
 
 <?php 
     
-    mysql_close($conn);
+    mysqli_close($conn);
  ?>

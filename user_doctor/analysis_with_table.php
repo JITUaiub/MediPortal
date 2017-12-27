@@ -107,25 +107,9 @@
                             <!------------------------ DESIGN PORTAL PAGE HERE ------------------------------>
                              <fieldset>
                                          <legend><b>Medicine  | ANALYSIS</b></legend>
-                                            <label>Sort The Page By:</label>
-                                <select>
-                                    <option>Medicine Name</option>
-                                    <option>Number Of Prescribe</option>
-                                </select>
-                                        </br>
-                                    </br>
-                                        Filter By
-                                        <select>
-                                            <option>Any</option>
-                                            <option>Name</option>
-                                        </select>
-                                          <input />
-                                        
+                                           <label>Search:</label> 
+                                        <input type="text" name="search"  />
 										
-                                  Date: <input name="blockdate1" value="2013-01-08"  type="date">
-                                     to <input name="blockdate2" value="2014-01-08" type="date">
-                                        <input type="submit" value="Search" />
-										<input type="submit" value="Print"/>
                                                     
                                     
                                     <table width="100%" cellspacing="0" border="1" cellpadding="5">

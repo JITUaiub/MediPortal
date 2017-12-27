@@ -16,9 +16,38 @@
 
 <html>
 
-<head><title>Prescriptions</title></head>
+<head><title>Prescriptions</title>
 
-<body>
+
+
+<script type="text/javascript">
+    
+     function showHint() {
+      var  xmlhttp = new XMLHttpRequest();
+      var str=document.getElementById('search_prescription').value ;  
+      //alert(str);
+      xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {     
+          var m=document.getElementById("load_prescription");
+          m.innerHTML=xmlhttp.responseText;
+        }
+      };
+      var url="ajax_prescription.php?mid="+str; // this will only change
+      //alert(url);
+      xmlhttp.open("GET", url,true);
+      xmlhttp.send();
+    }
+   
+
+
+</script>
+
+
+
+
+</head>
+
+<body onload="showHint()">
 	<table align="center" width="100%">
     	<tr>
         	<td>
@@ -131,25 +160,10 @@
                                 <fieldset>
                                     <div align="center">
                                        
-                                        <label>Sort The Page By:</label>
-                                <select>
-                                    <option>Name</option>
-                                    <option>Appoinment Date</option>
-                                    <option>Age</option>
-                                    <option>Disease</option>
-                                </select>
-                                        </br>
-                                    </br>
-
-                                        <label>Search by: </label>
-                                    <select>
-                                        <option>Patient Name</option>
-                                        <option>Disease</option>
-                                        <option>Prescription Name</option>
-                                    </select>
+                                        
                                      
                                      <label>Search:</label>
-                                    <input type="text" name="text" value="Search Text" /><button>Go</button><br>
+                                    <input type="text" id="search_prescription" onkeyup="showHint()" placeholder="search by name,disease" /><br>
                                       </br>
                                    
                                     Results per page: 
@@ -166,77 +180,10 @@
                         </tr>
                         <tr>
                             <td>
-                                <table border="1" width="100%">
-                                    <tr height="10%">
-                                        <th>
-                                            <h3 align="center">Appointment Date</h3>
-                                        </th>
-                                        <th>
-                                            <h3 align="center">Name</h3>
-                                        </th>
-                                        <th>
-                                            <h3 align="center">Age</h3>
-                                        </th>
-                                        <th>
-                                            <h3 align="center">Disease</h3>
-                                        </th>
-                                        <th>
-                                            <h3 align="center">Download Prescription File</h3>
-                                        </th>
-                                        <th>
-                                            <h3 align="center">Get Details</h3>
-                                        </th>
-                                    </tr>
 
+                                <div id="load_prescription"></div>
 
-                                    <?php 
-                       
-                           $load_member_information = "SELECT * FROM member,prescription,appointment where member.member_id = prescription.member_id and appointment.member_id = prescription.member_id";  
-
-
-
-                           $result = mysqli_query($conn, $load_member_information)or die(mysqli_error($conn)); 
-
-                           while($row = mysqli_fetch_assoc($result)){           
-                              $current_year = date("Y");
-                              $dob_year = explode("-",$row['dob']);
-
-
-
-
-
-                     ?>  
-
-
-                                    <tr>
-                                        <td align="center">
-                                           <b><?php echo $row['date']; ?></b>
-                                        </td>
-                                        <td align="center">
-                                           <b> <a href="patientdetails.php?mid=<?php echo $row['member_id']; ?>"><?php echo $row['name']; ?></a></b>
-                                        </td>
-                                        <td align="center">
-                                            <b><?php 
-
-                                        $age = $current_year - $dob_year[0];    
-                                        echo $age;
-
-                                     ?></b>
-                                        </td>
-                                        <td align="center">
-                                            <b><?php echo $row['disease']; ?></b>
-                                        </td>
-                                        <td align="center">
-                                            <a href="#"></a>
-                                        </td>
-                                        <td>
-                                            <a href="prescriptionHistory.php">Get details</a>
-                                        </td>
-                                    </tr>
-<?php } ?>
-                                    
-                                    
-                                </table><br><br>
+                              <br><br>
                                 <p align="center"><button>Previous Page</button> | <button>Next Page</button></p>
                                 <p align="center"><a href="newpescriptions.php">Create New Prescription</a></p>
                                 

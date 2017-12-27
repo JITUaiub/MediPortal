@@ -10,7 +10,7 @@
      //$result_update_doctor_userinfo=mysqli_query($conn,$update_doctor_user) or (mysqli_error($conn));
 
 
-	$update_doctor = "UPDATE doctor SET name='".$_REQUEST['name']."', username='".$_REQUEST['username']."', email='".$_REQUEST['email']."' WHERE doctor_id=".$_SESSION['doctor_id'];
+	$update_doctor = "UPDATE doctor SET name='".$_REQUEST['name']."', email='".$_REQUEST['email']."' WHERE doctor_id=".$_SESSION['doctor_id'];
 
 	$result_update_doctor_general = mysqli_query($conn, $update_doctor)or die(mysqli_error($conn));
 	

@@ -10,9 +10,35 @@ session_start();
 
 <html>
 
-<head><title>Patient History</title></head>
+<head><title>Patient History</title>
 
-<body>
+
+<script type="text/javascript">
+    
+     function showHint() {
+      var  xmlhttp = new XMLHttpRequest();
+      var str=document.getElementById('search_phisto').value ;  
+      //alert(str);
+      xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {     
+          var m=document.getElementById("load_phisto");
+          m.innerHTML=xmlhttp.responseText;
+        }
+      };
+      var url="ajax_patienthistory.php?mid="+str; // this will only change
+      //alert(url);
+      xmlhttp.open("GET", url,true);
+      xmlhttp.send();
+    }
+   
+
+
+</script>
+
+
+</head>
+
+<body onload="showHint()">
 	<table align="center" width="100%">
     	<tr>
         	<td>
@@ -123,110 +149,15 @@ session_start();
                                     <legend><b>Find Patient Histoy</b></legend>
                               <table align="center">
                                 <tr align="center">
-                                    <td align="center">
-                                        <label>Sort The Page By</label>
-                                <select>
-                                    <option>Name</option>
-                                    <option>Last Appointment Date</option>
-                                    <option>Age</option>
-                                    <option>Disease</option>
-                                </select>
-                                        
-                                    </td>
-                                </tr>
-                                
-                            <tr>
-                                <td>
-                                 <label>Search By</label>
-                                <select>
-                                    <option>Name</option>
-                                    <option>Last Appointment</option>
-                                    <option>Disease</option>
-                                    
-                                </select>
-                            </td>
-                            </br>
+
                             <td>
-                            <label>Search</label> 
-                            <input type="text" name="search"/> <button>Search</button></td> </tr>
+                            <label>Search:</label> 
+                            <input type="text" name="search" id="search_phisto" onkeyup="showHint()" /> </td> </tr>
                         </table>
 
 
 
-                        <table border="1" width="100%" >
-                                    <tr>
-                                        <td width="15%">
-                                            <h3 align="center">Last Appointment</h3>
-                                        </td>
-                                        <td width="20%">
-                                            <h3 align="center">Name</h3>
-                                        </td>
-                                        <td width="10%">
-                                            <h3 align="center">Age</h3>
-                                        </td>
-                                        <td align="center">
-                                            <h3 align="center" width="35%">Disease</h3>
-                                        </td>
-                                        <td colspan="2" width="20%">
-                                            <h3 align="center">Action</h3>
-                                        </td>
-                                    </tr>
- <?php 
-    
-    //$curr = date("Y-M-D");
- 
-     $curr = date('Y-m-d', strtotime('-7 days'));
-    
-
-    $last_week = "SELECT * from member,prescription,appointment where member.member_id = appointment.member_id and prescription.member_id = appointment.member_id and appointment.status='active' and appointment.date <='".$curr."'";
-     $result = mysqli_query($conn, $last_week)or die(mysqli_error($conn)); 
-     
-    while($last = mysqli_fetch_assoc($result)) {
-
-      $current_year = date("Y");
-      $dob_year = explode("-",$last['dob']);
-
-        ?>
-
-		
-			<tr>
-        				<td align="center">
-        					<b><?php echo $last['date'] ?></b>
-        				</td>
-        				<td align="center">
-        					<b><a href="patientDetails.php?mid=<?php echo $last['member_id']; ?>"><?php echo $last['name'] ?></a></b>
-        				</td>
-        				<td align="center">
-        					<b>
-                       
-
-                               <?php 
-
-                                $age = $current_year - $dob_year[0];    
-                                echo $age;
-
-                                ?>      
-
-                                </b>
-							</td>
-							<td align="center">
-								<b><?php echo $last['disease']; ?></b>
-							</td>
-							<td align="center">
-								<a href="prescriptionHistory.php?mid= <?php echo $last['member_id']; ?>">Prescriptions</a>
-							</td>
-							<td align="center">
-								<a href="eConsultation/conversation.php">Message</a>
-							</td>
-			</tr>
-
-                                   
-
-                                    <?php 
-
-                                }
-
-                            ?>
+                         <div id="load_phisto"></div>
                                     
 								</table>
 
@@ -260,6 +191,6 @@ session_start();
 
 <?php 
     
-    mysqli_close();
+    mysqli_close($conn);
 
  ?>

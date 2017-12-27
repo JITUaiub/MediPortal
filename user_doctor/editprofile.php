@@ -20,11 +20,182 @@
 
 <html>
 
-<head><title>Edite Profile</title></head>
+<head><title>Edite Profile</title>
+
+
+<script>
+                function validate() {
+                    /*var id = document.getElementById("name").value;
+                    var pass = document.getElementById("password").value;
+                    if (id == "admin" && pass == "admin")
+                        {
+                            window.location.href = "user_admin/dashboard.php";
+                        } 
+                    else if (id == "member" && pass == "member")
+                        {
+                            window.location.href = "user_member/dashboard.php";
+                        }
+                    else if (id == "doctor" && pass == "doctor")
+                        {
+                            window.location.href = "user_doctor/dashboard.php";
+                        }*/
+
+                    var flag = true;
+                    var msg1 = document.getElementById('msg1');
+                    var msg2 = document.getElementById('msg2');
+                    var msg3 = document.getElementById('msg3');
+                    var msg4 = document.getElementById('msg4');
+                    var msg5 = document.getElementById('msg5');
+                    var msg6 = document.getElementById('msg6');
+                    var msg7 = document.getElementById('msg7');
+                    var msg8 = document.getElementById('msg8');
+                    var msg9 = document.getElementById('msg9');
+                    var msg10 = document.getElementById('msg10');
+                    var msg11 = document.getElementById('msg11');
+                    var msg12 = document.getElementById('msg12');
+
+                    //var username = document.getElementById('name');
+                    //var password = document.getElementById('password');
+                    // name     
+                    if (document.myForm.name.value.length == 0) {
+                        msg1.innerHTML = "You must input your name";
+                        msg1.style.color = "red";
+                        flag = false;
+                    }
+                    else if(document.myForm.name.value.length > 0) {
+                        msg1.innerHTML = " ";
+                    }
+                     
+                     //degree      
+                    if(document.myForm.degree.value.length == 0) {
+                        msg2.innerHTML = "You must input your Degree";
+                        msg2.style.color = "red";
+                        flag = false;
+                    }
+                    else if(document.myForm.degree.value.length > 0) {
+                        msg2.innerHTML = " ";
+                    }
+
+                    //passyear
+
+                    if(document.myForm.passyear.value.length == 0) {
+                        msg3.innerHTML = "You must input your pass year";
+                        msg3.style.color = "red";
+                        flag = false;
+                    }
+                    else if(document.myForm.degree.value.length > 0) {
+                        msg3.innerHTML = " ";
+                    }
+
+
+                    //passing college 
+
+                    if(document.myForm.passcollege.value.length == 0) {
+                        msg4.innerHTML = "You must input your passing college name";
+                        msg4.style.color = "red";
+                        flag = false;
+                    }
+                    else if(document.myForm.passcollege.value.length > 0) {
+                        msg4.innerHTML = " ";
+                    }
+
+                    //description 
+
+                    if(document.myForm.description.value.length == 0) {
+                        msg5.innerHTML = "You must input your description";
+                        msg5.style.color = "red";
+                        flag = false;
+                    }
+                    else if(document.myForm.description.value.length > 0) {
+                        msg5.innerHTML = " ";
+                    }
+
+                    
+                    //title 
+
+                    if(document.myForm.title.value.length == 0) {
+                        msg6.innerHTML = "You must input your title";
+                        msg6.style.color = "red";
+                        flag = false;
+                    }
+                    else if(document.myForm.title.value.length > 0) {
+                        msg6.innerHTML = " ";
+                    }
+
+
+                    //department 
+
+                    if(document.myForm.department.value.length == 0) {
+                        msg7.innerHTML = "You must input your department";
+                        msg7.style.color = "red";
+                        flag = false;
+                    }
+                    else if(document.myForm.department.value.length > 0) {
+                        msg7.innerHTML = " ";
+                    }
+
+
+                    //medical college name 
+
+                    if(document.myForm.medicalcollege.value.length == 0) {
+                        msg8.innerHTML = "You must input your medical college name";
+                        msg8.style.color = "red";
+                        flag = false;
+                    }
+                    else if(document.myForm.medicalcollege.value.length > 0) {
+                        msg8.innerHTML = " ";
+                    }
+
+
+                    //bdmc number  
+
+                    if(document.myForm.bmdc_number.value.length == 0) {
+                        msg10.innerHTML = "You must input your bdmc number";
+                        msg10.style.color = "red";
+                        flag = false;
+                    }
+                    else if(document.myForm.bmdc_number.value.length > 0) {
+                        msg10.innerHTML = " ";
+                    }
+
+                     //mobile number 
+
+                    if(document.myForm.mobilenumber.value.length == 0) {
+                        msg11.innerHTML = "You must input your mobile number";
+                        msg11.style.color = "red";
+                        flag = false;
+                    }
+                    else if(document.myForm.mobilenumber.value.length > 0) {
+                        msg11.innerHTML = " ";
+                    }
+
+                     //email address 
+
+                    if(document.myForm.email.value.length == 0) {
+                        msg12.innerHTML = "You must input your email";
+                        msg12.style.color = "red";
+                        flag = false;
+                    }
+                    else if(document.myForm.email.value.length > 0) {
+                        msg12.innerHTML = " ";
+                    }
+
+
+                    return flag;
+                }
+            </script>
+
+
+
+
+
+
+
+</head>
 
 <body>
 
-    <form method="post" action="database_update_doctor_profile.php">
+    <form method="post" action="database_update_doctor_profile.php" name="myForm">
     <table align="center" width="100%">
         <tr>
             <td>
@@ -141,22 +312,25 @@
                                                     <td align="center">
                                                         <fieldset>
                                                         <table width="100%">
+                                                            <!-- doctor name -->
                                                         <tr>
                                                             <td width="30%"><strong>Name</strong></td>
                                                             <td><strong>:</strong></td>
                                                             <td ><input type="text" name="name" value="<?php echo $row['name'];?>"></td>
+                                                            <td><span id="msg1"></td>
                                                         </tr>
-                                                         
+                                                         <!-- gender -->
                                                          <tr>
                                                             
                                                             <td width="30%"><strong>Gender</strong></td>
                                                             <td><strong>:</strong></td>
                                                             <td ><input type="text" name="gender" value="<?php echo $row['gender'];?>" disabled="true"></td>
                                                         </tr>
+                                                        <!-- doctor personal usrename -->
                                                         <tr>
                                                             <td width="30%"><strong>User Name</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td ><input type="text" name="username" value="<?php echo $row['username'];?>"></td>
+                                                            <td ><input type="text" name="username" value="<?php echo $row['username'];?>" disabled="true"></td>
                                                         </tr>
                                                         
 
@@ -164,7 +338,18 @@
                                                 </fieldset>
                                                 </td>
                                             </tr>
-                <?php 
+                
+
+
+
+                                                <tr>
+                                                    <td width="20%" valign="top"><label><b><i>Educational Information:</i></b></label>
+                                                    </td>
+                                                    <td>
+                                                        <fieldset>
+                                                        <table width="100%">
+
+                                                            <?php 
 
     if(isset($_SESSION['doctor_username']) && isset($_SESSION['doctor_type'])) {
     $doctor_education_information = "SELECT * from educational_info where doctor_id=(select doctor_id from doctor where username = '".$_SESSION['doctor_username']."')";
@@ -175,44 +360,44 @@
   
                                                  ?>
 
-                                                <tr>
-                                                    <td width="20%" valign="top"><label><b><i>Educational Information:</i></b></label>
-                                                    </td>
-                                                    <td>
-                                                        <fieldset>
-                                                        <table width="100%">
+                                                          <!-- degree name   -->
                                                         <tr>
                                                             <td width="30%"><strong>Degree Name</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td width="65%"><input type="text" name="degree" value="<?php echo $education_row['degree_name']; ?>"></td>
+                                                            <td width="65%"><input type="text" name="degree" value="<?php echo $education_row['degree_name']; ?>"><span id="msg2"></td>
+                                                             <!-- <td></td> -->
                                                         </tr>
+
+                                                        <!-- pass year -->
                                                          <tr>
                                                             
                                                             <td width="30%"><strong>Passed Year</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td><input type="text" name="passyear" value="<?php echo $education_row['passed_year']; ?>"></td>
+                                                            <td><input type="text" name="passyear" value="<?php echo $education_row['passed_year']; ?>"><span id="msg3"></td>
                                                          </tr>
+
+                                                         <!-- passing college -->
                                                          <tr>
                                                             
                                                             <td width="30%"><strong>Passing College</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td><input type="text" name="passcollege" value="<?php echo $education_row['college']; ?>"></td>
+                                                            <td><input type="text" name="passcollege" value="<?php echo $education_row['college']; ?>"><span id="msg4"></td>
                                                         </tr>
+
+                                                        <!-- description -->
                                                         <tr>
                                                             <td width="30%"><strong>Description</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td><input type="text" name="description" value="<?php echo $education_row['description']; ?>"></td>
+                                                            <td><input type="text" name="description" value="<?php echo $education_row['description']; ?>"><span id="msg5"></td>
                                                         </tr>
                                                         
-
+<?php } ?>
                                                     </table>
                                                 </fieldset>
                                                 </td>
                                             </tr>
 
-                                            <?php 
-                                                }
-                                             ?>
+                                           
 
 <?php 
 
@@ -231,23 +416,28 @@
                                                     <td>
                                                         <fieldset>
                                                         <table width="100%">
+
+                                                        <!-- tittle      -->
                                                         <tr>
                                                             <td width="30%"><strong>Title</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td width="65%"><input type="text" name="title" value="<?php echo $education_row['title']; ?>"></td>
+                                                            <td width="65%"><input type="text" name="title" value="<?php echo $education_row['title']; ?>"><span id="msg6"></td>
                                                         </tr>
+
+                                                        <!-- department -->
                                                         <tr>
                                                             
                                                             <td width="30%"><strong>Department</strong></td>
                                                             <td><strong>:</strong></td>
-<td><input type="text" name="department" value="<?php echo $education_row['department']; ?>"></td>
+<td><input type="text" name="department" value="<?php echo $education_row['department']; ?>"><span id="msg7"></td>
                                                          </tr>
-
+                                                           
+                                                           <!-- medical college              -->
                                                          <tr>
                                                             
                                                             <td width="30%"><strong>Medical College</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td><input type="text" name="medicalcollege" value="<?php echo $education_row['medical_college']; ?>"></td>
+                                                            <td><input type="text" name="medicalcollege" value="<?php echo $education_row['medical_college']; ?>"><span id="msg8"></td>
                                                          </tr>
 
                                                          
@@ -309,30 +499,39 @@
                                                     <td>
                                                         <fieldset>
                                                         <table width="100%">
+
+                                                        <!-- date of birth     -->
                                                         <tr>
                                                             <td width="30%"><strong>Date Of Birth</strong></td>
                                                             <td><strong>:</strong></td>
                                                             <td width="65%"><input type="date" name="dob" value="<?php echo $row['dob'];?>" disabled="true"></td>
                                                         </tr>
+
+
+                                                        <!-- bmdc number  -->
                                                         <tr>
                                                             
                                                             <td width="30%"><strong>BMDC Number</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td><input type="text" name="bmdc_number" value="0168-DMC594/0625"></td>
+                                                            <td><input type="text" name="bmdc_number" value="0168-DMC594/0625"><span id="msg10"></td>
                                                          </tr>
+
+                                                         <!-- mobile number  -->
 
                                                          <tr>
                                                             
                                                             <td width="30%"><strong>Mobile Number</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td><input type="text" name="mobilenumber" value="<?php echo $row['mobile'];?>"></td>
+                                                            <td><input type="text" name="mobilenumber" value="<?php echo $row['mobile'];?>"><span id="msg11"></td>
                                                          </tr>
+                                                          
 
+                                                          <!-- email               -->
                                                          <tr>
                                                             
                                                             <td width="30%"><strong>Email</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td><input type="text" name="email" value="<?php echo $row['email'];?>"></td>
+                                                            <td><input type="text" name="email" value="<?php echo $row['email'];?>"><span id="msg12"></td>
                                                          </tr>
                                                     </table>
                                                                        <?php 
@@ -349,7 +548,8 @@
                                     </table>
 
                                          
-                                                            <tr><td colspan="4" align="center"><input type="submit" name="submit" value="Update Profile"></td></tr>
+                                <tr><td colspan="4" align="center"><input type="submit" name="submit" value="Update Profile" onClick="return validate();"></td></tr>
+
                                                             <tr>
                                                                 <td>
                                                                     <table width="100%">

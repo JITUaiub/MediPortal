@@ -18,9 +18,35 @@
 
 <html>
 
-<head><title>Appoinment History</title></head>
+<head><title>Appoinment History</title>
 
-<body>
+<script type="text/javascript">
+    
+     function showHint() {
+      var  xmlhttp = new XMLHttpRequest();
+      var str=document.getElementById('search_ahisto').value ;  
+      //alert(str);
+      xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {     
+          var m=document.getElementById("load_ahisto");
+          m.innerHTML=xmlhttp.responseText;
+        }
+      };
+      var url="ajax_appoinmenthistory.php?mid="+str; // this will only change
+      //alert(url);
+      xmlhttp.open("GET", url,true);
+      xmlhttp.send();
+    }
+   
+
+
+</script>
+
+
+
+</head>
+
+<body onload="showHint()">
 	<table align="center" width="100%">
     	<tr>
         	<td>
@@ -130,63 +156,18 @@
                                     <fieldset>
                                         <table align="center">
                                     <tr>
-                                        <td>
-                                          <label>Sort The Page By</label>
-                                <select>
-                                    <option>Name</option>
-                                    <option>Appoinment Date</option>
-                                    <option> Status</option>
-                                    
-                                </select></br></br>
-
-                                <label>Search By</label>
-                                <select>
-                                    <option>Name</option>
-                                    <option>Appoinment Date</option>
-                                    <option>Status</option>
-                                </select>
-                            </td>
+                                        
                             </br>
                             <td>
-                            <label>Search</label> 
-                            <input type="text" name="search"/> <button>Search</button></td> 
+                            <label>Search:</label> 
+                            <input type="text" id="search_ahisto" name="search" onkeyup="showHint()" /> </td> 
                         </tr>
                         <tr><td>&nbsp;</td></tr>
                     </table>
-                              <table border="1" align="center" width="100%">
-                                  <tr>
-                                      <td  width="25%"><strong>Appoinment Date</strong></td>
-                                      <td  width="25%"><strong>Appointment Time</strong></td>
-                                      <td  width="25%"><strong>Patient Name</strong></td>
-                                      <td  width="25%"><strong>Status</strong></td>
-                                     
-                                  </tr>
-<?php 
-                       
-                           $load_member_information = "SELECT * from member,appointment where member.member_id = appointment.member_id";  
+                         
 
+                         <div id="load_ahisto"></div>
 
-
-                           $result = mysqli_query($conn, $load_member_information)or die(mysqli_error($conn)); 
-
-                           while($row = mysqli_fetch_assoc($result)){           
-                              $current_year = date("Y");
-                              $dob_year = explode("-",$row['dob']);
-
-
-
-
-
-                     ?>  
-                                  <tr>
-                                      
-                                      <td><?php echo $row['date'] ?></td>
-                                      <td><?php echo $row['time']?></td>
-                                      <td><a href="patientDetails.php?mid=<?php echo $row['member_id']; ?>"><?php echo $row['name']; ?></a></td>
-                                      <td><?php echo $row['status'] ?></td>
-                                      <?php } ?>
-                                  </tr>
-                              </table>
                                       <p align="center"><button>Previous Page</button> | <button>Next Page</button></p>
                                       <p align="center"><a href="appointmentstatus.php">Go to Appoinment Status</a></p>
                                     </fieldset>

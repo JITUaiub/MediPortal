@@ -1,3 +1,4 @@
+
 <!DOCTYPE>
 <html>
 <head>
@@ -64,7 +65,7 @@ function test_input($data) {
 			<div>
 				<h1 align="center">Blood Donation Subscription Form</h1>
 				<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-				
+				<form method="post" name="myForm" action="../user_patient/database_addbloodinfo.php">
 				<table align="center" width="60%">
 					<tr>
 						<td>
@@ -117,7 +118,7 @@ function test_input($data) {
 												</td>
 												<td>:</td>
 												<td colspan="2">
-													<input name="weight" type="radio" value="Over 50 Kg"/>Yes
+													<input name="weight" type="radio" value="Over 50 Kg"/>Over 50 kg
 													<input name="weight" type="radio" value="Under 50 Kg"/>No
 													<span class="error">*<?php echo $weightErr;?></span>
 												</td>

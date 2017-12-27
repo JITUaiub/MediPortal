@@ -191,7 +191,7 @@
                                      ?></td>
                                                     <td><?php echo $row['problem']; ?></td>
                                                     <td><?php echo $row['time']." | ".$row['date']; ?> </td>
-                                                    <td><a href="createPresApointment.php">Create Prescription</a></td>
+                                                    <td><a href="createPresApointment.php?mid=<?php echo $row['member_id']; ?>">Create Prescription</a></td>
                                                     <td><a href="eConsultation/conversation.php">Message</a></td>
                                                     <td><button>Delete</button></td>
                                                 </tr>

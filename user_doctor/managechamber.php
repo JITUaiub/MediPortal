@@ -117,25 +117,7 @@
                             <h1 align="center">Chamber Information</h1>
                            <table align="center" valign="top">
                                 <tr align="center">
-                                    <td align="center">
-                                        <label>
-                                            Search By
-                                        </label>
-                                    </td>
-                                    <td>:</td>
-                                    <td>
-                                    <select>
-                                        <option>Chamber Name</option>
-                                        <option>Chamber Location</option>
-                                        <option>Working Days</option>
-                                        <option>Working Time</option>
-                                       
-                                    </select>
-                                </td>
-                            </tr>
-                        </br>
 
-                        <tr>
                             <td>
                                 <label>Search</label>
                             </td>

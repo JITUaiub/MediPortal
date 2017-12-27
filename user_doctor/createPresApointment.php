@@ -1,3 +1,17 @@
+
+<?php 
+    session_start();
+
+       $_SESSION['mid']=$_REQUEST['mid'];
+     $conn = mysqli_connect("localhost", "root", "","mediportal_db");
+   
+             if (!$conn) {
+         die("Connection failed: " . mysqli_connect_error()); 
+  }
+
+  ?>
+
+
 <html>
 
 <head><title>Create Patient Appoinment</title></head>
@@ -108,23 +122,48 @@
 
                                 <h1 align="center">Create Prescription</h1>
                                 <table align="center" width="100%">
+
+                                    <form action="database_add_prescription.php" method="post">
                                     <tr>
                                         <td >
                                             <fieldset>
                                 <table width="100%">
                                    <tr align="center">
                                        <div align="center">
+
+                                        <?php
+                                        if(isset($_SESSION['doctor_username']) && isset($_SESSION['doctor_type'])) {
+    $doctor_information = "SELECT * from doctor where doctor_id = ".$_SESSION['doctor_id'];
+     $result = mysqli_query($conn, $doctor_information)or die(mysqli_error($conn)); 
+     
+  }
+ 
+    while($row = mysqli_fetch_assoc($result)) {
+    
+?>
                                            <td align="center" colspan="3">
-                                              <b> Doctor Name: Mr. XYZ</b>
+                                              <b> Doctor Name: <?php echo $row['username']; ?></b>
                                            </td>
+                                           <?php } ?>
                                        </div>
                                    </tr>
                                    <br>
                                    <tr>
                                     <div>
+                                         <?php
+                                        
+    $doctor_information = "SELECT * from professional_info where doctor_id = ".$_SESSION['doctor_id'];
+     $result = mysqli_query($conn, $doctor_information)or die(mysqli_error($conn)); 
+     
+  
+ 
+    while($row = mysqli_fetch_assoc($result)) {
+    
+?>
+
                                            
                                            <td align="center" colspan="3">
-                                               Assitant Professor
+                                               <?php echo $row['title']; ?>
                                            </td>
                                        </div>
                                    </tr>
@@ -133,23 +172,45 @@
                                     <div>
                                            
                                            <td align="center" colspan="3">
-                                              Dhaka Medical College
+                                            <?php echo $row['medical_college']; ?>
                                            </td>
                                        </div>
                                    </tr>
+
+                                   <?php } ?>
                                    <tr>
                                        <td></td>
                                    </tr>
+
+                                   <?php 
+  if(isset($_REQUEST['mid'])) {
+  $member_information = "SELECT * from member where member_id = ".$_REQUEST['mid'] ;
+     $result = mysqli_query($conn, $member_information)or die(mysqli_error($conn)); }
+
+
+
+      while($row = mysqli_fetch_assoc($result)) {
+        $current_year = date("Y");
+                              $dob_year = explode("-",$row['dob']);
+?>
+                                
                                     <tr>
                                         <td>
-                                            <strong>Patient Name : Patient 01</strong>
+                                            <strong>Patient Name : <?php echo $row['name'] ?> </strong>
                                         </td>
 
-                                        <td><strong>Age: 24</strong></td>
+                                        <td><strong>Age: <?php 
+
+                                        $age = $current_year - $dob_year[0];    
+                                        echo $age;
+
+                                     ?></strong></td>
+
+                                     <?php } ?>
                                         
                                         <td align="right" width="40%">
                                             <strong>Date: </strong>
-                                            <strong><input type="date" name="date" value="21-07-2017"></strong>
+                                            <strong><input type="date" name="date" value="<?php echo date('Y-m-d'); ?>"></strong>
                                         </td>
                                     </tr>
 
@@ -161,12 +222,20 @@
                                     <tr>
                                         <td width="20%">
                                             <strong>Symptoms:</strong><br>
-                                            <textarea>
-                                                Bla, Bla, Bla Bla
-                                            </textarea><br>
+                                            <?php 
+                                 if(isset($_REQUEST['mid'])) {
+  $member_information = "SELECT * from appointment where member_id = ".$_REQUEST['mid'] ;
+     $result = mysqli_query($conn, $member_information)or die(mysqli_error($conn)); }
+      while($row = mysqli_fetch_assoc($result)) {
+                                             ?>
+                                            <textarea name="problem">
+                                               <?php echo $row['problem'] ?>
+                                            </textarea>
+ <?php } ?>
+                                            <br>
                                             <strong>Disease:</strong><br>
-                                            <textarea>
-                                                Bla, Bla, Bla Bla
+                                            <textarea name="disease">
+                                               
                                             </textarea>
                                         </td>
                                         <td width="80%">
@@ -184,7 +253,7 @@
                                                     var times = document.getElementById('times').value;
 
                                                     var str = mediCatagorie + ".  " + mediName + " \r\n";
-                                                    str += "<br>Daily " + times +  " times on " + day + " \r\n";
+                                                    str += "<br>Daily " + times +  " times on " + day + " day \r\n";
 
                                                     document.getElementById('medicineList').innerHTML += "<p align=\"center\">" + str + "</p>";
                                                 }
@@ -210,8 +279,9 @@
                                                         <input type="text" id="medicineName" name="medicineName" value="Medicine Name">
                                                     </td>
                                                     <td>&nbsp;</td>
-                                                    <td align="center">Day:</td>
-                                                    <td><input type="text" id="day" name="day" value="Mon, Wed, Thus"></td>
+                                                    <td align="center">Total Days:</td>
+                                                    <td><input type="text" id="day" name="day"></td>
+
                                                     <td><input type="text" name="times" id="times" value="2" size="5"> </td>
                                                      <td align="center">times</td>
                                                 </tr>
@@ -224,135 +294,7 @@
                                         </td>
 
 
-                                        <td>
-                                            <table id="bar" align="center" border="0" cellspacing="10">
-                                            <tr >
-                                                <td height="400" >
-                                                    <table width="100%" height="100%" border="0">
-                                                        <tr>
-                                                            <td height="9.1%" >100+</td>
-                                                            
-                                                        </tr>
-                                                        <tr>
-                                                            <td height="9.1%" >90</td>
-                                                            
-                                                        </tr>
-                                                        <tr>
-                                                            <td height="9.1%" >80</td>
-                                                            
-                                                        </tr>
-                                                        <tr>
-                                                            <td height="9.1%" >70</td>
-                                                            
-                                                        </tr>
-                                                        <tr>
-                                                            <td height="9.1%" >60</td>
-                                                            
-                                                        </tr>
-                                                        <tr>
-                                                            <td height="9.1%" >50</td>
-                                                            
-                                                        </tr>
-                                                        <tr>
-                                                            <td height="9.1%" >40</td>
-                                                            
-                                                        </tr>
-                                                        <tr>
-                                                            <td height="9.1%">30</td>
-                                                            
-                                                        </tr>
-                                                        <tr>
-                                                            <td height="9.1%" >20</td>
-                                                            
-                                                        </tr>
-                                                        <tr>
-                                                            <td height="9.1%" >10</td>
-
-                                                            
-                                                        </tr>
-                                                        <tr>
-                                                            <td height="9.1%" >0</td>
-                                                            
-                                                            
-                                                        </tr>
-                                                    </table>
-                                                        <td height="400" >
-                                                    <table  width="100%" height="100%" >
-                                                        <tr>
-                                                            <td height="0%" ></td>
-                                                            
-                                                        </tr>
-                                                        <tr>
-                                                            <td align="up" id="napa"height="102%"  title="102"></td>
-                                                        </tr>
-                                                    </table>
-                                                </td>
-                                                <td height="400" >
-                                                    <table width="100%" height="100%">
-                                                        <tr>
-                                                            <td height="0%" ></td>
-                                                            
-                                                        </tr>
-                                                        <tr>
-                                                            <td id="naloxegol" height="9%"  title="9"></td>
-                                                        </tr>
-                                                    </table>
-                                                </td>
-                                                <td height="400" >
-                                                    <table width="100%" height="100%">
-                                                        <tr>
-                                                            <td height="0%" ></td>
-                                                            
-                                                        </tr>
-                                                        <tr>
-                                                            <td id="naltrexone" height="2%"  title="2"></td>
-                                                        </tr>
-                                                    </table>
-                                                </td>
-                                                <td height="400" >
-                                                    <table width="100%" height="100%">
-                                                        <tr>
-                                                            <td height="0%" ></td>
-                                                            
-                                                        </tr>
-                                                        <tr>
-                                                            <td id="zantac" height="17%"  title="17"></td>
-                                                        </tr>
-                                                    </table>
-                                                </td>
-                                                <tr>
-                                                <th height="10" >
-                                                    <h5>No</h5>
-                                                </th>
-                                                <th height="10" >
-                                                    <h5>Napa</h5>
-                                                </th>
-                                                <th height="10" >
-                                                    <h5>Naloxegol</h5>
-                                                </th>
-                                                <th height="10" >
-                                                    <h5>Naltrexone</h5>
-                                                </th>
-                                                <th height="10" >
-                                                    <h5>Zantac 150</h5>
-                                                </th>
-                                                
-
-                                            </tr>
-                                        </table>
-                                        <script type="text/javascript">
-                                            //var bar=document.getElementById("bar");
-                                                //bar.style.backgroundColor = "DodgerBlue";
-                                                napa.style.backgroundColor="green";
-                                                naloxegol.style.backgroundColor="green";
-                                                naltrexone.style.backgroundColor="green";
-                                                zantac.style.backgroundColor="green";
-                                                
-                                                
-                                        </script>
-                                        <h4 align="center">Number of Medicine which is Prescrib to Patient</h4>
-
-                                        </td>
+                                        
                                     </tr>
                                 </table>
 
@@ -372,6 +314,7 @@
                             </br>
                             <a href="pescriptions.php">Prescription History</a>
                             </fieldset>
+                        </form>
                                         </td>
                                     </tr>
                                     

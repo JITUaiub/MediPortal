@@ -106,26 +106,9 @@
                              <td width="70%" align="center">
                             <!------------------------ DESIGN PORTAL PAGE HERE ------------------------------>
 								<fieldset>
-                                         <legend><b>Medicine  | ANALYSIS</b></legend>
-                                            <label>Sort The Chart By:</label>
-                                <select>
-                                    <option>Medicine Name</option>
-                                    <option>Number Of Prescribe</option>
-                                </select>
-                                        </br>
-                                    </br>
-                                        Filter By
-                                        <select>
-                                            <option>Any</option>
-                                            <option>Name</option>
-                                        </select>
-                                          <input />
-                                        
+                                         <label>Search:</label>
+                                        <input type="text" value="Search" />
 										
-                                  Date: <input name="blockdate1" value="2013-01-08"  type="date">
-                                     to <input name="blockdate2" value="2014-01-08" type="date">
-                                        <input type="submit" value="Search" />
-										<input type="submit" value="Print"/>
                                                    
                                             <table id="bar" align="center" border="0" cellspacing="10">
 											<tr >
