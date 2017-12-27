@@ -1,3 +1,48 @@
+<?php
+    ini_set('mysql.connect_timeout', 300);
+    ini_set('default_socket_timeout', 300);
+    $conn = mysqli_connect("localhost", "root", "", "mediportal_db", 3306);
+    $questionErr = "";
+    $answerErr = "";
+    $err1 = false;
+    $err2 = false;
+    if(isset($_POST['submit'])){   
+
+        $category = $_POST['category'];
+        $author = "Admin";
+        $question = $_POST['question'];
+        $answer = "";
+
+        $question = addslashes($_POST['question']);
+        $answer = addslashes($_POST['answer']);
+
+        if(empty($question)){
+            $questionErr = "Must Need a Question";
+            $err1 = false;
+        }
+        else {
+            $err1 = true;
+            $questionErr = "";
+        } 
+        if(empty($answer)){
+            $answerErr = "Provide an answer";
+            $err2 = false;
+        }
+        else {
+            $err2 = true; 
+            $answerErr = "";         
+        }
+//        var_dump($err1);var_dump($err2);
+        if ($err1 == true && $err2 == true) {
+            $query = "INSERT INTO `faq`(`category`, `Author`, `Question`, `Answer`) VALUES ('$category','$author','$question','$answer')";
+            var_dump($query);
+            mysqli_query($conn, $query);
+            header("location: newFAQ.php");
+            exit;
+        }
+    }
+?> 
+
 <!DOCTYPE>
 <html>
 <head>
@@ -9,18 +54,21 @@
 				<div>
 				<table align="center" width="100%">
 					<tr align="right">
-						<td width="30%">
-							<a href="../Home.html"><img src="../images/logo.png" align="left"></a>
+						<td width="10%">
+							<a href="Home.php"><img src="images/logo.png" align="left"></a>
 						</td>
 						<td width="30%">&nbsp;</td>
-						<td>
-							<a href="../Home.html" >Home <img src="../images/home.png"></a>
+						<td align="center" width="10%">
+							<fieldset><a href="Home.php" >Home <img src="images/home.png"></a></fieldset>
 						</td>
-						<td width="10%">
-							<a href="../Registration.html">Registration<img src="../images/registration.png"></a>
+						<td width="10%" align="center">
+							<fieldset><a href="Registration.php">Registration<img src="images/registration.png"></a></fieldset>
 						</td>
-						<td width="10%">
-							<a href="../Login.html">Login<img src="../images/login.png"></a>
+						<td width="10%" align="center">
+							<fieldset><a href="service.php">Our Service<img src="images/service.png"></a></fieldset>
+						</td>
+						<td width="10%" align="center">
+							<fieldset><a href="Login.php">Login<img src="images/login.png"></a></fieldset>
 						</td>
 					</tr>
 				</table>
@@ -49,60 +97,50 @@
 				<a href="ownQuestion.php">Submit your Own Question</a>
 			</td>
 			<td>
-				<table align="center">
-					<tr>
+				<form>
+					<table align="center" width="100%">
+                                        <tr>
+                                            <td>
+                                                <fieldset>
+                                        <table align="center">
+                                        	<tr>
 						<td align="center" colspan="3"><img src="../images/question.png"></td>
 						
 					</tr>
 					<tr>
-						<td colspan="3" align="center"><strong>Didn't find answer to your query? Ask here..</strong></td>
+						<td colspan="3" align="center"><strong>Didn't find answer to your query? Ask here.<br>We'll add your question soon.</strong></td>
 					</tr>
 					<tr><td>&nbsp;</td></tr>
-					<tr>
-						<td>
-							<strong>Select Category</strong>
-						</td>
-						<td>:</td>
-						<td>
-							<select>
-								<option>Mediportal</option>
-								<option>Appointments</option>
-								<option>Econsultation</option>
-								<option>Price and Fees</option>	
-							</select>
-						</td>
-					</tr>
-					<tr>
-							<td ><label><strong>Question Title</strong></label></td>
-							<td>:</td>
-						    <td ><input type="text" name="questiontitle" value="No live contact"></td>
-						
-					</tr>
-					<tr>
-							<td ><label><strong>Name</strong></label></td>
-							<td>:</td>
-						    <td ><input type="text" name="askerName" value="John Doe"></td>
-						
-					</tr>
-					<tr>
-							<td ><label><strong>Email</strong></label></td>
-							<td>:</td>
-						    <td ><input type="text" name="askeremail" value="required"></td>
-						
-					</tr>
-					<tr>
-						<td><label><strong>Write your question</strong></label></td>
-						<td>:</td>
-						<td>
-							<textarea>Don't you have any hotline number?</textarea>
-						</td>
-					</tr>
-					<tr><td colspan="3" align="center"><hr></tr>
-					<tr>
-						<td colspan="3" align="center"><button>Send</button></td>
-					</tr>
-
-				</table>
+                                        <tr>
+                                            <td>
+                                                <strong>Select Category</strong>
+                                            </td>
+                                            <td>:</td>
+                                            <td>
+                                                <select name="category">
+                                                    <option>Mediportal</option>
+                                                    <option>Appointments</option>
+                                                    <option>Econsultation</option>
+                                                    <option>Price and Fees</option> 
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><label><strong>Write your question</strong></label></td>
+                                            <td>:</td>
+                                            <td>
+                                                <textarea name="question"></textarea><br>
+                                                <div style="color: RED"><?php echo $questionErr; ?></div>
+                                            </td>
+                                        </tr>
+                                        <tr><td colspan="3" align="center"><hr></tr>
+                                        <tr>
+                                            <td align="right"><input type="submit" name="submit" value="Submit"></td>
+                                            <td>|</td>
+                                            <td><input type="reset" name="" value="Reset"></td>
+                                        </tr>
+                                    </table>
+				</form>
 			</td>
 		</tr>
 		<tr>

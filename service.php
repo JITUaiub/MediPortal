@@ -10,7 +10,7 @@
 				<table align="center" width="100%">
 					<tr align="right">
 						<td width="10%">
-							<fieldset><a href="Home.php"><img src="images/logo.png" align="left"></a></fieldset>
+							<a href="Home.php"><img src="images/logo.png" align="left"></a>
 						</td>
 						<td width="30%">&nbsp;</td>
 						<td align="center" width="10%">
