@@ -170,7 +170,16 @@
                                                 <td width="40"><a href="normalUserDetails.php?mid=<?php echo $row['member_id'];?>">Profile</a></td>
                                                 <td width="30"><a href="useractivity.php?mid=<?php echo $row['member_id'];?>">Activity</a></td>
                                                 <td width="30"><a href="eConsultation/conversation.php?mid=<?php echo $row['member_id'];?>">Message</a></td>
-                                                <td width="30"><a href="database_blockusers.php?mid=<?php echo $row['member_id'];?>">Block</td>
+                                                <td width="30"><a href="database_blockusers.php?mid=<?php echo $row['member_id'];?>">
+
+        <?php 
+            $account_stat = "select account_status from member where member_id=".$row['member_id'];
+            $result_stat = mysqli_query($conn, $account_stat)or die(mysqli_error($conn));
+            $row_stat = mysqli_fetch_assoc($result_stat);
+            echo $row_stat['account_status'];
+        ?>
+
+                                                </td>
                                                 
                                             </tr>
                                           <?php } ?>

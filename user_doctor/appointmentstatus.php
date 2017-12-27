@@ -154,17 +154,18 @@
                                         </fieldset>
                                             <fieldset>
                                                 <legend><b>Online Service Patient</b></legend>
-                                            <table align="center" border="1">
-                                                <tr>
-                                                    <td width="15%">Name</td>
-                                                    <td width="15%">Adress</td>
-                                                    <td width="15%">Age</td>
-                                                    <td width="15%">Patient Problem</td>
-                                                    <td width="15%">Time | Date</td>
-                                                    <td align="center" colspan="3">Action</td>
-                                                </tr>
+                  <table align="center" border="1">
+                          
+                                    <tr>
+                                        <td width="15%">Name</td>
+                                        <td width="15%">Adress</td>
+                                        <td width="15%">Age</td>
+                                        <td width="15%">Patient Problem</td>
+                                        <td width="15%">Time | Date</td>
+                                        <td align="center" colspan="3">Action</td>
+                                    </tr>
 
-                                                <tr>
+                                               <!--  <tr>
                                                     <td><a href="patientDetails.php">Kent</a></td>
                                                     <td>Khilkhet,Dhaka</td>
                                                     <td>25</td>
@@ -173,18 +174,51 @@
                                                     <td><button>Confirm Appointment</button></td>
                                                     <td><a href="eConsultation/conversation.php">Message</a></td>
                                                     <td><button>Delete</button></td>
-                                                </tr>
+                                                </tr> -->
+                    <?php 
+                       
+                           $load_member_information = "SELECT * from member,appointment where member.member_id = appointment.member_id";  
 
-                                                 <tr>
-                                                    <td><a href="patientDetails.php">Gayle</a></td>
-                                                    <td>Dhanmondi</td>
-                                                    <td>31</td>
-                                                    <td>Headeach</td>
-                                                    <td>2.30PM | 12-09-2017</td>
-                                                    <td><button>Confirm Appointment</button></td>
-                                                    <td><a href="eConsultation/conversation.php">Message</a></td>
-                                                    <td><button>Delete</button></td>
-                                                </tr>
+
+
+                           $result = mysqli_query($conn, $load_member_information)or die(mysqli_error($conn)); 
+
+                           while($row = mysqli_fetch_assoc($result)){           
+                              $current_year = date("Y");
+                              $dob_year = explode("-",$row['dob']);
+
+
+
+
+
+                     ?>  
+                            
+
+                             <tr>
+                                <td><a href="patientDetails.php?mid=<?php echo $row['member_id']; ?>"><?php echo $row['name']; ?></a></td>
+                                <td><?php echo $row['address']; ?></td>
+                                <td>
+                                    
+                                    <?php 
+
+                                        $age = $current_year - $dob_year[0];    
+                                        echo $age;
+
+                                     ?>
+
+
+                                </td>
+                                <td><?php echo $row['problem']; ?></td>
+                                <td><?php echo $row['time']." | ".$row['date']; ?> </td>
+                                <td><a href="database_confirm_appointment.php?mid=<?php echo $row['member_id']; ?>">Confirm Appointment</a></td>
+                                <td><a href="eConsultation/conversation.php">Message</a></td>
+                                <td><a href="database_delete_appointment.php">Delete</button></td>
+                            </tr>
+
+                            <?php } ?>
+
+
+
                                              </table>
                                              <tr>
                                                 <td align="center">
@@ -212,3 +246,9 @@
 </body>
 
 </html>
+
+<?php 
+
+   mysqli_close($conn);
+
+ ?>

@@ -157,7 +157,7 @@
                                             </tr>
 
                                             <?php //if(isset($_SESSION['patient_username']) && isset($_SESSION['patient_type'])) {
-    $doctor_information = "SELECT * from doctor where account_status='active'";
+    $doctor_information = "SELECT * from doctor where account_status='active' or account_status='blocked'";
      $result = mysqli_query($conn, $doctor_information)or die(mysqli_error($conn)); 
      
   
@@ -173,8 +173,17 @@
                                                 <td width="40"><a href="doctorDetails.php?did=<?php echo $row['doctor_id'];?>">Profile</a></td>
                                                 <td width="30"><a href="useractivity.php?did=<?php echo $row['doctor_id'];?>"">Activity</a></td>
                                                 <td width="30"><a href="eConsultation/conversation.php?did=<?php echo $row['doctor_id'];?>"">Message</a></td>
-                                                <td width="30"><a href="database_blockdoctors.php?did=<?php echo $row['doctor_id'];?>">Block</td>
-                                            </tr>
+                                                <td width="30"><a href="database_blockdoctors.php?did=<?php echo $row['doctor_id'];?>">
+
+
+                                                    <?php 
+            $account_stat = "select account_status from doctor where doctor_id=".$row['doctor_id'];
+            $result_stat = mysqli_query($conn, $account_stat)or die(mysqli_error($conn));
+            $row_stat = mysqli_fetch_assoc($result_stat);
+            echo $row_stat['account_status'];
+        ?>
+                           </td>                
+                            </tr>
                                             <?php }?>
                                             
                                      </table>
