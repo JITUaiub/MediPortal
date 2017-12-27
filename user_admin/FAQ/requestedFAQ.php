@@ -1,7 +1,7 @@
 <?php
     ini_set('mysql.connect_timeout', 300);
     ini_set('default_socket_timeout', 300);
-
+        $emptyFaq = "";
         $result = null;
         $query = "Select * from `faq` where status = 'Unread'";    
         $conn = mysqli_connect("localhost", "root", "", "mediportal_db", 3306);
@@ -12,6 +12,11 @@
         while(($row = mysqli_fetch_assoc($result))!=null){ 
                     $faqArray[] = array('id'=>$row['id'],'category'=>$row['category'],'author'=>$row['Author'],'question'=>$row['Question'],'answer'=>$row['Answer'],'time'=>$row['Time'],'date'=>$row['Date'], 'status'=>$row['status']);
                     }
+        if(empty($faqArray)){
+            $emptyFaq = "<h1 align=\"center\">No New Frequently Asked Question</h1>";
+        }else{
+            $emptyFaq = "";
+        }
 //        var_dump($faqArray);
 ?> 
 <html>
@@ -147,14 +152,19 @@
                                         </td>
                                     </tr>
                                     <tr><td colspan="5"><hr></td></tr>
+                                    <tr><td colspan="5"><div><?php echo $emptyFaq; ?></div></td></tr>
                                     <?php
+
                                         for ($i=0; $i < count($faqArray); $i++) { 
                                             echo "<tr>";
                                             echo "<td align=\"center\"><strong>";
                                             echo $faqArray[$i]['category'];
                                             echo "</strong></td>";
                                             echo "<td align=\"center\">";
-                                                 echo "<a href=\"addFAQAnswer.php\"><strong>";
+                                                 echo "<a href=\"addFAQAnswer.php?";
+                                                 echo "time=";echo $faqArray[$i]["time"];
+                                                 echo "&date=";echo $faqArray[$i]["date"];
+                                                 echo "\"><strong>";
                                                  echo $faqArray[$i]['question'];
                                                  echo "</strong></a>  <img src=\"../images/newStatus.png\">";
                                             echo "</td>";

@@ -1,4 +1,47 @@
+<?php
+    ini_set('mysql.connect_timeout', 300);
+    ini_set('default_socket_timeout', 300);
 
+        if(isset($_GET['time']))
+            $time = $_GET['time'];
+        if(isset($_GET['date']))
+            $date = $_GET['date'];
+        $time = addslashes($time);
+        $date = addslashes($date);
+        $result = null;
+        $query = "Select * from `faq` where status = 'Unread' and Time = '$time' and Date = '$date'";    
+        $conn = mysqli_connect("localhost", "root", "", "mediportal_db", 3306);
+        mysqli_set_charset($conn,"utf8");
+        $result = mysqli_query($conn, $query);
+
+        $faqArray = array();
+        while(($row = mysqli_fetch_assoc($result))!=null){ 
+                    $faqArray[] = array('id'=>$row['id'],'category'=>$row['category'],'author'=>$row['Author'],'question'=>$row['Question'],'answer'=>$row['Answer'],'time'=>$row['Time'],'date'=>$row['Date'], 'status'=>$row['status']);
+                    } 
+//        var_dump($faqArray);
+        $errorMsg = "";
+        if(isset($_POST['submit'])){
+            if($_POST['answer'] == ""){
+                $errorMsg = "Must need to add an answer";
+            }else{
+                $errorMsg = "";
+
+                $query = "update faq set Answer = '".addslashes($_POST['answer'])."'";
+                mysqli_query($conn, $query);
+                $query = "update faq set status = 'Read'";
+                mysqli_query($conn, $query);
+
+                header("location: requestedFAQ.php");
+                exit;
+            }
+        }
+        if(isset($_POST['goBack'])){
+            if($_POST['answer'] == ""){
+                header("location: requestedFAQ.php");
+                exit;
+            }
+        }
+?>
 <html>
 
 <head><title>Home</title></head>
@@ -106,32 +149,34 @@
                        		 <td width="70%" align="center" valign="top">
                        		 	<!-- FAQ DESIGN -->
 
-                                <h1 align="center">Add an answer to this FAQ</h1>
-                                    <h3 align="center">Hotline</h3>
-                                    <p align="center">Category: Mediportal<br>
-                                        Asked by: John<br>
-                                        Asked on: 22-09-2017<br>
-                                        Asked time: 10.57PM
-                                    </p>
-                                    <p align="center">
-                                        <br>bla bla bla bla bla bla bla bla bla blabla bla bla bla bla  <br>
-                                    bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla <br>
-                                    bla bla bla bla bla bla bla bla bla bla <br>
-                                    bla bla bla bla bla <br>
-                                    </p>
+                                <form action="" method="post">
+                                    <h1 align="center">Add an answer to this FAQ</h1>
+                                    <?php
+                                        echo "<p align=\"center\">Category: ";
+                                            echo $faqArray[0]['category'];
+                                            echo "<br>";
+                                            echo "Author: ";
+                                            echo $faqArray[0]['author'];
+                                            echo "<br>";
+                                            echo "Asked on: ";
+                                            echo $faqArray[0]['date'];
+                                            echo "<br>";
+                                            echo "Asked time: ";
+                                            echo $faqArray[0]['time'];
+                                        echo "</p>";
+                                        echo "<p align=\"center\" width=\"40%\">";
+                                            echo "<br><fieldset><legend align=\"center\"><b>QUESTION</b></legend>";
+                                            echo $faqArray[0]['question'];
+                                            echo "</fieldset><br>";
+                                        echo "</p>";
+                                    ?>
                                     <br>
 
                                     <strong>Add an answer to this question.</strong><br><br>
-                                    <textarea>Write an answer here</textarea>  <br><br>
-                                    <input type="submit" name="" value="Submit Answer"><br><br>
-                                    <div align="center"><button onclick="goBack()">Go Back</button></div>
-                                    <script>
-                                        function goBack()
-                                        {
-                                            window.history.back();
-                                        }
-                                    </script>
-
+                                    <textarea name="answer"></textarea><br><div style="color: RED"><?php echo $errorMsg; ?></div><br>
+                                    <input type="submit" name="submit" value="Submit Answer"><br><br>
+                                    <div align="center"><input type="submit" name="goBack" value="Go Back"></div>
+                                </form>
                     		</td>
                     	</div>
                     </table>
