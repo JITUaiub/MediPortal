@@ -175,16 +175,21 @@
 								
 								<td colspan="3" align="center">
 									<input type="submit" value="Add another" onclick="return validation_chamber();" />
-									<input type="button" value="Finish"/></td>
+									<input type="button" value="Finish" onclick="next()" /></td>
 							</tr>
 							<tr>
 								<td colspan="3" align="center"><a href="addpersonalinfo.php">Skip for now</a></td>
 							</tr>
 						</table>
+
+						
 					</fieldset>
 							</td>
 						</tr>
-					</table>		
+					</table>	
+					<script type="text/javascript">
+							//window.location.href="../index.php";
+						</script>	
 				</form>
 			</div>
 			<div>

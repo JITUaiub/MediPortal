@@ -1,18 +1,21 @@
 <?php 
     session_start();
-
-
-     $conn = mysqli_connect("localhost", "root", "","mediportal_db");
+	
+	$conn = mysqli_connect("localhost", "root", "","mediportal_db");
    
-             if (!$conn) {
-         die("Connection failed: " . mysqli_connect_error()); 
-  }
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error()); 
+	}
 
-  if(isset($_SESSION['patient_username']) && isset($_SESSION['patient_type'])) {
-    $member_information = "SELECT * from member where username = '".$_SESSION['patient_username']."';";
-     $result = mysqli_query($conn, $member_information)or die(mysqli_error($conn)); 
-     
-  }
+	if(isset($_SESSION['patient_username']) && isset($_SESSION['patient_type'])) {
+		$member_information = "SELECT * from member where username = '".$_SESSION['patient_username']."';";
+		$result = mysqli_query($conn, $member_information)or die(mysqli_error($conn)); 
+    }
+	else
+	{
+		header("Location:../login.php");
+		exit;
+	}
  
     while($row = mysqli_fetch_assoc($result)) {
     
@@ -41,7 +44,7 @@
                         <td width="40%">
                             <table align="right">
                                 <td><strong>Logged in as </strong></td>
-                                <td><a href="viewprofile.php">Bob<img src="images/user.png"></a></td>
+                                <td><a href="viewprofile.php"><?php echo $row['username']; ?><img src="images/user.png"></a></td>
                                 <td><hr width="1" size="15"></td>
                                 <td><a href="../Registration/DonorSubscription.php">Profile</a></td>
                                 <td><hr width="1" size="15"></td>
@@ -141,7 +144,7 @@
                                                         <tr>
                                                             <td width="30%"><strong>Name</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td ><input type="text" name="name" value="<?php echo $row['name'];?>"></td>
+                                                            <td ><input id="name" type="text" name="name" value="<?php echo $row['name'];?>"></td>
                                                         </tr>
                                                          
                                                          <tr>
@@ -153,7 +156,7 @@
                                                         <tr>
                                                             <td width="30%"><strong>User Name</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td ><input type="text" name="username" value="<?php echo $row['username'];?>"></td>
+                                                            <td ><input type="text" name="username" value="<?php echo $row['username'];?>"disabled="true"></td>
                                                         </tr>
                                                         
 
@@ -212,21 +215,21 @@
                                                         <tr>
                                                             <td width="30%"><strong>Date Of Birth</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td width="65%"><input type="date" name="dob" value="<?php echo $row['dob'];?>" disabled="true"></td>
+                                                            <td width="65%"><input type="date" name="dob" value="<?php echo $row['dob'];?>" ></td>
                                                         </tr>
 
                                                          <tr>
                                                             
                                                             <td width="30%"><strong>Mobile Number</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td><input type="text" name="mobilenumber" value="<?php echo $row['mobile'];?>"></td>
+                                                            <td><input id="mobile" type="text" name="mobile" value="<?php echo $row['mobile'];?>"></td>
                                                          </tr>
 
                                                          <tr>
                                                             
                                                             <td width="30%"><strong>Email</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td><input type="text" name="email" value="<?php echo $row['email'];?>"></td>
+                                                            <td><input id="email" type="text" name="email" value="<?php echo $row['email'];?>"></td>
                                                          </tr>
                                                     </table>
 
@@ -248,7 +251,7 @@
                                                 <tr><td></td></tr>
                                                             <tr>
                                                                 <td colspan="4" align="center">
-                                                                    <input type="submit" id="update" value="Update Profile" onclick="update()">
+                                                                    <input type="submit" id="update" value="Update Profile" >
                                                                 </td>
                                                                 
                                                             </tr>
@@ -299,7 +302,7 @@
             </td>
         </tr>
     </table>
-    <script>
+    <script type="text/javascript" >
         function update(){
             var x= document.getElementById("update").value;
             alert("Profile is Updated");

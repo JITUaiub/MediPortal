@@ -1,3 +1,16 @@
+<?php 
+    session_start();
+
+
+     $conn = mysqli_connect("localhost", "root", "","mediportal_db");
+   
+             if (!$conn) {
+         die("Connection failed: " . mysqli_connect_error()); 
+  }
+ ?>
+
+
+
 <html>
 
 <head><title>Home</title></head>
@@ -111,8 +124,15 @@
                                         
                                         <td align="center" width="35%"">
                                             <fieldset>
+                                                <?php 
+
+                                 $count_pending_doctors="select count(*) from doctor where account_status='pending'";
+                                 $result = mysqli_query($conn, $count_pending_doctors)or die(mysqli_error($conn)); 
+                                 $row = mysqli_fetch_assoc($result);
+
+                                 ?>
                                                 <h2 align="center">Pending Sign Up Requests</h2></br>
-                                                <h1 align="center"><a href="pendingRequest.php">0</a></h1>
+                                                <h1 align="center"><a href="pendingRequest.php"><?php echo $row['count(*)'] ?></a></h1>
                                                 <h4 align="center"><b>Doctors need approval to join</b></h4>
                                         </fieldset>
                                     </td>

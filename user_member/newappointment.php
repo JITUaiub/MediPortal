@@ -1,85 +1,30 @@
-<?php
-	session_start();
-	
-	$userName=$_SESSION['patient_username'];
-	
+<?php 
+    session_start();
 	if(!isset($_SESSION['patient_username']) || empty($_SESSION['patient_username'])){
 		  header("location: ../Login.php");
 		  exit;
 		}
-		
-		
-//Title
-$sql="SELECT distinct(title) FROM professional_info";
-$conn = mysqli_connect("localhost", "root", "", "mediportal_db", 3306);
-mysqli_set_charset($conn,"utf8");
-$result = mysqli_query($conn, $sql);
-
-$title=array();
- while(($row = mysqli_fetch_assoc($result))!=null){ 
-							$title[] = array(
-								"title"=>$row['title']
-							);
-		}  
-var_dump($title);
-//Dept
-$sql="SELECT distinct(department) FROM professional_info";
-$conn = mysqli_connect("localhost", "root", "", "mediportal_db", 3306);
-mysqli_set_charset($conn,"utf8");
-$result = mysqli_query($conn, $sql);
-
-$dept=array();
- while(($row = mysqli_fetch_assoc($result))!=null){ 
-							$dept[] = array(
-								"dept"=>$row['department']
-							);
-		}  
-var_dump($dept);
 	
-	$tit = $dep = null;
 	
-	if(isset($_POST['title'])){
-		$tit = $_POST['title'];
-	}
-	if(isset($_POST['dept'])){
-		$dep = $_POST['dept'];
-	}
-
-//doctor
-$doctor=array();
-	$sql="SELECT `name` FROM `doctor` WHERE `doctor_id` = (SELECT `doctor_id` FROM `professional_info` WHERE `title` = '".$tit."' and `department` = '".$dep."')";
-							$conn = mysqli_connect("localhost", "root", "", "mediportal_db", 3306);
-							$result = mysqli_query($conn, $sql);
-						var_dump($sql);	
-	 while(($row = mysqli_fetch_assoc($result))!=null){ 
-			$doctor[] = array(
-							"name"=>$row['name']
-							);				
-							
-		}
-
-
-var_dump($doctor);
+	$con = mysqli_connect("localhost", "root", "", "mediportal_db");
+	if (!$con) {
+		die("Connection failed: " . mysqli_connect_error());
+	} 
+?>
 
 
 
-
-
-
-
-
-
-
-
-
-
+<?php
 $err1=false;
 $err2=false;
 $err3=false;
 $err4=false;
 $doctor_err=$problem_err=$date_err=$time_err=$appointment_type_err="";
+ 
+
+ 
  if(isset($_POST['submit'])){
-			$doctor = $_POST['select_doctor'];
+			$doctor = $_POST['user'];
 			$problem=$_POST['problem'];
 			$date=$_POST['date'];
 			$time=$_POST['time'];
@@ -122,28 +67,102 @@ $doctor_err=$problem_err=$date_err=$time_err=$appointment_type_err="";
 		$time_err="";
 	}
 	if($err1==true && $err2==true && $err3==true && $err4==true){
-
-	$sql ="INSERT INTO appointment(doctor_id, member_id, date, time, status,problem,appointment_type) VALUES (2,2,'$date','$time','pending','$problem','$appointment_type')";
-	//$conn = mysqli_connect("localhost", "root", "", "mediportal_db", 3306);
-	$result = mysqli_query($conn, $sql);
-	header("location: appointmentstatus.php");
-	exit;
+		
+		$conn = mysqli_connect("localhost", "root", "", "mediportal_db", 3306);
+		/*doctor id*/ 
+		$sql1="SELECT `doctor_id` FROM `doctor` WHERE `username`='".$doctor."'";
+		$result = mysqli_query($conn, $sql1);
+	
+		while(($row = mysqli_fetch_assoc($result))!=null){ 
+			$doctor_id =$row['doctor_id'];
+											
+							
+		}
+		
+		/*member id*/
+		$sql2="SELECT `member_id` FROM `member` WHERE `username`= '".$_SESSION['patient_username']."';";
+		$result = mysqli_query($conn, $sql2);
+	
+		while(($row = mysqli_fetch_assoc($result))!=null){ 
+			$member_id =$row['member_id'];
+											
+							
+		}
+		
+		
+		/*chamber
+		
+		$sql3="SELECT `name` FROM `chamber` WHERE `doctor_id`='".$doctor_id."'";
+		$result = mysqli_query($conn, $sql3);
+	
+		
+		while(($row = mysqli_fetch_assoc($result))!=null){ 
+			$chamber =$row['name'];
+								
+							
+		}*/
+		
+		
+		
+	
+		$sql ="INSERT INTO appointment(doctor_id, member_id, date, time, status,problem,appointment_type) VALUES ('$doctor_id','$member_id','$date','$time','pending','$problem','$appointment_type')";
+	
+		$result = mysqli_query($conn, $sql);
+		header("location: appointmentstatus.php");
+		exit;
 		
 	mysqli_close($conn);
 	}
+	
+	
+	
+	
  }
 
 
 ?>
 
 <html>
+	<script type="text/javascript">
+		function showHint(choice) {
+			var  xmlhttp = new XMLHttpRequest();
+			var str=document.getElementById(choice).value;	
+			//document.getElementById("spinner").style.visibility= "visible";
+			xmlhttp.onreadystatechange = function() {
+				//alert(xmlhttp.rxmlhttpeadyState);
+				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {			
+						//document.getElementById("spinner").style.visibility= "hidden";
+					var m=document.getElementById("usrname");
+					m.innerHTML=xmlhttp.responseText;;
+				}
+			};
+ 	var url="server.php";
+	var title = document.fm.title.value;
+	//var dept = document.fm.department.value;
+	var dept;
+	if(title != null ) {
+		dept = document.fm.dept.value;
+	}else {
+		dept = " ";
+	}
+	
+	url=url+"?tit="+title;
+	url=url+"&dpt="+dept;
+	//alert(url);
+	xmlhttp.open("GET", url,true);
+	xmlhttp.send();
+		}
+	</script>
+
+<html>
 
 <head>
 	<title>New Appoitnment</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	
 </head>
 
 <body>
+	<form action="" name="fm" method="post">
 	<table border="0" align="center" width="100%">
     	<tr>
         	<td>
@@ -157,7 +176,7 @@ $doctor_err=$problem_err=$date_err=$time_err=$appointment_type_err="";
                         <td width="40%">
                             <table align="right">
                                 <td><strong>Logged in as </strong></td>
-                                <td><a href="viewprofile.php"><?php echo $userName;?><img src="images/user.png"></a></td>
+                                <td><a href="viewprofile.php"><?php echo $_SESSION['patient_username'];?><img src="images/user.png"></a></td>
                                 <td><hr width="1" size="15"></td>
 								<td><a href="../Registration/DonorSubscription.php">Profile</a></td>
                                 <td><hr width="1" size="15"></td>
@@ -268,8 +287,17 @@ $doctor_err=$problem_err=$date_err=$time_err=$appointment_type_err="";
 																			<strong>Department :</strong>
 																		</td>
 																		<td>
-																			<select name="dept" id="dept">
-																				<?php for($i=0; $i<count($dept); $i++){echo "<option value=".$i.">".$dept[$i]['dept']."</option>";}?>
+								<select name="dept" id="dept" onchange="showHint('dept')">
+									<option selected value="">---</option>
+					<?php 
+						$doc_department = "select distinct(department) from professional_info";
+						$dept_result = mysqli_query($con, $doc_department)or die(mysqli_error());
+						while($dept_row = mysqli_fetch_assoc($dept_result)) {
+					?>
+							<option value="<?php echo $dept_row['department']; ?>"><?php echo $dept_row['department']; ?></option>
+							
+					<?php } ?>
+		
 																			</select>
 																		</td>
 																	</tr>
@@ -282,8 +310,15 @@ $doctor_err=$problem_err=$date_err=$time_err=$appointment_type_err="";
 																			<strong>Title :</strong>
 																		</td>
 																		<td>
-																			<select name="title" id="title">
-																					<?php for($i=0; $i<count($title); $i++){echo "<option value=".$i.">".$title[$i]['title']."</option>";}?>
+								<select name="title" id="title" onchange="showHint('title')">
+	                                    <option selected value="">---</option>
+					<?php 
+						$doc_title = "select distinct(title) from professional_info";
+						$title_result = mysqli_query($con, $doc_title)or die(mysqli_error());
+						while($title_row = mysqli_fetch_assoc($title_result)) {
+					?>
+					<option value="<?php echo $title_row['title']; ?>"><?php echo $title_row['title']; ?></option>
+					<?php } ?>
 																			</select>
 																		</td>
 																	</tr>
@@ -297,14 +332,20 @@ $doctor_err=$problem_err=$date_err=$time_err=$appointment_type_err="";
 																			<strong>Doctor :</strong>
 																		</td>
 																		<td>
-																			<select id="select_doctor" name="select_doctor">
-																				<?php for($i=0; $i<count($doctor); $i++){echo "<option value=".$i.">".$doctor[$i]['name']."</option>";}?>
-																			</select>
-																			<br><span style="color : RED"><?php echo $doctor_err;?></span>
+																			<td>Doctor name</td>
+					<td>
+						<div id="usrname" >
+						</div>
+					</td>
 																		</td>
 																	</tr>
-																</table>
-															</td>
+																	</table>
+																</td>
+
+																	<td>
+					<td rowspan="2" align="center"><input type="submit" name="sbt" value="submit"></td>
+				</td>
+															
 															<td>
 																<table>
 																	<tr>
@@ -341,19 +382,6 @@ $doctor_err=$problem_err=$date_err=$time_err=$appointment_type_err="";
 										</tr>
 										<tr>
 											<td align="center" width="30%">
-												<strong>chamber:</strong>
-											</td>
-											<td>
-												<select name="chamber">
-													<option value="">Select one</option>
-													<option value="online">gulshan</option>
-													<option value="direct">banani </option>
-												</select>
-											<!--	<br><span style="color : RED"><?php echo $appointment_type_err;?></span> -->
-											</td>
-										</tr>
-										<tr>
-											<td align="center" width="30%">
 												<strong>Appointment Type:</strong>
 											</td>
 											<td>
@@ -364,7 +392,23 @@ $doctor_err=$problem_err=$date_err=$time_err=$appointment_type_err="";
 												</select>
 												<br><span style="color : RED"><?php echo $appointment_type_err;?></span>
 											</td>
+											
 										</tr>
+								<!--	<tr>
+											
+											<td align="center" width="30%">
+												<strong>chamber:</strong>
+											</td>
+											<td>
+												<select name="chamber">
+													<option value="">Select one</option>
+													<option> gulshan</option>												
+													</select>
+												<br><span style="color : RED"><?php echo $appointment_type_err;?></span> 
+											</td>
+											
+										</tr>
+								-->
                                         <tr>
                                             <td width="30%" align="center">
 												<strong>Date :</strong>
@@ -446,3 +490,8 @@ $doctor_err=$problem_err=$date_err=$time_err=$appointment_type_err="";
 </body>
 
 </html>
+<?php 
+	//print_r($_POST);
+	mysqli_close($con);
+
+?>

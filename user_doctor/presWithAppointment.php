@@ -1,3 +1,14 @@
+<?php 
+    session_start();
+
+     $conn = mysqli_connect("localhost", "root", "","mediportal_db");
+   
+             if (!$conn) {
+         die("Connection failed: " . mysqli_connect_error()); 
+  }
+
+?>
+
 <html>
 
 <head><title>Appointment</title></head>
@@ -152,28 +163,44 @@
                                                     <td width="15%">Time | Date</td>
                                                     <td align="center" colspan="3">Action</td>
                                                 </tr>
+<?php 
+                       
+                           $load_member_information = "SELECT * from member,appointment where member.member_id = appointment.member_id and appointment.status='active'";  
 
+
+
+                           $result = mysqli_query($conn, $load_member_information)or die(mysqli_error($conn)); 
+
+                           while($row = mysqli_fetch_assoc($result)){           
+                              $current_year = date("Y");
+                              $dob_year = explode("-",$row['dob']);
+
+
+
+
+
+                     ?>  
                                                 <tr>
-                                                    <td><a href="patientDetails.php">Kent</a></td>
-                                                    <td>Khilkhet,Dhaka</td>
-                                                    <td>25</td>
-                                                    <td>Fever</td>
-                                                    <td>2.30PM | 12-09-2017</td>
-                                                    <td><a href="createPresApointment.php">Create Prescription</a></td>
-                                                    <td><a href="eConsultation/conversation.php">Message</a></td>
-                                                    <td><button>Delete</button></td>
-                                                </tr>
+                                                    <td><a href="patientDetails.php"><?php echo $row['name']; ?></a></td>
+                                                    <td><?php echo $row['address']; ?></td>
+                                        <td><?php 
 
-                                                 <tr>
-                                                    <td><a href="patientDetails.php">Gayle</a></td>
-                                                    <td>Dhanmondi</td>
-                                                    <td>31</td>
-                                                    <td>Headeach</td>
-                                                    <td>2.30PM | 12-09-2017</td>
+                                        $age = $current_year - $dob_year[0];    
+                                        echo $age;
+
+                                     ?></td>
+                                                    <td><?php echo $row['problem']; ?></td>
+                                                    <td><?php echo $row['time']." | ".$row['date']; ?> </td>
                                                     <td><a href="createPresApointment.php">Create Prescription</a></td>
                                                     <td><a href="eConsultation/conversation.php">Message</a></td>
                                                     <td><button>Delete</button></td>
                                                 </tr>
+<?php 
+
+}
+
+ ?>
+                                                
 
                                              </table>
                                              <a href="newpescriptions.php">Back to Prescription Home Page</a>
@@ -218,3 +245,9 @@
 </body>
 
 </html>
+
+<?php 
+
+   mysqli_close($conn);
+
+ ?>

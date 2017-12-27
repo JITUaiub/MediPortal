@@ -1,3 +1,27 @@
+<?php 
+    session_start();
+
+     $conn = mysqli_connect("localhost", "root", "","mediportal_db");
+   
+             if (!$conn) {
+         die("Connection failed: " . mysqli_connect_error()); 
+  }
+ if(isset($_SESSION['patient_username']) && isset($_SESSION['patient_type'])) {
+    $member_information = "SELECT * from member where member_id=".$_REQUEST['mid'].";";
+     $result = mysqli_query($conn, $member_information)or die(mysqli_error($conn)); 
+     
+  }
+
+      while($row = mysqli_fetch_assoc($result)) {
+
+
+  ?>
+
+
+
+
+
+
 <html>
 
 <head><title>Paitent Details</title></head>
@@ -107,8 +131,8 @@
 
                                 <h1 align="center">Patient Details</h1>
                                 <div>
-                                        <h1>Bob</h1>
-                                             <table width="100%">
+                                        <h1>PROFILE</h1>
+                                           <table width="100%">
                                         <td width="60%">
                                             <fieldset>
 
@@ -121,7 +145,10 @@
                                                 <tr>
                                                     <td align="center"><img src="images/usericon.png"/></td>
                                                 </tr>
-                                               
+                                                <tr>
+                                                    <td align="center"><a href="changeprofilepicture.php">Change</a></td>
+
+                                                </tr>
                                             </table>
                                         </td>
                                                 </tr>
@@ -135,26 +162,23 @@
                                                         <tr>
                                                             <td width="30%"><strong>Name</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td >Bob Pirate</td>
+                                                            <td ><?php echo $row['name'];?></td>
                                                         </tr>
+
+                                                      
                                                          
                                                          <tr>
                                                             
                                                             <td width="30%"><strong>Gender</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td >Male</td>
+                                                            <td ><?php echo $row['gender'];?></td>
                                                         </tr>
                                                         <tr>
                                                             <td width="30%"><strong>User Name</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td >Bob Pirate123</td>
+                                                            <td ><?php echo $row['username'];?></td>
                                                         </tr>
-                                                        <tr>
-                                                            <td width="30%"><strong>Password</strong></td>
-                                                            <td><strong>:</strong></td>
-                                                            <td width="65%">Bob123</td>
-                                                        </tr>
-
+                                                        
                                                     </table>
                                                 </fieldset>
                                                 </td>
@@ -211,23 +235,26 @@
                                                         <tr>
                                                             <td width="30%"><strong>Date Of Birth</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td width="65%">19/9/1998</td>
+                                                            <td width="65%"><?php echo $row['dob'];?></td>
                                                         </tr>
 
                                                          <tr>
                                                             
                                                             <td width="30%"><strong>Mobile Number</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td>01685940625</td>
+                                                            <td><?php echo $row['mobile'];?></td>
                                                          </tr>
 
                                                          <tr>
                                                             
                                                             <td width="30%"><strong>Email</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td>bob@aiub.edu</td>
+                                                            <td><?php echo $row['email'];?></td>
                                                          </tr>
                                                     </table>
+                                          <?php }
+                                          mysqli_close($conn) ?>
+                                                       
                                                 </fieldset>
                                                 </td>
                                             </tr>

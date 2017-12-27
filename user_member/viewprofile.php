@@ -2,6 +2,7 @@
     session_start();
 
 
+
      $conn = mysqli_connect("localhost", "root", "","mediportal_db");
    
              if (!$conn) {
@@ -10,6 +11,8 @@
  if(isset($_SESSION['patient_username']) && isset($_SESSION['patient_type'])) {
     $member_information = "SELECT * from member where username = '".$_SESSION['patient_username']."';";
      $result = mysqli_query($conn, $member_information)or die(mysqli_error($conn)); }
+
+ 
 
       while($row = mysqli_fetch_assoc($result)) {
 
@@ -35,7 +38,7 @@
                         <td width="40%">
                             <table align="right">
                                 <td><strong>Logged in as </strong></td>
-                                <td><a href="viewprofile.php">Bob<img src="images/user.png"></a></td>
+                                <td><a href="viewprofile.php"><?php echo $row['username']; ?><img src="images/user.png"></a></td>
                                 <td><hr width="1" size="15"></td>
 								<td><a href="../Registration/DonorSubscription.php">Profile</a></td>
                                 <td><hr width="1" size="15"></td>
@@ -114,7 +117,7 @@
                            
                             <ul>
                                 <li><a href="changepassword.php">Change Password</a></li>
-                                <li><a href="../index.php">Logout</a></li>
+                                <li><a href="member_logout.php">Logout</a></li>
                             </ul>
                         </fieldset>
                         </td>
@@ -244,8 +247,10 @@
                                                             <td><?php echo $row['email'];?></td>
                                                          </tr>
                                                     </table>
-                                          <?php }
-                                          mysqli_close($conn) ?>
+                                          <?php
+                                          } 
+
+                                          mysqli_close($conn); ?>
                                                        
                                                 </fieldset>
                                                 </td>
