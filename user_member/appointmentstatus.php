@@ -1,5 +1,5 @@
 <?php 
-    session_start();
+	session_start();
 	
 	if(!isset($_SESSION['patient_username']) || empty($_SESSION['patient_username'])){
 		  header("location: ../Login.php");
@@ -11,6 +11,22 @@
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
     }
+	
+	
+	//doctor info
+	  function doctor_name($doctor_id){
+	   $conn = mysqli_connect("localhost", "root", "","mediportal_db");
+	   $sql3="SELECT `username` FROM `doctor` WHERE `doctor_id`= ".$doctor_id."";
+		$result = mysqli_query($conn, $sql3);
+	
+		while(($row = mysqli_fetch_assoc($result))!=null){ 
+			$username =$row['username'];
+											
+							
+		}
+			return $username;
+	  } 
+	
 	
 	
 	$sql1="SELECT `member_id` FROM `member` WHERE `username`='".$_SESSION['patient_username']."'";
@@ -32,6 +48,7 @@
 		$ff=array();
 		while(($row = mysqli_fetch_assoc($result))!=null){ 
 			$ff[] =array(
+				"appointment_id"=>$row['appointment_id'],
 				"doctor_id"=>$row['doctor_id'],
 				"member_id"=>$row['member_id'],
 				"date"=>$row['date'],
@@ -46,7 +63,23 @@
        
 	
  ?>
-
+<?php
+if(isset($_POST['submit'])){
+	if(!empty($_POST['check_list'])){
+		
+		foreach($_POST['check_list'] as $selected){
+				
+				header('location: appointmentstatus.php?id=$selected');
+				
+				//$conn = mysqli_connect("localhost", "root", "","mediportal_db");
+				//$delete="DELETE FROM `appointment` WHERE `appointment_id`=".$selected."";
+				
+				//$result = mysqli_query($conn, $delete);
+			}
+	
+	}
+}
+?>
 <html>
 
 <head><title>Appoinment Status</title></head>
@@ -80,7 +113,8 @@
         	<td>
             	<!-- Body section -->
                <div>
-                    <table width="100%" border="1">
+                    <form method="$_POST">
+					<table width="100%" border="1">
                         <!-- User Menu Section -->
                         <td width="20%">
                             <fieldset>
@@ -196,12 +230,11 @@
                                             </strong>
                                         </th>
 								-->
-                                      <th width="10%"><strong>Doctor ID</strong></th>
+                                      <th width="10%"><strong>Doctor name</strong></th>
                                       <th  width="10%"><strong>Appoinment Date</strong></th>
                                       <th  width="10%"><strong>Time</strong></th>
 									  <th  width="10%"><strong>Type</strong></th>
 									  <th  width="10%"><strong>Status</strong></th>
-									  <td  width="10%"><strong>Next Appointment Date</strong></th>
                                   </tr>
 									<?php for($i=0;$i<count($ff);$i++){ ?>
 							<tr>
@@ -209,18 +242,21 @@
                                     <input type="checkbox" name="action">
                                 </td>
 							-->	
-								<td><?=$ff[$i]['doctor_id']?></td>
+								<td><a href="doctorDetails.php?id=<?= $ff[$i]['doctor_id']?>"><?= doctor_name($ff[$i]['doctor_id'])?></a></td>
 								<td><?= $ff[$i]['date']?></td>
 								<td><?= $ff[$i]['time']?></td>
-								<td><?= $ff[$i]['status']?></td>
 								<td><?= $ff[$i]['appointment_type']?></td>
-								<td><?php echo "----------";?></td>
+								<td><?= $ff[$i]['status']?> <input type="checkbox" name="check_list[]" value="<?=$ff[$i]['appointment_id']?>"/> </td>
 							</tr>
 							<?php } ?>	  
                               </table>   <br>                  
-
-                        </td></div>
+							<input type="submit" value="delete">
+                        </td>
+						
+						</div>
+						
                     </table>
+					</form>
                 </div>
             </td>
         </tr>
