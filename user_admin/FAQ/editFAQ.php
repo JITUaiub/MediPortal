@@ -1,3 +1,48 @@
+<?php
+    ini_set('mysql.connect_timeout', 300);
+    ini_set('default_socket_timeout', 300);
+
+        $result = null;
+        $query = "Select * from `faq` where id = ".$_GET['faqID'];    
+        $conn = mysqli_connect("localhost", "root", "", "mediportal_db", 3306);
+        mysqli_set_charset($conn,"utf8");
+        $result = mysqli_query($conn, $query);
+
+        $faqArray = array();
+        while(($row = mysqli_fetch_assoc($result))!=null){ 
+                    $faqArray[] = array('id'=>$row['id'],'category'=>$row['category'],'author'=>$row['Author'],'question'=>$row['Question'],'answer'=>$row['Answer'],'time'=>$row['Time'],'date'=>$row['Date'], 'status'=>$row['status']);
+                    } 
+//        var_dump($faqArray);
+        $errorMsg = "";
+        $errorMsg1 = "";
+        if(isset($_POST['submit'])){
+            if($_POST['answer'] == ""){
+                $errorMsg = "Answer cannot be Empty";
+            }
+            if($_POST['question'] == ""){
+                $errorMsg1 = "Question cannot be Empty";
+            }
+
+            if(!empty($_POST['question']) && !empty($_POST['answer'])){
+                $errorMsg = "";
+                $errorMsg1 = "";
+
+                $query = "update faq set Answer = '".addslashes($_POST['answer'])."' where id = ".$_GET['faqID'];
+                mysqli_query($conn, $query);
+                $query = "update faq set Question = '".addslashes($_POST['question'])."' where id = ".$_GET['faqID'];
+                mysqli_query($conn, $query);
+
+                header("location: manageFAQ.php");
+                exit;
+            }
+        }
+        if(isset($_POST['goBack'])){
+            if($_POST['answer'] == ""){
+                header("location: manageFAQ.php");
+                exit;
+            }
+        }
+?>
 <html>
 
 <head><title>Home</title></head>
@@ -103,33 +148,48 @@
                         </td>
                         <div align="center">
                        		 <td width="70%" align="center" valign="top">
-                       		 	<!-- FAQ DESIGN -->
-                                <h1 align="center">Edit this FAQ</h1>
-                                    <h3 align="center">What is Mediportal?</h3>
-                                    <p align="center">Category: Mediportal<br>
-                                        Asked by: John<br>
-                                        Asked on: 22-09-2017<br>
-                                        Asked time: 10.57PM
-                                    </p>
-                                    <p align="center">
-                                        <br>bla bla bla bla bla bla bla bla bla blabla bla bla bla bla  <br>
-                                    bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla <br>
-                                    bla bla bla bla bla bla bla bla bla bla <br>
-                                    bla bla bla bla bla <br>
-                                    </p>
+                                <!-- FAQ DESIGN -->
+
+                                <form action="" method="post">
+                                    <h1 align="center">Add an answer to this FAQ</h1>
+                                    <?php
+                                        echo "<p align=\"center\">Category: ";
+                                            echo $faqArray[0]['category'];
+                                            echo "<br>";
+                                            echo "Author: ";
+                                            echo $faqArray[0]['author'];
+                                            echo "<br>";
+                                            echo "Asked on: ";
+                                            echo $faqArray[0]['date'];
+                                            echo "<br>";
+                                            echo "Asked time: ";
+                                            echo $faqArray[0]['time'];
+                                        echo "</p>";
+                                        echo "<p align=\"center\" width=\"40%\">";
+                                            echo "<br><b>Edit Question</b><br/>";
+                                            echo "<textarea name=\"question\">";
+                                            echo $faqArray[0]['question'];
+                                            echo "</textarea>";
+                                            echo "<div style=\"color: RED\">";
+                                            echo $errorMsg1;
+                                            echo "</div><br>";
+                                            echo "<br>";
+                                        echo "</p>";
+                                        echo "<strong>Edit Answer</strong><br><br>";
+                                    echo "<textarea name=\"answer\">";
+                                    echo $faqArray[0]['answer'];
+                                    echo "</textarea><br>";
+
+                                    echo "<div style=\"color: RED\">";
+                                    echo $errorMsg;
+                                    echo "</div><br>";
+                                    ?>
                                     <br>
 
-                                    <strong>Modify this answer</strong><br><br>
-                                    <textarea>This is answer to this question. But you can modify this answer too here.</textarea>  <br><br>
-                                    <input type="submit" name="" value="Submit Answer"><br><br>
-                                    <div align="center"><button onclick="goBack()">Go Back</button></div>
-                                    <script>
-                                        function goBack()
-                                        {
-                                            window.history.back();
-                                        }
-                                    </script>
-                                <!--     FAQ  END here -->
+                                    
+                                    <input type="submit" name="submit" value="Submit Answer"><br><br>
+                                    <div align="center"><input type="submit" name="goBack" value="Go Back"></div>
+                                </form>
                     		</td>
                     	</div>
                     </table>
