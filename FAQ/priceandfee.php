@@ -1,3 +1,25 @@
+<?php
+    ini_set('mysql.connect_timeout', 300);
+    ini_set('default_socket_timeout', 300);
+        $emptyFaq = "";
+        $result = null;
+        $query = "Select * from `faq` where category = 'price and fees'";    
+        $conn = mysqli_connect("localhost", "root", "", "mediportal_db", 3306);
+        mysqli_set_charset($conn,"utf8");
+        $result = mysqli_query($conn, $query);
+
+        $faqArray = array();
+        while(($row = mysqli_fetch_assoc($result))!=null){ 
+                    $faqArray[] = array('id'=>$row['id'],'category'=>$row['category'],'author'=>$row['Author'],'question'=>$row['Question'],'answer'=>$row['Answer'],'time'=>$row['Time'],'date'=>$row['Date'], 'status'=>$row['status']);
+                    }
+        if(empty($faqArray)){
+            $emptyFaq = "<h1 align=\"center\">No New Frequently Asked Question</h1>";
+        }else{
+            $emptyFaq = "";
+        }
+//        var_dump($faqArray);
+?> 
+
 <!DOCTYPE>
 <html>
 <head>
@@ -67,17 +89,22 @@
                                             }
                                         </script>
                                     </fieldset>
-						<h1>Is Mediportal free?</h1>
-				<br><hr>
-				<p>
-					Mediportal is full free for general users. You can request for an appointment for free.
-					You need to pay 5% of your fee if you register as an doctor.
-				</p>
-				<h1>What is Mediportal's Doctor's visit?</h1>
-				<br><hr>
-				<p>
-					It differs from doctor to doctor. You can see doctor visit from his profile page.
-				</p>
+						<?php
+									for ($i=0; $i < count($faqArray); $i++) { 
+										echo "<h1>";
+										echo $faqArray[$i]['question'];;
+										echo "</h1>";
+										echo "<br/><b>Author: </b>".$faqArray[$i]['author'];
+										echo "  <b>Posted on: </b>".$faqArray[$i]['date']." ".$faqArray[$i]['time'];
+										echo "<br><hr>";
+										echo "<p>";
+
+										echo $faqArray[$i]['answer'];
+
+										echo "</p>";
+										
+									}
+								?>
 			</td>
 		</tr>
 		<tr>

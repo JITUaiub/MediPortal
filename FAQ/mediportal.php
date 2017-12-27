@@ -1,3 +1,25 @@
+<?php
+    ini_set('mysql.connect_timeout', 300);
+    ini_set('default_socket_timeout', 300);
+        $emptyFaq = "";
+        $result = null;
+        $query = "Select * from `faq` where category = 'Mediportal'";    
+        $conn = mysqli_connect("localhost", "root", "", "mediportal_db", 3306);
+        mysqli_set_charset($conn,"utf8");
+        $result = mysqli_query($conn, $query);
+
+        $faqArray = array();
+        while(($row = mysqli_fetch_assoc($result))!=null){ 
+                    $faqArray[] = array('id'=>$row['id'],'category'=>$row['category'],'author'=>$row['Author'],'question'=>$row['Question'],'answer'=>$row['Answer'],'time'=>$row['Time'],'date'=>$row['Date'], 'status'=>$row['status']);
+                    }
+        if(empty($faqArray)){
+            $emptyFaq = "<h1 align=\"center\">No New Frequently Asked Question</h1>";
+        }else{
+            $emptyFaq = "";
+        }
+//        var_dump($faqArray);
+?> 
+
 <!DOCTYPE>
 <html>
 <head>
@@ -69,31 +91,37 @@
                                             }
                                         </script>
                                     </fieldset>
-						<h1>What is Mediportal?</h1>
-				<br><hr>
-				<p>
-					Mediportal is a online doctor appointment system made for general users and doctor's accross the world. Get an appointment today.
-				</p>
-				<h1>What is Mediportal's Hotline?</h1>
-				<br><hr>
-				<p>
-					Currently we don't have any helpline number. Soon we'll add hotline number(toll free).
-				</p>
-			</td>
-		</tr>
-		<tr>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td align="center" colspan="2">
-				<button>Previous Page</button> | <button>Next Page</button>
-			</td>
-		</tr>
-		<tr>
-			<td><h2>&nbsp;</h2></td>
-		</tr>
-	</table>
-</div>
+								<?php
+									for ($i=0; $i < count($faqArray); $i++) { 
+										echo "<h1>";
+										echo $faqArray[$i]['question'];;
+										echo "</h1>";
+										echo "<br/><b>Author: </b>".$faqArray[$i]['author'];
+										echo "  <b>Posted on: </b>".$faqArray[$i]['date']." ".$faqArray[$i]['time'];
+										echo "<br><hr>";
+										echo "<p>";
+
+										echo $faqArray[$i]['answer'];
+
+										echo "</p>";
+										
+									}
+								?>
+							</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td align="center" colspan="2">
+								<button>Previous Page</button> | <button>Next Page</button>
+							</td>
+						</tr>
+						<tr>
+							<td><h2>&nbsp;</h2></td>
+						</tr>
+					</table>
+				</div>
 <div>
 		<table align="center">
 			<tr align="center">

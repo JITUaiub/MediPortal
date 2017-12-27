@@ -37,7 +37,11 @@ session_start();
                         <td width="40%">
                             <table align="right">
                                 <td><strong>Logged in as </strong></td>
-                                <td><a href="viewprofile.php"><?php echo $row['username']; ?><img src="images/user.png"></a></td>
+                                <td><a href="viewprofile.php"><?php echo $row['username']; ?><?php if($row['profile_picture'] == ""){
+                                        echo "<img width='20' height='20' src='images/default.png' alt='Default Profile Pic'>";
+                                } else {
+                                        echo "<img width='20' height='20' src='images/".$row['profile_picture']."' alt='Profile Pic'>";
+                                }?> <br></a></td>
                                 <td><hr width="1" size="15"></td>
                                  <td><a href="../Registration/DocRegAddEducation.php">Profile</a></td>
                                                                  <td><hr width="1" size="15"></td>
@@ -125,8 +129,12 @@ session_start();
                         </fieldset>
                         </td>
                         <div align="center">
-                             <td width="70%" align="center">    <h2><img src="images/usericon.png"/><br/>
-                                Welcome Doctor  
+                             <td width="70%" align="center">    <h2><?php if($row['profile_picture'] == ""){
+                                        echo "<img width='200' height='200' src='images/default.png' alt='Default Profile Pic'>";
+                                } else {
+                                        echo "<img width='200' height='200' src='images/".$row['profile_picture']."' alt='Profile Pic'>";
+                                }?> <br><br/>
+                                Welcome <?php echo $row['username']; ?> 
                                 <h3>11 DEC, 2017</h3>
                                 <table width="80%">
                                     <tr>

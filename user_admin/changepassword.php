@@ -205,7 +205,7 @@ $conn = mysqli_connect("localhost", "root", "","mediportal_db");
                 </div>
             </td>
         </tr>
-        <<?php }mysqli_close($conn); ?>
+        <?php }mysqli_close($conn); ?>
         <tr>
             <td>
                 <!-- Footer section -->

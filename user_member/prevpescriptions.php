@@ -8,6 +8,26 @@
 
 	$conn = mysqli_connect("localhost", "root", "","mediportal_db");	
 		
+	//doctor info
+	  function doctor_name($doctor_id){
+	   $conn = mysqli_connect("localhost", "root", "","mediportal_db");
+	   $sql3="SELECT `username` FROM `doctor` WHERE `doctor_id`= ".$doctor_id."";
+		$result = mysqli_query($conn, $sql3);
+	
+		while(($row = mysqli_fetch_assoc($result))!=null){ 
+			$username =$row['username'];
+											
+							
+		}
+			return $username;
+	  } 
+	
+	
+	
+	
+	
+	
+	
 	/*member id*/
 		$sql2="SELECT `member_id` FROM `member` WHERE `username`= '".$_SESSION['patient_username']."';";
 		$result = mysqli_query($conn, $sql2);
@@ -178,7 +198,7 @@
                                             <h3 align="center">date</h3>
                                         </th>
                                         <th>
-                                            <h3 align="center">Doctor id</h3>
+                                            <h3 align="center">Doctor name</h3>
                                         </th>
                                         <th>
                                             <h3 align="center">Disease</h3>
@@ -194,7 +214,7 @@
 							<tr>
 								
 								<td><?= $arr[$i]['appointment']?></td>
-								<td><a href="doctorDetails.php"><?=$arr[$i]['doctor_id']?></a></td>
+								<td><a href="doctorDetails.php?id=<?= $arr[$i]['doctor_id']?>"><?= doctor_name($arr[$i]['doctor_id'])?></a></td>
 								<td><?= $arr[$i]['disease']?></td>
 								<td><?= $arr[$i]['prescription_id']?></td>
 								<td><?= $arr[$i]['next_appointment']?></td>
