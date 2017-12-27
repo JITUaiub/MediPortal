@@ -65,13 +65,13 @@
             $_SESSION['patient_username'] = $row['username'];
             $_SESSION['patient_type'] = $row['type'];
            
-		   /*
+		   
 		   $file = "select member_id from member where username = '".$_SESSION['patient_username']."'";
 			$result = mysqli_query($conn, $file)or die(mysqli_error($conn));
 			while($row = mysqli_fetch_assoc($result)) {
 				$_SESSION['patient_id'] = $row['member_id'];
 			}
-          */  
+           
 			header("Location:user_member/dashboard.php");
             $check = 1;
 		}

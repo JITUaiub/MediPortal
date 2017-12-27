@@ -39,11 +39,11 @@
 				"status"=>$row['status'],
 				"appointment_type"=>$row['appointment_type']			
 				);
-											
+										
 							
 		}
-	
-	
+
+       
 	
  ?>
 
@@ -196,7 +196,7 @@
                                             </strong>
                                         </th>
 								-->
-                                      <th width="10%"><strong>Doctor Name</strong></th>
+                                      <th width="10%"><strong>Doctor ID</strong></th>
                                       <th  width="10%"><strong>Appoinment Date</strong></th>
                                       <th  width="10%"><strong>Time</strong></th>
 									  <th  width="10%"><strong>Type</strong></th>
