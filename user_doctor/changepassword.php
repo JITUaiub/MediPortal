@@ -31,6 +31,11 @@ $conn = mysqli_connect("localhost", "root", "","mediportal_db");
   		$result=mysqli_query($conn, $sql)or die(mysqli_error($conn));
 
   	}
+     else
+    {
+     $mess="Password does not match";
+    echo "<script>alert(' $mess')</script>";
+    }
   }
   mysqli_close($conn);
   ?>

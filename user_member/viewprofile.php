@@ -2,6 +2,7 @@
     session_start();
 
 
+
      $conn = mysqli_connect("localhost", "root", "","mediportal_db");
    
              if (!$conn) {
@@ -10,6 +11,8 @@
  if(isset($_SESSION['patient_username']) && isset($_SESSION['patient_type'])) {
     $member_information = "SELECT * from member where username = '".$_SESSION['patient_username']."';";
      $result = mysqli_query($conn, $member_information)or die(mysqli_error($conn)); }
+
+ 
 
       while($row = mysqli_fetch_assoc($result)) {
 
@@ -244,8 +247,10 @@
                                                             <td><?php echo $row['email'];?></td>
                                                          </tr>
                                                     </table>
-                                          <?php }
-                                          mysqli_close($conn) ?>
+                                          <?php
+                                          } 
+
+                                          mysqli_close($conn); ?>
                                                        
                                                 </fieldset>
                                                 </td>

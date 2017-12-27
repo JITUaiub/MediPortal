@@ -19,7 +19,7 @@
 
 
 	$_SESSION['admin_username'];
-	//$_SESSION['admin_type'];
+	$_SESSION['admin_type'];
 	//$_SESSION['admin_id'];
 
 
@@ -65,13 +65,13 @@
             $_SESSION['patient_username'] = $row['username'];
             $_SESSION['patient_type'] = $row['type'];
            
-		   /*
+		   
 		   $file = "select member_id from member where username = '".$_SESSION['patient_username']."'";
 			$result = mysqli_query($conn, $file)or die(mysqli_error($conn));
 			while($row = mysqli_fetch_assoc($result)) {
 				$_SESSION['patient_id'] = $row['member_id'];
 			}
-          */  
+           
 			header("Location:user_member/dashboard.php");
             $check = 1;
 		}
@@ -83,14 +83,14 @@
 			$_SESSION['admin_username'] = $row['username'];
             $_SESSION['admin_type'] = $row['type'];
             
-			/*
+			
 			$file = "select admin_id from admin where username = '".$_SESSION['admin_username']."'";
 			$result = mysqli_query($conn, $file)or die(mysqli_error($conn));
 			while($row = mysqli_fetch_assoc($result)) {
 				$_SESSION['admin_id'] = $row['admin_id'];
 			}
 
-			*/
+			
             header("Location:user_admin/dashboard.php");
             $check = 1;		}
 		

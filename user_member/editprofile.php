@@ -215,7 +215,7 @@
                                                         <tr>
                                                             <td width="30%"><strong>Date Of Birth</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td width="65%"><input type="date" name="dob" value="<?php echo $row['dob'];?>" disabled="true"></td>
+                                                            <td width="65%"><input type="date" name="dob" value="<?php echo $row['dob'];?>" ></td>
                                                         </tr>
 
                                                          <tr>
