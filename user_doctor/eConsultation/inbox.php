@@ -1,3 +1,44 @@
+<?php
+    ini_set('mysql.connect_timeout', 300);
+    ini_set('default_socket_timeout', 300);
+    session_start();
+
+    $sql="select senderName, RecipientName, ChatID, Subject, Status from inbox where senderName = 'Jitu'";
+    $conn = mysqli_connect("localhost", "root", "", "mediportal_db", 3306);
+    mysqli_set_charset($conn,"utf8");
+    $result = mysqli_query($conn, $sql);
+
+    $inbox_array = array();
+     while(($row = mysqli_fetch_assoc($result))!=null){ 
+                                $inbox_array[] = array('senderName'=>$row['senderName'],'RecipientName'=>$row['RecipientName'],'ChatID'=>$row['ChatID'],'Subject'=>$row['Subject'],'Status'=>$row['Status']);
+            }  
+            //var_dump($inbox_array);
+    //$sql="select * from messages where chatID = 1 order by date desc, time desc limit 1";
+    $sql="select * from messages";      
+    $conn = mysqli_connect("localhost", "root", "", "mediportal_db", 3306);
+    mysqli_set_charset($conn,"utf8");
+    $result = mysqli_query($conn, $sql);
+
+    $message_array = array();
+     while(($row = mysqli_fetch_assoc($result))!=null){ 
+                                $message_array[] = array('chatID'=>$row['ChatID'],'body'=>$row['Body'],'attachment'=>$row['attachment'],'time'=>$row['Time'],'date'=>$row['Date']);
+            }
+
+    //var_dump($message_array);
+
+    if(isset($_POST['prev'])){
+
+    }
+
+    if(isset($_POST['next'])){
+        
+    }
+
+    if(isset($_POST['search'])){
+        
+    }
+
+?>
 <html>
 
 <head><title>Home</title></head>
@@ -104,15 +145,29 @@
                         <div align="center">
                              <td width="70%" align="center" valign="top">
                                 <!------ UI  -->
+                                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
                                 <h1>Inbox</h1>
                                 <strong>Search Message: </strong><input type="text" name="senderName" value="Sender Name">
                                 <input type="submit" name="search" value="Search"><br><br>
-                                <table width="100%">
+                                    <table width="100%">
                                     <tr>
-                                        
-                                        <td align="right" colspan="7">
+                                        <td align="center">
+                                             <strong>Sender</strong>
+                                        </td>
+                                        <td align="center">
+                                             <strong>Subject</strong>
+                                        </td>
+                                        <td align="center">
+                                             <strong>Message</strong>
+                                        </td>
+                                        <td align="center">
+                                             <strong>Time | Date</strong>
+                                        </td>
+                                        <td align="center">
+                                            <strong>Attachment</strong>
+                                        </td>
+                                        <td align="center">
                                              <strong>
-                                                <label>Actions:</label>
                                                 <select >
                                                     <optgroup label="Actions">
                                                         <option selected="true" value="all">Select none</option>
@@ -126,76 +181,58 @@
                                         </td>
                                     </tr>
                                     <tr><td colspan="6"><hr></td></tr>
-                                    <tr>
-                                        <td align="center">
-                                            <strong>Ashley</strong>
-                                        </td>
-                                        <td align="center">
-                                            <strong>Hello<strong>
-                                        </td>
-                                        <td align="center">
-                                             <a href="conversation.php"><strong>Heey Bob, How are you?..</strong></a>
-                                        </td>
-                                        <td align="center">
-                                             <strong>3:06AM | 24-11-2017</strong>
-                                        </td>
-                                        <td align="center">
-                                            <strong>No attachment</strong>
-                                        </td>
-                                        <td align="center">
-                                            <strong><input type="checkbox" name="action"></strong>
-                                        </td>
-                                    </tr>
-                                    
-                                    <tr><td colspan="6"><hr></td></tr>
 
-                                    <tr>
-                                        <td align="center">
-                                            Marsh
-                                        </td>
-                                        <td align="center">
-                                            Need Help
-                                        </td>
-                                        <td align="center">
-                                             <a href="conversation.php">Hi Buddy !! ..</a>
-                                        </td>
-                                        <td align="center">
-                                             9:27AM | 23-11-2017
-                                        </td>
-                                        <td align="center">
-                                            assignment24Li.pdf
-                                        </td>
-                                        <td align="center">
-                                            <input type="checkbox" name="action">
-                                        </td>
-                                    </tr>
-                                    
-                                    <tr><td colspan="6"><hr></td></tr>
+                                    <?php
 
-                                    <tr>
-                                        <td align="center">
-                                            <strong>John</strong>
-                                        </td>
-                                        <td align="center">
-                                            <strong>No Subject<strong>
-                                        </td>
-                                        <td align="center">
-                                             <a href="conversation.php"><strong>Meet me at this place at..</strong></a>
-                                        </td>
-                                        <td align="center">
-                                             <strong>1:39PM | 21-11-2017</strong>
-                                        </td>
-                                        <td align="center">
-                                            <strong>location.txt</strong>
-                                        </td>
-                                        <td align="center">
-                                            <strong><input type="checkbox" name="action"></strong>
-                                        </td>
-                                    </tr>
+                                        for($i=0; $i<count($inbox_array); $i++){
+                                            echo "<tr>";
+                                            echo "<td align=\"center\">";
+                                                echo "<strong>".$inbox_array[$i]["RecipientName"]."</strong>";
+                                            echo "</td>";
+                                            echo "<td align=\"center\">";
+                                                echo "<strong>".$inbox_array[$i]["Subject"]."<strong>";
+                                            echo "</td>";
+                                            echo "<td align=\"center\">";
+                                                 echo "<a href=\"conversation.php?ChatID=".($inbox_array[$i]["ChatID"])."\">";
+                                                 echo "<strong>";
+
+                                                $sql="select * from messages where chatID = ".($inbox_array[$i]["ChatID"])." order by date desc, time desc limit 1";    
+                                                $conn = mysqli_connect("localhost", "root", "", "mediportal_db", 3306);
+                                                mysqli_set_charset($conn,"utf8");
+                                                $result = mysqli_query($conn, $sql);
+
+                                                $m_array = array();
+                                                 while(($row = mysqli_fetch_assoc($result))!=null){ 
+                                                                            $m_array[] = array('body'=>$row['Body']);
+                                                        }
+                                                 echo $m_array[0]["body"];
+                                                 echo "</strong></a>";
+                                                 if($inbox_array[$i]["Status"] == "Unread")
+                                                    echo"<img src=\"../images/newStatus.png\"/>";
+                                            echo "</td>";
+                                            echo "<td align=\"center\">";
+                                                 echo "<strong>".$message_array[$i]["time"]." | ".$message_array[$i]["date"]."</strong>";
+                                            echo "</td>";
+                                            echo "<td align=\"center\">";
+                                                echo "<strong>";
+                                                    if($message_array[$i]["attachment"] == "")
+                                                        echo "No attachment";
+                                                    else 
+                                                        echo '<img height="40" width="40" src="data:image;base64, '.$message_array[$i]["attachment"].'"/>';
+                                                echo "</strong>";
+                                            echo "</td>";
+                                            echo "<td align=\"center\">";
+                                                echo "<strong><input type=\"checkbox\" name=\"action\"></strong>";
+                                            echo "</td>";
+                                        echo "</tr>";
+                                        
+                                        echo "<tr><td colspan=\"6\"><hr></td></tr>";
+                                        }
+                                    ?>
+
                                     
-                                    <tr><td colspan="6"><hr></td></tr>
                                 </table>
-                                <button>Previous Page</button><button>Next Page</button>
+                                <input type="submit" name="prev" value="Previous Page"><input type="submit" name="next" value="Next Page">
                                 <br>
                                 <br>
                                 Show Email Per Page: <select>

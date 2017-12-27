@@ -1,11 +1,7 @@
 <?php
 	ini_set('mysql.connect_timeout', 300);
 	ini_set('default_socket_timeout', 300);
-
-	//$db_host = 'localhost';
-	//$db_user = 'root';
-	//$db_pass = '';
-	//$db_name = 'mediportal_db';
+	session_start();
 
 	$sql="select senderName, RecipientName, ChatID, Subject, Status from inbox where senderName = 'Jitu'";
 	$conn = mysqli_connect("localhost", "root", "", "mediportal_db", 3306);
@@ -197,9 +193,10 @@
 	                                            echo "<strong>".$inbox_array[$i]["Subject"]."<strong>";
 	                                        echo "</td>";
 	                                        echo "<td align=\"center\">";
-	                                             echo "<a href=\"conversation.php\"><strong>";
+	                                             echo "<a href=\"conversation.php?ChatID=".($inbox_array[$i]["ChatID"])."\">";
+	                                             echo "<strong>";
 
-	                                            $sql="select * from messages where chatID = ".($i+1)." order by date desc, time desc limit 1";	
+	                                            $sql="select * from messages where chatID = ".($inbox_array[$i]["ChatID"])." order by date desc, time desc limit 1";	
 												$conn = mysqli_connect("localhost", "root", "", "mediportal_db", 3306);
 												mysqli_set_charset($conn,"utf8");
 												$result = mysqli_query($conn, $sql);
