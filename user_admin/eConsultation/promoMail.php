@@ -187,15 +187,17 @@
               <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
                 <h1>Promotional Email</h1>
                 <legend align="center"><h4>Type a message here</h4></legend>
-                <table align="center" width="60%">
-                  <tr>
-                    <td>
-                      <fieldset>
+                <fieldset>
                                              
                                              <table>
                                              <tr>
                                                  <td align="center">To</td><td>:</td>
-                                                 <td align="left"><input  type="text" name="to_mail" /><br>
+                                                 <td align="left"><select>
+                                                    <option>All Doctors</option>
+                                                    <option>All General Users</option>
+                                                    <option>All Blood Donors</option>
+                                                    <option>All Blocked User</option>
+                                                 </select><br>
                                                   <div style="color: RED">
                                                     <?php echo $recipientErr ?>
                                                   </div>
@@ -231,10 +233,7 @@
                                              </table>
                                              <input type="submit" name="submit" value="Send Message"><br/><br/>
                                              <a href="inbox.php">Go to inbox</a>
-                                         </fieldset>
-                    </td>
-                  </tr>
-                </table>                 
+                                         </fieldset>                
               </form>
 
             </td>
