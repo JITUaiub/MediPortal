@@ -1,3 +1,48 @@
+<?php
+	ini_set('mysql.connect_timeout', 300);
+	ini_set('default_socket_timeout', 300);
+	session_start();
+	if(isset($_GET['ChatID'])){$_SESSION['ChatID'] = $_GET['ChatID'];}
+
+	$sql="select * from messages where ChatID =". $_SESSION['ChatID'];		
+	$conn = mysqli_connect("localhost", "root", "", "mediportal_db", 3306);
+	mysqli_set_charset($conn,"utf8");
+	$result = mysqli_query($conn, $sql);
+
+	$message_array = array();
+	 while(($row = mysqli_fetch_assoc($result))!=null){ 
+								$message_array[] = array('chatID'=>$row['ChatID'],'body'=>$row['Body'],'attachment'=>$row['attachment'],'time'=>$row['Time'],'date'=>$row['Date']);
+			}
+
+	$conn = mysqli_connect("localhost", "root", "", "mediportal_db", 3306);
+			$query = "UPDATE inbox SET inbox.Status = 'Read' where inbox.ChatID = {$_SESSION['ChatID']}";
+
+			mysqli_query($conn, $query);
+
+	$errormsg = "";
+
+	if(isset($_POST['reply'])){
+		if($_POST['body'] == "")
+			$errormsg = "Type a message";
+		else
+		{
+			$conn = mysqli_connect("localhost", "root", "", "mediportal_db", 3306);
+			$errormsg = "";
+			$time = date("h:i:sa");
+			$date = date("l").' '.date("Y-m-d");
+			$query = "INSERT INTO `messages` (`ChatID`, `Body`, `attachment`, `Time`, `Date`) VALUES ({$_SESSION['ChatID']}, '{$_POST['body']}', '', '{$time}', '{$date}')";
+
+			mysqli_query($conn, $query);
+			header("location: conversation.php");
+			exit();
+		}
+	}
+	if (isset($_POST['report'])) {
+		//SELECT inbox.SenderName FROM inbox WHERE inbox.ChatID = messages.ChatID
+	}
+
+?>
+
 <html>
 
 <head><title>Home</title></head>
@@ -103,44 +148,43 @@
                         <div align="center">
                              <td width="70%" align="center" valign="top">
                                 <!------ UI  -->
-                                <h1>Conversation</h1>
+                                <form method="post" action="" enctype="multipart/form-data">
+                                	<h1>Conversation</h1>
                                 <p align="center"><a href="viewProfileAdmin.php">Ashley</a><br/>
                                 Email: ashley@example.com<br/>
                                 Subject: Unknown<br/>
                                 Last seen: X moment ago</p>
-                                <table width="100%">
-                                    <tr align="left">
-                                        <td>Heey Bob, How are you?..</td>
-                                    </tr>
-                                    <tr align="left"><td>3:06AM | 24-11-2017</td></tr>
-                                </table>
-                                <table width="100%">
-                                    <tr align="right">
-                                        <td>I'm good. What's about you?..</td>
-                                    </tr>
-                                    <tr align="right"><td>3:07AM | 24-11-2017</td></tr>
-                                </table>
-
-                                <table width="100%">
-                                    <tr align="left">
-                                        <td>Any new Grand opening for today?</td>
-                                    </tr>
-                                    <tr align="left"><td>3:09AM | 24-11-2017</td></tr>
-                                </table>
-
-                                <table width="100%">
-                                    <tr align="right">
-                                        <td>We got a special one. Better than last time.. bla bla</td>
-                                    </tr>
-                                    <tr align="right"><td>3:12AM | 24-11-2017</td></tr>
-                                </table>
-
+                                <?php
+                                	for($i=0; $i<count($message_array); $i++){
+                                		echo "<table width=\"100%\">";
+		                                    echo "<tr align=\"";
+		                                    if($i%2 == 0)
+		                                    	echo "left";
+		                                    else
+		                                    	echo "right";
+		                                    echo "\">";
+		                                        echo "<td>".$message_array[$i]["body"];
+		                                        if($message_array[$i]["attachment"] != ""){
+		                                        	echo "<br/><a href=\"download.php?id=".$message_array[$i]['time']."&sub_id=".$message_array[$i]['date']; echo "\"><img height=\"100\" width=\"100\" src=\"data:image;base64, ".$message_array[$i]["attachment"]."\"/>";
+		                                        	echo "</a>";
+		                                        }
+		                                        echo "</td>";
+		                                    echo "</tr>";
+		                                    echo "<tr align=\"";
+		                                    if($i%2 == 0)
+		                                    	echo "left";
+		                                    else
+		                                    	echo "right";
+		                                    echo "\"><td>". $message_array[$i]["time"] ." | ". $message_array[$i]["date"]."</td></tr>";
+	                                	echo "</table>";
+                                	}
+                                ?>
                                 <!-- Reply  -->
                                 <br><br>
                                 <table>
                                     <tr>
                                         <td align="right">Reply to this conversation:</td>
-                                        <td width="20%"><textarea></textarea></td>
+                                        <td width="20%"><textarea name="body"></textarea><br><div><?php echo $errormsg;?></div></td>
                                     </tr>
                                     <script>
                                                 function goBack() {
@@ -152,11 +196,13 @@
                                                 }
                                     </script> 
                                     <tr>
-                                        <td align="left"><a href="inbox.php">Go to inbox</a> |  | <button onclick="report()">Report This User</button></td>
+                                        <td align="left"><a href="inbox.php">Go to inbox</a> |  | <input type="submit" name="report" value="Report This User"></td>
                                         <td align="right"><input type="submit" name="reply" value="Reply"></td>
                                     </tr>
                                 </table>
 
+
+                                </form>
                                 
                                 <!-- END -->
                             </td>
