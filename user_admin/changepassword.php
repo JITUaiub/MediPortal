@@ -37,8 +37,17 @@ $conn = mysqli_connect("localhost", "root", "","mediportal_db");
     echo "<script>alert(' $mess')</script>";
     }
   }
+  if(isset($_SESSION['admin_username']) && isset($_SESSION['admin_type'])) {
+    $doctor_information = "SELECT * from admin where username = '".$_SESSION['admin_username']."';";
+     $result = mysqli_query($conn, $doctor_information)or die(mysqli_error($conn)); 
+     
+  }
+ 
+    while($row = mysqli_fetch_assoc($result)) {
+    
 
-  mysqli_close($conn);
+
+  
   ?>
 <html>
 
@@ -62,7 +71,11 @@ $conn = mysqli_connect("localhost", "root", "","mediportal_db");
                         <td width="40%">
                             <table align="right">
                                 <td><strong>Logged in as </strong></td>
-                                <td><a href="viewprofile.php">Bob<img src="images/user.png"></a></td>
+                                <td><a href="viewprofile.php"><?php echo $row['username']; ?><?php if($row['profile_picture'] == ""){
+                                        echo "<img width='20' height='20' src='images/default.png' alt='Default Profile Pic'>";
+                                } else {
+                                        echo "<img width='20' height='20' src='images/".$row['profile_picture']."' alt='Profile Pic'>";
+                                }?></a></td>
                                 <td><hr width="1" size="15"></td>
                                 <td><a href="../index.php">Logout<img src="images/logout.png"></a></td>
                             </table> 
@@ -192,6 +205,7 @@ $conn = mysqli_connect("localhost", "root", "","mediportal_db");
                 </div>
             </td>
         </tr>
+        <<?php }mysqli_close($conn); ?>
         <tr>
             <td>
                 <!-- Footer section -->

@@ -16,7 +16,7 @@
     while($row = mysqli_fetch_assoc($result)) {
     
 ?>
- ?>
+
 
 
 
@@ -38,7 +38,11 @@
                         <td width="40%">
                             <table align="right">
                                 <td><strong>Logged in as </strong></td>
-                                <td><a href="viewprofile.php"><?php echo $row['username']; ?><img src="images/user.png"></a></td>
+                                <td><a href="viewprofile.php"><?php echo $row['username']; ?><?php if($row['profile_picture'] == ""){
+                                        echo "<img width='20' height='20' src='images/default.png' alt='Default Profile Pic'>";
+                                } else {
+                                        echo "<img width='20' height='20' src='images/".$row['profile_picture']."' alt='Profile Pic'>";
+                                }?></a></td>
                                 <td><hr width="1" size="15"></td>
                                 <td><a href="../index.php">Logout<img src="images/logout.png"></a></td>
                             </table> 
@@ -124,7 +128,11 @@
                         </fieldset>
                         </td>
                         <div align="center">
-                       		 <td width="70%" align="center">	<h2><?php if($row['profile_picture'] == ""){
+                       		 <td width="70%" align="center"><?php if($row['profile_picture'] == ""){
+                                        echo "<img width='200' height='200' src='images/default.png' alt='Default Profile Pic'>";
+                                } else {
+                                        echo "<img width='200' height='200' src='images/".$row['profile_picture']."' alt='Profile Pic'>";
+                                }?>	<br><h2><?php if($row['profile_picture'] == ""){
                     echo "<img width='100' height='100' src='images/default.png' alt='Default Profile Pic'>";
                 } 
                 ?><br/>

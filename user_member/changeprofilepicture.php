@@ -45,7 +45,11 @@
                         <td width="40%">
                             <table align="right">
                                 <td><strong>Logged in as </strong></td>
-                                <td><a href="viewprofile.php"><?=$_SESSION['patient_username']?><img src="images/user.png"></a></td>
+                                <td><a href="viewprofile.php"><?=$_SESSION['patient_username']?><?php if($row['profile_picture'] == ""){
+                                        echo "<img width='20' height='20' src='images/default.jpg' alt='Default Profile Pic'>";
+                                } else {
+                                        echo "<img width='20' height='20' src='images/".$row['profile_picture']."' alt='Profile Pic'>";
+                                }?></a></td>
                                 <td><hr width="1" size="15"></td>
 								<td><a href="../Registration/DonorSubscription.php">Profile</a></td>
                                 <td><hr width="1" size="15"></td>
@@ -131,7 +135,11 @@
                              <td width="70%" align="center" valign="top">
                                 <!------ UI  -->
                                     <h1>CHANGE PROFILE PICTURE</h1>
-                                    <img src="images/default.png"/>
+                                    <?php if($row['profile_picture'] == ""){
+                                        echo "<img width='200' height='200' src='images/default.png' alt='Default Profile Pic'>";
+                                } else {
+                                        echo "<img width='200' height='200' src='images/".$row['profile_picture']."' alt='Profile Pic'>";
+                                }?>
                                     <br/><br/>
                                     <input type="file" name="file"/>
                                     <hr/>

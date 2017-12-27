@@ -39,7 +39,7 @@
                             <table align="right">
                                 <td><strong>Logged in as </strong></td>
                                 <td><a href="viewprofile.php"><?php echo $row['username']; ?><?php if($row['profile_picture'] == ""){
-                                        echo "<img width='20' height='20' src='pictures/default.jpg' alt='Default Profile Pic'>";
+                                        echo "<img width='20' height='20' src='images/default.png' alt='Default Profile Pic'>";
                                 } else {
                                         echo "<img width='20' height='20' src='images/".$row['profile_picture']."' alt='Profile Pic'>";
                                 }?></a></td>
