@@ -209,7 +209,7 @@
                         <td width="40%">
                             <table align="right">
                                 <td><strong>Logged in as </strong></td>
-                                <td><a href="viewprofile.php"><?php echo $row['username']; ?><img src="images/user.png"></a></td>
+                                <td><a href="viewprofile.php"><?php echo $_SESSION['doctor_username']; ?><img src="images/user.png"></a></td>
                                 <td><hr width="1" size="15"></td>
                                 <td><a href="../Registration/DocRegAddEducation.php">Profile</a></td>
                                                                  <td><hr width="1" size="15"></td>
@@ -513,7 +513,7 @@
                                                             
                                                             <td width="30%"><strong>BMDC Number</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td><input type="text" name="bmdc_number" value="0168-DMC594/0625"><span id="msg10"></td>
+                                                            <td><input type="text" name="bmdc_number" value="<?php echo $row['bmdc_license'] ;?>"><span id="msg10"></td>
                                                          </tr>
 
                                                          <!-- mobile number  -->

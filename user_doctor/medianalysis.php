@@ -1,3 +1,6 @@
+<?php session_start(); ?>
+
+
 <html>
 
 <head><title>Medicine Analysis</title></head>
@@ -16,7 +19,7 @@
                         <td width="40%">
                             <table align="right">
                                 <td><strong>Logged in as </strong></td>
-                                <td><a href="viewprofile.php">Bob<img src="images/user.png"></a></td>
+                                <td><a href="viewprofile.php"><?php echo $_SESSION['doctor_username']; ?><img src="images/user.png"></a></td>
                                 <td><hr width="1" size="15"></td>
                                 <td><a href="../Registration/DocRegAddEducation.php">Profile</a></td>
                                                                  <td><hr width="1" size="15"></td>
