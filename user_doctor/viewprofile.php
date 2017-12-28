@@ -36,7 +36,7 @@
                         <td width="40%">
                             <table align="right">
                                 <td><strong>Logged in as </strong></td>
-                                <td><a href="viewprofile.php"><?php echo $row['username']; ?><?php echo $row['username']; ?><?php if($row['profile_picture'] == ""){
+                                <td><a href="viewprofile.php"><?php echo $row['username']; ?><?php if($row['profile_picture'] == ""){
                                         echo "<img width='20' height='20' src='pictures/default.jpg' alt='Default Profile Pic'>";
                                 } else {
                                         echo "<img width='20' height='20' src='images/".$row['profile_picture']."' alt='Profile Pic'>";
@@ -344,7 +344,7 @@ if(isset($_SESSION['doctor_username']) && isset($_SESSION['doctor_type'])) {
                                                             
                                                             <td width="30%"><strong>BMDC Number</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td>0168-DMC594/0625</td>
+                                                            <td><?php echo $row['bmdc_license'] ;?></td>
                                                          </tr>
                                                          
 
