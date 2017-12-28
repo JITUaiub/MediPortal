@@ -1,6 +1,9 @@
 <?php 
 session_start();
-	
+
+	if(isset($_SESSION['topMember'])){
+		unset($_SESSION['topMember']);
+	}
 	$conn = mysqli_connect("localhost", "root", "","mediportal_db");	
 //top appointment
 	$app="SELECT COUNT(appointment.member_id) AS no, member.name,member.member_id, member.profile_picture FROM appointment, member WHERE appointment.member_id = member.member_id GROUP BY appointment.member_id ORDER BY COUNT(appointment.member_id) DESC";
@@ -21,7 +24,7 @@ session_start();
 				"no"=>$arr[$i]['no'], "image"=>$arr[$i]['image']
 				);
 	}
-	var_dump($_SESSION['topMember']);
+//	var_dump($_SESSION['topMember']);
 //online tretment	
 	$online="SELECT COUNT(appointment.member_id) AS no, member.name,member.member_id FROM appointment, member WHERE appointment.member_id = member.member_id AND appointment.appointment_type LIKE 'online' GROUP BY appointment.member_id ORDER BY COUNT(appointment.member_id) DESC";
 	$result = mysqli_query($conn, $online);
