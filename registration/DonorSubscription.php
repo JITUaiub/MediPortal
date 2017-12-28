@@ -1,6 +1,4 @@
-<<<<<<< HEAD
 
-<!DOCTYPE>
 <html>
 <head>
 	<title>Patient Registration</title>
@@ -9,30 +7,27 @@
 	</style>
 </head>
 <body>
-	<?php
 
-=======
 <?php
 	session_start();
 	if(!isset($_SESSION['patient_username']) || empty($_SESSION['patient_username'])){
 		  header("location: ../Login.php");
 		  exit;
 		}
-	
->>>>>>> 9809467a5f76b27d2a52dcb5af9b81dceb7781b1
+
 $bloodsubErr = $weightErr = $heartconditionErr = $drugsErr = "";
 $err1=false;
 $err2=false;
 $err3=false;
 $err4=false;
 
-if(isset($_POST['submit'])){
+if(isset($_REQUEST['submit'])){
   
-  $blood_donation_status=$_POST['blood_donation_status'];
-  $weight=$_POST['weight'];
-  $heartcondition=$_POST['heartcondition'];
-  $drugs=$_POST["drugs"];
-  $blood_group=$_POST['blood_group'];
+  $blood_donation_status=$_REQUEST['blood_donation_status'];
+  $weight=$_REQUEST['weight'];
+  $heartcondition=$_REQUEST['heartcondition'];
+  $drugs=$_REQUEST["drugs"];
+  $blood_group=$_REQUEST['blood_group'];
   
   if ($blood_donation_status=='') {
     $bloodsubErr = "Checkbox is required";
@@ -75,7 +70,17 @@ if(isset($_POST['submit'])){
   }
  if($err1==true && $err2==true && $err3==true && $err4==true){
 	 $conn = mysqli_connect("localhost", "root", "", "mediportal_db");
- 	$sql="INSERT INTO blood(status, blood_group, question_1, question_2, question_3) VALUES ('$blood_donation_status','$blood_group','$weight','$heartcondition','$drugs')";
+	 if(isset($_SESSION["patient_username"])) {
+		$member_id_sql = "SELECT * FROM member where username = '".$_SESSION["patient_username"]."'";
+		$result = mysqli_query($conn, $member_id_sql)or die(mysqli_error($conn));
+
+		while($row = mysqli_fetch_assoc($result)) {
+			$mem_id = $row['member_id'];
+			
+		}
+	}
+	
+ 	$sql="INSERT INTO blood(blood_group_id,member_id,status, blood_group, question_1, question_2, question_3) VALUES ('','$mem_id','$blood_donation_status','$blood_group','$weight','$heartcondition','$drugs')";
 	
 	$result = mysqli_query($conn, $sql);
 	
@@ -117,13 +122,9 @@ if(isset($_POST['submit'])){
 
 			<div>
 				<h1 align="center">Blood Donation Subscription Form</h1>
-<<<<<<< HEAD
+
 				<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 				<form method="post" name="myForm" action="../user_patient/database_addbloodinfo.php">
-=======
-				<form method="post" action="">
-				
->>>>>>> 9809467a5f76b27d2a52dcb5af9b81dceb7781b1
 				<table align="center" width="60%">
 					<tr>
 						<td>
@@ -227,8 +228,8 @@ if(isset($_POST['submit'])){
 							
 							<tr>
 								<td colspan="3" align="center">
-							<input type="reset" name="reset" value="Reset" align="center"> 
-							<input type="Submit" name="Submit" value="Finish" align="center" >
+							<input type="submit" name="submit" value="Add" align="center"> 
+							<input type="Submit" name="finish" value="Finish" onclick= finish() align="center" >
 							<tr>
 								<td colspan="3" align="center"><a href="../user_member/dashboard.php">Skip for now</a></td>
 							</tr>
@@ -236,6 +237,10 @@ if(isset($_POST['submit'])){
 						</table>
 					</form>
 							</fieldset>
+							
+							
+							<script>
+							window.location.href=../user_member/viewprofile.php;
 						</td>
 					</tr>
 				</table>
