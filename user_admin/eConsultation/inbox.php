@@ -2,14 +2,14 @@
 	ini_set('mysql.connect_timeout', 300);
 	ini_set('default_socket_timeout', 300);
 	session_start();
-
-	$sql="select senderName, RecipientName, ChatID, Subject, Status from inbox where senderName = 'Jitu'";
+    var_dump($_SESSION);
+	$sql="select senderName, RecipientName, ChatID, Subject, Status from inbox where senderName = '". $_SESSION['admin_username']. "' order by ChatID desc";
 	$conn = mysqli_connect("localhost", "root", "", "mediportal_db", 3306);
 	mysqli_set_charset($conn,"utf8");
 	$result = mysqli_query($conn, $sql);
 
 	$inbox_array = array();
-	 while(($row = mysqli_fetch_assoc($result))!=null){ 
+	 while(($row = mysqli_fetch_array($result))!=null){ 
 								$inbox_array[] = array('senderName'=>$row['senderName'],'RecipientName'=>$row['RecipientName'],'ChatID'=>$row['ChatID'],'Subject'=>$row['Subject'],'Status'=>$row['Status']);
 			}  
 			//var_dump($inbox_array);
@@ -152,7 +152,7 @@
                                 	<table width="100%">
                                     <tr>
                                         <td align="center">
-                                             <strong>Sender</strong>
+                                             <strong>Recipient</strong>
                                         </td>
                                         <td align="center">
                                              <strong>Subject</strong>

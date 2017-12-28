@@ -1,7 +1,8 @@
 <?php
+  session_start();
 	ini_set('mysql.connect_timeout', 300);
 	ini_set('default_socket_timeout', 300);
-
+//    var_dump($_SESSION);
     $recipientErr = "";
     $bodyErr = "";
     $err1 = false;
@@ -15,7 +16,7 @@
 
 		$connection = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 
-        $sender = "Jitu";
+        $sender = $_SESSION['admin_username'];
         $to = $_POST['to_mail'];
         $subject = $_POST['subject'];
         $body = $_POST['body'];
@@ -41,7 +42,7 @@
             $bodyErr = "";         
         }
         if ($err1 == true && $err2 == true) {
-        	$sender = "Jitu";
+        	$sender = $_SESSION['admin_username'];
 	        $recipient = $to;
 	       // $subject = $subject;
 	        $message = $body;

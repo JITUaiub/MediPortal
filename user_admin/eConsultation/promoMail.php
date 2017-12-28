@@ -1,21 +1,17 @@
 <?php
   ini_set('mysql.connect_timeout', 300);
   ini_set('default_socket_timeout', 300);
-
+    session_start();
+    $allDoctor = null;
+    $allGeneralUser = null;
     $recipientErr = "";
     $bodyErr = "";
-    $err1 = false;
+    $err1 = true;
     $err2 = false;
     if(isset($_POST['submit'])){   
-      $db_host = 'localhost';
-    $db_user = 'root';
-    $db_pass = '';
+    $connection = mysqli_connect("localhost", "root", "", "mediportal_db", 3306);
 
-    $db_name = 'mediportal_db';
-
-    $connection = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
-
-        $sender = "Jitu";
+        $sender = $_SESSION['admin_username'];
         $to = $_POST['to_mail'];
         $subject = $_POST['subject'];
         $body = $_POST['body'];
@@ -25,8 +21,8 @@
             $subject = "No Subject";
 
         if(empty($to)){
-            $recipientErr = "Enter recipient.";
-            $err1 = false;
+            //$recipientErr = "Enter recipient.";
+            //$err1 = false;
         }
         else {
           $err1 = true;
@@ -41,7 +37,7 @@
             $bodyErr = "";         
         }
         if ($err1 == true && $err2 == true) {
-          $sender = "Jitu";
+          $sender = $_SESSION['admin_username'];
           $recipient = $to;
          // $subject = $subject;
           $message = $body;
@@ -52,18 +48,61 @@
             $image = file_get_contents($image);
             $image = base64_encode($image);
           }
-          $query = "INSERT INTO `inbox` (`SenderName`, `RecipientName`, `Subject`, `Status`) VALUES ('{$sender}', '{$recipient}', '{$subject}', 'Unread')";
+          
+          if($_POST['users'] == "All Doctors"){
+            $sql="SELECT doctor.username FROM `doctor` WHERE doctor.account_status = 'active'";      
+                $conn = mysqli_connect("localhost", "root", "", "mediportal_db", 3306);
+                mysqli_set_charset($conn,"utf8");
+                $result = mysqli_query($conn, $sql);
 
-      mysqli_query($connection, $query);
+                 while(($row = mysqli_fetch_assoc($result))!=null){ 
+                                            $allDoctor[] = array('SenderName'=>$row['username']);
+                        }
 
-      $query = "SELECT MAX(ChatID) from `inbox`";
-      $chatID = mysqli_fetch_assoc(mysqli_query($connection, $query));
+            for ($i=0; $i < count($allDoctor); $i++) { 
+                
+                $query = "INSERT INTO `inbox` (`SenderName`, `RecipientName`, `Subject`, `Status`) VALUES ('".$sender."', '".$allDoctor[$i]['SenderName']."', '".$subject."', 'Unread')";
 
-      $time = date("h:i:sa");
-      $date = date("l").' '.date("Y-m-d");
-      $query = "INSERT INTO `messages` (`ChatID`, `Body`, `attachment`, `Time`, `Date`) VALUES ({$chatID ["MAX(ChatID)"]}, '{$message}', '{$image}', '{$time}', '{$date}')";
+                mysqli_query($connection, $query);
 
-      mysqli_query($connection, $query);
+                $query = "SELECT MAX(ChatID) from `inbox`";
+                $chatID = mysqli_fetch_assoc(mysqli_query($connection, $query));
+
+                $time = date("h:i:sa");
+                $date = date("l").' '.date("Y-m-d");
+                $query = "INSERT INTO `messages` (`ChatID`, `Body`, `attachment`, `Time`, `Date`) VALUES ({$chatID ["MAX(ChatID)"]}, '{$message}', '{$image}', '{$time}', '{$date}')";
+
+                mysqli_query($connection, $query);
+            }
+          }
+
+          if($_POST['users'] == "All General Users"){
+            $sql="SELECT member.username FROM `member` WHERE member.account_status = 'active'";      
+                $conn = mysqli_connect("localhost", "root", "", "mediportal_db", 3306);
+                mysqli_set_charset($conn,"utf8");
+                $result = mysqli_query($conn, $sql);
+
+                 while(($row = mysqli_fetch_assoc($result))!=null){ 
+                                            $allGeneralUser[] = array('SenderName'=>$row['username']);
+                        }
+
+            for ($i=0; $i < count($allGeneralUser); $i++) { 
+                
+                $query = "INSERT INTO `inbox` (`SenderName`, `RecipientName`, `Subject`, `Status`) VALUES ('".$sender."', '".$allGeneralUser[$i]['SenderName']."', '".$subject."', 'Unread')";
+
+                mysqli_query($connection, $query);
+
+                $query = "SELECT MAX(ChatID) from `inbox`";
+                $chatID = mysqli_fetch_assoc(mysqli_query($connection, $query));
+
+                $time = date("h:i:sa");
+                $date = date("l").' '.date("Y-m-d");
+                $query = "INSERT INTO `messages` (`ChatID`, `Body`, `attachment`, `Time`, `Date`) VALUES ({$chatID ["MAX(ChatID)"]}, '{$message}', '{$image}', '{$time}', '{$date}')";
+
+                mysqli_query($connection, $query);
+            }
+          
+          }
 
       //$q = "select * from messages";
       //$arr = mysqli_query($connection, $q);
@@ -71,7 +110,7 @@
       //  echo '<img height="300" width="300" src="data:image;base64, '.$row["attachment"].'"/>';
       //}
 
-      header("location: message.php");
+      header("location: promoMail.php");
       exit;
         }
         mysqli_close($connection);
@@ -192,7 +231,7 @@
                                              <table>
                                              <tr>
                                                  <td align="center">To</td><td>:</td>
-                                                 <td align="left"><select>
+                                                 <td align="left"><select name="users">
                                                     <option>All Doctors</option>
                                                     <option>All General Users</option>
                                                     <option>All Blood Donors</option>
