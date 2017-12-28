@@ -80,7 +80,7 @@ function getDataFromDB($sql){
                       <a href="#"></a>
                   </td>
                   <td>
-                      <a href="prescriptionHistory.php">Get details</a>
+                      <a href="prescriptionHistory.php?mid=<?php echo $row['member_id']; ?>">Get details</a>
                   </td>
               </tr>
 
