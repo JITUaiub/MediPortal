@@ -1,6 +1,8 @@
 <?php
 session_start();
-session_destroy();
+	
+	
+	
 ?>
 
 <!DOCTYPE>
@@ -202,56 +204,54 @@ session_destroy();
 <br><br>
 			<div align="center">
 				<fieldset>
-					<h1 align="center">Our Top User</h1>
 					<div>
 						<fieldset>
-							<h1 align="center"> Top Doctor</h1>
+							<h1 align="center"> Top Doctors</h1>
 
 							<table align="center" width="80%">
 								<tr align="center">
-									<td align="center">
-										<img src="images/u1.png">
-						                 <p><b>Mr.XYZ</b></p>
-						                 <a href="doctor.php">See Profile</a>
-									</td>
-
-									<td>
-										<img src="images/u1.png">
-						<p><b>Mr.XYZ</b></p>
-						  <a href="doctor.php">See Profile</a>
-									</td>
-
-									<td>
-										<img src="images/u1.png">
-						<p><b>Mr.XYZ</b></p>
-						 <a href="doctor.php">See Profile</a>
-									</td>
+									<?php
+										for($i=0; $i<3; $i++){
+											echo "<td align=\"center\">";
+											echo "<img height=\"100\" width=\"100\" src=\"data:image;base64, ".$_SESSION['topDoctor'][$i]['image']."\"/>";
+											 echo "<p><b>";
+											 echo $_SESSION['topDoctor'][$i]['name'];
+											 echo "</b></p>";
+											echo "</td>";
+										}
+									?>
 								</tr>
 							</table>
 						</fieldset>
 
 						<fieldset>
-							<h1 align="center">Top general User</h1>
+							<h1 align="center">Top general Users</h1>
 							<table align="center" width="80%">
 								<tr align="center">
-									<td align="center">
-										<img src="images/u1.png">
-						<p><b>Mr.XYZ</b></p>
-						 <a href="patient.php">See Profile</a>
-									</td>
-
-									<td>
-										<img src="images/u1.png">
-						<p><b>Mr.XYZ</b></p>
-						  <a href="patient.php">See Profile</a>
-									</td>
-
-									<td>
-										<img src="images/u1.png">
-						<p><b>Mr.XYZ</b></p>
-						  <a href="patient.php">See Profile</a>
-									</td>
+									<?php
+										for($i=0; $i<4; $i++){
+											echo "<td align=\"center\">";
+											echo "<img height=\"100\" width=\"100\" src=\"data:image;base64, ".$_SESSION['topMember'][$i]['image']."\"/>";
+											 echo "<p><b>";
+											 echo $_SESSION['topMember'][$i]['name'];
+											 echo "</b></p>";
+											echo "</td>";
+										}
+									?>
 								</tr>
+
+									<!-- <td>
+										<img src="images/u1.png">
+						<p><b>Mr.XYZ</b></p>
+						  <a href="patient.php">See Profile</a>
+									</td>
+
+									<td>
+										<img src="images/u1.png">
+						<p><b>Mr.XYZ</b></p>
+						  <a href="patient.php">See Profile</a>
+									</td>
+								</tr> -->
 								
 							</table>
 						</fieldset>
