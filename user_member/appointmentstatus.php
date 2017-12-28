@@ -113,7 +113,7 @@ if(isset($_POST['submit'])){
         	<td>
             	<!-- Body section -->
                <div>
-                    <form method="$_POST">
+                    <form method="$_POST" action="#">
 					<table width="100%" border="1">
                         <!-- User Menu Section -->
                         <td width="20%">
@@ -246,8 +246,15 @@ if(isset($_POST['submit'])){
 								<td><?= $ff[$i]['date']?></td>
 								<td><?= $ff[$i]['time']?></td>
 								<td><?= $ff[$i]['appointment_type']?></td>
-								<td><?= $ff[$i]['status']?> <input type="checkbox" name="check_list[]" value="<?=$ff[$i]['appointment_id']?>"/> </td>
+
+								<td><?= $ff[$i]['status']?> <input type="checkbox" name="checkbox[]" value="<?=$ff[$i]['appointment_id']?>"/> </td>
 							</tr>
+								<?php if(isset($_POST['submit'])){
+									$conn = mysqli_connect("localhost", "root", "","mediportal_db");
+												$delete="DELETE FROM `appointment` WHERE `appointment_id`=".$ff[$i]['appointment_id'];
+												
+												$result = mysqli_query($conn, $delete);
+								} ?>
 							<?php } ?>	  
                               </table>   <br>                  
 							<input type="submit" value="delete">
