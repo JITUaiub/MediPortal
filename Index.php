@@ -1,4 +1,9 @@
-
+<?php
+session_start();
+	
+	
+	
+?>
 
 <!DOCTYPE>
 <html>
@@ -8,8 +13,7 @@
 <body>
 	<table>
 		<div>
-		<div>
-				<table align="center" width="100%">
+		<div><table align="center" width="100%">
 					<tr align="right">
 						<td width="10%">
 							<a href="Home.php"><img src="images/logo.png" align="left"></a>
@@ -31,12 +35,9 @@
 				</table>
 		</div>
 
-<br>
 
 <div align="center">
 	<script>
-		
-		
 	var i=0;
 	var images=[];
 	var time=3000;
@@ -48,7 +49,6 @@
 
 	function changeImage()
 	{
-		
 	   document.slide.src=images[i];
 
 	   if(i<images.length-1)
@@ -69,7 +69,7 @@
 	<img name="slide" width="100%" height="70%">
 
 </div>
-<br><br>
+
 <div>
 	<h1 align="center"><i>Welcome to MediPortal</i></h1>
 </div>
@@ -78,7 +78,7 @@
 	<table>
 		<tr>
 			<td width="50%">
-				<fieldset>
+	<fieldset>
 		<h1 align="center">About us</h1>
 
 		<p>
@@ -89,10 +89,10 @@
 		</p>
 		<div align="center"><a href="About_Us.php">Read More</a></div>
 	</fieldset>
-</td>
+<</td>
 
 <td width="50%">
-<div align="center" >
+<div align="center">
 	<table width="80%" align="center">
 
 			<td>
@@ -150,7 +150,6 @@
 		</tr>
 	</table>
 </div>	
-
 </td>
 </tr>
 </table>
@@ -203,68 +202,70 @@
 				</div>
 			</fieldset>
 <br><br>
-			<div>
+			<div align="center">
 				<fieldset>
-					<h1 align="center">Our Top User</h1>
 					<div>
 						<fieldset>
-							<h1 align="center"> Top Doctor</h1>
+							<h1 align="center"> Top Doctors</h1>
 
-							<table align="center" width="50%">
+							<table align="center" width="80%">
 								<tr align="center">
-									<td align="center">
-										<img src="images/u1.png">
-						                 <p><b>Mr.XYZ</b></p>
-						                 <a href="doctor.php">See Profile</a>
-									</td>
-
-									<td>
-										<img src="images/u1.png">
-						<p><b>Mr.XYZ</b></p>
-						  <a href="doctor.php">See Profile</a>
-									</td>
-
-									<td>
-										<img src="images/u1.png">
-						<p><b>Mr.XYZ</b></p>
-						 <a href="doctor.php">See Profile</a>
-									</td>
+									<?php
+										for($i=0; $i<3; $i++){
+											echo "<td align=\"center\">";
+											echo "<img height=\"100\" width=\"100\" src=\"data:image;base64, ".$_SESSION['topDoctor'][$i]['image']."\"/>";
+											 echo "<p><b>";
+											 echo $_SESSION['topDoctor'][$i]['name'];
+											 echo "</b></p>";
+											echo "</td>";
+										}
+									?>
 								</tr>
 							</table>
 						</fieldset>
 
 						<fieldset>
-							<h1 align="center">Top general User</h1>
-							<table align="center" width="50%">
+							<h1 align="center">Top general Users</h1>
+							<table align="center" width="80%">
 								<tr align="center">
-									<td align="center">
-										<img src="images/u1.png">
-						<p><b>Mr.XYZ</b></p>
-						 <a href="patient.php">See Profile</a>
-									</td>
-
-									<td>
-										<img src="images/u1.png">
-						<p><b>Mr.XYZ</b></p>
-						  <a href="patient.php">See Profile</a>
-									</td>
-
-									<td>
-										<img src="images/u1.png">
-						<p><b>Mr.XYZ</b></p>
-						  <a href="patient.php">See Profile</a>
-									</td>
+									<?php
+										for($i=0; $i<4; $i++){
+											echo "<td align=\"center\">";
+											echo "<img height=\"100\" width=\"100\" src=\"data:image;base64, ".$_SESSION['topMember'][$i]['image']."\"/>";
+											 echo "<p><b>";
+											 echo $_SESSION['topMember'][$i]['name'];
+											 echo "</b></p>";
+											echo "</td>";
+										}
+									?>
 								</tr>
+
+									<!-- <td>
+										<img src="images/u1.png">
+						<p><b>Mr.XYZ</b></p>
+						  <a href="patient.php">See Profile</a>
+									</td>
+
+									<td>
+										<img src="images/u1.png">
+						<p><b>Mr.XYZ</b></p>
+						  <a href="patient.php">See Profile</a>
+									</td>
+								</tr> -->
 								
 							</table>
 						</fieldset>
 
 					</div>
 				</fieldset>
-
-				<h1 align="center">Our Location</h1>
+				<br><br><br>
+                
+                <h1 align="center">Our Location</h1>
 				<iframe align="center" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.6717485272!2d90.40031141446606!3d23.794700593000627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c711d13bbec7%3A0xc47f7c3e8e2263f2!2sAmerican+International+University+Bangladesh+(AIUB)!5e0!3m2!1sen!2sbd!4v1507242789312" width="100%" height="50%" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+
 			</div>
+
 
 <br><br><br><br><br><br><br><br>
 
