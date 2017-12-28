@@ -187,7 +187,16 @@
                                                 </td>
                                             </tr>
                                                  
+<?php if(isset($_SESSION['patient_username']) && isset($_SESSION['patient_type'])) {
+    $member_information = "SELECT * from blood where member_id = '".$row['member_id']."';";
+     $result = mysqli_query($conn, $member_information)or die(mysqli_error($conn)); }
 
+ 
+
+      while($row2 = mysqli_fetch_assoc($result)) {
+
+
+  ?>
 
                                                  <tr>
                                                     <td width="10%" valign="top"><label><b><i>Blood Donation Information:</i></b></label>
@@ -198,36 +207,37 @@
                                                         <tr>
                                                             <td width="30%"><strong>Blood Group</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td width="65%">A+</td>
+                                                            <td width="65%"><?php echo $row2['blood_group']?></td>
                                                         </tr>
+														
+	
                                                          <tr>
                                                             
                                                             <td width="30%"><strong>Weight</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td>Over 50 Kg</td>
+                                                            <td><?php echo $row2['question_1']?></td>
                                                          </tr>
 
                                                          <tr>
                                                             
                                                             <td width="30%"><strong>Heart Condition</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td>Good</td>
+                                                            <td><?php echo $row2['question_2']?></td>
                                                          </tr>
 
                                                          <tr>
                                                             
                                                             <td width="30%"><strong>Injected Drugs</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td>No</td>
+                                                            <td><?php echo $row2['question_3']?></td>
                                                          </tr>
                                                          
-                                                        
-
+                                                         
                                                     </table>
                                                 </fieldset>
                                                 </td>
                                             </tr>
-
+	  <?php }?>
 
                                                   <tr>
                                                     <td width="10%" valign="top"><label><b><i>Others Information:</i></b></label>
@@ -254,6 +264,8 @@
                                                             <td><strong>:</strong></td>
                                                             <td><?php echo $row['email'];?></td>
                                                          </tr>
+														  
+
                                                     </table>
                                           <?php
                                           } 
