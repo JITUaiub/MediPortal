@@ -3,7 +3,7 @@ session_start();
 	
 	$conn = mysqli_connect("localhost", "root", "","mediportal_db");	
 //top appointment
-	$app="SELECT COUNT(appointment.member_id) AS no, member.name,member.member_id FROM appointment, member WHERE appointment.member_id = member.member_id GROUP BY appointment.member_id ORDER BY COUNT(appointment.member_id) DESC";
+	$app="SELECT COUNT(appointment.member_id) AS no, member.name,member.member_id, member.profile_picture FROM appointment, member WHERE appointment.member_id = member.member_id GROUP BY appointment.member_id ORDER BY COUNT(appointment.member_id) DESC";
 	$result = mysqli_query($conn, $app);
 	
 	$arr=array();
@@ -11,9 +11,17 @@ session_start();
 		$arr[] =array(
 				"name"=>$row['name'],
 				"member_id"=>$row['member_id'],
-				"no"=>$row['no'],			
+				"no"=>$row['no'], "image"=>$row['profile_picture']			
+				);	
+	}
+	for($i=0; $i<count($arr); $i++){
+		$_SESSION['topMember'][] = array(
+				"name"=>$arr[$i]['name'],
+				"member_id"=>$arr[$i]['member_id'],
+				"no"=>$arr[$i]['no'], "image"=>$arr[$i]['image']
 				);
 	}
+	var_dump($_SESSION['topMember']);
 //online tretment	
 	$online="SELECT COUNT(appointment.member_id) AS no, member.name,member.member_id FROM appointment, member WHERE appointment.member_id = member.member_id AND appointment.appointment_type LIKE 'online' GROUP BY appointment.member_id ORDER BY COUNT(appointment.member_id) DESC";
 	$result = mysqli_query($conn, $online);
@@ -22,7 +30,7 @@ session_start();
 		$trt[] =array(
 				"name"=>$row['name'],
 				"member_id"=>$row['member_id'],
-				"no"=>$row['no'],			
+				"no"=>$row['no']			
 				);
 	}
 	
