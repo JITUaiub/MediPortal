@@ -353,17 +353,7 @@ if(!isset($_SESSION['patient_username']) || empty($_SESSION['patient_username'])
                                     
                                            <br><br>
                                            <hr>
-                                    <div>
-                                        <table width="100%">
-											<tr>
-                                                 <td width="10%">&nbsp;</td>
-                                                 <td width="30%" align="right"><a href="editprofile.php">Edit Profile</a></td>
-                                                 <td><strong><hr width="1" size="15"></strong></td>
-                                                 <td><a href="changepassword.php">Change Password</a></td>
-											</tr>
-                                         </table>
-									</div>
-
+                                   
                                 </fieldset>
                             </td>
                         </table>
