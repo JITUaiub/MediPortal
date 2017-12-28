@@ -1,10 +1,12 @@
 <?php 
 session_start();
 	
-
+	if(isset($_SESSION['topDoctor'])){
+		unset($_SESSION['topDoctor']);
+	}
 	$conn = mysqli_connect("localhost", "root", "","mediportal_db");	
 	//top appointment
-	$app="SELECT COUNT(appointment.doctor_id) AS no, doctor.name, doctor.doctor_id FROM appointment, doctor WHERE appointment.doctor_id = doctor.doctor_id GROUP BY appointment.doctor_id ORDER BY COUNT(appointment.doctor_id) DESC";
+	$app="SELECT COUNT(appointment.doctor_id) AS no, doctor.name, doctor.doctor_id, doctor.profile_picture FROM appointment, doctor WHERE appointment.doctor_id = doctor.doctor_id GROUP BY appointment.doctor_id ORDER BY COUNT(appointment.doctor_id) DESC";
 	$result = mysqli_query($conn, $app);
 	
 	$arr=array();
@@ -12,9 +14,17 @@ session_start();
 		$arr[] =array(
 				"name"=>$row['name'],
 				"doctor_id"=>$row['doctor_id'],
-				"no"=>$row['no'],			
+				"no"=>$row['no'], "image"=>$row['profile_picture']				
 				);
 	}
+	for($i=0; $i<count($arr); $i++){
+		$_SESSION['topDoctor'][] = array(
+				"name"=>$arr[$i]['name'],
+				"doctor_id"=>$arr[$i]['doctor_id'],
+				"no"=>$arr[$i]['no'], "image"=>$arr[$i]['image']
+				);
+	}
+//	var_dump($_SESSION['topDoctor']);
 	//online tretment
 	$online="SELECT COUNT(appointment.doctor_id) AS no, doctor.name,doctor.doctor_id FROM appointment, doctor WHERE appointment.doctor_id = doctor.doctor_id AND appointment.appointment_type LIKE 'online' GROUP BY appointment.doctor_id ORDER BY COUNT(appointment.doctor_id) DESC";
 	$result = mysqli_query($conn, $online);
@@ -23,7 +33,7 @@ session_start();
 		$trt[] =array(
 				"name"=>$row['name'],
 				"doctor_id"=>$row['doctor_id'],
-				"no"=>$row['no'],			
+				"no"=>$row['no']		
 				);
 	}
 	
