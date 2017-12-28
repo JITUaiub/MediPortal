@@ -6,14 +6,14 @@ if (!$conn) {
 	}
 
 if(isset($_REQUEST["tit"]) && isset($_REQUEST["dpt"])){
-	$sql="select username from doctor where doctor_id=(select doctor_id from professional_info where title='".$_REQUEST["tit"]."' and department='".$_REQUEST["dpt"]."')";
+	$sql="select name from doctor where doctor_id=(select doctor_id from professional_info where title='".$_REQUEST["tit"]."' and department='".$_REQUEST["dpt"]."')";
 
 	$result = mysqli_query($conn, $sql)or die(mysqli_error($conn));
 
 	$arr=array();
 
 	while($row = mysqli_fetch_assoc($result)) {
-		$arr[]=$row['username'];
+		$arr[]=$row['name'];
 	}
 }	
 	
