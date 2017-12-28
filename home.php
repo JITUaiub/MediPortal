@@ -77,7 +77,7 @@ session_start();
 <div>
 	<table>
 		<tr>
-			<td width="50%">
+			<td width="100%">
 	<fieldset>
 		<h1 align="center">About us</h1>
 
@@ -89,8 +89,8 @@ session_start();
 		</p>
 		<div align="center"><a href="About_Us.php">Read More</a></div>
 	</fieldset>
-<</td>
-
+</td>
+<!--
 <td width="50%">
 <div align="center">
 	<table width="80%" align="center">
@@ -146,7 +146,7 @@ session_start();
 				</form>
 			</table>
 			</fieldset>
-			</td>
+			</td> -->
 		</tr>
 	</table>
 </div>	
