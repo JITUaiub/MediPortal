@@ -24,7 +24,7 @@ session_start();
 				"no"=>$arr[$i]['no'], "image"=>$arr[$i]['image']
 				);
 	}
-//	var_dump($_SESSION['topDoctor']);
+	var_dump($_SESSION['topDoctor']);
 	//online tretment
 	$online="SELECT COUNT(appointment.doctor_id) AS no, doctor.name,doctor.doctor_id FROM appointment, doctor WHERE appointment.doctor_id = doctor.doctor_id AND appointment.appointment_type LIKE 'online' GROUP BY appointment.doctor_id ORDER BY COUNT(appointment.doctor_id) DESC";
 	$result = mysqli_query($conn, $online);
