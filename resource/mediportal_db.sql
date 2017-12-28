@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 27, 2017 at 05:11 PM
+-- Generation Time: Dec 28, 2017 at 03:18 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 7.0.6
 
@@ -192,19 +192,25 @@ CREATE TABLE `faq` (
   `category` varchar(30) NOT NULL,
   `Author` varchar(100) NOT NULL,
   `Question` text NOT NULL,
-  `Answer` text
+  `Answer` text,
+  `Time` varchar(50) NOT NULL,
+  `Date` varchar(50) NOT NULL,
+  `status` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `faq`
 --
 
-INSERT INTO `faq` (`id`, `category`, `Author`, `Question`, `Answer`) VALUES
-(1, 'Mediportal', 'Admin', 'What is Mediportal?', 'Mediportal is a online doctor appointment system made for general users and doctor''s accross the world. Get an appointment today. '),
-(2, 'Mediportal', 'Admin', 'What is Mediportal''s Hotline?', 'Currently we don''t have any helpline number. Soon we''ll add hotline number(toll free).'),
-(3, 'Appointments', 'Admin', 'How to get an appointment?', 'Get an appointment by following these step: 1. Register with us with email and a username. \r\n2. Login and go to new Appointment. \r\n3. Fill in the details. \r\n4. You''re now good to go. '),
-(4, 'Mediportal', 'Admin', 'Can any doctor turn off taking appointment?', 'Yes. You can change that option under Manage Appointments. '),
-(5, 'Mediportal', 'Admin', 'How to get econsultation?', 'Currently we don''t have any facilities for live consultation, We are working on it. Please wait for further updates. ');
+INSERT INTO `faq` (`id`, `category`, `Author`, `Question`, `Answer`, `Time`, `Date`, `status`) VALUES
+(1, 'Mediportal', 'Admin', 'What is Mediportal?', 'Mediportal is a online doctor appointment system made for general users and doctor''s accross the world. Get an appointment today. ', '3:06:12 AM', '24-11-2017', 'Read'),
+(2, 'Mediportal', 'Admin', 'What is Mediportal''s Hotline?', 'Currently we don''t have any helpline number. Soon we''ll add hotline number(toll free). ', '3:07:12 AM', '24-11-2017', 'Read'),
+(3, 'Appointments', 'Admin', 'How to get an appointment?', 'Get an appointment by following these step: 1. Register with us with email and a username. 2. Login and go to new Appointment. 3. Fill in the details. 4. You''re now good to go. ', '3:08:12 AM', '24-11-2017', 'Read'),
+(4, 'Appointments', 'Admin', 'Can any doctor turn off taking appointment?', 'Yes. You can change that option under Manage Appointments. ', '3:09:12 AM', '24-11-2017', 'Read'),
+(5, 'Econsultation', 'Admin', 'How to get econsultation?', 'Ask your doctor for an econsultation session. Get an appointment and ask him for e-consultation. Doctor''s attention required to access that features. ', '3:10:12 AM', '24-11-2017', 'Read'),
+(6, 'Econsultation', 'Admin', 'Can we make live conversation here?', 'Currently we don''t have any facilities for live consultation, We are working on it. Please wait for further updates. ', '3:11:12 AM', '24-11-2017', 'Read'),
+(7, 'Price and Fees', 'Admin', 'Is Mediportal free?', 'Mediportal is full free for general users. You can request for an appointment for free. You need to pay 5% of your fee if you register as an doctor. ', '3:12:12 AM', '24-11-2017', 'Read'),
+(8, 'Price and Fees', 'Admin', 'What is Mediportal''s Doctor''s visit?', 'It differs from doctor to doctor. You can see doctor visit from his profile page. ', '3:13:12 AM', '24-11-2017', 'Read');
 
 -- --------------------------------------------------------
 
@@ -512,7 +518,7 @@ ALTER TABLE `educational_info`
 -- AUTO_INCREMENT for table `faq`
 --
 ALTER TABLE `faq`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `inbox`
 --
