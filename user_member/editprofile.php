@@ -11,11 +11,11 @@
 		$member_information = "SELECT * from member where username = '".$_SESSION['patient_username']."';";
 		$result = mysqli_query($conn, $member_information)or die(mysqli_error($conn)); 
     }
-	else
+	/*(else
 	{
 		header("Location:../login.php");
 		exit;
-	}
+	}*/
  
     while($row = mysqli_fetch_assoc($result)) {
     
@@ -174,7 +174,16 @@
                                                 </td>
                                             </tr>
                                                 
+<?php if(isset($_SESSION['patient_username']) && isset($_SESSION['patient_type'])) {
+    $member_information = "SELECT * from blood where member_id = '".$row['member_id']."';";
+     $result = mysqli_query($conn, $member_information)or die(mysqli_error($conn)); }
 
+ 
+
+      while($row2 = mysqli_fetch_assoc($result)) {
+
+
+  ?>
                                                 
 
 
@@ -187,33 +196,33 @@
                                                         <tr>
                                                             <td width="30%"><strong>Blood Group</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td width="65%"><input type="text" name="blood" value="A+" disabled="true"></td>
+                                                            <td width="65%"><input type="text" name="blood" value="<?php echo $row2['blood_group'] ?>" disabled="true"></td>
                                                         </tr>
                                                          <tr>
                                                             
                                                             <td width="30%"><strong>Weight</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td><input type="text" name="weight" value="Over 50 kg"></td>
+                                                            <td><input type="text" name="weight" value="<?php echo $row2['question_1'] ?>"></td>
                                                          </tr>
 
                                                          <tr>
                                                             
                                                             <td width="30%"><strong>Heart Condation</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td><input type="text" name="heart" value="Good"></td>
+                                                            <td><input type="text" name="heart" value="<?php echo $row2['question_2'] ?>"></td>
                                                          </tr>
 
                                                           <tr>
                                                             
                                                             <td width="30%"><strong>Injected Drugs</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td><input type="text" name="injected_drugs" value="No"></td>
+                                                            <td><input type="text" name="injected_drugs" value="<?php echo $row2['question_3'] ?>"></td>
                                                          </tr>
                                                     </table>
                                                 </fieldset>
                                                 </td>
                                             </tr>
-
+	  <?php } ?>
 
                                                  <tr>
                                                     <td width="20%" valign="top"><label><b><i>Others Information:</i></b></label>
@@ -224,7 +233,7 @@
                                                         <tr>
                                                             <td width="30%"><strong>Date Of Birth</strong></td>
                                                             <td><strong>:</strong></td>
-                                                            <td width="65%"><input type="date" name="dob" value="<?php echo $row['dob'];?>" ></td>
+                                                            <td width="65%"><input type="date" name="dob"  value="<?php echo $row['dob'];?>" ></td>
                                                         </tr>
 
                                                          <tr>
@@ -260,8 +269,7 @@
                                                 <tr><td></td></tr>
                                                             <tr>
                                                                 <td colspan="4" align="center">
-                                                                    <input type="submit" id="update" value="Update Profile" >
-                                                                </td>
+                                                                   <tr><td colspan="4" align="center"><input type="submit" name="submit" value="Update Profile" onClick="return validate();"></td></tr>
                                                                 
                                                             </tr>
                                                             <tr>
