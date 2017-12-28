@@ -1,10 +1,6 @@
 <?php 
 session_start();
 	
-	if(!isset($_SESSION['patient_username']) || empty($_SESSION['patient_username'])){
-		  header("location: ../Login.php");
-		  exit;
-		}
 
 	$conn = mysqli_connect("localhost", "root", "","mediportal_db");	
 	//top appointment

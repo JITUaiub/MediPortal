@@ -1,6 +1,12 @@
 <?php 
     session_start();
-	
+    $count = 1;
+	if(isset($_SESSION['LastLogin'])){
+        $count = 0;
+    }else{
+        $count = $_SESSION['LastLogin'] = 1;
+    }
+
 	$conn = mysqli_connect("localhost", "root", "","mediportal_db");
    
     if (!$conn) {
@@ -63,17 +69,13 @@
 		}
 
 
-
-
-	//log_in time update
-	/*
 	if($count==1){
 		$currentDateTime = date('Y-m-d H:i:s');	
 		$sql="UPDATE `member` SET `last_login`='".$currentDateTime."' WHERE `username`='".$arr['username']."'";
 		$result = mysqli_query($conn, $sql)or die(mysqli_error($conn));
 		$count=2;
 	}
-	*/
+
  ?>
 <html>
 

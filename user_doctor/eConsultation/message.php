@@ -15,7 +15,7 @@
 
     $connection = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 
-        $sender = $_SESSION['admin_username'];
+        $sender = $_SESSION['doctor_username'];
         $to = $_POST['to_mail'];
         $subject = $_POST['subject'];
         $body = $_POST['body'];
@@ -41,7 +41,7 @@
             $bodyErr = "";         
         }
         if ($err1 == true && $err2 == true) {
-          $sender = $_SESSION['admin_username'];
+          $sender = $_SESSION['doctor_username'];
           $recipient = $to;
          // $subject = $subject;
           $message = $body;

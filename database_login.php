@@ -5,7 +5,7 @@
 	if (!$conn) {
     	die("Connection failed: " . mysqli_connect_error());
 	}
-
+	
 	$username = $_REQUEST['name'];
 	$password = $_REQUEST['password'];
 	
@@ -48,7 +48,7 @@
 			}
 			
 
-            header("Location:user_doctor/dashboard.php");
+            header("Location: user_doctor/dashboard.php");
             $check = 1;
 		}
 
@@ -72,7 +72,7 @@
 				$_SESSION['patient_id'] = $row['member_id'];
 			}
            
-			header("Location:user_member/dashboard.php");
+			header("Location: user_member/dashboard.php");
             $check = 1;
 		}
 		
@@ -91,13 +91,13 @@
 			}
 
 			
-            header("Location:user_admin/dashboard.php");
+            header("Location: user_admin/dashboard.php");
             $check = 1;		}
 		
 	}
 
 	 if ($check == 0) {	
-			header("Location:Login.php?error=wrong user name or password");
+			header("Location: Login.php?error=wrong user name or password");
 	 }
 	
 	mysqli_close($conn);

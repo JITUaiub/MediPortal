@@ -2,8 +2,8 @@
 	ini_set('mysql.connect_timeout', 300);
 	ini_set('default_socket_timeout', 300);
 	session_start();
-    var_dump($_SESSION);
-	$sql="select senderName, RecipientName, ChatID, Subject, Status from inbox where senderName = '". $_SESSION['admin_username']. "' order by ChatID desc";
+
+	$sql="select senderName, RecipientName, ChatID, Subject, Status from inbox where senderName = '". $_SESSION['admin_username']. "' or RecipientName= '".$_SESSION['admin_username']."' order by ChatID desc";
 	$conn = mysqli_connect("localhost", "root", "", "mediportal_db", 3306);
 	mysqli_set_charset($conn,"utf8");
 	$result = mysqli_query($conn, $sql);
