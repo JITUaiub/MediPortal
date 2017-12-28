@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 28, 2017 at 03:18 AM
+-- Generation Time: Dec 28, 2017 at 09:59 AM
 -- Server version: 10.1.13-MariaDB
--- PHP Version: 7.0.6
+-- PHP Version: 7.0.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -42,8 +42,8 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`admin_id`, `username`, `name`, `gender`, `email`, `dob`, `mobile`, `profile_picture`) VALUES
-(1, 'shuvo', 'mehedi hasan shuvo', 'male', 'rpm_shuvo@outlook.com', '1995-03-19', '01521493732', 0x702e706e67),
-(2, 'jitu', 'nashid kamal', 'male', 'kamal@gmail.com', '1995-12-12', '01758478754', 0x702e706e67);
+(1, 'admin', 'Md. Nashid Kamal', 'Male', 'nashid@example.com', '1996-05-20', '01621580578', ''),
+(2, 'Jitu', 'Jitu Khan', 'Male', 'jitu@example.com', '1994-07-17', '01713789047', '');
 
 -- --------------------------------------------------------
 
@@ -68,19 +68,7 @@ CREATE TABLE `appointment` (
 --
 
 INSERT INTO `appointment` (`appointment_id`, `doctor_id`, `member_id`, `prescription_id`, `date`, `time`, `status`, `problem`, `appointment_type`) VALUES
-(1, 1, 1, 0, '2017-12-24', '03:00:00', 'pending', NULL, ''),
-(2, 1, 1, NULL, '2017-12-12', '05:00:00', 'pending', NULL, ''),
-(3, 2, 2, NULL, '2017-12-12', '05:00:00', 'pending', NULL, ''),
-(4, 18, 8, NULL, '2017-12-30', '05:00:00', 'accepted', 'fever', 'online'),
-(5, 2, 2, NULL, '2017-12-01', '05:05:00', 'pending', 'aaaa', 'online'),
-(6, 8, 2, NULL, '2017-12-08', '04:04:00', 'pending', 'wwwwwwwwwwwwwwwwww', 'direct'),
-(7, 8, 8, NULL, '2017-12-31', '10:10:00', 'pending', 'hi', 'online'),
-(8, 12, 8, NULL, '2017-12-31', '00:00:00', 'pending', 'ttttttttttttttttttttttttttttttttttttttttt', 'direct'),
-(9, 8, 8, NULL, '2017-12-08', '04:04:00', 'pending', '', 'online'),
-(10, 8, 8, NULL, '2017-12-14', '03:03:00', 'pending', '', 'direct'),
-(11, 8, 8, NULL, '2017-12-14', '16:04:00', 'pending', 'zxzxzxzxzxzxzxzxzxzxzxzxzxzxz', 'online'),
-(12, 12, 10, NULL, '2017-12-15', '04:04:00', 'pending', 'hello', 'online'),
-(13, 15, 10, NULL, '2017-12-15', '04:05:00', 'pending', 'mm', 'direct');
+(4, 1, 4, NULL, '2017-12-28', '07:00:00', 'pending', 'fever', 'online');
 
 -- --------------------------------------------------------
 
@@ -90,12 +78,20 @@ INSERT INTO `appointment` (`appointment_id`, `doctor_id`, `member_id`, `prescrip
 
 CREATE TABLE `blood` (
   `blood_group_id` int(11) NOT NULL,
+  `member_id` int(11) NOT NULL,
   `status` varchar(50) NOT NULL,
   `blood_group` varchar(50) NOT NULL,
   `question_1` varchar(50) NOT NULL,
   `question_2` varchar(50) NOT NULL,
   `question_3` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `blood`
+--
+
+INSERT INTO `blood` (`blood_group_id`, `member_id`, `status`, `blood_group`, `question_1`, `question_2`, `question_3`) VALUES
+(4, 5, 'on', 'A(+)', 'Over 50 Kg', 'Good', 'yes');
 
 -- --------------------------------------------------------
 
@@ -119,9 +115,9 @@ CREATE TABLE `chamber` (
 --
 
 INSERT INTO `chamber` (`chamber_id`, `doctor_id`, `name`, `location`, `days`, `schedule`, `description`, `visit`) VALUES
-(1, 1, 'United Hospital', 'Gulshan, Dhaka1230', 'Sat,Sun', '05:00:00', 'Saturday and Sunday I am available in united Hospital from 10 am to 5 pm . So you can contact with me', ''),
-(6, 18, 'Square', 'Dhanmondi', 'mon,tue', '14:34 - 17:06', 'I am available at this time', ''),
-(7, 8, 'popular', 'uttara', 'sun,wed', '14:00 - 08:00', 'i am available', '');
+(1, 1, 'Apollo Hospital', 'Bashundhara', 'tue,thu', '5:00 PM - 8:00 PM', ' Bla bla bla bla', ''),
+(2, 2, 'United Hospital', 'Gulshan', 'sun,mon,wed,thu', '5:00 PM - 11:00 PM', 'I am available ', ''),
+(3, 2, 'Apollo Hospital', 'Uttara', 'sat,wed,fri', '7:00 PM - 12:00 PM', 'I am available', '');
 
 -- --------------------------------------------------------
 
@@ -148,14 +144,9 @@ CREATE TABLE `doctor` (
 --
 
 INSERT INTO `doctor` (`doctor_id`, `username`, `name`, `gender`, `email`, `dob`, `mobile`, `bmdc_license`, `account_status`, `profile_picture`, `last_login`) VALUES
-(8, 'rashed', 'rashed ', 'male', 'rashed@gmail.com', '2017-05-04', NULL, NULL, 'pending', NULL, '2017-04-04 05:00:00'),
-(12, 'erfefe', 'efre', 'Other', 'eeewjndjwbdhjw', '2017-12-01', NULL, NULL, 'pending', NULL, '2017-12-25 02:35:06'),
-(13, 'adadadad', 'adad adad', 'Female', 'a@gmail.com', '2017-12-07', NULL, NULL, 'pending', NULL, '2017-12-25 06:38:03'),
-(14, 'adadadad', 'adad adad', 'Female', 'a@gmail.com', '2017-12-07', NULL, NULL, 'pending', NULL, '2017-12-25 06:38:13'),
-(15, 'adadadad', 'adad adad', 'Female', 'a@gmail.com', '2017-12-07', NULL, NULL, 'pending', NULL, '2017-12-25 06:38:13'),
-(16, 'dbdbdbd', 'dbdbdbdbbd', 'Male', 'a@gmail.com', '2017-12-03', NULL, NULL, 'pending', NULL, '2017-12-25 06:42:12'),
-(17, 'popopopo', 'popopop', 'Male', 'a@gmail.com', '2017-12-05', NULL, NULL, 'pending', NULL, '2017-12-25 06:46:35'),
-(18, 'lasttest', 'Last test', 'Male', 'a@gmail.com', '2017-12-06', NULL, NULL, 'pending', NULL, '2017-12-25 06:50:45');
+(1, 'doctor', 'Himu', 'Male', 'himu15@gmail.com', '1995-02-25', '01685940625', 'DMC2017SA15', 'active', NULL, '2017-12-28 07:25:17'),
+(2, 'susmoy', 'Susmoy Roy', 'Male', 'susmoy@gmail.com', '1994-11-12', NULL, NULL, 'pending', NULL, '2017-12-28 09:10:37'),
+(3, 'zahid', 'Zahid Rahman', 'Male', 'zahid@yahoo.com', '1998-09-17', NULL, NULL, 'pending', NULL, '2017-12-28 09:11:55');
 
 -- --------------------------------------------------------
 
@@ -177,9 +168,8 @@ CREATE TABLE `educational_info` (
 --
 
 INSERT INTO `educational_info` (`id`, `doctor_id`, `degree_name`, `passed_year`, `college`, `description`) VALUES
-(1, 1, 'MBBS', 2012, 'Dhaka Medical College', 'bla bla bla bla'),
-(2, 8, 'FCPS', 2011, 'Dhaka Medical College', 'my best part'),
-(3, 18, 'Frcs', 2007, 'London Medical College', 'I am graduated');
+(1, 1, 'MBBS', 1998, 'Gazipurt Medical College', 'Graduated'),
+(2, 2, 'FCPS', 2016, 'London Medical College', 'Graduate\r\n');
 
 -- --------------------------------------------------------
 
@@ -226,13 +216,6 @@ CREATE TABLE `inbox` (
   `Status` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `inbox`
---
-
-INSERT INTO `inbox` (`SenderName`, `RecipientName`, `ChatID`, `Subject`, `Status`) VALUES
-('Jitu', 'aaaaa', 1, 'aaaaaaa', 'Read');
-
 -- --------------------------------------------------------
 
 --
@@ -242,16 +225,17 @@ INSERT INTO `inbox` (`SenderName`, `RecipientName`, `ChatID`, `Subject`, `Status
 CREATE TABLE `medicine` (
   `medicine_id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `time` time NOT NULL,
-  `totaldays` varchar(255) NOT NULL
+  `time` varchar(50) NOT NULL,
+  `totaldays` varchar(255) NOT NULL,
+  `member_id` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `medicine`
 --
 
-INSERT INTO `medicine` (`medicine_id`, `name`, `time`, `totaldays`) VALUES
-(1, 'napa', '06:00:03', '');
+INSERT INTO `medicine` (`medicine_id`, `name`, `time`, `totaldays`, `member_id`) VALUES
+(1, 'Napa', '10', '1+0+1', 1);
 
 -- --------------------------------------------------------
 
@@ -279,11 +263,11 @@ CREATE TABLE `member` (
 --
 
 INSERT INTO `member` (`member_id`, `username`, `name`, `gender`, `email`, `dob`, `mobile`, `blood_group_id`, `profile_picture`, `account_status`, `last_login`, `address`) VALUES
-(1, 'rifat', 'rufat hasan', 'male', 'rifat@gmail.com', '1999-10-01', '012547895', 0, 0x702e706e67, 'active', '0000-00-00 00:00:00', 'o/26,mohammodpur'),
-(2, 'israk', 'israk', 'Male', 'israk@gmail.com', '2017-12-01', NULL, NULL, NULL, '', '0000-00-00 00:00:00', NULL),
-(8, 'aaaaa', 'mr.yyyyyy', 'Female', '', '2017-12-14', '01521493732', NULL, NULL, 'active', '2017-12-27 01:39:47', ''),
-(9, 'adadadad', 'adad adad', 'Female', 'a@gmail.com', '2017-12-07', NULL, NULL, NULL, 'active', '2017-12-25 06:38:03', NULL),
-(10, 'testdb', 'gcghf fghf  f', 'Other', 'a@gmail.com', '2017-12-01', NULL, NULL, NULL, 'active', '2017-12-25 06:40:22', NULL);
+(1, 'patient', 'shuvo', 'Male', 'shuvo95@yahoo.com', '1994-08-29', '0167494424', NULL, 0x6e65772e6a7067, 'active', '2017-12-28 07:26:46', NULL),
+(2, 'komol', 'Komol Hasan', 'Female', 'komol@gmail.com', '1995-01-01', NULL, NULL, NULL, 'active', '2017-12-28 09:04:51', NULL),
+(3, 'tasnim', 'Tasnim Khan', 'Male', 'tasnim15@gmail.com', '1996-03-26', NULL, NULL, NULL, 'active', '2017-12-28 09:05:46', NULL),
+(4, 'ratul', 'Ratul Bakshi', 'Male', 'ratul@gmail.com', '1995-10-17', NULL, NULL, NULL, 'active', '2017-12-28 09:08:57', NULL),
+(5, 'faria', 'Faria Hasan', 'Female', 'faria@gmail.com', '1999-02-23', '01704075642', NULL, NULL, 'active', '2017-12-28 09:13:55', NULL);
 
 -- --------------------------------------------------------
 
@@ -298,13 +282,6 @@ CREATE TABLE `messages` (
   `Time` varchar(20) NOT NULL,
   `Date` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `messages`
---
-
-INSERT INTO `messages` (`ChatID`, `Body`, `attachment`, `Time`, `Date`) VALUES
-(1, 'aaaaaaa', '', '12:55:07am', 'Wednesday 2017-12-27');
 
 -- --------------------------------------------------------
 
@@ -328,8 +305,7 @@ CREATE TABLE `prescription` (
 --
 
 INSERT INTO `prescription` (`prescription_id`, `doctor_id`, `member_id`, `date`, `medicine_id`, `next_appointment`, `symptoms`, `disease`) VALUES
-(1, 1, 1, '0000-00-00', 1, '0000-00-00', 'bla,bla,bla', 'fiver'),
-(2, 18, 8, '2016-05-04', 1, '2018-12-01', 'bla nla mla', 'dengu');
+(1, 1, 1, '2017-12-28', 1, '2017-12-30', '                                               I am affected from fever                                            ', '                               Fever                \r\n                                            ');
 
 -- --------------------------------------------------------
 
@@ -350,10 +326,7 @@ CREATE TABLE `professional_info` (
 --
 
 INSERT INTO `professional_info` (`id`, `doctor_id`, `title`, `department`, `medical_college`) VALUES
-(2, 8, 'Assitant professor', 'Medicine', 'Dhaka Medical College'),
-(3, 12, 'junior assistant', 'cancer', 'solimulla'),
-(4, 18, 'consultant', 'medicine', 'rajshahi'),
-(5, 13, 'Assitant professor', 'Surgery', 'sylhet');
+(1, 1, 'Assistant Professor', 'Medicine', 'Dhaka Medical college');
 
 -- --------------------------------------------------------
 
@@ -372,21 +345,16 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`username`, `type`, `password`) VALUES
-('aaaaa', 'patient', 'aaaaaaaaa'),
-('adadadad', 'doctor', 'adadadad'),
-('dbdbdbd', 'doctor', 'dddddddd'),
-('erfefe', 'doctor', '12345678'),
-('jitu', 'admin', 'jitu'),
-('lasttest', 'doctor', 'qqqqqqqq'),
-('popopopo', 'doctor', 'pppppppp'),
-('pppppp', 'doctor', 'pppppppp'),
-('qqqqq', 'patient', 'qqqqqqqq'),
-('rashed', 'doctor', '154rsss'),
-('rifat', 'member', 'mmmmmm'),
-('shuvo', 'admin', 'rpm7876'),
-('testaaa', 'doctor', 'aaaaaaaa'),
-('testdb', 'patient', '11111111'),
-('xxxxxx', 'doctor', 'xxxxxxxx');
+('admin', 'admin', 'admin'),
+('doctor', 'doctor', 'doctor'),
+('faria', 'patient', 'faria'),
+('Jitu', 'admin', 'admin'),
+('komol', 'patient', 'komol'),
+('patient', 'patient', 'patient'),
+('ratul', 'patient', 'ratul'),
+('susmoy', 'doctor', 'susmoy'),
+('tasnim', 'patient', 'tasnim'),
+('zahid', 'doctor', 'zahid');
 
 --
 -- Indexes for dumped tables
@@ -411,7 +379,8 @@ ALTER TABLE `appointment`
 -- Indexes for table `blood`
 --
 ALTER TABLE `blood`
-  ADD PRIMARY KEY (`blood_group_id`);
+  ADD PRIMARY KEY (`blood_group_id`),
+  ADD KEY `member_id` (`member_id`);
 
 --
 -- Indexes for table `chamber`
@@ -493,27 +462,27 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `appointment`
 --
 ALTER TABLE `appointment`
-  MODIFY `appointment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `appointment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `blood`
 --
 ALTER TABLE `blood`
-  MODIFY `blood_group_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `blood_group_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `chamber`
 --
 ALTER TABLE `chamber`
-  MODIFY `chamber_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `chamber_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `doctor`
 --
 ALTER TABLE `doctor`
-  MODIFY `doctor_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `doctor_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `educational_info`
 --
 ALTER TABLE `educational_info`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `faq`
 --
@@ -523,7 +492,7 @@ ALTER TABLE `faq`
 -- AUTO_INCREMENT for table `inbox`
 --
 ALTER TABLE `inbox`
-  MODIFY `ChatID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ChatID` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `medicine`
 --
@@ -533,17 +502,17 @@ ALTER TABLE `medicine`
 -- AUTO_INCREMENT for table `member`
 --
 ALTER TABLE `member`
-  MODIFY `member_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `member_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `prescription`
 --
 ALTER TABLE `prescription`
-  MODIFY `prescription_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `prescription_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `professional_info`
 --
 ALTER TABLE `professional_info`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- Constraints for dumped tables
 --
@@ -553,6 +522,12 @@ ALTER TABLE `professional_info`
 --
 ALTER TABLE `admin`
   ADD CONSTRAINT `admin_ibfk_1` FOREIGN KEY (`username`) REFERENCES `user` (`username`);
+
+--
+-- Constraints for table `blood`
+--
+ALTER TABLE `blood`
+  ADD CONSTRAINT `blood_ibfk_1` FOREIGN KEY (`member_id`) REFERENCES `member` (`member_id`);
 
 --
 -- Constraints for table `doctor`
