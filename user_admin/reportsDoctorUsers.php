@@ -4,7 +4,7 @@ session_start();
 	if(isset($_SESSION['topDoctor'])){
 		unset($_SESSION['topDoctor']);
 	}
-	$conn = mysqli_connect("localhost", "root", "","mediportal_db");	
+	$conn = mysqli_connect($_ENV["MYSQL_HOST"].":".$_ENV["MYSQL_PORT"], $_ENV["MYSQL_UN"], $_ENV["MYSQL_PW"],$_ENV["MYSQL_DB"]);	
 	//top appointment
 	$app="SELECT COUNT(appointment.doctor_id) AS no, doctor.name, doctor.doctor_id, doctor.profile_picture FROM appointment, doctor WHERE appointment.doctor_id = doctor.doctor_id GROUP BY appointment.doctor_id ORDER BY COUNT(appointment.doctor_id) DESC";
 	$result = mysqli_query($conn, $app);

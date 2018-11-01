@@ -15,7 +15,7 @@
 	
 	//doctor info
 	  function doctor_name($doctor_id){
-	   $conn = mysqli_connect("localhost", "root", "","mediportal_db");
+	   $conn = mysqli_connect($_ENV["MYSQL_HOST"].":".$_ENV["MYSQL_PORT"], $_ENV["MYSQL_UN"], $_ENV["MYSQL_PW"],$_ENV["MYSQL_DB"]);
 	   $sql3="SELECT `username` FROM `doctor` WHERE `doctor_id`= ".$doctor_id."";
 		$result = mysqli_query($conn, $sql3);
 	
@@ -71,7 +71,7 @@ if(isset($_POST['submit'])){
 				
 				header('location: appointmentstatus.php?id=$selected');
 				
-				//$conn = mysqli_connect("localhost", "root", "","mediportal_db");
+				//$conn = mysqli_connect($_ENV["MYSQL_HOST"].":".$_ENV["MYSQL_PORT"], $_ENV["MYSQL_UN"], $_ENV["MYSQL_PW"],$_ENV["MYSQL_DB"]);
 				//$delete="DELETE FROM `appointment` WHERE `appointment_id`=".$selected."";
 				
 				//$result = mysqli_query($conn, $delete);
@@ -250,7 +250,7 @@ if(isset($_POST['submit'])){
 								<td><?= $ff[$i]['status']?> <input type="checkbox" name="checkbox[]" value="<?=$ff[$i]['appointment_id']?>"/> </td>
 							</tr>
 								<?php if(isset($_POST['submit'])){
-									$conn = mysqli_connect("localhost", "root", "","mediportal_db");
+									$conn = mysqli_connect($_ENV["MYSQL_HOST"].":".$_ENV["MYSQL_PORT"], $_ENV["MYSQL_UN"], $_ENV["MYSQL_PW"],$_ENV["MYSQL_DB"]);
 												$delete="DELETE FROM `appointment` WHERE `appointment_id`=".$ff[$i]['appointment_id'];
 												
 												$result = mysqli_query($conn, $delete);

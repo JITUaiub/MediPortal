@@ -1,20 +1,20 @@
-<?php 
+<?php
 session_start();
 
- $conn = mysqli_connect("localhost", "root", "","mediportal_db");
-   
+ $conn = mysqli_connect($_ENV["MYSQL_HOST"].":".$_ENV["MYSQL_PORT"], $_ENV["MYSQL_UN"], $_ENV["MYSQL_PW"],$_ENV["MYSQL_DB"]);
+
              if (!$conn) {
-         die("Connection failed: " . mysqli_connect_error()); 
+         die("Connection failed: " . mysqli_connect_error());
   }
 
   if(isset($_SESSION['doctor_username']) && isset($_SESSION['doctor_type'])) {
     $doctor_information = "SELECT * from doctor where username = '".$_SESSION['doctor_username']."';";
-     $result = mysqli_query($conn, $doctor_information)or die(mysqli_error($conn)); 
-     
+     $result = mysqli_query($conn, $doctor_information)or die(mysqli_error($conn));
+
   }
- 
+
     while($row = mysqli_fetch_assoc($result)) {
-    
+
 ?>
 
 
@@ -47,7 +47,7 @@ session_start();
                                                                  <td><hr width="1" size="15"></td>
                                 <td><a href="../index.php">Logout<img src="images/logout.png"></a></td>
 
-                            </table> 
+                            </table>
                         </td>
                     </table>
                 </div>
@@ -85,7 +85,7 @@ session_start();
                         <fieldset>
                             <legend>
                             <strong>Appointments Information</strong></legend>
-                           
+
                             <ul>
                                 <li><a href="appointmentstatus.php">Appointment Status</a></li>
                                 <li><a href="appointmenthistory.php">Appointment History</a></li>
@@ -96,24 +96,24 @@ session_start();
                         <fieldset>
                             <legend>
                             <strong>Reports</strong></legend>
-                           
+
                             <ul>
                                 <li><a href="patienthistory.php">Patient History</a></li>
                                 <li><a href="medianalysis.php">Medicine Analysis</a></li>
                                 <li><a href="disanalysis.php">Disease Analysis</a></li>
                             </ul>
                         </fieldset>
-                        
-                        
+
+
                         <fieldset>
                             <legend>
                             <strong>E-consultation</strong></legend>
-                           
+
                             <ul>
                                 <li><a href="eConsultation/message.php">New Message</a></li>
                                 <li><a href="eConsultation/inbox.php">Inbox</a></li>
                                 <li><a href="eConsultation/sentitems.php">Sent Items</a></li>
-                                
+
                             </ul>
                         </fieldset>
 
@@ -121,7 +121,7 @@ session_start();
                         <fieldset>
                             <legend>
                             <strong>Account</strong></legend>
-                           
+
                             <ul>
                                 <li><a href="changepassword.php">Change Password</a></li>
                                 <li><a href="../index.php">Logout</a></li>
@@ -134,15 +134,15 @@ session_start();
                                 } else {
                                         echo "<img width='200' height='200' src='images/".$row['profile_picture']."' alt='Profile Pic'>";
                                 }?> <br><br/>
-                                Welcome <?php echo $row['username']; ?> 
+                                Welcome <?php echo $row['username']; ?>
                                 <h3>11 DEC, 2017</h3>
                                 <table width="80%">
                                     <tr>
-                                        
+
                                         <td align="center" width="35%"">
                                             <fieldset>
                                               <?php  $count_pending_appointment="select count(*) from appointment where status='pending'";
-                                 $result = mysqli_query($conn, $count_pending_appointment)or die(mysqli_error($conn)); 
+                                 $result = mysqli_query($conn, $count_pending_appointment)or die(mysqli_error($conn));
                                  $row = mysqli_fetch_assoc($result);
 
                                  ?>
@@ -151,8 +151,8 @@ session_start();
                                                 <h4 align="center"><b>See Appointment Status</b></h4>
                                         </fieldset>
                                     </td>
-                                    
-                                  
+
+
                                         <td align="center" width="35%">
                                               <fieldset>
                                                 <h2 align="center">Pending Prescriptions</h2></br>
@@ -161,11 +161,11 @@ session_start();
                                         </fieldset>
                                     </td>
                                     </tr>
-                                    
-                                    
+
+
                                     <tr align="center">
                                         <td align="center" width="35%" colspan="2">
-                                           
+
                                               <fieldset>
                                                 <h2 align="center">Last Week Patient List</h2></br>
 
@@ -176,16 +176,16 @@ session_start();
         <td><label><b>Patient Name</b></label></td>
         <td><label><b>Disease</b></label></td>
     </tr>
-<?php 
-    
+<?php
+
     //$curr = date("Y-M-D");
 
      $curr = date('Y-m-d', strtotime('-7 days'));
 
 
     $last_week = "SELECT * from member,prescription,appointment where member.member_id = appointment.member_id and prescription.member_id = appointment.member_id and appointment.status='active' and appointment.date <='".$curr."'";
-     $result = mysqli_query($conn, $last_week)or die(mysqli_error($conn)); 
-     
+     $result = mysqli_query($conn, $last_week)or die(mysqli_error($conn));
+
     while($last = mysqli_fetch_assoc($result)) {
 
         /*
@@ -194,27 +194,27 @@ session_start();
         $last_date = $appointment_day-7;
 
         */
-        
+
 
         //if($appointment_day>$last_date){
 
         //$date = $last['date']-strtotime("7 days");
 
 
-       
-         
+
+
 
         ?>
                  <tr>
-                 
+
                         <td><?php echo $last['name']; ?></td>
                         <td><?php echo $last['disease']; ?></td>
-                        
+
                 </tr>
 
-            <?php 
-                 
-               
+            <?php
+
+
             //}
 
         }
@@ -224,15 +224,15 @@ session_start();
             ?>
 
                                                 </table>
-                                                
-                                                
+
+
                                         </fieldset>
 
                                     </td>
                                     </tr>
-                                
-                                    
-                                    
+
+
+
                                 </table>
                             </td>
                         </div>
@@ -243,8 +243,8 @@ session_start();
         <tr>
             <td>
 
-                <?php 
-                
+                <?php
+
 
             }
 

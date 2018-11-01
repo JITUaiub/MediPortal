@@ -2,7 +2,7 @@
 	session_start();
 	//print_r($GLOBALS);
 	
-	$conn = mysqli_connect("localhost", "root", "","mediportal_db");
+	$conn = mysqli_connect($_ENV["MYSQL_HOST"].":".$_ENV["MYSQL_PORT"], $_ENV["MYSQL_UN"], $_ENV["MYSQL_PW"],$_ENV["MYSQL_DB"]);
 	if (!$conn) {
     	die("Connection failed: " . mysqli_connect_error());
 	}
