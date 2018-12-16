@@ -66,6 +66,7 @@
 
 			<div align="center">
 				<h1><i>Please Login with your username and password</i></h1>
+				<p align="center"> Credential for Login(username/password) = Admin -> admin/admin, Doctor -> doctor/doctor, Patient -> patient/patient</p>
 			</div>
        		
 			<script>
