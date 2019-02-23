@@ -20,7 +20,7 @@ session_start();
 						</td>
 						<td width="30%">&nbsp;</td>
 						<td align="center" width="10%">
-							<fieldset><a href="home.php" >Home <img src="images/home.png"></a></fieldset>
+							<fieldset><a href="Home.php" >Home <img src="images/home.png"></a></fieldset>
 						</td>
 						<td width="10%" align="center">
 							<fieldset><a href="Registration.php">Registration<img src="images/registration.png"></a></fieldset>
