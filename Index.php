@@ -16,11 +16,11 @@ session_start();
 		<div><table align="center" width="100%">
 					<tr align="right">
 						<td width="10%">
-							<a href="Home.php"><img src="images/logo.png" align="left"></a>
+							<a href="index.php"><img src="images/logo.png" align="left"></a>
 						</td>
 						<td width="30%">&nbsp;</td>
 						<td align="center" width="10%">
-							<fieldset><a href="Home.php" >Home <img src="images/home.png"></a></fieldset>
+							<fieldset><a href="index.php" >Home <img src="images/home.png"></a></fieldset>
 						</td>
 						<td width="10%" align="center">
 							<fieldset><a href="Registration.php">Registration<img src="images/registration.png"></a></fieldset>
